@@ -280,6 +280,7 @@
     var onExit = bots.filter(function (b) { return tile(b.x, b.y) === 'E'; }).length;
     if (onExit === 2) {
       won = true;
+      if (lv === LEVELS.length - 1 && window.bbAchieve) window.bbAchieve('joined');
       say(lv < LEVELS.length - 1 ? 'Both robots home. Next puzzle…' : 'All three solved. Nice teamwork.');
       setTimeout(function () { load((lv + 1) % LEVELS.length); }, lv < LEVELS.length - 1 ? 1300 : 3200);
     } else if (onExit === 1) say('One robot home. The exit only opens for both.');
