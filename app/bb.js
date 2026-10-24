@@ -341,6 +341,23 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
     update();
   }
+  function initTop() {
+    if (!document.querySelector('.bb-page') || document.querySelector('.bb-top')) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'bb-top'; b.setAttribute('aria-label', 'Back to top');
+    b.innerHTML = '<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><circle class="bb-top__ring" cx="24" cy="24" r="22" pathLength="1"/><path d="M24 31V17M18 23l6-6 6 6"/></svg>';
+    b.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }); });
+    document.body.appendChild(b);
+    var ticking = false;
+    function update() {
+      var y = window.pageYOffset, max = document.documentElement.scrollHeight - window.innerHeight;
+      b.classList.toggle('is-on', y > window.innerHeight * 1.5 && !document.documentElement.classList.contains('bb-menu-open'));
+      b.style.setProperty('--p', max > 0 ? Math.min(1, y / max).toFixed(4) : 0);
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+    update();
+  }
   function initMotes(root) {
     if (reduceMotion) return;
     root.querySelectorAll('.bb-hero').forEach(function (hero) {
@@ -487,12 +504,14 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initIntro, initProgress, initSplit, initMotes, initPointerFx, initImageParallax].forEach(function (fn) {
+    [initIntro, initProgress, initTop, initSplit, initMotes, initPointerFx, initImageParallax].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
   }
   function addChrome() {
     var C = window.BB_CHROME;
+    var tc = document.querySelector('meta[name="theme-color"]') || document.head.appendChild(document.createElement('meta'));
+    tc.name = 'theme-color'; tc.content = '#09090b';
     if (!C) return;
     if (!document.querySelector('.bb-header') && C.header) document.body.insertAdjacentHTML('afterbegin', C.header);
     if (!document.querySelector('.bb-footer') && C.footer) {
