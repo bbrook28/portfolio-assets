@@ -1,5 +1,5 @@
-<!-- PAGE: /projects/wild-magic — Wild Magic (GMTK Game Jam) -->
-<div class="bb-page" style="--bb-accent:#c78bff;--bb-accent-2:#e6cdff;">
+<!-- PAGE: /projects/wild-magic — Wild Magic (GMTK Game Jam 2020) -->
+<div class="bb-page wm" style="--bb-accent:#c78bff;--bb-accent-2:#e6cdff;">
 
   <section class="bb-hero bb-hero--short">
     <div class="bb-hero__media"><img data-bb-src="wildmagic/combat.jpg" alt="Wizzo the Wizard casting fire spells at enemies" fetchpriority="high"></div>
@@ -11,39 +11,104 @@
         <div><dt>Role</dt><dd>Game Design · VFX · SFX</dd></div>
         <div><dt>Team</dt><dd>7 developers</dd></div>
         <div><dt>Engine</dt><dd>Unreal Engine</dd></div>
-        <div><dt>Format</dt><dd>Game jam</dd></div>
+        <div><dt>Result</dt><dd>#970 of 5,244 entries</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <section class="bb-section bb-section--tight">
+    <div class="bb-container">
+      <div class="bb-stats bb-reveal">
+        <div class="bb-stat"><div class="bb-stat__num">Top 19<sup>%</sup></div><div class="bb-stat__label">Overall, of 5,244 entries</div></div>
+        <div class="bb-stat"><div class="bb-stat__num">3.36</div><div class="bb-stat__label">Overall score / 5</div></div>
+        <div class="bb-stat"><div class="bb-stat__num">#1,118</div><div class="bb-stat__label">Fun</div></div>
+        <div class="bb-stat"><div class="bb-stat__num">48<sup>h</sup></div><div class="bb-stat__label">Jam length</div></div>
+      </div>
     </div>
   </section>
 
   <section class="bb-section">
     <div class="bb-container bb-split">
       <div class="bb-sticky bb-reveal">
-        <p class="bb-kicker">Core mechanic</p>
+        <p class="bb-kicker">Reading the theme</p>
         <h2 class="bb-h2">Your strongest spell is also your <em>worst</em> idea.</h2>
       </div>
       <div class="bb-reveal" style="--d:.1s">
-        <p class="bb-lead">High-velocity spells push Wizzo backwards. Fire a big one near a hazard and the recoil can kill you. That single rule turns a twin-stick shooter into a game about <strong>timing, positioning and restraint</strong>.</p>
+        <p class="bb-lead">"Out of control" usually means the player loses control. We wanted the player to <strong>choose</strong> how much control to give up. Small spells barely move Wizzo; big ones hit hard and fling him backwards. Every cast is a trade between damage and footing.</p>
         <ul class="bb-facts" style="margin-top:30px">
-          <li><span>Counters</span><span>Each enemy type is weak to a different spell, so players must switch</span></li>
+          <li><span>Counters</span><span>Each enemy type is weak to a different spell, so players can't just spam the safe one</span></li>
           <li><span>Risk</span><span>Kickback scales with spell power: big damage, big displacement</span></li>
-          <li><span>Arena</span><span>Hazards are placed to punish careless recoil</span></li>
+          <li><span>Arena</span><span>Hazards sit where careless recoil will carry you</span></li>
+          <li><span>Movement</span><span>Recoil can double as repositioning, if you aim it well</span></li>
           <li><span>Feedback</span><span>I owned VFX and SFX so every cast reads and lands</span></li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- TOY -->
   <section class="bb-section bb-section--alt">
+    <div class="bb-container">
+      <div class="bb-split" style="align-items:end">
+        <div class="bb-reveal">
+          <p class="bb-kicker">Interactive · Try the kickback</p>
+          <h2 class="bb-h2" style="margin-bottom:0">Aim, cast, and mind the <em>edges</em>.</h2>
+        </div>
+        <p class="bb-prose bb-reveal" style="--d:.1s">A tiny recreation of the core rule. Click or tap to cast toward that point, and pick a spell below. Bigger spells hit harder and throw Wizzo further back. Land in the fire and you start over.</p>
+      </div>
+      <div class="wm-toy bb-reveal" data-wm-toy>
+        <canvas aria-label="Kickback demo: click to cast a spell toward the cursor"></canvas>
+        <div class="wm-toy__hud">
+          <div class="wm-toy__spells" role="radiogroup" aria-label="Spell">
+            <button type="button" role="radio" data-s="0">Spark <small>light kick</small></button>
+            <button type="button" role="radio" data-s="1">Fireball <small>medium</small></button>
+            <button type="button" role="radio" data-s="2">Arcane blast <small>huge kick</small></button>
+          </div>
+          <div class="wm-toy__score"><span>Targets <b data-wm-hits>0</b></span><span>Falls <b data-wm-falls>0</b></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bb-section">
     <div class="bb-container">
       <div class="bb-gallery">
         <figure class="bb-figure bb-g-wide bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="wm"><img loading="lazy" data-bb-src="wildmagic/arena-top.jpg" alt="Top-down view of the arena with Wizzo and enemies"></div><figcaption><strong>The arena.</strong> Hazards and cover laid out around recoil distances.</figcaption></figure>
-        <figure class="bb-figure bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="wm"><img loading="lazy" data-bb-src="wildmagic/enemies.jpg" alt="Enemies firing at Wizzo"></div><figcaption><strong>Enemy pressure.</strong></figcaption></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="wm"><img loading="lazy" data-bb-src="wildmagic/enemies.jpg" alt="Enemies firing at Wizzo"></div><figcaption><strong>Enemy pressure.</strong> Projectiles push you toward the spells you'd rather not cast.</figcaption></figure>
       </div>
+    </div>
+  </section>
+
+  <section class="bb-section bb-section--alt">
+    <div class="bb-container">
+      <div class="bb-split" style="align-items:center">
+        <div class="bb-reveal">
+          <p class="bb-kicker">Controls</p>
+          <h2 class="bb-h2">Twin-stick, with a <em>dash</em>.</h2>
+          <p class="bb-prose">Move on the left stick, aim and fire on the right, and dash on the bumper. The dash is the one fully controlled move in your kit, a way to correct after a big blast throws you somewhere bad. Keyboard and mouse are supported too.</p>
+        </div>
+        <div class="bb-stack bb-reveal" style="--d:.1s">
+          <figure class="bb-figure"><div class="bb-figure__frame" style="background:#0b0612" data-bb-lightbox="wm-controls"><img loading="lazy" data-bb-src="wildmagic/controls-pad.jpg" alt="Gamepad controls: dash on the left bumper, move on the left stick, shoot on the right stick"></div></figure>
+          <figure class="bb-figure"><div class="bb-figure__frame" style="background:#0b0612" data-bb-lightbox="wm-controls"><img loading="lazy" data-bb-src="wildmagic/controls-keys.jpg" alt="Keyboard controls"></div></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bb-section">
+    <div class="bb-container">
+      <div class="bb-reveal" style="max-width:760px">
+        <p class="bb-kicker">Player feedback</p>
+        <h2 class="bb-h2">What players said, and what we <em>took away</em>.</h2>
+      </div>
+      <div class="bb-grid bb-grid--3" style="margin-top:40px">
+        <figure class="bb-card bb-quote-card bb-reveal"><blockquote>"I'm impressed that you did all this art in the scope of the jam. The gameplay is solid and fits the theme well. I like the switching between easy control and hard control."</blockquote><figcaption>GMTK Jam player</figcaption></figure>
+        <figure class="bb-card bb-quote-card bb-reveal" style="--d:.06s"><blockquote>"Very charming, the controls are slightly rough however."</blockquote><figcaption>GMTK Jam player</figcaption></figure>
+        <figure class="bb-card bb-quote-card bb-reveal" style="--d:.12s"><blockquote>"I loved the art of the game. I found it a little difficult to control the character but the game is a lot of fun."</blockquote><figcaption>GMTK Jam player</figcaption></figure>
+      </div>
+      <div class="bb-note bb-reveal" style="margin-top:28px"><strong>The lesson:</strong> the theme landed, but "out of control" has to feel deliberate. Players read rough controls and intended chaos the same way, so the post-jam plan centred on impact: more oomph on each spell and its hits, so the recoil reads as the spell's power rather than slippery movement.</div>
       <div class="bb-embed bb-embed--itch bb-reveal" style="margin-top:40px;max-width:560px"><iframe loading="lazy" src="https://itch.io/embed/695062" title="Wild Magic on itch.io"></iframe></div>
-      <div class="bb-press" style="margin-top:40px">
-        <div class="bb-card bb-reveal"><div class="bb-card__num">Team</div><p>Joey Belt · Materials, environment art, music<br>Ben Brook · Game design, VFX, SFX<br>Alex Compton · Character art<br>Phillip Corrado · Design, programming, VFX<br>Greg González · Design, motion media<br>Spencer Hamm · Animation, rigging<br>John Washington · Design, programming, UI</p></div>
-      </div>
+      <div class="bb-card bb-reveal" style="margin-top:28px"><div class="bb-card__num">Team</div><p>Joey Belt · Materials, environment art, music · Ben Brook · Game design, VFX, SFX · Alex Compton · Character art · Phillip Corrado · Design, programming, VFX · Greg González · Design, motion media · Spencer Hamm · Animation, rigging · John Washington · Design, programming, UI</p></div>
     </div>
   </section>
 
@@ -52,3 +117,112 @@
     <a href="/projects/hell-my-name-is-bubba"><img data-bb-src="buba/shot-2.jpg" alt=""><small>Next project →</small><strong>Hell, My Name Is Buba</strong></a>
   </nav>
 </div>
+
+<style>
+.bb-quote-card blockquote { margin: 0; font-family: var(--bb-serif); font-size: 22px; line-height: 1.3; color: var(--bb-text); }
+.bb-quote-card figcaption { margin-top: 18px; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--bb-accent); }
+.wm-toy { margin-top: 40px; border: 1px solid var(--bb-line); border-radius: var(--bb-radius); overflow: hidden; background: #0d0916; }
+.wm-toy canvas { display: block; width: 100%; aspect-ratio: 16 / 8; cursor: crosshair; touch-action: none; }
+.wm-toy__hud { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; padding: 16px 18px; border-top: 1px solid var(--bb-line); }
+.wm-toy__spells { display: flex; flex-wrap: wrap; gap: 8px; }
+.wm-toy__spells button { padding: 10px 16px; border-radius: 999px; border: 1px solid var(--bb-line-strong); background: transparent; color: var(--bb-muted); font: 600 13px/1 var(--bb-sans); cursor: pointer; transition: all .25s; }
+.wm-toy__spells button small { font-weight: 400; opacity: .7; margin-left: 4px; }
+.wm-toy__spells button[aria-checked="true"] { background: var(--bb-accent); border-color: var(--bb-accent); color: #0b0b0b; }
+.wm-toy__score { display: flex; gap: 20px; font-size: 13px; color: var(--bb-muted); font-variant-numeric: tabular-nums; }
+.wm-toy__score b { color: var(--bb-text); margin-left: 4px; }
+@media (max-width: 720px) { .wm-toy canvas { aspect-ratio: 4 / 3; } }
+</style>
+
+<script>
+(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root, bb) {
+  var host = root.querySelector('[data-wm-toy]');
+  if (!host) return;
+  var cv = host.querySelector('canvas'), ctx = cv.getContext('2d');
+  var SP = [
+    { n: 'Spark', kick: 2.2, speed: 9, r: 4, col: '#9fe8ff' },
+    { n: 'Fireball', kick: 5.2, speed: 7, r: 8, col: '#ff9a4a' },
+    { n: 'Arcane blast', kick: 10.5, speed: 6, r: 13, col: '#c78bff' }
+  ];
+  var spell = 1, W, H, dpr = Math.min(2, window.devicePixelRatio || 1);
+  var wiz, shots = [], targets = [], hits = 0, falls = 0, flash = 0, sparks = [];
+  var hitsEl = host.querySelector('[data-wm-hits]'), fallsEl = host.querySelector('[data-wm-falls]');
+  var btns = host.querySelectorAll('[data-s]');
+  function pick(i) { spell = i; btns.forEach(function (b, j) { b.setAttribute('aria-checked', j === i ? 'true' : 'false'); }); }
+  btns.forEach(function (b, i) { b.addEventListener('click', function () { pick(i); }); });
+  pick(1);
+  function pits() { return [{ x: 0, y: H * .82, w: W * .22, h: H * .18 }, { x: W * .78, y: 0, w: W * .22, h: H * .2 }, { x: W * .42, y: H * .9, w: W * .16, h: H * .1 }]; }
+  function resetWiz() { wiz = { x: W * .45, y: H * .5, vx: 0, vy: 0 }; }
+  function spawnTargets() {
+    targets = [];
+    for (var i = 0; i < 3; i++) targets.push({ x: W * (.2 + Math.random() * .6), y: H * (.18 + Math.random() * .55), r: 14, hp: 1 });
+  }
+  function size() {
+    var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    resetWiz(); spawnTargets();
+  }
+  function cast(tx, ty) {
+    var s = SP[spell], dx = tx - wiz.x, dy = ty - wiz.y, d = Math.hypot(dx, dy) || 1;
+    dx /= d; dy /= d;
+    shots.push({ x: wiz.x + dx * 18, y: wiz.y + dy * 18, vx: dx * s.speed, vy: dy * s.speed, s: s, life: 120 });
+    wiz.vx -= dx * s.kick; wiz.vy -= dy * s.kick;
+  }
+  function pos(e) { var r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
+  cv.addEventListener('pointerdown', function (e) { e.preventDefault(); var p = pos(e); cast(p[0], p[1]); });
+  function inRect(p, r) { return p.x > r.x && p.x < r.x + r.w && p.y > r.y && p.y < r.y + r.h; }
+  function step() {
+    wiz.x += wiz.vx; wiz.y += wiz.vy; wiz.vx *= .9; wiz.vy *= .9;
+    var m = 16;
+    if (wiz.x < m) { wiz.x = m; wiz.vx *= -.4; } if (wiz.x > W - m) { wiz.x = W - m; wiz.vx *= -.4; }
+    if (wiz.y < m) { wiz.y = m; wiz.vy *= -.4; } if (wiz.y > H - m) { wiz.y = H - m; wiz.vy *= -.4; }
+    if (pits().some(function (r) { return inRect(wiz, r); })) { falls++; fallsEl.textContent = falls; flash = 18; resetWiz(); }
+    shots.forEach(function (s) {
+      s.x += s.vx; s.y += s.vy; s.life--;
+      targets.forEach(function (t) {
+        if (t.hp > 0 && Math.hypot(s.x - t.x, s.y - t.y) < t.r + s.s.r) {
+          t.hp = 0; s.life = 0; hits++; hitsEl.textContent = hits;
+          for (var k = 0; k < 14; k++) sparks.push({ x: t.x, y: t.y, vx: (Math.random() - .5) * 6, vy: (Math.random() - .5) * 6, l: 30, c: s.s.col });
+        }
+      });
+    });
+    shots = shots.filter(function (s) { return s.life > 0 && s.x > -20 && s.x < W + 20 && s.y > -20 && s.y < H + 20; });
+    if (targets.every(function (t) { return t.hp === 0; })) spawnTargets();
+    sparks.forEach(function (p) { p.x += p.vx; p.y += p.vy; p.l--; });
+    sparks = sparks.filter(function (p) { return p.l > 0; });
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(199,139,255,.07)';
+    for (var gx = 0; gx < W; gx += 32) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke(); }
+    for (var gy = 0; gy < H; gy += 32) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke(); }
+    pits().forEach(function (r) {
+      var g = ctx.createLinearGradient(r.x, r.y, r.x, r.y + r.h); g.addColorStop(0, 'rgba(255,90,40,.55)'); g.addColorStop(1, 'rgba(255,40,20,.25)');
+      ctx.fillStyle = g; ctx.fillRect(r.x, r.y, r.w, r.h);
+    });
+    targets.forEach(function (t) {
+      if (t.hp <= 0) return;
+      ctx.fillStyle = '#3a2a52'; ctx.strokeStyle = '#e6cdff'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(t.x, t.y, t.r, 0, 6.283); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); ctx.arc(t.x, t.y, t.r * .45, 0, 6.283); ctx.stroke();
+    });
+    shots.forEach(function (s) { ctx.shadowColor = s.s.col; ctx.shadowBlur = 16; ctx.fillStyle = s.s.col; ctx.beginPath(); ctx.arc(s.x, s.y, s.s.r, 0, 6.283); ctx.fill(); });
+    ctx.shadowBlur = 0;
+    sparks.forEach(function (p) { ctx.globalAlpha = p.l / 30; ctx.fillStyle = p.c; ctx.fillRect(p.x, p.y, 3, 3); });
+    ctx.globalAlpha = 1;
+    // Wizzo: robe + hat
+    ctx.fillStyle = '#4b6bff'; ctx.beginPath(); ctx.arc(wiz.x, wiz.y + 4, 13, 0, 6.283); ctx.fill();
+    ctx.fillStyle = '#c78bff'; ctx.beginPath(); ctx.moveTo(wiz.x - 13, wiz.y - 2); ctx.lineTo(wiz.x + 13, wiz.y - 2); ctx.lineTo(wiz.x + 3, wiz.y - 28); ctx.closePath(); ctx.fill();
+    if (flash > 0) { ctx.fillStyle = 'rgba(255,80,40,' + (flash / 40) + ')'; ctx.fillRect(0, 0, W, H); flash--; }
+  }
+  var running = false;
+  function loop() { if (!running) return; step(); draw(); requestAnimationFrame(loop); }
+  size(); draw();
+  window.addEventListener('resize', size);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      var v = en[0].isIntersecting;
+      if (v && !running) { running = true; requestAnimationFrame(loop); } else if (!v) running = false;
+    }).observe(host);
+  } else { running = true; loop(); }
+});
+</script>

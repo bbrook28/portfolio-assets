@@ -143,6 +143,9 @@
 .home-hero { min-height: 100vh; min-height: 100svh; padding-bottom: 28px; }
 .home-reel img, .home-reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s ease; animation: none; }
 .home-reel .is-on { opacity: 1; animation: bb-pushin 9s linear both; }
+.home-yt { position: absolute; inset: 0; overflow: hidden; opacity: 0; transition: opacity 1.2s ease; pointer-events: none; }
+.home-yt.is-on { opacity: 1; }
+.home-yt iframe { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: 0; pointer-events: none; }
 .home-launch { display: inline-flex; align-items: center; gap: 10px; margin-bottom: clamp(28px, 5vh, 56px); padding: 8px 16px 8px 12px; border-radius: 999px; border: 1px solid rgba(185,226,111,.45); background: rgba(9,9,11,.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #e3f4b5 !important; text-decoration: none !important; font-size: 13px; font-weight: 500; letter-spacing: .02em; transition: border-color .3s, background .3s; }
 .home-launch:hover { border-color: #b9e26f; background: rgba(185,226,111,.12); }
 .home-launch i { width: 8px; height: 8px; border-radius: 50%; background: #b9e26f; box-shadow: 0 0 0 0 rgba(185,226,111,.7); animation: home-ping 2s infinite; }
@@ -221,16 +224,55 @@
   var hero = root.querySelector('[data-home-reel]');
   if (hero) {
     var S = [
-      { t: 'Forgotten Hollow', r: 'Region design · Nexon · MapleStory Classic', h: '/projects/maplestory-classic', a: '#b9e26f' },
+      { t: 'Forgotten Hollow', r: 'Region design · Nexon · MapleStory Classic', h: '/projects/maplestory-classic', a: '#b9e26f', yt: 'Xm9Ub7Ln3IE', start: 14 },
       { t: 'BioShock 4', r: 'Level design · Cloud Chamber · 2K', h: '/projects/t-7xfc6', a: '#d8b46a' },
-      { t: "Skydance's Behemoth", r: 'Level design · Skydance · VR', h: '/projects/tbehemoth', a: '#9fc3e8' },
-      { t: 'TWD: Retribution', r: 'Game & level design · Skydance · VR', h: '/projects/the-walking-dead-saints-and-sinners-chapter-2', a: '#e0654a' },
+      { t: "Skydance's Behemoth", r: 'Level design · Skydance · VR', h: '/projects/tbehemoth', a: '#9fc3e8', yt: 'Z97OfLomM4s', start: 10 },
+      { t: 'TWD: Retribution', r: 'Game & level design · Skydance · VR', h: '/projects/the-walking-dead-saints-and-sinners-chapter-2', a: '#e0654a', yt: '5wp0TW3R7uI', start: 8 },
       { t: 'Project: Lonestar', r: 'Level design · Unannounced VR', h: '/projects/level-design-blockout-canceled-title', a: '#e2a356' },
       { t: 'Zoélie', r: 'Lead gameplay design · SCAD · Award winner', h: '/projects/zoelie', a: '#f2a65a' }
     ];
     var media = hero.querySelectorAll('.home-reel > *');
     var now = hero.querySelector('.home-now'), tabs = hero.querySelector('.home-tabs');
-    var idx = 0, t0 = 0, DUR = 7000, paused = false, raf;
+    var idx = 0, t0 = 0, DUR = 7000, paused = false, raf, yt = null;
+    var reel = hero.querySelector('.home-reel');
+    var saveData = navigator.connection && navigator.connection.saveData;
+    function slideDur(i) { return S[i].yt || media[i].tagName === 'VIDEO' ? 12000 : DUR; }
+    // Official trailers play muted behind the still, fading in once they're running.
+    function stopTrailer() { if (yt) { var old = yt; old.classList.remove('is-on'); setTimeout(function () { old.remove(); }, 1200); yt = null; } }
+    function startTrailer(s) {
+      stopTrailer();
+      if (!s.yt || bb.reduceMotion || saveData) return;
+      var box = document.createElement('div');
+      box.className = 'home-yt';
+      box.innerHTML = '<iframe tabindex="-1" title="' + s.t + ' trailer" allow="autoplay; encrypted-media; picture-in-picture" src="https://www.youtube-nocookie.com/embed/' + s.yt +
+        '?autoplay=1&mute=1&controls=0&loop=1&playlist=' + s.yt + '&start=' + (s.start || 0) + '&playsinline=1&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1&fs=0&enablejsapi=1&origin=' + encodeURIComponent(location.origin) + '"></iframe>';
+      reel.appendChild(box);
+      yt = box;
+      var frame = box.querySelector('iframe');
+      // Ask the player for state updates; only reveal it once it reports "playing",
+      // so an unavailable video never shows YouTube's error screen.
+      frame.addEventListener('load', function () {
+        var n = 0, ping = setInterval(function () {
+          if (yt !== box || box.classList.contains('is-on') || ++n > 20) return clearInterval(ping);
+          try { frame.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: s.yt }), '*'); } catch (e) {}
+        }, 250);
+      });
+      box._frame = frame;
+      sizeTrailer();
+    }
+    function sizeTrailer() {
+      if (!yt) return;
+      var W = reel.clientWidth, H = reel.clientHeight, w = Math.max(W, H * 16 / 9) * 1.18;
+      var f = yt.querySelector('iframe'); f.style.width = w + 'px'; f.style.height = (w * 9 / 16) + 'px';
+    }
+    window.addEventListener('resize', sizeTrailer);
+    window.addEventListener('message', function (e) {
+      if (!yt || !/youtube(-nocookie)?\.com$/.test((e.origin || '').replace(/^https?:\/\/(www\.)?/, ''))) return;
+      if (e.source !== yt._frame.contentWindow) return;
+      var d; try { d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (err) { return; }
+      var st = d && d.info && d.info.playerState;
+      if (st === 1) { var box = yt; setTimeout(function () { if (yt === box) box.classList.add('is-on'); }, 600); }
+    });
     S.forEach(function (s, i) {
       var b = document.createElement('button');
       b.type = 'button'; b.setAttribute('role', 'tab');
@@ -253,15 +295,16 @@
       now.querySelector('[data-home-role]').textContent = s.r;
       now.classList.remove('is-swap'); void now.offsetWidth; now.classList.add('is-swap');
       hero.style.setProperty('--bb-accent', s.a);
+      startTrailer(s);
       btns.forEach(function (b, j) { b.setAttribute('aria-selected', j === idx ? 'true' : 'false'); bars[j].style.width = j < idx ? '100%' : '0'; });
       t0 = performance.now();
     }
     function tick(t) {
       if (!paused && !bb.reduceMotion) {
-        var p = Math.min(1, (t - t0) / DUR);
+        var p = Math.min(1, (t - t0) / slideDur(idx));
         bars[idx].style.width = (p * 100) + '%';
         if (p >= 1) go(idx + 1);
-      } else { t0 = t - (parseFloat(bars[idx].style.width) || 0) / 100 * DUR; }
+      } else { t0 = t - (parseFloat(bars[idx].style.width) || 0) / 100 * slideDur(idx); }
       raf = requestAnimationFrame(tick);
     }
     hero.addEventListener('mouseenter', function () { paused = true; });
@@ -283,6 +326,14 @@
     });
     go(0);
     raf = requestAnimationFrame(tick);
+    if ('IntersectionObserver' in window) {
+      var offscreen = false;
+      new IntersectionObserver(function (en) {
+        var vis = en[0].isIntersecting;
+        if (!vis && !offscreen) { offscreen = true; paused = true; stopTrailer(); }
+        else if (vis && offscreen) { offscreen = false; paused = false; startTrailer(S[idx]); }
+      }, { threshold: 0.15 }).observe(hero);
+    }
   }
 
   /* Seamless marquee: repeat the run once */
