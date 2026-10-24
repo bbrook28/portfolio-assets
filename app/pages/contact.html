@@ -1,0 +1,27 @@
+<!-- PAGE: /contact -->
+<div class="bb-page">
+  <section class="bb-section" style="padding-top:calc(var(--bb-header-h) + clamp(60px,9vw,120px))">
+    <div class="bb-container bb-split">
+      <div class="bb-reveal">
+        <p class="bb-kicker">Contact</p>
+        <h1 class="bb-h1">Let's <em>talk</em>.</h1>
+        <p class="bb-lead" style="margin-top:26px">Level design, quest and systems work, a role on your team, or just comparing notes with a fellow developer. My inbox is open.</p>
+        <ul class="bb-facts" style="margin-top:40px">
+          <li><span>Email</span><span><a class="bb-link" href="mailto:benbrookgames@gmail.com">benbrookgames@gmail.com</a></span></li>
+          <li><span>Based in</span><span>Los Angeles · open to remote</span></li>
+          <li><span>LinkedIn</span><span><a class="bb-link" href="https://www.linkedin.com/in/benbrook12/" target="_blank" rel="noopener">in/benbrook12</a></span></li>
+          <li><span>itch.io</span><span><a class="bb-link" href="https://bbrook28.itch.io/" target="_blank" rel="noopener">bbrook28</a></span></li>
+        </ul>
+      </div>
+      <form class="bb-form bb-card bb-reveal" style="--d:.1s" action="https://formspree.io/f/xnjjnlyw" method="POST" data-bb-ajax>
+        <label for="bb-name">Name<input id="bb-name" name="name" type="text" autocomplete="name" required></label>
+        <label for="bb-email">Email<input id="bb-email" name="email" type="email" autocomplete="email" required></label>
+        <label for="bb-topic">About<select id="bb-topic" name="topic"><option>A role or project</option><option>Freelance / web design</option><option>Just saying hi</option></select></label>
+        <label for="bb-msg">Message<textarea id="bb-msg" name="message" required></textarea></label>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+        <button class="bb-btn" type="submit" style="justify-self:start">Send message <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></button>
+        <p class="bb-form__status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</div>

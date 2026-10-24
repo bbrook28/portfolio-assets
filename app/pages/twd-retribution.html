@@ -1,0 +1,385 @@
+<!-- PAGE: /projects/the-walking-dead-saints-and-sinners-chapter-2 — TWD: Saints & Sinners Ch. 2 Retribution -->
+<div class="bb-page twd" style="--bb-accent:#e0654a;--bb-accent-2:#f4b9a6;">
+
+  <section class="bb-hero">
+    <div class="bb-hero__media"><img data-bb-src="covers/twd.jpg" alt="A survivor in The Walking Dead: Saints & Sinners Chapter 2 facing walkers in New Orleans" fetchpriority="high"></div>
+    <div class="bb-container bb-hero__inner">
+      <p class="bb-kicker">Skydance Games · Shipped 2022</p>
+      <h1 class="bb-h1">The Walking Dead:<br>Saints &amp; Sinners <em>Ch. 2</em></h1>
+      <p class="bb-hero__sub">Retribution, the VR survival-horror sequel. I designed new enemies, the chainsaw's haptics, Night Mode systems and campaign missions across a non-linear New Orleans.</p>
+      <dl class="bb-hero__meta">
+        <div><dt>Role</dt><dd>Game &amp; Level Designer</dd></div>
+        <div><dt>Studio</dt><dd>Skydance Games</dd></div>
+        <div><dt>Engine</dt><dd>Unreal Engine 4</dd></div>
+        <div><dt>Platforms</dt><dd>PS VR2 · Quest · PC VR</dd></div>
+      </dl>
+    </div>
+    <span class="bb-hero__scroll" aria-hidden="true">Scroll</span>
+  </section>
+
+  <section class="bb-section">
+    <div class="bb-container bb-split">
+      <div class="bb-sticky bb-reveal">
+        <p class="bb-kicker">Overview</p>
+        <h2 class="bb-h2">Raising the stakes for players who <em>survived</em> Chapter 1.</h2>
+      </div>
+      <div class="bb-reveal" style="--d:.1s">
+        <p class="bb-lead">Chapter 2 had to challenge veterans who had already mastered Chapter 1's combat and scavenging. My work spanned the <strong>enemy roster, weapon feel, Night Mode systems and mission design</strong>, usually from first spec through Blueprint implementation and playtest tuning.</p>
+        <ul class="bb-own" style="margin-top:40px">
+          <li><div><strong>Enemy design</strong><span>Eradicators and Tower Grenadiers</span></div></li>
+          <li><div><strong>Weapon feel</strong><span>Chainsaw haptics, arsenal tuning</span></div></li>
+          <li><div><strong>Mission design</strong><span>Tower Mission 2 and campaign layouts</span></div></li>
+          <li><div><strong>Night Mode systems</strong><span>Procedural dead-body loot</span></div></li>
+          <li><div><strong>World placement</strong><span>Exile foothold camps across New Orleans</span></div></li>
+          <li><div><strong>Implementation</strong><span>Blueprints, AI behaviour, spawners</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENEMIES -->
+  <section class="bb-section bb-section--alt">
+    <div class="bb-container">
+      <div class="bb-split">
+        <div class="bb-reveal">
+          <p class="bb-kicker">Enemy design · Eradicators</p>
+          <h2 class="bb-h2">Mama's elite guard.</h2>
+          <div class="bb-prose">
+            <p>The Tower's strongest troops, saved for fights with a heavy Tower presence. The goal was a new threat for players who had mastered Chapter 1 and were carrying advanced weaponry.</p>
+            <p>Every rule pushes the player toward a different answer than a headshot:</p>
+          </div>
+          <ul class="bb-facts" style="margin-top:24px">
+            <li><span>Armour</span><span>Helmets and face coverings make headshots unreliable</span></li>
+            <li><span>Counter</span><span>One grenade-launcher round kills a human, two kill a walker</span></li>
+            <li><span>Behaviour</span><span>Rushes the player and only takes cover when injured</span></li>
+            <li><span>Loadouts</span><span>Faster-firing M4s, more accurate Supernova shotguns</span></li>
+            <li><span>Cost</span><span>Built on the existing enemy system to stay cheap to produce</span></li>
+          </ul>
+        </div>
+        <figure class="bb-figure bb-reveal-img" style="--d:.1s">
+          <div class="bb-figure__frame" data-bb-lightbox="twd-enemies"><img loading="lazy" data-bb-src="twd/eradicator-lineup.jpg" alt="Eradicator armour variants lineup"></div>
+          <figcaption><strong>Eradicator variants.</strong> Mismatched scavenged armour over a consistent uniform reads as one disciplined unit.</figcaption>
+        </figure>
+      </div>
+
+      <div class="bb-split bb-split--rev" style="margin-top:clamp(70px,9vw,130px)">
+        <div class="bb-grid bb-grid--2 bb-reveal">
+          <figure class="bb-figure"><div class="bb-figure__frame" data-bb-lightbox="twd-enemies"><img loading="lazy" data-bb-src="twd/grenadier-lineup-1.jpg" alt="Tower Grenadier character variants"></div></figure>
+          <figure class="bb-figure"><div class="bb-figure__frame" data-bb-lightbox="twd-enemies"><img loading="lazy" data-bb-src="twd/grenadier-blueprint.jpg" alt="Grenadier grenade-throw Blueprint graph"></div></figure>
+          <figure class="bb-figure" style="grid-column:1/-1"><div class="bb-figure__frame" data-bb-lightbox="twd-enemies"><img loading="lazy" data-bb-src="twd/grenadier-lineup-2.jpg" alt="Tower Grenadier variants, alternate set"></div><figcaption><strong>Tower Grenadiers.</strong> Character variants and the grenade-throw Blueprint.</figcaption></figure>
+        </div>
+        <div class="bb-reveal" style="--d:.1s">
+          <p class="bb-kicker">Enemy design · Grenadiers</p>
+          <h2 class="bb-h2">Get the player <em>moving</em>.</h2>
+          <div class="bb-prose">
+            <p>VR players love to hunker behind cover. Grenadiers lob explosives to flush them out, carry .30 revolvers for close quarters, and give the Tower AI a way to deal with walker hordes, including Eradicator walkers.</p>
+          </div>
+          <ul class="bb-facts" style="margin-top:24px">
+            <li><span>Range</span><span>550–2,000 units, tunable per spawn</span></li>
+            <li><span>Fuse</span><span>6 s, plus 2.5 s if the player catches it</span></li>
+            <li><span>Safety</span><span>Won't throw near allies</span></li>
+            <li><span>Data-driven</span><span>Grenade type, arc height and fuse set in Blueprint</span></li>
+          </ul>
+          <div class="bb-note" style="margin-top:24px"><strong>VR detail:</strong> catching a live grenade adds time to its fuse, which gives players a beat to throw it back.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAPTICS -->
+  <section class="bb-section" id="haptics">
+    <div class="bb-container">
+      <div class="bb-split">
+        <div class="bb-sticky bb-reveal">
+          <p class="bb-kicker">Interactive · Chainsaw haptics</p>
+          <h2 class="bb-h2">Making a chainsaw <em>feel</em> like a chainsaw.</h2>
+          <div class="bb-prose">
+            <p>I designed and tuned every haptic curve on the chainsaw, one of the most praised interactions in Retribution. The goal was for players to hear, see and <strong>feel</strong> each state, from the first pull of the ripcord to the sputter of an empty tank, with meat and bone cutting differently.</p>
+            <p>These are the shipped intensity curves. Pick one to see its shape and watch the controller react.</p>
+          </div>
+        </div>
+        <div class="twd-hap bb-reveal" data-twd-haptics style="--d:.1s">
+          <div class="twd-hap__tabs" role="tablist" aria-label="Haptic effects"></div>
+          <div class="twd-hap__stage">
+            <div class="twd-hap__head">
+              <div><p class="twd-hap__group"></p><h3 class="bb-h3 twd-hap__name"></h3></div>
+              <div class="twd-hap__pad" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 22h28c6 0 10 5 11 11l2 11c1 5-5 8-9 4l-6-6H20l-6 6c-4 4-10 1-9-4l2-11c1-6 5-11 11-11z"/><path d="M20 30v8M16 34h8"/><circle cx="44" cy="31" r="2"/><circle cx="49" cy="36" r="2"/></svg></div>
+            </div>
+            <svg class="twd-hap__chart" viewBox="0 0 600 220" preserveAspectRatio="none" role="img" aria-label="Haptic intensity over time">
+              <g class="twd-hap__grid"></g>
+              <path class="twd-hap__area"></path>
+              <path class="twd-hap__line"></path>
+              <line class="twd-hap__cursor" x1="0" x2="0" y1="10" y2="190"></line>
+            </svg>
+            <div class="twd-hap__axis"><span>0 s</span><span class="twd-hap__dur"></span></div>
+            <p class="twd-hap__note"></p>
+            <div class="bb-btn-row" style="margin-top:20px">
+              <button class="bb-btn bb-btn--ghost twd-hap__play" type="button">▶ Replay</button>
+              <button class="bb-btn bb-btn--ghost twd-hap__buzz" type="button" hidden>Feel it on your phone</button>
+            </div>
+            <p class="bb-small twd-hap__hint" style="margin-top:12px">On a phone? Android plays the real vibration pattern. iPhone (iOS 18+) taps out the rhythm with light haptic ticks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bb-grid bb-grid--3" style="margin-top:clamp(60px,8vw,110px)">
+        <div class="bb-card bb-reveal"><div class="bb-card__num">Playtest feedback</div><h3 class="bb-h3">Ripcord in three beats</h3><p>Feedback asked for a slight buzz on the initial pull, moderate at half pull and intense at full pull, so the start-up builds like a real engine.</p></div>
+        <div class="bb-card bb-reveal" style="--d:.08s"><div class="bb-card__num">Hardware</div><h3 class="bb-h3">One curve isn't one feel</h3><p>Haptic strength differs between PS VR2, Quest and other headsets, so curves were checked per platform. PS VR2's headset motor and adaptive triggers opened up more options.</p></div>
+        <div class="bb-card bb-reveal" style="--d:.16s"><div class="bb-card__num">Bug hunting</div><h3 class="bb-h3">The right hand</h3><p>Testing caught the ripcord haptic firing on the wrong hand and overlapping SFX. Both hands now feel the saw while it runs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="bb-section bb-section--alt">
+    <div class="bb-container">
+      <div class="bb-split">
+        <div class="bb-sticky bb-reveal">
+          <p class="bb-kicker">Mission design · Tower Mission 2</p>
+          <h2 class="bb-h2">Teaching a system by <em>using</em> it.</h2>
+          <div class="bb-prose">
+            <p>The original mission relied on bespoke scripting. I rebuilt it around the game's real <strong>Exile Order</strong> system, so the mission doubles as the tutorial for a feature players use for the rest of the game.</p>
+            <p>Patricia, an Exile trader on Bourbon Street, asks for surgical scissors from the dangerous clinic, everyday loot from other maps, and UV mushrooms that only glow at night. One order teaches the clinic threat, the Exile economy and Night Mode's UV loot.</p>
+          </div>
+          <ol class="bb-steps" style="margin-top:36px;grid-template-columns:1fr">
+            <li><h4 class="bb-h4">Meet Patricia at night</h4><p>Travel to Bourbon Street and meet the Exile Trade Network leader.</p></li>
+            <li><h4 class="bb-h4">Take a real Exile Order</h4><p>5 surgical scissors, 3 generic loot, 4 UV night loot.</p></li>
+            <li><h4 class="bb-h4">Open-world gathering</h4><p>The clinic is playable day or night, with Gerik's threat looming the whole time.</p></li>
+            <li><h4 class="bb-h4">Close the loop</h4><p>Complete the order and return the bolt cutters to the dissidents.</p></li>
+          </ol>
+        </div>
+        <div class="bb-stack bb-reveal" style="--d:.1s">
+          <figure class="bb-figure bb-reveal-img"><div class="bb-figure__frame" data-bb-lightbox="twd-mission"><img loading="lazy" data-bb-src="twd/exile-order-ui-1.jpg" alt="In-headset view of the Exile Order journal"></div><figcaption><strong>In headset.</strong> The Exile Order as the player sees it.</figcaption></figure>
+          <figure class="bb-figure bb-reveal-img"><div class="bb-figure__frame" data-bb-lightbox="twd-mission"><img loading="lazy" data-bb-src="twd/exile-dialogue-graph.jpg" alt="Patricia's dialogue graph in the editor"></div><figcaption><strong>Dialogue implementation.</strong> Patricia's conversation graph, rebuilt to match the simplified flow.</figcaption></figure>
+          <figure class="bb-figure bb-reveal-img"><div class="bb-figure__frame" data-bb-lightbox="twd-mission"><img loading="lazy" data-bb-src="twd/exile-order-ui-2.jpg" alt="Exile Order task list"></div></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NIGHT MODE -->
+  <section class="bb-section">
+    <div class="bb-container bb-split">
+      <div class="bb-reveal">
+        <p class="bb-kicker">Systems design · Night Mode</p>
+        <h2 class="bb-h2">Dead men's <em>backpacks</em>.</h2>
+        <div class="bb-prose">
+          <p>A loot layer only for Night Mode. Fresh corpses of survivors who died during the day spawn with backpacks of night-only items, so players who brave the dark find loot in a more personal, dynamic way.</p>
+          <p>I wrote the spec as a toolset for designers, not a fixed table, so the system could be tuned without code changes.</p>
+        </div>
+      </div>
+      <div class="bb-reveal" style="--d:.1s">
+        <ul class="bb-facts">
+          <li><span>Spawning</span><span>Designer-set min/max bodies per map, with a weighted distribution</span></li>
+          <li><span>Loot tiers</span><span>Separate "Average" and "Rare" find tables, each weighted</span></li>
+          <li><span>Guarantees</span><span>Minimum number of rare bodies per visit</span></li>
+          <li><span>Interaction</span><span>Backpacks open with the same UX as the player's own</span></li>
+          <li><span>Rules</span><span>No backpacks inside backpacks; pages generated from contents</span></li>
+          <li><span>Stretch</span><span>Turn a pack upside down and shake it to empty it</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXILE CAMPS -->
+  <section class="bb-section bb-section--alt">
+    <div class="bb-container">
+      <div class="bb-reveal" style="max-width:760px">
+        <p class="bb-kicker">World placement · Exile footholds</p>
+        <h2 class="bb-h2">Scouting New Orleans for <em>footholds</em>.</h2>
+        <p class="bb-prose">I scouted and blocked out Exile foothold camps across the game's maps. Each one is a defensible pocket in an existing space: a lumberyard, a garage beside a shipping office, a coach's office in a school gym, a covered parking area at the mansion, a reception floor in the hotel. Top-down passes mark the footprint, and in-engine shots check how it reads on the ground.</p>
+      </div>
+      <div class="bb-gallery" style="margin-top:48px">
+        <figure class="bb-figure bb-g-wide bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-industrial-1-top.jpg" alt="Industrial lumberyard camp footprint, top-down"></div><figcaption><strong>Industrial 1.</strong> Lumberyard footprint, top-down.</figcaption></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-industrial-2.jpg" alt="Garage attached to shipping office"></div><figcaption><strong>Industrial 2.</strong> Garage by the shipping office.</figcaption></figure>
+        <figure class="bb-figure bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-industrial-2-interior.jpg" alt="Interior of the industrial camp"></div><figcaption><strong>Industrial 2.</strong> Interior.</figcaption></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-school-interior.jpg" alt="Coach Perez's office in the school gym"></div><figcaption><strong>School.</strong> Coach Perez's office.</figcaption></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.12s"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-mafia-top.jpg" alt="Mafia map house near the burning skiff"></div><figcaption><strong>Mafia.</strong> House near the burning skiff.</figcaption></figure>
+        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-duplex.jpg" alt="Duplex garage connected to the main house"></div><figcaption><strong>Duplex.</strong> Garage connected to the main house.</figcaption></figure>
+        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-duplex-top.jpg" alt="Duplex camp footprint, top-down"></div><figcaption><strong>Duplex.</strong> Footprint, top-down.</figcaption></figure>
+        <figure class="bb-figure bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-mansion-top.jpg" alt="Mansion covered parking area, top-down"></div><figcaption><strong>Mansion.</strong> Covered parking, top-down.</figcaption></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-mansion-night.jpg" alt="Mansion camp at night"></div><figcaption><strong>Mansion.</strong> The same space at night.</figcaption></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.12s"><div class="bb-figure__frame" data-bb-lightbox="twd-camps"><img loading="lazy" data-bb-src="twd/camp-hotel-1.jpg" alt="Hotel reception area second floor"></div><figcaption><strong>Hotel.</strong> Second floor, by the supply closet.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="bb-section">
+    <div class="bb-container">
+      <div class="bb-grid bb-grid--3">
+        <div class="bb-card bb-reveal"><div class="bb-card__num">Arsenal</div><h3 class="bb-h3">Weapon feel</h3><p>Owned the pipeline for new weapons from concept to ship: recoil, reload friction, haptics, stat tuning and crafting recipes, so each weapon felt distinct and grounded.</p></div>
+        <div class="bb-card bb-reveal" style="--d:.08s"><div class="bb-card__num">Economy</div><h3 class="bb-h3">Survival tension</h3><p>Placed resources and tuned crafting costs and ammo economy to keep players on the edge between scarcity and power.</p></div>
+        <div class="bb-card bb-reveal" style="--d:.16s"><div class="bb-card__num">Layouts</div><h3 class="bb-h3">Non-linear missions</h3><p>Designed open mission spaces with stealth and combat approaches and vertical routes that reward VR climbing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bb-section bb-section--flush" style="padding-top:0">
+    <div class="bb-container">
+      <p class="bb-kicker bb-reveal">Gameplay</p>
+      <div class="bb-embed bb-reveal"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/4Q4fAl_5EB0" title="Saints & Sinners Chapter 2 gameplay" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+  </section>
+
+  <nav class="bb-next" aria-label="More projects" style="margin-top:var(--bb-section)">
+    <a href="/projects/tbehemoth"><img data-bb-src="covers/behemoth-gematsu.jpg" alt=""><small>← Previous</small><strong>Skydance's Behemoth</strong></a>
+    <a href="/projects/level-design-blockout-canceled-title"><img data-bb-src="lonestar/shot-00.jpg" alt=""><small>Next project →</small><strong>Project: Lonestar</strong></a>
+  </nav>
+  <p class="bb-credits">The Walking Dead: Saints &amp; Sinners © Skydance Interactive. Development images shown for portfolio purposes.</p>
+</div>
+
+<style>
+.twd-hap { border: 1px solid var(--bb-line); border-radius: var(--bb-radius); background: var(--bb-bg-2); overflow: hidden; }
+.twd-hap__tabs { display: flex; gap: 6px; overflow-x: auto; padding: 14px; border-bottom: 1px solid var(--bb-line); scrollbar-width: thin; }
+.twd-hap__tabs button { flex: 0 0 auto; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--bb-line-strong); background: transparent; color: var(--bb-muted); font: 500 13px/1 var(--bb-sans); cursor: pointer; transition: all .25s; }
+.twd-hap__tabs button:hover { color: var(--bb-text); }
+.twd-hap__tabs button[aria-selected="true"] { background: var(--bb-accent); border-color: var(--bb-accent); color: #0b0b0b; }
+.twd-hap__stage { padding: clamp(20px, 3vw, 32px); }
+.twd-hap__head { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.twd-hap__group { margin: 0 0 6px; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--bb-accent); }
+.twd-hap__name { margin: 0; }
+.twd-hap__pad { width: 72px; height: 72px; flex-shrink: 0; color: var(--bb-text); will-change: transform; }
+.twd-hap__chart { width: 100%; height: clamp(150px, 22vw, 220px); margin-top: 18px; overflow: visible; }
+.twd-hap__grid line { stroke: var(--bb-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.twd-hap__grid text { fill: var(--bb-dim); font: 11px var(--bb-sans); }
+.twd-hap__area { fill: color-mix(in srgb, var(--bb-accent) 18%, transparent); }
+.twd-hap__line { fill: none; stroke: var(--bb-accent); stroke-width: 2.5; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.twd-hap__cursor { stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke; opacity: 0; }
+.twd-hap__axis { display: flex; justify-content: space-between; font-size: 12px; color: var(--bb-dim); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.twd-hap__note { margin: 16px 0 0; color: var(--bb-muted); font-size: 15px; min-height: 3em; }
+</style>
+
+<script>
+(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root, bb) {
+  var host = root.querySelector('[data-twd-haptics]');
+  if (!host) return;
+  // Shipped intensity curves from the chainsaw haptics spec (values 0–1, evenly spaced over duration).
+  var FX = [
+    { g: 'Start-up', n: 'Ripcord', d: 1.5, v: [0.3, 0.3, 0.3, 0.3], note: 'A subtle loop while the cord is being pulled.' },
+    { g: 'Start-up', n: 'Ripcord blip', d: 0.5, v: [0, 0.6, 0.6, 0], note: 'The kick you feel as the motor catches, handing off to Motor On.' },
+    { g: 'Start-up', n: 'Motor on', d: 1.6, v: [0.5, 0, 0.5, 0, 0.5, 0, 0.5, 0, 0.5, 0, 0.5], note: 'A steady pulse that reads as an idling two-stroke engine.' },
+    { g: 'Running', n: 'Throttle held', d: 1.6, v: [0.7, 0, 0.7, 0, 0.7, 0, 0.7, 0, 0.7, 0, 0.7, 0], note: 'Revving hard: stronger, tighter pulses than idle.' },
+    { g: 'Running', n: 'Throttle released', d: 2, v: [0.6, 0.5, 0.3, 0.2, 0], note: 'Winds down smoothly before returning to Motor On.' },
+    { g: 'Running', n: 'Add gas', d: 2, v: [0.4, 0.4, 0.4, 0.4, 0], note: 'Refuelling, held while the can pours.' },
+    { g: 'Cutting', n: 'Sever meat', d: 2, v: [0, 0.7, 0, 0.7, 0, 0.7, 0, 0.7, 0], note: 'Cutting flesh: rhythmic and slightly softer than bone.' },
+    { g: 'Cutting', n: 'Sever bone', d: 2, v: [0, 0.8, 0, 0.8, 0, 0.8, 0, 0.8, 0], note: 'Bone hits harder. Playtest feedback slowed this one down so each impact lands.' },
+    { g: 'Cutting', n: 'Sever stuck', d: 0.5, v: [0, 1], note: 'The blade binds in a body: a sharp full-strength jolt.' },
+    { g: 'Cutting', n: 'Bounce off', d: 0.5, v: [0.7, 0.7, 0], note: 'A short burst when the saw glances off armour or bone.' },
+    { g: 'Shut-down', n: 'Low fuel', d: 1, v: [0, 1], note: 'An intense sputter that warns the tank is nearly empty.' },
+    { g: 'Shut-down', n: 'Motor off', d: 1.6, v: [0.5, 0.3, 0.25, 0.2, 0.15, 0.1, 0.05, 0], note: 'The engine dying out.' }
+  ];
+  var W = 600, H = 220, top = 10, bot = 190;
+  var tabs = host.querySelector('.twd-hap__tabs');
+  var line = host.querySelector('.twd-hap__line'), area = host.querySelector('.twd-hap__area');
+  var cursor = host.querySelector('.twd-hap__cursor'), pad = host.querySelector('.twd-hap__pad');
+  var grid = host.querySelector('.twd-hap__grid');
+  var ns = 'http://www.w3.org/2000/svg';
+  [0, 0.5, 1].forEach(function (v) {
+    var y = bot - v * (bot - top);
+    var l = document.createElementNS(ns, 'line');
+    l.setAttribute('x1', 0); l.setAttribute('x2', W); l.setAttribute('y1', y); l.setAttribute('y2', y);
+    grid.appendChild(l);
+  });
+  var current = 0, raf = null;
+
+  function pts(fx) {
+    return fx.v.map(function (v, i) { return [i / (fx.v.length - 1) * W, bot - v * (bot - top)]; });
+  }
+  function valueAt(fx, t) { // t 0..1, linear interpolation
+    var x = t * (fx.v.length - 1), i = Math.floor(x), f = x - i;
+    if (i >= fx.v.length - 1) return fx.v[fx.v.length - 1];
+    return fx.v[i] * (1 - f) + fx.v[i + 1] * f;
+  }
+  function play() {
+    var fx = FX[current];
+    if (raf) cancelAnimationFrame(raf);
+    if (bb.reduceMotion) return;
+    var t0 = null, ms = fx.d * 1000;
+    cursor.style.opacity = 1;
+    function step(t) {
+      if (!t0) t0 = t;
+      var p = Math.min(1, (t - t0) / ms), v = valueAt(fx, p);
+      cursor.setAttribute('x1', p * W); cursor.setAttribute('x2', p * W);
+      var a = v * 5;
+      pad.style.transform = 'translate(' + ((Math.random() - .5) * a).toFixed(2) + 'px,' + ((Math.random() - .5) * a).toFixed(2) + 'px) rotate(' + ((Math.random() - .5) * a * .8).toFixed(2) + 'deg)';
+      pad.style.color = v > 0.05 ? 'var(--bb-accent)' : 'var(--bb-text)';
+      if (p < 1) raf = requestAnimationFrame(step);
+      else { pad.style.transform = ''; pad.style.color = ''; cursor.style.opacity = 0; }
+    }
+    raf = requestAnimationFrame(step);
+  }
+  function show(i) {
+    current = i;
+    var fx = FX[i], p = pts(fx);
+    var d = 'M' + p.map(function (q) { return q[0].toFixed(1) + ' ' + q[1].toFixed(1); }).join(' L');
+    line.setAttribute('d', d);
+    area.setAttribute('d', d + ' L' + W + ' ' + bot + ' L0 ' + bot + ' Z');
+    host.querySelector('.twd-hap__name').textContent = fx.n;
+    host.querySelector('.twd-hap__group').textContent = fx.g;
+    host.querySelector('.twd-hap__dur').textContent = fx.d + ' s';
+    host.querySelector('.twd-hap__note').textContent = fx.note;
+    tabs.querySelectorAll('button').forEach(function (b, j) { b.setAttribute('aria-selected', j === i ? 'true' : 'false'); b.tabIndex = j === i ? 0 : -1; });
+    play();
+  }
+  FX.forEach(function (fx, i) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = fx.n;
+    b.addEventListener('click', function () { show(i); });
+    b.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        var n = (i + (e.key === 'ArrowRight' ? 1 : -1) + FX.length) % FX.length;
+        show(n); tabs.children[n].focus();
+      }
+    });
+    tabs.appendChild(b);
+  });
+  host.querySelector('.twd-hap__play').addEventListener('click', play);
+  var buzz = host.querySelector('.twd-hap__buzz');
+  var touch = window.matchMedia('(pointer: coarse)').matches;
+  // iOS Safari has no Vibration API, but toggling a native switch control
+  // (iOS 18+) fires a system haptic tick. Tick density follows the curve.
+  var iosSwitch = null;
+  if (!navigator.vibrate && touch) {
+    var lab = document.createElement('label');
+    lab.setAttribute('aria-hidden', 'true');
+    lab.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none';
+    var sw = document.createElement('input');
+    sw.type = 'checkbox'; sw.setAttribute('switch', ''); sw.tabIndex = -1;
+    lab.appendChild(sw); host.appendChild(lab);
+    iosSwitch = lab;
+  }
+  if (navigator.vibrate || iosSwitch) {
+    buzz.hidden = false;
+    buzz.addEventListener('click', function () {
+      var fx = FX[current], seg = fx.d * 1000 / fx.v.length;
+      if (navigator.vibrate) {
+        // Android: on/off segments sized by intensity (phones can't vary strength).
+        var pattern = [];
+        fx.v.forEach(function (v) {
+          var on = Math.round(seg * Math.min(1, v * 1.2));
+          pattern.push(on, Math.round(seg - on));
+        });
+        navigator.vibrate(pattern);
+      } else {
+        // iPhone: stronger moments get more ticks, up to one every ~45 ms.
+        var t = 0;
+        iosSwitch.click();
+        fx.v.forEach(function (v) {
+          var n = Math.round(v * Math.max(1, seg / 45));
+          for (var k = 0; k < n; k++) setTimeout(function () { iosSwitch.click(); }, Math.round(t + k * seg / Math.max(n, 1)));
+          t += seg;
+        });
+      }
+      play();
+    });
+  }
+  // Start when scrolled into view so the first animation is seen.
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); show(current); } }, { threshold: 0.4 });
+    io.observe(host);
+  }
+  show(2);
+});
+</script>

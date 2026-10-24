@@ -1,0 +1,212 @@
+<!-- PAGE: /projects/tbehemoth — Skydance's Behemoth -->
+<div class="bb-page beh" style="--bb-accent:#d9a066;--bb-accent-2:#efd2ac;">
+
+  <section class="bb-hero">
+    <div class="bb-hero__media"><img data-bb-src="behemoth/arch-1.jpg" alt="The snow-covered castle courtyard I designed for Behemoth's opening chapter" fetchpriority="high"></div>
+    <div class="bb-container bb-hero__inner">
+      <p class="bb-kicker">Skydance Games · Shipped December 2024</p>
+      <h1 class="bb-display">Skydance's<br><em>Behemoth</em></h1>
+      <p class="bb-hero__sub">A VR action-adventure about felling colossal monsters in the cursed Forsaken Lands. I concepted the game's final area and designed a key castle space in the opening chapter.</p>
+      <dl class="bb-hero__meta">
+        <div><dt>Role</dt><dd>Gameplay / Level Designer</dd></div>
+        <div><dt>Studio</dt><dd>Skydance Games</dd></div>
+        <div><dt>Engine</dt><dd>Unreal Engine 5</dd></div>
+        <div><dt>Platforms</dt><dd>PS VR2 · Quest · PC VR</dd></div>
+      </dl>
+    </div>
+    <span class="bb-hero__scroll" aria-hidden="true">Scroll</span>
+  </section>
+
+  <section class="bb-section">
+    <div class="bb-container bb-split">
+      <div class="bb-sticky bb-reveal">
+        <p class="bb-kicker">My contribution</p>
+        <h2 class="bb-h2">The first castle, and the <em>last</em> place.</h2>
+      </div>
+      <div class="bb-reveal" style="--d:.1s">
+        <p class="bb-lead">Behemoth's levels are large and open, letting players approach objectives their own way between the giant boss fights. I worked on both ends of that journey: <strong>the concept for the final area</strong>, and <strong>a castle hub in the opening chapter</strong> that teaches players how these spaces work.</p>
+        <ul class="bb-own" style="margin-top:40px">
+          <li><div><strong>Final area concept</strong><span>The space the whole campaign builds toward</span></div></li>
+          <li><div><strong>Opening castle hub</strong><span>Entryway, courtyard and connections</span></div></li>
+          <li><div><strong>VR scale</strong><span>Grand spaces that stay comfortable to move through</span></div></li>
+          <li><div><strong>Combat spaces</strong><span>Room for physics melee, bow and grapple</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASTLE SCHEMATIC -->
+  <section class="bb-section bb-section--alt">
+    <div class="bb-container">
+      <div class="bb-split" style="align-items:center">
+        <div class="bb-reveal">
+          <p class="bb-kicker">Opening chapter · Castle hub</p>
+          <h2 class="bb-h2">One arch, <em>three</em> ways forward.</h2>
+          <div class="bb-prose">
+            <p>Players arrive through a large entryway that frames the castle and sets its scale. It opens onto an outdoor courtyard built around a central arch: a landmark visible from everywhere in the space, so players always know where they are.</p>
+            <p>From the courtyard, the hub connects to two other areas. It is an early lesson in the game's structure: a readable central space with multiple routes, rather than a single corridor.</p>
+          </div>
+          <ul class="beh-legend">
+            <li data-k="entry"><b></b>Large entryway</li>
+            <li data-k="court"><b></b>Outdoor courtyard</li>
+            <li data-k="arch"><b></b>Central arch (landmark)</li>
+            <li data-k="link"><b></b>Connections to two areas</li>
+          </ul>
+        </div>
+        <figure class="bb-figure bb-reveal" style="--d:.1s">
+          <div class="beh-map" data-beh-map>
+            <svg viewBox="0 0 600 520" role="img" aria-labelledby="behMapTitle">
+              <title id="behMapTitle">Schematic of the opening-chapter castle hub: entryway, courtyard with central arch, and connections to two areas</title>
+              <defs>
+                <pattern id="behGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="currentColor" stroke-opacity=".07"/></pattern>
+              </defs>
+              <rect class="beh-bg" width="600" height="520" fill="url(#behGrid)"/>
+              <!-- connections -->
+              <g class="beh-link" data-k="link">
+                <path d="M170 210 H70 V110" />
+                <path d="M430 210 H530 V110" />
+                <rect x="20" y="40" width="110" height="70" rx="6"/><text x="75" y="80">Area A</text>
+                <rect x="470" y="40" width="110" height="70" rx="6"/><text x="525" y="80">Area B</text>
+              </g>
+              <!-- courtyard -->
+              <g class="beh-court" data-k="court">
+                <path d="M170 130 H430 V350 H170 Z"/>
+                <text x="300" y="160">Courtyard</text>
+              </g>
+              <!-- arch -->
+              <g class="beh-arch" data-k="arch">
+                <path d="M270 265 V225 A30 30 0 0 1 330 225 V265" />
+                <circle cx="300" cy="245" r="70" class="beh-sight"/>
+                <text x="300" y="335">Central arch</text>
+              </g>
+              <!-- entryway -->
+              <g class="beh-entry" data-k="entry">
+                <path d="M235 350 V460 H365 V350"/>
+                <text x="300" y="415">Entryway</text>
+                <path class="beh-arrow" d="M300 505 V470 M290 482 L300 470 L310 482"/>
+              </g>
+            </svg>
+          </div>
+          <figcaption>Schematic redrawn for this portfolio from memory. Not to scale.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCH MAP RENDERS -->
+  <section class="bb-section">
+    <div class="bb-container">
+      <div class="bb-reveal" style="max-width:780px">
+        <p class="bb-kicker">In the shipped game</p>
+        <h2 class="bb-h2">From blockout to <em>snowbound ruin</em>.</h2>
+        <p class="bb-prose">The finished courtyard, as built and lit by the environment art team. The gate entrance opens onto the courtyard, the arched bridge anchors the middle of the space, and routes lead off to the chapel ruins and the tower.</p>
+      </div>
+      <figure class="bb-figure bb-reveal-img" style="margin-top:44px">
+        <div class="bb-figure__frame" style="aspect-ratio:2000/837" data-bb-lightbox="beh-arch"><img loading="lazy" data-bb-src="behemoth/arch-1.jpg" alt="Panorama of the courtyard from above: gate entrance on the right, chapel ruins at the back"></div>
+        <figcaption><strong>The courtyard.</strong> Gate entrance on the right, chapel ruins behind, the bridge below.</figcaption>
+      </figure>
+      <div class="bb-grid bb-grid--2" style="margin-top:18px">
+        <figure class="bb-figure bb-reveal"><div class="bb-figure__frame" style="aspect-ratio:16/10" data-bb-lightbox="beh-arch"><img loading="lazy" data-bb-src="behemoth/arch-2.jpg" alt="The central arched bridge with a campfire in the foreground and the tower beyond"></div><figcaption><strong>The central arch.</strong> A landmark that reads from anywhere in the courtyard.</figcaption></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.06s"><div class="bb-figure__frame" style="aspect-ratio:16/10" data-bb-lightbox="beh-arch"><img loading="lazy" data-bb-src="behemoth/arch-3.jpg" alt="The ruined chapel with collapsed stairs and a winged statue"></div><figcaption><strong>Chapel ruins.</strong> Vertical routes up broken stairs and rubble.</figcaption></figure>
+      </div>
+      <details class="beh-credits bb-reveal">
+        <summary>Art credits for this space</summary>
+        <div class="bb-small">
+          <p>Environment art by <a class="bb-link" href="https://danaklaren.artstation.com/projects/V2GWWR" target="_blank" rel="noopener">Dana Klaren</a> and Kyle Chansler, who carried the space through changes requested by Design. Lighting by Chris Williams. Art direction by Maxx Kaufman. Renders by Dana Klaren, property of Skydance Games.</p>
+          <p>Additional assets by
+            <a class="bb-link" href="https://www.artstation.com/jwatson" target="_blank" rel="noopener">jwatson</a>,
+            <a class="bb-link" href="https://www.artstation.com/chanse" target="_blank" rel="noopener">chanse</a>,
+            <a class="bb-link" href="https://www.artstation.com/tomwinwinwin" target="_blank" rel="noopener">tomwinwinwin</a>,
+            <a class="bb-link" href="https://www.artstation.com/brettlo" target="_blank" rel="noopener">brettlo</a>,
+            <a class="bb-link" href="https://www.artstation.com/joshuacamit" target="_blank" rel="noopener">joshuacamit</a>,
+            <a class="bb-link" href="https://www.artstation.com/jontando" target="_blank" rel="noopener">jontando</a>,
+            <a class="bb-link" href="https://www.artstation.com/edge_dragoonrider" target="_blank" rel="noopener">edge_dragoonrider</a>,
+            <a class="bb-link" href="https://www.artstation.com/pward3d" target="_blank" rel="noopener">pward3d</a>,
+            <a class="bb-link" href="https://www.artstation.com/martindigenio" target="_blank" rel="noopener">martindigenio</a>,
+            <a class="bb-link" href="https://www.artstation.com/devin_hipp" target="_blank" rel="noopener">devin_hipp</a> and
+            <a class="bb-link" href="https://www.artstation.com/virtuosgames" target="_blank" rel="noopener">Virtuos</a>.
+            Concept art by
+            <a class="bb-link" href="https://cara.app/dustandhalos" target="_blank" rel="noopener">dustandhalos</a>,
+            <a class="bb-link" href="https://www.artstation.com/dscher" target="_blank" rel="noopener">dscher</a> and
+            <a class="bb-link" href="https://www.artstation.com/terraformstudios" target="_blank" rel="noopener">Terraform Studios</a>.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- FINAL AREA -->
+  <section class="bb-section bb-section--alt">
+    <div class="bb-container bb-split bb-split--rev" style="align-items:center">
+      <figure class="bb-figure bb-reveal-img"><div class="bb-figure__frame" data-bb-lightbox="beh"><img loading="lazy" data-bb-src="covers/behemoth-boss.jpg" alt="Behemoth's climactic final area"></div></figure>
+      <div class="bb-reveal" style="--d:.1s">
+        <p class="bb-kicker">Finale · Area concept</p>
+        <h2 class="bb-h2">Where the hunt <em>ends</em>.</h2>
+        <div class="bb-prose">
+          <p>I developed the concept for the game's final area, the setting for the climactic fight against the Hollow King. The space has to deliver on hours of buildup: the biggest sense of scale in the game, a clear read of the arena in VR, and a stage that lets the last behemoth feel like the payoff.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bb-section">
+    <div class="bb-container">
+      <p class="bb-kicker bb-reveal">From the game</p>
+      <div class="bb-gallery" style="margin-top:12px">
+        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="beh"><img loading="lazy" data-bb-src="behemoth/steam-2.jpg" alt="Melee combat in castle ruins"></div></figure>
+        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="beh"><img loading="lazy" data-bb-src="behemoth/steam-5.jpg" alt="Crossbow combat at a fortified gate"></div></figure>
+        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="beh"><img loading="lazy" data-bb-src="behemoth/steam-4.jpg" alt="Drawing a bow toward a fortress"></div></figure>
+        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="beh"><img loading="lazy" data-bb-src="behemoth/steam-1.jpg" alt="Facing a winged enemy"></div></figure>
+      </div>
+      <div class="bb-press" style="margin-top:48px">
+        <a class="bb-reveal" href="https://www.roadtovr.com/skydances-behemoth-review-quest-3-psvr-2-steam/" target="_blank" rel="noopener"><small>Road to VR · Review</small><strong>"A colossal step forward in VR action-adventure gaming"</strong><span>Read ↗</span></a>
+        <a class="bb-reveal" style="--d:.06s" href="https://store.steampowered.com/app/1707990/" target="_blank" rel="noopener"><small>Steam</small><strong>Skydance's Behemoth store page</strong><span>Visit ↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bb-next" aria-label="More projects">
+    <a href="/projects/t-7xfc6"><img data-bb-src="covers/bioshock.jpg" alt=""><small>← Previous</small><strong>BioShock 4</strong></a>
+    <a href="/projects/the-walking-dead-saints-and-sinners-chapter-2"><img data-bb-src="covers/twd.jpg" alt=""><small>Next project →</small><strong>TWD: Retribution</strong></a>
+  </nav>
+  <p class="bb-credits">Skydance's Behemoth © Skydance Games. Courtyard renders by Dana Klaren; other screenshots from the official store page.</p>
+</div>
+
+<style>
+.beh-map { color: var(--bb-text); border: 1px solid var(--bb-line); border-radius: var(--bb-radius); background: var(--bb-bg); padding: clamp(12px, 2vw, 24px); }
+.beh-map svg { display: block; width: 100%; height: auto; }
+.beh-map .beh-bg { stroke: none !important; }
+.beh-map path, .beh-map rect:not(.beh-bg) { fill: none; stroke: var(--bb-muted); stroke-width: 2; transition: stroke .3s, fill .3s; }
+.beh-map text { fill: var(--bb-muted); font: 600 13px var(--bb-sans); letter-spacing: .12em; text-transform: uppercase; text-anchor: middle; transition: fill .3s; }
+.beh-map .beh-court path { fill: color-mix(in srgb, var(--bb-accent) 6%, transparent); }
+.beh-map .beh-entry path:first-child { stroke-width: 3; }
+.beh-map .beh-arch path { stroke: var(--bb-accent); stroke-width: 6; stroke-linecap: round; }
+.beh-map .beh-sight { fill: none; stroke: var(--bb-accent); stroke-dasharray: 4 6; stroke-opacity: .5; }
+.beh-map .beh-link path { stroke-dasharray: 8 8; }
+.beh-map .beh-arrow { stroke: var(--bb-accent); stroke-width: 2.5; }
+.beh-map g.is-hot path, .beh-map g.is-hot rect { stroke: var(--bb-accent-2); }
+.beh-map g.is-hot text { fill: var(--bb-text); }
+.beh-legend { list-style: none; margin: 30px 0 0; padding: 0; display: grid; gap: 4px; }
+.beh-legend li { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 8px; color: var(--bb-muted); font-size: 15px; cursor: default; transition: background .25s, color .25s; }
+.beh-legend li:hover, .beh-legend li:focus-visible { background: rgba(255,255,255,.04); color: var(--bb-text); }
+.beh-legend b { width: 14px; height: 14px; border-radius: 4px; border: 2px solid var(--bb-accent); }
+.beh-credits { margin-top: 32px; border-top: 1px solid var(--bb-line); padding-top: 18px; }
+.beh-credits summary { cursor: pointer; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--bb-muted); list-style: none; }
+.beh-credits summary::-webkit-details-marker { display: none; }
+.beh-credits summary::after { content: ' +'; color: var(--bb-accent); }
+.beh-credits[open] summary::after { content: ' −'; }
+.beh-credits .bb-small { margin-top: 14px; max-width: 60em; }
+</style>
+
+<script>
+(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
+  var map = root.querySelector('[data-beh-map]');
+  if (!map) return;
+  root.querySelectorAll('.beh-legend li').forEach(function (li) {
+    li.tabIndex = 0;
+    var g = map.querySelector('g[data-k="' + li.getAttribute('data-k') + '"]');
+    var on = function () { g.classList.add('is-hot'); }, off = function () { g.classList.remove('is-hot'); };
+    li.addEventListener('mouseenter', on); li.addEventListener('mouseleave', off);
+    li.addEventListener('focus', on); li.addEventListener('blur', off);
+  });
+});
+</script>
