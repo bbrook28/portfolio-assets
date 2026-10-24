@@ -247,6 +247,8 @@
 .twd-hap__line { fill: none; stroke: var(--bb-accent); stroke-width: 2.5; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .twd-hap__cursor { stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke; opacity: 0; }
 .twd-hap__axis { display: flex; justify-content: space-between; font-size: 12px; color: var(--bb-dim); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.twd-hap__pad.is-tap { animation: twd-tap .25s ease-out; }
+@keyframes twd-tap { 0% { color: #fff; filter: drop-shadow(0 0 10px var(--bb-accent)); } 100% { filter: none; } }
 .twd-hap__switch { position: absolute; opacity: 0; width: 100%; height: 100%; left: 0; top: 0; margin: 0; cursor: pointer; }
 .twd-hap label.bb-btn { position: relative; }
 .twd-hap__note { margin: 16px 0 0; color: var(--bb-muted); font-size: 15px; min-height: 3em; }
@@ -293,11 +295,13 @@
     if (i >= fx.v.length - 1) return fx.v[fx.v.length - 1];
     return fx.v[i] * (1 - f) + fx.v[i + 1] * f;
   }
+  var playing = false, loopUntil = 0;
   function play() {
     var fx = FX[current];
     if (raf) cancelAnimationFrame(raf);
     if (bb.reduceMotion) return;
     var t0 = null, ms = fx.d * 1000;
+    playing = true;
     cursor.style.opacity = 1;
     function step(t) {
       if (!t0) t0 = t;
@@ -307,7 +311,8 @@
       pad.style.transform = 'translate(' + ((Math.random() - .5) * a).toFixed(2) + 'px,' + ((Math.random() - .5) * a).toFixed(2) + 'px) rotate(' + ((Math.random() - .5) * a * .8).toFixed(2) + 'deg)';
       pad.style.color = v > 0.05 ? 'var(--bb-accent)' : 'var(--bb-text)';
       if (p < 1) raf = requestAnimationFrame(step);
-      else { pad.style.transform = ''; pad.style.color = ''; cursor.style.opacity = 0; }
+      else if (Date.now() < loopUntil && fx === FX[current]) { t0 = null; raf = requestAnimationFrame(step); }
+      else { playing = false; pad.style.transform = ''; pad.style.color = ''; cursor.style.opacity = 0; }
     }
     raf = requestAnimationFrame(step);
   }
@@ -359,9 +364,15 @@
     lab.className = buzz.className;
     lab.innerHTML = '<input type="checkbox" switch class="twd-hap__switch" aria-label="Tap to feel the haptic">Tap to feel it';
     buzz.replaceWith(lab);
-    lab.querySelector('input').addEventListener('change', play);
+    // Taps never restart the curve: the first starts it, and it keeps looping
+    // while you tap along, each tap giving its own tick.
+    lab.querySelector('input').addEventListener('change', function () {
+      loopUntil = Date.now() + 2500;
+      pad.classList.remove('is-tap'); void pad.offsetWidth; pad.classList.add('is-tap');
+      if (!playing) play();
+    });
     var hint = host.querySelector('.twd-hap__hint');
-    if (hint) hint.textContent = 'On iPhone, Apple lets websites play a single haptic tick per tap, so each tap gives you the kick. Android phones play the full vibration pattern.';
+    if (hint) hint.textContent = 'On iPhone, Apple only lets websites play one haptic tick per tap, so tap along with the pulses to feel the rhythm. Android phones play the full vibration pattern.';
   }
   // Start when scrolled into view so the first animation is seen.
   if ('IntersectionObserver' in window) {
