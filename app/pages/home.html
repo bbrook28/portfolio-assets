@@ -258,7 +258,9 @@
     function stopTrailer() { if (yt) { var old = yt; old.classList.add('is-cut'); old.classList.remove('is-on'); setTimeout(function () { old.remove(); }, 200); yt = null; } }
     function startTrailer(s) {
       stopTrailer();
-      if (!s.yt || bb.reduceMotion || saveData) return;
+      // Touch devices get the stills: YouTube's mobile player draws its own
+      // play/skip buttons over muted embeds and the page can't suppress them.
+      if (!s.yt || bb.reduceMotion || saveData || window.matchMedia('(hover: none)').matches) return;
       var box = document.createElement('div');
       box.className = 'home-yt';
       box.innerHTML = '<iframe tabindex="-1" title="' + s.t + ' trailer" allow="autoplay; encrypted-media; picture-in-picture" src="https://www.youtube-nocookie.com/embed/' + s.yt +
