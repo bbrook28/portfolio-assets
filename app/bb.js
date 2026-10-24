@@ -347,6 +347,19 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
     update();
   }
+  function initNoZoom(root) {
+    root.querySelectorAll('[data-bp-toy], [data-buba-toy], [data-wm-toy]').forEach(function (el) {
+      var last = 0;
+      el.addEventListener('touchend', function (e) {
+        var now = Date.now(), quick = now - last < 400;
+        last = now;
+        if (!quick || e.touches.length || e.target.closest('input[switch], label')) return;
+        e.preventDefault();
+        var t = e.target.closest('button, a');
+        if (t) t.click();
+      }, { passive: false });
+    });
+  }
   function initLive(root) {
     if (Date.now() < Date.UTC(2026, 10, 18, 8)) return;
     root.querySelectorAll('[data-bb-live]').forEach(function (el) { el.textContent = el.getAttribute('data-bb-live'); });
@@ -591,6 +604,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     initFilter(root);
     initForms(root);
     initLive(root);
+    initNoZoom(root);
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
