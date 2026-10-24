@@ -109,8 +109,8 @@
         <figure class="bb-figure bb-reveal"><div class="bb-figure__frame" style="aspect-ratio:16/10" data-bb-lightbox="beh-arch"><img loading="lazy" data-bb-src="behemoth/arch-2.jpg" alt="The central arched bridge with a campfire in the foreground and the tower beyond"></div><figcaption><strong>The central arch.</strong> A landmark that reads from anywhere in the courtyard.</figcaption></figure>
         <figure class="bb-figure bb-reveal" style="--d:.06s"><div class="bb-figure__frame" style="aspect-ratio:16/10" data-bb-lightbox="beh-arch"><img loading="lazy" data-bb-src="behemoth/arch-3.jpg" alt="The ruined chapel with collapsed stairs and a winged statue"></div><figcaption><strong>Chapel ruins.</strong> Vertical routes up broken stairs and rubble.</figcaption></figure>
       </div>
-      <details class="beh-credits bb-reveal">
-        <summary>Art credits for this space</summary>
+      <div class="beh-credits bb-reveal">
+        <p class="beh-credits__title">Art credits for this space</p>
         <div class="bb-small">
           <p>Environment art by <a class="bb-link" href="https://danaklaren.artstation.com/projects/V2GWWR" target="_blank" rel="noopener">Dana Klaren</a> and Kyle Chansler, who carried the space through changes requested by Design. Lighting by Chris Williams. Art direction by Maxx Kaufman. Renders by Dana Klaren, property of Skydance Games.</p>
           <p>Additional assets by
@@ -130,7 +130,7 @@
             <a class="bb-link" href="https://www.artstation.com/dscher" target="_blank" rel="noopener">dscher</a> and
             <a class="bb-link" href="https://www.artstation.com/terraformstudios" target="_blank" rel="noopener">Terraform Studios</a>.</p>
         </div>
-      </details>
+      </div>
     </div>
   </section>
 
@@ -190,11 +190,8 @@
 .beh-legend li:hover, .beh-legend li:focus-visible { background: rgba(255,255,255,.04); color: var(--bb-text); }
 .beh-legend b { width: 14px; height: 14px; border-radius: 4px; border: 2px solid var(--bb-accent); }
 .beh-credits { margin-top: 32px; border-top: 1px solid var(--bb-line); padding-top: 18px; }
-.beh-credits summary { cursor: pointer; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--bb-muted); list-style: none; }
-.beh-credits summary::-webkit-details-marker { display: none; }
-.beh-credits summary::after { content: ' +'; color: var(--bb-accent); }
-.beh-credits[open] summary::after { content: ' −'; }
-.beh-credits .bb-small { margin-top: 14px; max-width: 60em; }
+.beh-credits__title { margin: 0 0 10px !important; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--bb-muted); }
+.beh-credits .bb-small { max-width: 60em; font-size: 13px; }
 </style>
 
 <script>
