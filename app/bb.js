@@ -510,9 +510,13 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
       var dpr = Math.min(2, window.devicePixelRatio || 1), W, H, motes = [], running = false, raf;
       function spawn(p, init) { p.col = th.cols[Math.floor(Math.random() * th.cols.length)]; p.t = Math.random() * 6.28; th.spawn(p, W, H, init); return p; }
       function size() {
-        W = hero.clientWidth; H = hero.clientHeight;
+        var w = hero.clientWidth, h = hero.clientHeight;
+        if (w === W && h === H) return;
+        var keep = w === W && motes.length;
+        W = w; H = h;
         c.width = W * dpr; c.height = H * dpr;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        if (keep) return;
         var n = Math.round(Math.min(th.n * 1.2, th.n * W * H / 800000 + 10));
         motes = [];
         for (var k = 0; k < n; k++) motes.push(spawn({}, true));
