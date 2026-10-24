@@ -117,7 +117,7 @@
               <button class="bb-btn bb-btn--ghost twd-hap__play" type="button">▶ Replay</button>
               <button class="bb-btn bb-btn--ghost twd-hap__buzz" type="button" hidden>Feel it on your phone</button>
             </div>
-            <p class="bb-small twd-hap__hint" style="margin-top:12px">On a phone? Android plays the real vibration pattern. iPhone (iOS 18+) taps out the rhythm with light haptic ticks.</p>
+            <p class="bb-small twd-hap__hint" style="margin-top:12px">On a phone? Android plays the full vibration pattern. iPhone gives one haptic tick per tap.</p>
           </div>
         </div>
       </div>
@@ -247,6 +247,8 @@
 .twd-hap__line { fill: none; stroke: var(--bb-accent); stroke-width: 2.5; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .twd-hap__cursor { stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke; opacity: 0; }
 .twd-hap__axis { display: flex; justify-content: space-between; font-size: 12px; color: var(--bb-dim); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.twd-hap__switch { position: absolute; opacity: 0; width: 100%; height: 100%; left: 0; top: 0; margin: 0; cursor: pointer; }
+.twd-hap label.bb-btn { position: relative; }
 .twd-hap__note { margin: 16px 0 0; color: var(--bb-muted); font-size: 15px; min-height: 3em; }
 </style>
 
@@ -338,42 +340,28 @@
   host.querySelector('.twd-hap__play').addEventListener('click', play);
   var buzz = host.querySelector('.twd-hap__buzz');
   var touch = window.matchMedia('(pointer: coarse)').matches;
-  // iOS Safari has no Vibration API, but toggling a native switch control
-  // (iOS 18+) fires a system haptic tick. Tick density follows the curve.
-  var iosSwitch = null;
-  if (!navigator.vibrate && touch) {
-    var lab = document.createElement('label');
-    lab.setAttribute('aria-hidden', 'true');
-    lab.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none';
-    var sw = document.createElement('input');
-    sw.type = 'checkbox'; sw.setAttribute('switch', ''); sw.tabIndex = -1;
-    lab.appendChild(sw); host.appendChild(lab);
-    iosSwitch = lab;
-  }
-  if (navigator.vibrate || iosSwitch) {
+  if (navigator.vibrate) {
+    // Android: on/off segments sized by intensity (phones can't vary strength).
     buzz.hidden = false;
     buzz.addEventListener('click', function () {
-      var fx = FX[current], seg = fx.d * 1000 / fx.v.length;
-      if (navigator.vibrate) {
-        // Android: on/off segments sized by intensity (phones can't vary strength).
-        var pattern = [];
-        fx.v.forEach(function (v) {
-          var on = Math.round(seg * Math.min(1, v * 1.2));
-          pattern.push(on, Math.round(seg - on));
-        });
-        navigator.vibrate(pattern);
-      } else {
-        // iPhone: stronger moments get more ticks, up to one every ~45 ms.
-        var t = 0;
-        iosSwitch.click();
-        fx.v.forEach(function (v) {
-          var n = Math.round(v * Math.max(1, seg / 45));
-          for (var k = 0; k < n; k++) setTimeout(function () { iosSwitch.click(); }, Math.round(t + k * seg / Math.max(n, 1)));
-          t += seg;
-        });
-      }
+      var fx = FX[current], seg = fx.d * 1000 / fx.v.length, pattern = [];
+      fx.v.forEach(function (v) {
+        var on = Math.round(seg * Math.min(1, v * 1.2));
+        pattern.push(on, Math.round(seg - on));
+      });
+      navigator.vibrate(pattern);
       play();
     });
+  } else if (touch) {
+    // iPhone: Safari only gives a web page a haptic tick when your finger toggles
+    // a native switch, one tick per tap. So the button becomes a real switch.
+    var lab = document.createElement('label');
+    lab.className = buzz.className;
+    lab.innerHTML = '<input type="checkbox" switch class="twd-hap__switch" aria-label="Tap to feel the haptic">Tap to feel it';
+    buzz.replaceWith(lab);
+    lab.querySelector('input').addEventListener('change', play);
+    var hint = host.querySelector('.twd-hap__hint');
+    if (hint) hint.textContent = 'On iPhone, Apple lets websites play a single haptic tick per tap, so each tap gives you the kick. Android phones play the full vibration pattern.';
   }
   // Start when scrolled into view so the first animation is seen.
   if ('IntersectionObserver' in window) {
