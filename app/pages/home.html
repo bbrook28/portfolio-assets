@@ -8,7 +8,7 @@
       <img data-bb-src="behemoth/arch-1.jpg" alt="">
       <img data-bb-src="covers/twd.jpg" alt="">
       <img data-bb-src="lonestar/shot-02.jpg" alt="">
-      <video muted loop playsinline preload="none" data-bb-poster="zoelie/4.jpg" data-bb-src="zoelie/hero-loop.mp4" data-bb-src-m="zoelie/hero-loop-m.mp4"></video>
+      <div class="home-clip"><img data-bb-src="zoelie/4.jpg" alt=""><video muted loop playsinline preload="none" data-bb-src="zoelie/hero-loop.mp4" data-bb-src-m="zoelie/hero-loop-m.mp4"></video></div>
     </div>
     <div class="bb-container bb-hero__inner">
       <a class="home-launch" href="/projects/maplestory-classic"><i></i><span data-home-countdown>Forgotten Hollow opens November 18</span></a>
@@ -143,6 +143,13 @@
 .home-hero { min-height: 100vh; min-height: 100svh; padding-bottom: 28px; }
 .home-reel img, .home-reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s ease; animation: none; }
 .home-reel .is-on { opacity: 1; animation: bb-pushin 9s linear both; }
+/* Clip slides: a still holds the frame and the video fades in only once it's
+   playing, so iOS never shows its play button or a blank player. */
+.home-reel .home-clip { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
+.home-reel .home-clip.is-on { opacity: 1; }
+.home-reel .home-clip > img { opacity: 1; animation: none; }
+.home-reel .home-clip > video { opacity: 0; transition: opacity .6s ease; animation: none; }
+.home-reel .home-clip.is-playing > video { opacity: 1; }
 .home-yt { position: absolute; inset: 0; overflow: hidden; opacity: 0; transition: opacity 1.2s ease; pointer-events: none; }
 .home-yt.is-on { opacity: 1; }
 .home-yt iframe { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: 0; pointer-events: none; }
@@ -236,7 +243,11 @@
     var idx = 0, t0 = 0, DUR = 7000, paused = false, raf, yt = null;
     var reel = hero.querySelector('.home-reel');
     var saveData = navigator.connection && navigator.connection.saveData;
-    function slideDur(i) { return S[i].yt || media[i].tagName === 'VIDEO' ? 12000 : DUR; }
+    function vid(i) { return media[i].querySelector('video'); }
+    function slideDur(i) { return S[i].yt || vid(i) ? 12000 : DUR; }
+    hero.querySelectorAll('.home-clip video').forEach(function (v) {
+      v.addEventListener('playing', function () { v.parentNode.classList.add('is-playing'); });
+    });
     // Official trailers play muted behind the still, fading in once they're running.
     function stopTrailer() { if (yt) { var old = yt; old.classList.remove('is-on'); setTimeout(function () { old.remove(); }, 1200); yt = null; } }
     function startTrailer(s) {
@@ -279,7 +290,15 @@
       var st = d && d.info && d.info.playerState;
       // YouTube shows its title bar and controls for the first ~3 s of play
       // even with controls=0, so keep the still up until they've faded.
-      if (st === 1 && !yt._shown) { var box = yt; box._shown = true; setTimeout(function () { if (yt === box) box.classList.add('is-on'); }, 3200); }
+      var box = yt;
+      if (st === 1) {
+        clearTimeout(box._t);
+        box._t = setTimeout(function () { if (yt === box) box.classList.add('is-on'); }, box._shown ? 900 : 3200);
+        box._shown = true;
+      } else if (st === 2 || st === 3 || st === 0) {
+        // Buffering, paused or ended: the player draws its controls, so cover it.
+        clearTimeout(box._t); box.classList.remove('is-on');
+      }
     });
     S.forEach(function (s, i) {
       var b = document.createElement('button');
@@ -291,11 +310,12 @@
     var bars = tabs.querySelectorAll('i'), btns = tabs.querySelectorAll('button');
     function go(i) {
       media[idx].classList.remove('is-on');
-      if (media[idx].tagName === 'VIDEO') media[idx].pause();
+      if (vid(idx)) { vid(idx).pause(); media[idx].classList.remove('is-playing'); }
       idx = (i + S.length) % S.length;
       var m = media[idx];
       m.classList.add('is-on');
-      if (m.tagName === 'VIDEO') { try { var p = m.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {} }
+      var v = vid(idx);
+      if (v) { try { var p = v.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {} }
       var s = S[idx];
       now.href = s.h;
       now.querySelector('[data-home-idx]').textContent = '0' + (idx + 1);
