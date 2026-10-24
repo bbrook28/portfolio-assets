@@ -423,7 +423,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
             pv.appendChild(f);
             var onMsg = function (e) {
               if (!pv || e.source !== f.contentWindow) return;
-              try { var d = JSON.parse(e.data); if (d.info && d.info.playerState === 1) pv.classList.add('is-on'); } catch (err) {}
+              try { var d = JSON.parse(e.data); if (d.info && d.info.playerState === 1 && !pv._shown) { pv._shown = true; var box = pv; setTimeout(function () { if (pv === box) box.classList.add('is-on'); }, 2600); } } catch (err) {}
             };
             window.addEventListener('message', onMsg); pv._off = function () { window.removeEventListener('message', onMsg); };
           } else {
