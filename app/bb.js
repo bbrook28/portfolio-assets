@@ -14,8 +14,14 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
   }
   window.bbAsset = assetUrl;
   function resolveAssets(root) {
+    var small = window.matchMedia('(max-width: 760px)').matches;
     root.querySelectorAll('[data-bb-src]').forEach(function (el) {
-      el.setAttribute('src', assetUrl(el.getAttribute('data-bb-src')));
+      var key = (small && el.getAttribute('data-bb-src-m')) || el.getAttribute('data-bb-src');
+      if (el.tagName === 'IMG') {
+        if (!el.hasAttribute('loading') && !el.closest('.bb-hero, .bb-pcard--feature')) el.setAttribute('loading', 'lazy');
+        el.setAttribute('decoding', 'async');
+      }
+      el.setAttribute('src', assetUrl(key));
       el.removeAttribute('data-bb-src');
     });
     root.querySelectorAll('[data-bb-poster]').forEach(function (el) {
@@ -83,7 +89,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     els.forEach(function (el) { io.observe(el); });
   }
   function initParallax(root) {
-    if (reduceMotion) return;
+    if (reduceMotion || window.matchMedia('(hover: none), (max-width: 760px)').matches) return;
     var media = root.querySelectorAll('.bb-hero__media');
     if (!media.length) return;
     var ticking = false;

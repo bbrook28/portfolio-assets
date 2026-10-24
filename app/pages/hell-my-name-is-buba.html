@@ -63,7 +63,7 @@
         <canvas tabindex="0" aria-label="Arena demo: move Buba, fire, and watch spent shells reshape the routes enemies take"></canvas>
         <p class="buba-toy__how"><span><kbd>WASD</kbd> or arrows to move · click or <kbd>Space</kbd> to fire</span><span>Touch: hold to walk · tap to fire</span></p>
         <div class="buba-toy__hud">
-          <div class="buba-toy__meter" aria-label="Space remaining"><i></i></div>
+          <div class="buba-toy__meter" role="progressbar" aria-label="Floor in reach" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><i></i></div>
           <span class="buba-toy__stats" aria-live="polite"></span>
           <button type="button" class="bb-btn bb-btn--ghost buba-toy__reset">Clear the arena</button>
         </div>
@@ -296,7 +296,7 @@
     booms.forEach(function (b) { b.t++; }); booms = booms.filter(function (b) { return b.t < 22; });
     if (flash) flash--;
     var pct = Math.round(reach * 100);
-    meter.style.width = pct + '%';
+    meter.style.width = pct + "%"; meter.parentNode.setAttribute("aria-valuenow", pct);
     stats.textContent = pct < 12 ? 'Boxed in. Blast a shell to break out.'
       : shells.length + ' shells · ' + pct + '% of the floor in reach · ' + kills + ' damned · ' + hits + ' hits';
   }
