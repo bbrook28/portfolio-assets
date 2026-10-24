@@ -11,7 +11,7 @@
       <div class="home-clip"><img data-bb-src="zoelie/4.jpg" alt=""><video muted loop playsinline preload="none" data-bb-src="zoelie/hero-loop.mp4" data-bb-src-m="zoelie/hero-loop-m.mp4"></video></div>
     </div>
     <div class="bb-container bb-hero__inner">
-      <a class="home-launch" href="/projects/maplestory-classic"><i></i><span data-home-countdown>Forgotten Hollow opens November 18</span></a>
+      <a class="home-launch" href="/projects/maplestory-classic"><i></i><span data-home-countdown>MapleStory Classic: Forgotten Hollow opens November 18</span></a>
       <div class="home-hero__grid">
         <div>
           <p class="bb-kicker">Game &amp; Level Designer · Los Angeles</p>
@@ -24,7 +24,7 @@
         </div>
         <a class="home-now" href="/projects/maplestory-classic" aria-live="polite">
           <small><span data-home-idx>01</span> / 06 · Now showing</small>
-          <strong data-home-title>Forgotten Hollow</strong>
+          <strong data-home-title>MapleStory Classic: Forgotten Hollow</strong>
           <span data-home-role>Region design · Nexon · MapleStory Classic</span>
           <em>View case study →</em>
         </a>
@@ -51,7 +51,7 @@
           <span class="bb-pcard__arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 12 4M5 4h7v7"/></svg></span>
           <div class="bb-pcard__body">
             <div class="bb-pcard__eyebrow" data-bb-live="New · Nexon · MapleStory Classic World · Live now">New · Nexon · MapleStory Classic World · Live Nov 18</div>
-            <h3 class="bb-pcard__title">Forgotten Hollow</h3>
+            <h3 class="bb-pcard__title">MapleStory Classic: Forgotten Hollow</h3>
             <p class="bb-pcard__desc">An entire new region, owned end to end: 26 maps, 25 quests and questlines, NPCs, encounters and story.</p>
           </div>
         </a>
@@ -93,7 +93,7 @@
     </div>
     <div class="home-strip" data-home-strip tabindex="0" aria-label="Design document highlights">
       <a href="/projects/level-design-blockout-canceled-title"><img loading="lazy" data-bb-src="lonestar/map-police-gameplay.jpg" alt="Police station gameplay map"><span><small>Lonestar</small>Paper map with walkers, loot and crawl-throughs</span></a>
-      <a href="/projects/maplestory-classic"><img loading="lazy" data-bb-src="fh/maps/precipice-of-darkness.webp" alt="Precipice of Darkness map"><span><small>Forgotten Hollow</small>Precipice of Darkness, deep in the rot</span></a>
+      <a href="/projects/maplestory-classic"><img loading="lazy" data-bb-src="fh/maps/precipice-of-darkness.webp" alt="Precipice of Darkness map"><span><small>MapleStory Classic</small>Precipice of Darkness, deep in the rot</span></a>
       <a href="/projects/tbehemoth"><img loading="lazy" data-bb-src="behemoth/arch-2.jpg" alt="Behemoth castle courtyard"><span><small>Behemoth</small>The castle courtyard and its central arch</span></a>
       <a href="/projects/the-walking-dead-saints-and-sinners-chapter-2"><img loading="lazy" data-bb-src="twd/grenadier-blueprint.jpg" alt="Grenadier Blueprint graph"><span><small>TWD: Retribution</small>The Grenadier's grenade-throw Blueprint</span></a>
       <a href="/projects/game-design-pitch-deck"><img loading="lazy" data-bb-src="bsi/level-design-doc.jpg" alt="BioShock Infinite level design document"><span><small>BioShock Infinite</small>A one-room level design doc on a 1 ft grid</span></a>
@@ -223,8 +223,8 @@
       pt = Date.UTC(get('year'), get('month') - 1, get('day'));
     } catch (e) { pt = Date.UTC(pt.getFullYear(), pt.getMonth(), pt.getDate()); }
     var days = Math.round((Date.UTC(2026, 10, 18) - pt) / 864e5);
-    cd.textContent = days > 1 ? 'Forgotten Hollow opens in ' + days + ' days'
-      : days === 1 ? 'Forgotten Hollow opens tomorrow'
+    cd.textContent = days > 1 ? 'MapleStory Classic: Forgotten Hollow opens in ' + days + ' days'
+      : days === 1 ? 'MapleStory Classic: Forgotten Hollow opens tomorrow'
       : 'Forgotten Hollow is live in MapleStory Classic World';
   }
 
@@ -232,7 +232,7 @@
   var hero = root.querySelector('[data-home-reel]');
   if (hero) {
     var S = [
-      { t: 'Forgotten Hollow', r: 'Region design · Nexon · MapleStory Classic', h: '/projects/maplestory-classic', a: '#b9e26f', yt: 'Xm9Ub7Ln3IE', start: 14 },
+      { t: 'MapleStory Classic: Forgotten Hollow', r: 'Region design · Nexon America', h: '/projects/maplestory-classic', a: '#b9e26f', yt: 'Xm9Ub7Ln3IE', start: 14 },
       { t: 'BioShock 4', r: 'Level design · Cloud Chamber · 2K', h: '/projects/t-7xfc6', a: '#d8b46a' },
       { t: "Skydance's Behemoth", r: 'Level design · Skydance · VR', h: '/projects/tbehemoth', a: '#9fc3e8', yt: 'Z97OfLomM4s', start: 10 },
       { t: 'TWD: Retribution', r: 'Game & level design · Skydance · VR', h: '/projects/the-walking-dead-saints-and-sinners-chapter-2', a: '#e0654a', yt: '5wp0TW3R7uI', start: 8 },
