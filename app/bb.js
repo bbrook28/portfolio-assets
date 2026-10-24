@@ -341,6 +341,10 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
     update();
   }
+  function initLive(root) {
+    if (Date.now() < Date.UTC(2026, 10, 18, 8)) return;
+    root.querySelectorAll('[data-bb-live]').forEach(function (el) { el.textContent = el.getAttribute('data-bb-live'); });
+  }
   function initTop() {
     if (!document.querySelector('.bb-page') || document.querySelector('.bb-top')) return;
     var b = document.createElement('button');
@@ -501,6 +505,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     initCompare(root);
     initFilter(root);
     initForms(root);
+    initLive(root);
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
