@@ -146,6 +146,7 @@
 .zoe-forms__svg svg { width: 72%; max-height: 78%; fill: none; stroke: var(--bb-accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .zoe-forms__svg .q { stroke: #e9a7ff; }
 .zoe-forms__svg .d { stroke-dasharray: 6 10; opacity: .7; }
+.zoe-forms__svg[hidden] { display: none; }
 .zoe-forms__svg small { position: absolute; left: 16px; bottom: 14px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--bb-muted); }
 .zoe-forms__text { padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; justify-content: center; }
 .zoe-forms__use { margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--bb-line); font-size: 13px; letter-spacing: .04em; color: var(--bb-accent-2); }
@@ -171,7 +172,7 @@
     { t: 'Trampoline', svg: 'tramp', d: 'Blended into the environment, the quilt becomes a springboard that launches Zoélie high into the air.', u: 'Used for: reaching high places, combo jumps' },
     { t: 'Sail', img: 'zoelie/8.jpg', d: 'On the beach level, Sueño becomes a sail and Zoélie rides giant sea turtles like a windsurfer.', u: 'Used for: the island race and sea travel' },
     { t: 'Distraction', svg: 'distract', d: 'With no combat, threats are handled by wit. Sueño knocks over trash cans to distract foes and scares away stray cats and birds.', u: 'Used for: stealth and avoiding hazards' },
-    { t: 'Imagination', img: 'zoelie/trailer-41.jpg', d: 'Wherever Sueño flies, the world transforms: buildings glow with graffiti, magic grass sprouts, and hidden objects and maps are revealed.', u: 'Used for: revealing secrets and puzzle clues' }
+    { t: 'Imagination', img: 'zoelie/form-imagination.jpg', d: 'Wherever Sueño flies, the world transforms: buildings glow with graffiti, magic grass sprouts, and hidden objects and maps are revealed.', u: 'Used for: revealing secrets and puzzle clues' }
   ];
   var btns = host.querySelectorAll('[role=tab]');
   var img = host.querySelector('.zoe-forms__img img');
