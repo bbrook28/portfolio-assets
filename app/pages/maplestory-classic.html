@@ -63,10 +63,11 @@
       <div class="bb-reveal" style="max-width:760px">
         <p class="bb-kicker">Interactive · Walk the Hollow</p>
         <h2 class="bb-h2">Every map, in the order you <em>walk</em> it.</h2>
-        <p class="bb-prose">Select a map to see its layout, what lives there, and the job it does in the region. The route runs from the town at the center, east up to the surface and west down into the rot.</p>
+        <p class="bb-prose">The whole region, as players walk it. Select any map to see its layout, what lives there, and the job it does. Routes run from the town at the center, east up to the surface and west down into the rot.</p>
       </div>
       <div class="fh-mapx bb-reveal" data-fh-mapx style="--d:.1s">
-        <nav class="fh-mapx__route" aria-label="Forgotten Hollow maps"></nav>
+        <div class="fh-chart" role="group" aria-label="Forgotten Hollow region map"><div class="fh-chart__inner"><svg class="fh-chart__lines" viewBox="0 0 1000 470" preserveAspectRatio="none" aria-hidden="true"></svg></div></div>
+        <p class="fh-chart__legend" aria-hidden="true"><span><i class="is-main"></i>Map</span><span><i class="is-sub"></i>Side area</span><span><i class="is-secret"></i>Hidden</span><span><i class="is-exit"></i>Exit to Victoria Island</span></p>
         <div class="fh-mapx__stage" aria-live="polite">
           <div class="fh-mapx__frame">
             <img alt="" class="fh-mapx__bg" aria-hidden="true">
@@ -362,6 +363,47 @@
   .fh-ledger img { flex-basis: 64px; width: 64px; height: 64px; }
   .fh-ledger strong { font-size: 22px; }
 }
+
+/* Region schematic */
+.fh-mapx { grid-template-columns: 1fr !important; gap: 18px !important; }
+.fh-chart { position: relative; border: 1px solid var(--bb-line); border-radius: var(--bb-radius); background: radial-gradient(ellipse at 42% 32%, rgba(233,196,106,.08), transparent 45%), radial-gradient(ellipse at 70% 92%, rgba(180,140,255,.10), transparent 50%), #0b0b0e; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+.fh-chart__inner { position: relative; min-width: 760px; aspect-ratio: 1000 / 470; }
+.fh-chart__lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.fh-chart__lines path { fill: none; stroke-width: 2; vector-effect: non-scaling-stroke; opacity: .55; }
+.fh-chart__lines .is-sub { stroke-dasharray: 4 5; opacity: .45; }
+.fh-chart__lines .is-secret { stroke-dasharray: 1 6; stroke-linecap: round; stroke-width: 2.5; opacity: .7; }
+.fh-chart__lines .is-exit { stroke: var(--bb-muted) !important; stroke-dasharray: 2 4; opacity: .5; }
+.fh-node { position: absolute; transform: translate(-50%, -50%); width: 26px; height: 26px; padding: 0; border: 0; background: none; cursor: pointer; z-index: 1; }
+.fh-node::before { content: ''; position: absolute; inset: 7px; border-radius: 50%; background: #0b0b0e; border: 2px solid var(--fh-c); transition: transform .25s var(--bb-ease), background .25s, box-shadow .25s; }
+.fh-node.is-sub::before { inset: 8px; border-style: dashed; }
+.fh-node.is-secret::before { border-style: dotted; }
+.fh-node.is-hub { width: 40px; height: 40px; }
+.fh-node.is-hub::before { inset: 6px; border-width: 3px; }
+.fh-node:hover::before, .fh-node:focus-visible::before { transform: scale(1.35); }
+.fh-node.is-active::before { background: var(--fh-c); transform: scale(1.5); box-shadow: 0 0 0 5px color-mix(in srgb, var(--fh-c) 25%, transparent), 0 0 22px var(--fh-c); }
+.fh-node span { position: absolute; left: 50%; top: calc(100% - 2px); transform: translateX(-50%); white-space: nowrap; font: 500 11px/1.2 var(--bb-sans); color: var(--bb-muted); pointer-events: none; transition: color .2s; }
+.fh-node.lab-up span { top: auto; bottom: calc(100% - 2px); }
+.fh-node.lab-left span { left: auto; right: calc(100% - 2px); top: 50%; transform: translateY(-50%); }
+.fh-node.lab-right span { left: calc(100% - 2px); top: 50%; transform: translateY(-50%); }
+.fh-node.lab-ul span { top: auto; bottom: calc(100% - 6px); left: auto; right: 50%; transform: none; }
+.fh-node.lab-ur span { top: auto; bottom: calc(100% - 6px); left: 50%; transform: none; }
+.fh-node.lab-dr span { top: calc(100% - 6px); left: 50%; transform: none; }
+.fh-node.lab-dl span { top: calc(100% - 6px); left: auto; right: 50%; transform: none; }
+.fh-node:hover span, .fh-node.is-active span { color: #fff; }
+.fh-node.is-hub span { font: 400 16px/1.1 var(--bb-serif); color: var(--bb-text); }
+.fh-exit { position: absolute; transform: translate(-50%, -50%); font: 600 10px/1.2 var(--bb-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--bb-muted); white-space: nowrap; pointer-events: none; }
+.fh-chart__region { position: absolute; font: 600 10px/1 var(--bb-sans); letter-spacing: .22em; text-transform: uppercase; opacity: .8; pointer-events: none; }
+.fh-chart__legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: -6px 0 0; font-size: 12px; color: var(--bb-muted); }
+.fh-chart__legend span { display: inline-flex; align-items: center; gap: 8px; }
+.fh-chart__legend i { width: 18px; height: 0; border-top: 2px solid var(--bb-muted); }
+.fh-chart__legend .is-sub { border-top-style: dashed; }
+.fh-chart__legend .is-secret { border-top-style: dotted; border-top-width: 3px; }
+.fh-chart__legend .is-exit { border-top: 2px dashed var(--bb-dim); }
+@media (min-width: 1025px) {
+  .fh-mapx__stage { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+  .fh-mapx__frame { aspect-ratio: auto; min-height: 420px; height: 100%; }
+}
+@media (max-width: 1024px) { .fh-chart__inner { min-width: 940px; } .fh-chart__legend::before { content: 'Swipe the map to explore →'; flex-basis: 100%; color: var(--bb-text); } }
 </style>
 
 <script type="application/json" id="fh-data">
@@ -463,26 +505,74 @@
     return slug.split('-').map(function (w) { return w === 's' ? "'s" : w.charAt(0).toUpperCase() + w.slice(1); }).join(' ').replace(" 's", "'s");
   }
 
-  var groups = {};
+  // Region schematic: positions are hand-placed per map; anything new (like a
+  // launch-day map) is placed next to its parent automatically. Connections
+  // come from the data order: each route chains off the town, the Deep
+  // Passage continues from the west, side areas hang off the map before them.
+  var POS = {
+    'forgotten-hollow': [430, 190, 'up'], 'cave-fairy-sanctuary': [350, 95, 'ul'], 'cave-fairy-department-store': [510, 95, 'ur'],
+    'primeval-forest-1': [530, 215], 'primeval-forest-2': [610, 190, 'ul'], 'collision-of-ice-and-fire': [610, 275],
+    'primeval-forest-3': [690, 165, 'ul'], 'the-valley-of-death': [690, 250], 'forgotten-entrance-1': [770, 140, 'ul'],
+    'forgotten-entrance-2': [850, 115, 'ul'], 'forgotten-entrance-3': [930, 90, 'ul'],
+    'the-end-of-fleeting-light': [330, 215, 'dr'], 'the-faded-canopy': [245, 235, 'dr'], 'forgotten-dungeon-tunnel': [160, 255, 'dr'],
+    'forbidden-entrance': [120, 330, 'dr'], 'perilous-descent-1': [190, 390, 'dl'], 'perilous-descent-2': [265, 410, 'up'],
+    'perilous-descent-3': [340, 425], 'decayed-tunnel-1': [420, 425, 'ur'], 'someone-elses-grave': [420, 340, 'up'],
+    'decayed-tunnel-2': [500, 425], 'decayed-tunnel-3': [580, 425, 'up'], 'lingering-regret': [660, 425],
+    'precipice-of-darkness': [740, 420, 'up'], 'dilapidated-tomb': [820, 410], 'another-sanctuary': [905, 395, 'up']
+  };
+  var EXIT_POS = { 'Ellinia': [930, 30], 'Sleepywood': [118, 255] };
+  var chart = host.querySelector('.fh-chart__inner'), svg = host.querySelector('.fh-chart__lines');
+  var route = host.querySelector('.fh-chart');
+  var last = {}, mainOf = {}, edges = [], lastMain = null, subCount = {};
   data.maps.forEach(function (m, i) {
-    var reg = data.regions[m.region];
-    if (!groups[m.region]) {
-      var g = document.createElement('div');
-      g.className = 'fh-route__group';
-      g.style.setProperty('--fh-c', reg.color);
-      g.innerHTML = '<h4>' + reg.label + '</h4>';
-      route.appendChild(g);
-      groups[m.region] = g;
+    var reg = data.regions[m.region], flags = m.flags || [];
+    var secret = flags.some(function (f) { return /hidden map/i.test(f); });
+    var parent;
+    if (m.sub) parent = m.region === 'town' ? 0 : lastMain;
+    else if (m.region === 'town') parent = null;
+    else if (last[m.region] != null) parent = last[m.region];
+    else parent = m.region === 'deep' ? last.west : 0;
+    if (!m.sub && m.region !== 'town') { last[m.region] = i; }
+    if (!m.sub) lastMain = i;
+    var p = POS[m.id];
+    if (!p) {
+      var pp = POS[data.maps[parent || 0].id] || [500, 235];
+      subCount[parent] = (subCount[parent] || 0) + 1;
+      p = [pp[0] + 70 * subCount[parent], pp[1] - 40 * subCount[parent], 'up'];
+      POS[m.id] = p;
     }
+    if (parent != null) edges.push([parent, i, secret ? 'is-secret' : m.sub ? 'is-sub' : '', reg.color]);
+    flags.forEach(function (f) {
+      var ex = /Entrance from (.+)/.exec(f);
+      if (ex && EXIT_POS[ex[1]]) edges.push([i, ex[1], 'is-exit']);
+    });
     var b = document.createElement('button');
     b.type = 'button';
-    b.className = 'fh-route__btn' + (m.sub ? ' is-sub' : '');
+    b.className = 'fh-node' + (i === 0 ? ' is-hub' : '') + (m.sub ? ' is-sub' : '') + (secret ? ' is-secret' : '') + (p[2] ? ' lab-' + p[2] : '');
+    b.style.left = (p[0] / 10) + '%'; b.style.top = (p[1] / 4.7) + '%';
     b.style.setProperty('--fh-c', reg.color);
-    b.innerHTML = '<span>' + m.name + '</span><span class="fh-route__lv">' + (levelRange(m) || (m.region === 'town' ? 'Safe' : '')) + '</span>';
+    b.setAttribute('aria-label', m.name + (levelRange(m) ? ', ' + levelRange(m) : '') + ', ' + reg.label);
+    b.innerHTML = '<span>' + m.name + '</span>';
     b.addEventListener('click', function () { show(i, true); });
-    groups[m.region].appendChild(b);
+    chart.appendChild(b);
     buttons.push(b);
   });
+  Object.keys(EXIT_POS).forEach(function (k) {
+    var t = document.createElement('div'); t.className = 'fh-exit';
+    t.style.left = (EXIT_POS[k][0] / 10) + '%'; t.style.top = (EXIT_POS[k][1] / 4.7) + '%';
+    if (k === 'Sleepywood') t.style.transform = 'translate(-100%, -50%)';
+    t.textContent = (k === 'Ellinia' ? '↑ ' : '← ') + k; chart.appendChild(t);
+  });
+  [['East · to the surface', 700, 70, '#b9e26f'], ['West', 230, 190, '#7fc8a9'], ['The Deep Passage', 620, 465, '#b48cff']].forEach(function (l) {
+    var t = document.createElement('div'); t.className = 'fh-chart__region';
+    t.style.left = (l[1] / 10) + '%'; t.style.top = (l[2] / 4.7) + '%'; t.style.color = l[3]; t.style.transform = 'translate(-50%,-50%)';
+    t.textContent = l[0]; chart.appendChild(t);
+  });
+  svg.innerHTML = edges.map(function (e) {
+    var a = POS[data.maps[e[0]].id], b = typeof e[1] === 'number' ? POS[data.maps[e[1]].id] : EXIT_POS[e[1]];
+    var col = e[3] || '#8c877f';
+    return '<path class="' + e[2] + '" stroke="' + col + '" d="M' + a[0] + ' ' + a[1] + ' L' + b[0] + ' ' + b[1] + '"/>';
+  }).join('');
 
   function show(i, fromUser) {
     current = (i + data.maps.length) % data.maps.length;
@@ -492,11 +582,9 @@
       b.classList.toggle('is-active', j === current);
       b.setAttribute('aria-pressed', j === current ? 'true' : 'false');
     });
-    if (fromUser) {
-      var btn = buttons[current];
-      var r = route.getBoundingClientRect(), br = btn.getBoundingClientRect();
-      if (window.innerWidth <= 1024) route.scrollTo({ left: route.scrollLeft + br.left - r.left - 20, behavior: 'smooth' });
-      else if (br.top < r.top || br.bottom > r.bottom) route.scrollTo({ top: route.scrollTop + br.top - r.top - 60, behavior: 'smooth' });
+    if (fromUser && route.scrollWidth > route.clientWidth) {
+      var r = route.getBoundingClientRect(), br = buttons[current].getBoundingClientRect();
+      if (br.left < r.left + 40 || br.right > r.right - 40) route.scrollTo({ left: route.scrollLeft + br.left - r.left - r.width / 2, behavior: 'smooth' });
     }
     img.classList.add('is-loading');
     var next = new Image();
@@ -531,8 +619,8 @@
   });
   host.addEventListener('keydown', function (e) {
     if (e.target.closest('input, textarea')) return;
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { if (e.target.closest('.fh-mapx__route, .fh-mapx__nav')) { e.preventDefault(); show(current + 1, true); buttons[current].focus(); } }
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { if (e.target.closest('.fh-mapx__route, .fh-mapx__nav')) { e.preventDefault(); show(current - 1, true); buttons[current].focus(); } }
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { if (e.target.closest('.fh-chart, .fh-mapx__nav')) { e.preventDefault(); show(current + 1, true); buttons[current].focus(); } }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { if (e.target.closest('.fh-chart, .fh-mapx__nav')) { e.preventDefault(); show(current - 1, true); buttons[current].focus(); } }
   });
   function zoomIn() {
     img.setAttribute('data-bb-caption', data.maps[current].name + ' · ' + data.regions[data.maps[current].region].label);
@@ -542,5 +630,6 @@
   img.style.cursor = 'zoom-in';
   img.addEventListener('click', zoomIn);
   show(0, false);
+  if (route.scrollWidth > route.clientWidth) route.scrollLeft = buttons[0].offsetLeft - route.clientWidth / 2;
 });
 </script>
