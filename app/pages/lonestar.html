@@ -1,0 +1,177 @@
+<!-- PAGE: /projects/level-design-blockout-canceled-title — Project: Lonestar (canceled VR title) -->
+<div class="bb-page lst" style="--bb-accent:#e2a356;--bb-accent-2:#f3d2a2;">
+
+  <section class="bb-hero">
+    <div class="bb-hero__media"><img data-bb-src="lonestar/shot-02.jpg" alt="The Lonestar courthouse in a fenced-off rural Texas town, in-engine" fetchpriority="high"></div>
+    <div class="bb-container bb-hero__inner">
+      <p class="bb-kicker">Unannounced VR title · Vertical slice 2024</p>
+      <h1 class="bb-display">Project:<br><em>Lonestar</em></h1>
+      <p class="bb-hero__sub">The central hub of a canceled Walking Dead VR spinoff: a small-town courthouse, a police station and the tunnel between them, taken from paper maps to a playable Unreal Engine 5 vertical slice.</p>
+      <dl class="bb-hero__meta">
+        <div><dt>Role</dt><dd>Level Designer</dd></div>
+        <div><dt>Engine</dt><dd>Unreal Engine 5</dd></div>
+        <div><dt>Genre</dt><dd>VR survival action</dd></div>
+        <div><dt>Status</dt><dd>Canceled after vertical slice</dd></div>
+      </dl>
+    </div>
+    <span class="bb-hero__scroll" aria-hidden="true">Scroll</span>
+  </section>
+
+  <section class="bb-section">
+    <div class="bb-container bb-split">
+      <div class="bb-sticky bb-reveal">
+        <p class="bb-kicker">The brief</p>
+        <h2 class="bb-h2">Treat the courthouse like a <em>dungeon</em>.</h2>
+      </div>
+      <div class="bb-reveal" style="--d:.1s">
+        <p class="bb-lead">I owned the hub of the vertical slice: a multi-storey courthouse built as a <strong>"Swiss cheese" stronghold</strong> with many ways in, connected underground to a police station and old jail. The project was canceled to prioritize other IP after the vertical slice was complete, with the hub fully playable.</p>
+        <div class="bb-prose" style="margin-top:26px">
+          <p>I worked from the narrative team's room-by-room brief, where the lobby, courtroom and offices each carried a piece of the town's story. My job was to turn that into a layout that supports stealth, combat and exploration in VR.</p>
+        </div>
+        <div class="bb-stats" style="margin-top:44px">
+          <div class="bb-stat"><div class="bb-stat__num">12<sup>+</sup></div><div class="bb-stat__label">Entry vectors</div></div>
+          <div class="bb-stat"><div class="bb-stat__num">3</div><div class="bb-stat__label">Courthouse floors</div></div>
+          <div class="bb-stat"><div class="bb-stat__num">2</div><div class="bb-stat__label">Buildings, one tunnel</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAPER MAPS -->
+  <section class="bb-section bb-section--alt">
+    <div class="bb-container">
+      <div class="bb-reveal" style="max-width:780px">
+        <p class="bb-kicker">Interactive · Paper to path</p>
+        <h2 class="bb-h2">The layout, then the <em>route</em> through it.</h2>
+        <p class="bb-prose">Every space started as a top-down paper map. The overview fixes the rooms and doors. The gameplay pass draws the intended route, red X's for blocked paths, walkers, loot and hidden crawl-throughs. Drag to compare.</p>
+      </div>
+
+      <div class="bb-split bb-split--even" style="margin-top:48px;align-items:center">
+        <div class="bb-compare bb-reveal" style="aspect-ratio:1016/588" aria-label="Courthouse overview compared with gameplay route">
+          <img data-bb-src="lonestar/map-courthouse-gameplay.jpg" alt="Courthouse floors with the critical path drawn in yellow">
+          <div class="bb-compare__top"><img data-bb-src="lonestar/map-courthouse-overview.jpg" alt="Courthouse floor plans: first floor, second floor, basement"></div>
+          <div class="bb-compare__handle"></div>
+          <span class="bb-compare__label bb-compare__label--l">Overview</span>
+          <span class="bb-compare__label bb-compare__label--r">Gameplay route</span>
+          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare courthouse overview and gameplay route">
+        </div>
+        <div class="bb-reveal" style="--d:.1s">
+          <h3 class="bb-h3">Courthouse</h3>
+          <p class="bb-prose">Three floors and a basement. The critical path snakes through the first floor, climbs to the courtroom and conference rooms, then drops into the basement and out through the tunnel. Doors marked with an X force players to find another way: up through holes in the ceiling, across the second floor, down a ladder.</p>
+        </div>
+      </div>
+
+      <div class="bb-split bb-split--even" style="margin-top:clamp(60px,8vw,100px);align-items:center">
+        <div class="bb-reveal">
+          <h3 class="bb-h3">Police station</h3>
+          <p class="bb-prose">A compact building of cells, interrogation, a firing range and the sheriff's gun storage. Walkers, cabinets and desks are placed to break sightlines. Hidden crouch-holes between the cells give stealthy players a way past.</p>
+        </div>
+        <div class="bb-compare bb-reveal" style="--d:.1s;aspect-ratio:1325/832" aria-label="Police station overview compared with gameplay layout">
+          <img data-bb-src="lonestar/map-police-gameplay.jpg" alt="Police station with walkers, loot and hidden holes marked">
+          <div class="bb-compare__top"><img data-bb-src="lonestar/map-police-overview.jpg" alt="Police station floor plan with room dimensions"></div>
+          <div class="bb-compare__handle"></div>
+          <span class="bb-compare__label bb-compare__label--l">Overview</span>
+          <span class="bb-compare__label bb-compare__label--r">Gameplay</span>
+          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare police station overview and gameplay layout">
+        </div>
+      </div>
+
+      <figure class="bb-figure bb-reveal-img" style="margin-top:clamp(60px,8vw,100px)">
+        <div class="bb-figure__frame" data-bb-lightbox="lst-maps"><img loading="lazy" data-bb-src="lonestar/map-police-tunnel.jpg" alt="Site plan connecting the courthouse, tunnel, old jail, police station, impound lot and auto shop"></div>
+        <figcaption><strong>Site plan.</strong> The courthouse (left) connects underground through the old jail to the police station, impound lot and auto shop.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ITERATION -->
+  <section class="bb-section">
+    <div class="bb-container bb-split">
+      <div class="bb-sticky bb-reveal">
+        <p class="bb-kicker">Iteration</p>
+        <h2 class="bb-h2">Three rounds of lead <em>feedback</em>.</h2>
+        <p class="bb-prose">Each review produced concrete changes. Tightening the micro layout, sizing spaces for VR bodies and making vertical routes essential rather than optional.</p>
+      </div>
+      <ol class="lst-log bb-reveal" style="--d:.1s">
+        <li>
+          <time>Feb 2, 2024</time>
+          <ul>
+            <li>Jail cells resized to 10×10</li>
+            <li>Jury room shrunk and Bailiff's office expanded</li>
+            <li>Second-floor layout broken up into smaller spaces</li>
+            <li>Tunnel widened to fit two people side by side</li>
+            <li>Added a 45° upward turn at the tunnel's end to block sightlines</li>
+          </ul>
+        </li>
+        <li>
+          <time>Feb 5, 2024</time>
+          <ul>
+            <li>Shifted focus to the micro layout</li>
+            <li>Treat the courthouse like a dungeon</li>
+            <li>Added alternative traversal: pipes, holes, ladders</li>
+          </ul>
+        </li>
+        <li>
+          <time>Mar 12, 2024</time>
+          <ul>
+            <li>Infested the mechanics bay so the upper pathway becomes essential</li>
+            <li>Placed an essential item up there, so more players experience the verticality</li>
+            <li>Station footprint enlarged where the layout needed it</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- DESIGN PRINCIPLES -->
+  <section class="bb-section bb-section--alt">
+    <div class="bb-container">
+      <div class="bb-grid bb-grid--3">
+        <div class="bb-card bb-reveal"><div class="bb-card__num">Permeability</div><h3 class="bb-h3">"Swiss cheese" layout</h3><p>Sewers, roof, windows and broken walls: more than a dozen ways in, so stealth and aggressive players each find their own approach.</p></div>
+        <div class="bb-card bb-reveal" style="--d:.08s"><div class="bb-card__num">Gating</div><h3 class="bb-h3">Show, don't tell</h3><p>Broken stairwells, flooded basements and barricaded doors are diegetic locks. Keys and upgrades reopen wings players already passed, like a Metroidvania.</p></div>
+        <div class="bb-card bb-reveal" style="--d:.16s"><div class="bb-card__num">Connection</div><h3 class="bb-h3">One continuous world</h3><p>The tunnel joins two distinct biomes, a civic courthouse and an industrial police compound, with sightlines and streaming managed so it never breaks immersion.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN ENGINE -->
+  <section class="bb-section">
+    <div class="bb-container">
+      <div class="bb-reveal" style="max-width:760px">
+        <p class="bb-kicker">In engine</p>
+        <h2 class="bb-h2">Blockout to <em>vertical slice</em>.</h2>
+        <p class="bb-prose">Selected high-resolution captures from the Unreal Engine 5 slice. Select any image to view it full size.</p>
+      </div>
+      <div class="bb-gallery" style="margin-top:44px">
+        <figure class="bb-figure bb-g-full bb-reveal"><div class="bb-figure__frame" style="aspect-ratio:21/9" data-bb-lightbox="lst"><img loading="lazy" data-bb-src="lonestar/shot-00.jpg" alt="The courthouse at the centre of town"></div></figure>
+        <figure class="bb-figure bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="lst"><img loading="lazy" data-bb-src="lonestar/shot-05.jpg" alt="Courthouse lobby staircase"></div></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="lst"><img loading="lazy" data-bb-src="lonestar/shot-08.jpg" alt="Courtroom gallery"></div></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.12s"><div class="bb-figure__frame" data-bb-lightbox="lst"><img loading="lazy" data-bb-src="lonestar/shot-12.jpg" alt="Office with ladder and hole in the floor"></div></figure>
+        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="lst"><img loading="lazy" data-bb-src="lonestar/shot-17.jpg" alt="Ladder up through the ceiling of a wood-panelled room"></div></figure>
+        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="lst"><img loading="lazy" data-bb-src="lonestar/shot-18.jpg" alt="Jail cells under the courthouse"></div></figure>
+        <figure class="bb-figure bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="lst"><img loading="lazy" data-bb-src="lonestar/shot-03.jpg" alt="Police department exterior"></div></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="lst"><img loading="lazy" data-bb-src="lonestar/shot-23.jpg" alt="Interrogation room"></div></figure>
+        <figure class="bb-figure bb-reveal" style="--d:.12s"><div class="bb-figure__frame" data-bb-lightbox="lst"><img loading="lazy" data-bb-src="lonestar/shot-26.jpg" alt="Police compound and impound lot from above"></div></figure>
+      </div>
+      <figure class="bb-figure bb-reveal" style="margin-top:40px;max-width:620px">
+        <div class="bb-figure__frame" data-bb-lightbox="lst-maps"><img loading="lazy" data-bb-src="lonestar/reference-board.jpg" alt="Reference board of real courthouses and floor plans"></div>
+        <figcaption><strong>Research.</strong> Real small-town courthouses and floor plans grounded the layout.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <nav class="bb-next" aria-label="More projects">
+    <a href="/projects/the-walking-dead-saints-and-sinners-chapter-2"><img data-bb-src="covers/twd.jpg" alt=""><small>← Previous</small><strong>TWD: Retribution</strong></a>
+    <a href="/projects/zoelie"><img data-bb-src="zoelie/12.jpg" alt=""><small>Next project →</small><strong>Zoélie</strong></a>
+  </nav>
+  <p class="bb-credits">Unreleased project. Development images shown for portfolio purposes.</p>
+</div>
+
+<style>
+.lst-log { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--bb-line-strong); }
+.lst-log > li { position: relative; padding: 0 0 40px 34px; }
+.lst-log > li::before { content: ''; position: absolute; left: -6px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--bb-bg); border: 2px solid var(--bb-accent); }
+.lst-log time { display: block; font-family: var(--bb-serif); font-size: 28px; color: var(--bb-text); margin-bottom: 12px; }
+.lst-log ul { list-style: none; margin: 0; padding: 0; }
+.lst-log ul li { padding: 9px 0; border-bottom: 1px solid var(--bb-line); color: var(--bb-muted); font-size: 15.5px; }
+.lst-log ul li::before { content: '→  '; color: var(--bb-accent); }
+</style>
