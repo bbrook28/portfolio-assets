@@ -55,12 +55,13 @@
       <div class="bb-split" style="align-items:end">
         <div class="bb-reveal">
           <p class="bb-kicker">Interactive · Hold the arena</p>
-          <h2 class="bb-h2" style="margin-bottom:0">Every shot is <em>space</em> you won't get back.</h2>
+          <h2 class="bb-h2" style="margin-bottom:0">The arena is whatever you've <em>left</em> it.</h2>
         </div>
-        <p class="bb-prose bb-reveal" style="--d:.1s">Click or tap to fire toward that point. Each shot leaves a shell behind. The damned walk around your shells, and any shell they touch goes off. Watch the space meter.</p>
+        <p class="bb-prose bb-reveal" style="--d:.1s">Every shot drops a solid shell beside you, so the path you take becomes the walls. The damned reroute around whatever you've built, and the meter shows how much floor you can still reach. Shoot a shell to blast a path back open.</p>
       </div>
       <div class="buba-toy bb-reveal" data-buba-toy>
-        <canvas aria-label="Arena demo: click to fire; shells pile up and enemies navigate around them"></canvas>
+        <canvas tabindex="0" aria-label="Arena demo: move Buba, fire, and watch spent shells reshape the routes enemies take"></canvas>
+        <p class="buba-toy__how"><span><kbd>WASD</kbd> or arrows to move · click or <kbd>Space</kbd> to fire</span><span>Touch: hold to walk · tap to fire</span></p>
         <div class="buba-toy__hud">
           <div class="buba-toy__meter" aria-label="Space remaining"><i></i></div>
           <span class="buba-toy__stats" aria-live="polite"></span>
@@ -124,11 +125,16 @@
 .bb-quote-card blockquote { margin: 0; font-family: var(--bb-serif); font-size: 22px; line-height: 1.3; color: var(--bb-text); }
 .bb-quote-card figcaption { margin-top: 18px; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--bb-accent); }
 .buba-toy { margin-top: 40px; border: 1px solid var(--bb-line); border-radius: var(--bb-radius); overflow: hidden; background: #160b0a; }
-.buba-toy canvas { display: block; width: 100%; aspect-ratio: 16 / 8; cursor: crosshair; touch-action: none; }
+.buba-toy canvas { display: block; width: 100%; aspect-ratio: 16 / 8; cursor: crosshair; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 .buba-toy__hud { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--bb-line); }
 .buba-toy__meter { flex: 1 1 200px; height: 8px; border-radius: 99px; background: rgba(255,255,255,.08); overflow: hidden; }
 .buba-toy__meter i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #ff3d2e, #ff7a45, #ffc3a3); transition: width .3s; }
 .buba-toy__stats { font-size: 13px; color: var(--bb-muted); font-variant-numeric: tabular-nums; min-width: 14em; }
+.buba-toy canvas:focus-visible { outline: 2px solid var(--bb-accent); outline-offset: -2px; }
+.buba-toy__how { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; margin: 0; padding: 10px 18px; font-size: 12px; color: var(--bb-muted); border-top: 1px solid var(--bb-line); }
+.buba-toy__how kbd { font: 600 11px var(--bb-sans); padding: 2px 6px; border: 1px solid var(--bb-line-strong); border-radius: 4px; color: var(--bb-text); }
+@media (hover: none) { .buba-toy__how span:first-child { display: none; } }
+@media (hover: hover) { .buba-toy__how span:last-child { display: none; } }
 .buba-toy .bb-btn { padding: 10px 18px; font-size: 12px; }
 @media (max-width: 720px) { .buba-toy canvas { aspect-ratio: 1 / 1; } }
 </style>
@@ -140,79 +146,187 @@
   var cv = host.querySelector('canvas'), ctx = cv.getContext('2d');
   var meter = host.querySelector('.buba-toy__meter i'), stats = host.querySelector('.buba-toy__stats');
   var W, H, dpr = Math.min(2, window.devicePixelRatio || 1), running = false;
-  var buba, shells, shots, foes, booms, kills, spawnT, SH = 9;
-  function reset() { buba = { x: W / 2, y: H / 2 }; shells = []; shots = []; foes = []; booms = []; kills = 0; spawnT = 40; }
-  function size() { var r = cv.getBoundingClientRect(); W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); reset(); }
+  // SR: shell collision radius, BR/FR: Buba and foe radii, CELL: routing grid size
+  var SR = 8, BR = 12, FR = 8, CELL = 12, BLAST = 48;
+  var buba, aim, shells, shots, foes, booms, kills, hits, spawnT, flash;
+  var cols, rows, blocked, dist, reach, queue, keys = {}, ptr = null;
+  function reset() {
+    buba = { x: W / 2, y: H / 2 }; aim = { x: 1, y: 0 };
+    shells = []; shots = []; foes = []; booms = []; kills = 0; hits = 0; spawnT = 60; flash = 0;
+  }
+  function size() {
+    var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cols = Math.ceil(W / CELL); rows = Math.ceil(H / CELL);
+    blocked = new Uint8Array(cols * rows); dist = new Int32Array(cols * rows); queue = new Int32Array(cols * rows);
+    reset();
+  }
   host.querySelector('.buba-toy__reset').addEventListener('click', reset);
-  cv.addEventListener('pointerdown', function (e) {
-    e.preventDefault();
-    var r = cv.getBoundingClientRect(), tx = e.clientX - r.left, ty = e.clientY - r.top;
+
+  function hitsShell(x, y, rad) {
+    for (var i = 0; i < shells.length; i++) if (Math.hypot(shells[i].x - x, shells[i].y - y) < SR + rad) return true;
+    return false;
+  }
+  // Slide along shells and walls by trying each axis on its own.
+  function move(o, dx, dy, rad) {
+    var nx = Math.max(rad, Math.min(W - rad, o.x + dx));
+    if (!hitsShell(nx, o.y, rad)) o.x = nx;
+    var ny = Math.max(rad, Math.min(H - rad, o.y + dy));
+    if (!hitsShell(o.x, ny, rad)) o.y = ny;
+  }
+  function fire(tx, ty) {
     var dx = tx - buba.x, dy = ty - buba.y, d = Math.hypot(dx, dy) || 1; dx /= d; dy /= d;
-    for (var k = -1; k <= 1; k++) { var a = Math.atan2(dy, dx) + k * .12; shots.push({ x: buba.x, y: buba.y, vx: Math.cos(a) * 9, vy: Math.sin(a) * 9, l: 50 }); }
-    // the spent shell is ejected beside Buba and stays forever
-    var ang = Math.atan2(dy, dx) + Math.PI / 2 + (Math.random() - .5);
-    var dist = 26 + Math.random() * 46 + shells.length * .6;
-    shells.push({ x: Math.max(SH, Math.min(W - SH, buba.x + Math.cos(ang) * dist)), y: Math.max(SH, Math.min(H - SH, buba.y + Math.sin(ang) * dist)), r: Math.random() * 6.28 });
+    aim = { x: dx, y: dy };
+    for (var k = -1; k <= 1; k++) { var a = Math.atan2(dy, dx) + k * .1; shots.push({ x: buba.x + dx * BR, y: buba.y + dy * BR, vx: Math.cos(a) * 10, vy: Math.sin(a) * 10, l: 34 }); }
+    // the spent shell kicks out to Buba's side and stays where it lands
+    var side = Math.random() < .5 ? 1 : -1, ex = -dy * side, ey = dx * side;
+    var sx = buba.x + ex * (BR + SR + 6) - dx * 6, sy = buba.y + ey * (BR + SR + 6) - dy * 6;
+    shells.push({ x: Math.max(SR, Math.min(W - SR, sx)), y: Math.max(SR, Math.min(H - SR, sy)), r: Math.random() * 6.28 });
+  }
+  function blast(x, y) {
+    booms.push({ x: x, y: y, t: 0 });
+    var chain = [];
+    shells = shells.filter(function (s) { var near = Math.hypot(s.x - x, s.y - y) < BLAST; if (near) chain.push(s); return !near; });
+    foes.forEach(function (f) { if (f.hp > 0 && Math.hypot(f.x - x, f.y - y) < BLAST + FR) { f.hp = 0; kills++; } });
+    chain.forEach(function (s) { if (Math.hypot(s.x - x, s.y - y) > 4) booms.push({ x: s.x, y: s.y, t: -4 }); });
+  }
+
+  function pos(e) { var r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
+  // A quick tap fires; press and hold walks Buba toward the pointer.
+  cv.addEventListener('pointerdown', function (e) {
+    e.preventDefault(); cv.focus({ preventScroll: true });
+    var p = pos(e); ptr = { x: p.x, y: p.y, x0: p.x, y0: p.y, t0: performance.now(), walk: false, id: e.pointerId };
+    cv.setPointerCapture(e.pointerId);
   });
-  function blocked(x, y, rad) { return shells.some(function (s) { return Math.hypot(s.x - x, s.y - y) < SH + rad; }); }
+  cv.addEventListener('pointermove', function (e) {
+    var p = pos(e);
+    if (!ptr || ptr.id !== e.pointerId) { if (e.pointerType === 'mouse') { var dx = p.x - buba.x, dy = p.y - buba.y, d = Math.hypot(dx, dy) || 1; aim = { x: dx / d, y: dy / d }; } return; }
+    ptr.x = p.x; ptr.y = p.y;
+    if (Math.hypot(p.x - ptr.x0, p.y - ptr.y0) > 12) ptr.walk = true;
+  });
+  function release(e) {
+    if (!ptr || ptr.id !== e.pointerId) return;
+    if (!ptr.walk && performance.now() - ptr.t0 < 220) fire(ptr.x, ptr.y);
+    ptr = null;
+  }
+  cv.addEventListener('pointerup', release);
+  cv.addEventListener('pointercancel', function () { ptr = null; });
+  var KEYS = { KeyW: 'u', ArrowUp: 'u', KeyS: 'd', ArrowDown: 'd', KeyA: 'l', ArrowLeft: 'l', KeyD: 'r', ArrowRight: 'r' };
+  cv.addEventListener('keydown', function (e) {
+    if (KEYS[e.code]) { keys[KEYS[e.code]] = true; e.preventDefault(); }
+    else if (e.code === 'Space') { fire(buba.x + aim.x * 100, buba.y + aim.y * 100); e.preventDefault(); }
+  });
+  cv.addEventListener('keyup', function (e) { if (KEYS[e.code]) keys[KEYS[e.code]] = false; });
+  cv.addEventListener('blur', function () { keys = {}; });
+
+  // Flood the grid from Buba: the result is both the damned's route map and
+  // how much of the floor he can still reach.
+  function route() {
+    blocked.fill(0); dist.fill(-1);
+    var pad = SR + FR - 2;
+    shells.forEach(function (s) {
+      var c0 = Math.max(0, Math.floor((s.x - pad) / CELL)), c1 = Math.min(cols - 1, Math.floor((s.x + pad) / CELL));
+      var r0 = Math.max(0, Math.floor((s.y - pad) / CELL)), r1 = Math.min(rows - 1, Math.floor((s.y + pad) / CELL));
+      for (var r = r0; r <= r1; r++) for (var c = c0; c <= c1; c++) {
+        if (Math.hypot((c + .5) * CELL - s.x, (r + .5) * CELL - s.y) < pad) blocked[r * cols + c] = 1;
+      }
+    });
+    var start = Math.min(rows - 1, Math.floor(buba.y / CELL)) * cols + Math.min(cols - 1, Math.floor(buba.x / CELL));
+    var head = 0, tail = 0, free = 0;
+    for (var i = 0; i < blocked.length; i++) if (!blocked[i]) free++;
+    dist[start] = 0; queue[tail++] = start;
+    while (head < tail) {
+      var cur = queue[head++], cc = cur % cols, cr = (cur - cc) / cols;
+      if (cc > 0) visit(cur - 1); if (cc < cols - 1) visit(cur + 1);
+      if (cr > 0) visit(cur - cols); if (cr < rows - 1) visit(cur + cols);
+    }
+    function visit(n) { if (dist[n] < 0 && !blocked[n]) { dist[n] = dist[cur] + 1; queue[tail++] = n; } }
+    reach = Math.min(1, tail / Math.max(1, free));
+  }
+  function nextStep(f) {
+    var c = Math.min(cols - 1, Math.max(0, Math.floor(f.x / CELL))), r = Math.min(rows - 1, Math.max(0, Math.floor(f.y / CELL)));
+    var here = dist[r * cols + c], best = null, bd = here < 0 ? 1e9 : here;
+    for (var dr = -1; dr <= 1; dr++) for (var dc = -1; dc <= 1; dc++) {
+      var nc = c + dc, nr = r + dr;
+      if ((!dr && !dc) || nc < 0 || nr < 0 || nc >= cols || nr >= rows) continue;
+      // no cutting corners between two blocked cells
+      if (dr && dc && (blocked[r * cols + nc] || blocked[nr * cols + c])) continue;
+      var v = dist[nr * cols + nc];
+      if (v >= 0 && v < bd) { bd = v; best = { x: (nc + .5) * CELL, y: (nr + .5) * CELL }; }
+    }
+    return best;
+  }
+
   function step() {
-    if (--spawnT <= 0) {
-      spawnT = Math.max(28, 80 - kills * 2);
+    var mx = (keys.r ? 1 : 0) - (keys.l ? 1 : 0), my = (keys.d ? 1 : 0) - (keys.u ? 1 : 0);
+    if (ptr && (ptr.walk || performance.now() - ptr.t0 > 220)) {
+      ptr.walk = true;
+      var px = ptr.x - buba.x, py = ptr.y - buba.y, pd = Math.hypot(px, py);
+      if (pd > 6) { mx = px / pd; my = py / pd; }
+    }
+    var ml = Math.hypot(mx, my);
+    if (ml) { move(buba, mx / ml * 2.6, my / ml * 2.6, BR); if (!ptr) aim = { x: mx / ml, y: my / ml }; }
+    route();
+
+    if (--spawnT <= 0 && foes.length < 16) {
+      spawnT = Math.max(40, 120 - kills * 2);
       var side = Math.floor(Math.random() * 4), p = Math.random();
-      foes.push({ x: side === 0 ? 0 : side === 1 ? W : p * W, y: side === 2 ? 0 : side === 3 ? H : p * H, hp: 2, wob: Math.random() * 6 });
+      foes.push({ x: side === 0 ? FR : side === 1 ? W - FR : p * W, y: side === 2 ? FR : side === 3 ? H - FR : p * H, hp: 2, wob: Math.random() * 6 });
     }
     shots.forEach(function (s) {
       s.x += s.vx; s.y += s.vy; s.l--;
-      foes.forEach(function (f) { if (f.hp > 0 && Math.hypot(f.x - s.x, f.y - s.y) < 14) { f.hp--; s.l = 0; if (f.hp <= 0) kills++; } });
+      if (s.x < 0 || s.y < 0 || s.x > W || s.y > H) s.l = 0;
+      for (var i = 0; i < shells.length && s.l > 0; i++) if (Math.hypot(shells[i].x - s.x, shells[i].y - s.y) < SR + 2) { s.l = 0; blast(shells[i].x, shells[i].y); }
+      foes.forEach(function (f) { if (s.l > 0 && f.hp > 0 && Math.hypot(f.x - s.x, f.y - s.y) < FR + 3) { f.hp--; s.l = 0; if (f.hp <= 0) kills++; } });
     });
     shots = shots.filter(function (s) { return s.l > 0; });
     foes.forEach(function (f) {
       if (f.hp <= 0) return;
-      var dx = buba.x - f.x, dy = buba.y - f.y, d = Math.hypot(dx, dy) || 1, sp = 1.1;
-      var nx = f.x + dx / d * sp, ny = f.y + dy / d * sp;
-      // steer around shells: try sidesteps if the direct path is blocked
-      if (blocked(nx, ny, 10)) {
-        f.wob += .3;
-        var side = Math.sin(f.wob) > 0 ? 1 : -1;
-        nx = f.x + (-dy / d) * sp * side + dx / d * .2; ny = f.y + (dx / d) * sp * side + dy / d * .2;
-      }
-      f.x = nx; f.y = ny;
-      // touching a shell sets it off
-      for (var i = shells.length - 1; i >= 0; i--) {
-        if (Math.hypot(shells[i].x - f.x, shells[i].y - f.y) < SH + 9) {
-          booms.push({ x: shells[i].x, y: shells[i].y, t: 0 });
-          shells.splice(i, 1); f.hp = 0; kills++;
-          break;
-        }
-      }
-      if (Math.hypot(f.x - buba.x, f.y - buba.y) < 18) f.hp = 0;
+      var t = nextStep(f), dx, dy;
+      f.lost = !t;
+      if (t) { dx = t.x - f.x; dy = t.y - f.y; }
+      else { f.wob += .05; dx = Math.cos(f.wob); dy = Math.sin(f.wob); }
+      var d = Math.hypot(dx, dy) || 1, sp = f.lost ? .5 : 1.25;
+      foes.forEach(function (o) { if (o !== f && o.hp > 0) { var ox = f.x - o.x, oy = f.y - o.y, od = Math.hypot(ox, oy); if (od < FR * 2 && od > 0) { dx += ox / od * .6 * d; dy += oy / od * .6 * d; } } });
+      d = Math.hypot(dx, dy) || 1;
+      move(f, dx / d * sp, dy / d * sp, FR);
+      if (Math.hypot(f.x - buba.x, f.y - buba.y) < BR + FR) { f.hp = 0; hits++; flash = 14; }
     });
     foes = foes.filter(function (f) { return f.hp > 0; });
     booms.forEach(function (b) { b.t++; }); booms = booms.filter(function (b) { return b.t < 22; });
-    var used = Math.min(1, shells.length * Math.PI * (SH + 14) * (SH + 14) / (W * H * .08));
-    meter.style.width = ((1 - used) * 100).toFixed(1) + '%';
-    stats.textContent = shells.length + ' shells down · ' + Math.round((1 - used) * 100) + '% space left · ' + kills + ' damned';
+    if (flash) flash--;
+    var pct = Math.round(reach * 100);
+    meter.style.width = pct + '%';
+    stats.textContent = pct < 12 ? 'Boxed in. Blast a shell to break out.'
+      : shells.length + ' shells · ' + pct + '% of the floor in reach · ' + kills + ' damned · ' + hits + ' hits';
   }
   function draw() {
-    ctx.clearRect(0, 0, W, H);
     var g = ctx.createRadialGradient(W / 2, H / 2, 10, W / 2, H / 2, Math.max(W, H) * .7);
     g.addColorStop(0, '#2a1410'); g.addColorStop(1, '#120807'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    ctx.strokeStyle = 'rgba(255,110,60,.35)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(W / 2, H / 2, Math.min(W, H) * .42, 0, 6.283); ctx.stroke();
+    // floor Buba can no longer reach goes dark
+    ctx.fillStyle = 'rgba(5,2,2,.62)';
+    for (var i = 0; i < dist.length; i++) if (dist[i] < 0 && !blocked[i]) ctx.fillRect((i % cols) * CELL, Math.floor(i / cols) * CELL, CELL, CELL);
     shells.forEach(function (s) {
       ctx.save(); ctx.translate(s.x, s.y); ctx.rotate(s.r);
-      ctx.fillStyle = '#c8402c'; ctx.fillRect(-SH, -SH * .45, SH * 1.5, SH * .9);
-      ctx.fillStyle = '#e8b04a'; ctx.fillRect(SH * .5, -SH * .45, SH * .5, SH * .9);
+      ctx.fillStyle = 'rgba(0,0,0,.35)'; ctx.fillRect(-SR + 2, -SR * .5 + 3, SR * 2, SR);
+      ctx.fillStyle = '#c8402c'; ctx.fillRect(-SR, -SR * .5, SR * 1.4, SR);
+      ctx.fillStyle = '#e8b04a'; ctx.fillRect(SR * .4, -SR * .5, SR * .6, SR);
       ctx.restore();
     });
-    booms.forEach(function (b) { ctx.globalAlpha = 1 - b.t / 22; ctx.fillStyle = '#ffb347'; ctx.beginPath(); ctx.arc(b.x, b.y, 6 + b.t * 1.6, 0, 6.283); ctx.fill(); });
+    booms.forEach(function (b) { if (b.t < 0) return; ctx.globalAlpha = 1 - b.t / 22; ctx.fillStyle = '#ffb347'; ctx.beginPath(); ctx.arc(b.x, b.y, 8 + b.t * (BLAST / 22), 0, 6.283); ctx.fill(); });
     ctx.globalAlpha = 1;
     shots.forEach(function (s) { ctx.fillStyle = '#ffd27a'; ctx.fillRect(s.x - 2, s.y - 2, 4, 4); });
-    foes.forEach(function (f) { ctx.fillStyle = '#7fe0a6'; ctx.beginPath(); ctx.arc(f.x, f.y, 9, 0, 6.283); ctx.fill(); ctx.fillStyle = '#0b0b0b'; ctx.fillRect(f.x - 4, f.y - 2, 2, 2); ctx.fillRect(f.x + 2, f.y - 2, 2, 2); });
-    ctx.fillStyle = '#ff7a45'; ctx.beginPath(); ctx.arc(buba.x, buba.y, 13, 0, 6.283); ctx.fill();
-    ctx.fillStyle = '#2b120c'; ctx.beginPath(); ctx.arc(buba.x, buba.y - 4, 5, 0, 6.283); ctx.fill();
+    foes.forEach(function (f) {
+      ctx.fillStyle = f.lost ? '#4e8f6b' : '#7fe0a6'; ctx.beginPath(); ctx.arc(f.x, f.y, FR, 0, 6.283); ctx.fill();
+      ctx.fillStyle = '#0b0b0b'; ctx.fillRect(f.x - 4, f.y - 2, 2, 2); ctx.fillRect(f.x + 2, f.y - 2, 2, 2);
+    });
+    if (ptr && ptr.walk) { ctx.strokeStyle = 'rgba(255,170,120,.35)'; ctx.setLineDash([3, 6]); ctx.beginPath(); ctx.moveTo(buba.x, buba.y); ctx.lineTo(ptr.x, ptr.y); ctx.stroke(); ctx.setLineDash([]); }
+    ctx.strokeStyle = '#ffd27a'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(buba.x + aim.x * 8, buba.y + aim.y * 8); ctx.lineTo(buba.x + aim.x * (BR + 8), buba.y + aim.y * (BR + 8)); ctx.stroke(); ctx.lineWidth = 1;
+    ctx.fillStyle = flash % 4 > 1 ? '#fff' : '#ff7a45'; ctx.beginPath(); ctx.arc(buba.x, buba.y, BR, 0, 6.283); ctx.fill();
+    ctx.fillStyle = '#2b120c'; ctx.beginPath(); ctx.arc(buba.x, buba.y - 4, 4.5, 0, 6.283); ctx.fill();
   }
   function loop() { if (!running) return; step(); draw(); requestAnimationFrame(loop); }
-  size(); draw();
+  size(); route(); draw();
   window.addEventListener('resize', size);
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (en) { var v = en[0].isIntersecting; if (v && !running) { running = true; requestAnimationFrame(loop); } else if (!v) running = false; }).observe(host);
