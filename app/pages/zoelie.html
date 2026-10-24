@@ -54,7 +54,7 @@
           <button role="tab" type="button" data-i="6">Imagination</button>
         </div>
         <div class="zoe-forms__panel" role="tabpanel">
-          <div class="zoe-forms__img"><img alt=""></div>
+          <div class="zoe-forms__img"><img alt=""><div class="zoe-forms__svg" hidden></div></div>
           <div class="zoe-forms__text"><h3 class="bb-h3"></h3><p class="bb-prose"></p><p class="zoe-forms__use"></p></div>
         </div>
       </div>
@@ -142,6 +142,11 @@
 .zoe-forms__img { position: relative; overflow: hidden; background: #000; }
 .zoe-forms__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .4s, transform 1.2s var(--bb-ease); }
 .zoe-forms__img img.is-swap { opacity: 0; transform: scale(1.04); }
+.zoe-forms__svg { position: absolute; inset: 0; display: grid; place-items: center; background: radial-gradient(ellipse at 50% 60%, color-mix(in srgb, var(--bb-accent) 14%, #0c0c10), #0a0a0d 70%); }
+.zoe-forms__svg svg { width: 72%; max-height: 78%; fill: none; stroke: var(--bb-accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.zoe-forms__svg .q { stroke: #e9a7ff; }
+.zoe-forms__svg .d { stroke-dasharray: 6 10; opacity: .7; }
+.zoe-forms__svg small { position: absolute; left: 16px; bottom: 14px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--bb-muted); }
 .zoe-forms__text { padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; justify-content: center; }
 .zoe-forms__use { margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--bb-line); font-size: 13px; letter-spacing: .04em; color: var(--bb-accent-2); }
 @media (max-width: 1024px) {
@@ -161,23 +166,35 @@
   if (!host) return;
   var F = [
     { t: 'Parachute & glider', img: 'zoelie/4.jpg', d: 'Sueño billows into a parachute to float down from rooftops, or a hang-glider to soar across the plaza.', u: 'Used for: descending safely, crossing long gaps, reaching distant ledges' },
-    { t: 'Bridge', img: 'zoelie/trailer-33.jpg', d: 'Stretched taut, the quilt spans gaps between rooftops and balconies that are too wide to jump.', u: 'Used for: crossing open expanses' },
-    { t: 'Rope', img: 'zoelie/trailer-41.jpg', d: 'Dropped from above, Sueño becomes a rope for climbing walls and reaching vertical spaces.', u: 'Used for: vertical traversal' },
-    { t: 'Trampoline', img: 'zoelie/1.jpg', d: 'Blended into the environment, the quilt becomes a springboard that launches Zoélie high into the air.', u: 'Used for: reaching high places, combo jumps' },
+    { t: 'Bridge', img: 'zoelie/form-bridge.jpg', d: 'Stretched taut, the quilt spans gaps between rooftops and balconies that are too wide to jump.', u: 'Used for: crossing open expanses' },
+    { t: 'Rope', svg: 'rope', d: 'Dropped from above, Sueño becomes a rope for climbing walls and reaching vertical spaces.', u: 'Used for: vertical traversal' },
+    { t: 'Trampoline', svg: 'tramp', d: 'Blended into the environment, the quilt becomes a springboard that launches Zoélie high into the air.', u: 'Used for: reaching high places, combo jumps' },
     { t: 'Sail', img: 'zoelie/8.jpg', d: 'On the beach level, Sueño becomes a sail and Zoélie rides giant sea turtles like a windsurfer.', u: 'Used for: the island race and sea travel' },
-    { t: 'Distraction', img: 'zoelie/trailer-77.jpg', d: 'With no combat, threats are handled by wit. Sueño knocks over trash cans to distract foes and scares away stray cats and birds.', u: 'Used for: stealth and avoiding hazards' },
-    { t: 'Imagination', img: 'zoelie/12.jpg', d: 'Wherever Sueño flies, the world transforms: buildings glow with graffiti, magic grass sprouts, and hidden objects and maps are revealed.', u: 'Used for: revealing secrets and puzzle clues' }
+    { t: 'Distraction', svg: 'distract', d: 'With no combat, threats are handled by wit. Sueño knocks over trash cans to distract foes and scares away stray cats and birds.', u: 'Used for: stealth and avoiding hazards' },
+    { t: 'Imagination', img: 'zoelie/trailer-41.jpg', d: 'Wherever Sueño flies, the world transforms: buildings glow with graffiti, magic grass sprouts, and hidden objects and maps are revealed.', u: 'Used for: revealing secrets and puzzle clues' }
   ];
   var btns = host.querySelectorAll('[role=tab]');
   var img = host.querySelector('.zoe-forms__img img');
   var h = host.querySelector('h3'), p = host.querySelector('.bb-prose'), u = host.querySelector('.zoe-forms__use');
+  // Forms that never appear in public footage get a simple diagram instead of
+  // a mismatched screenshot.
+  var SVG = {
+    rope: '<path d="M60 40h120v40H60z"/><path class="q" d="M150 80c-8 30 8 50 0 80s8 50 0 80"/><circle cx="150" cy="170" r="9"/><path d="M150 180v30m-14-20 14 8 14-8m-26 46 12-18 12 18"/><path class="d" d="M120 250h140"/>',
+    tramp: '<path class="q" d="M70 250q90 26 180 0"/><path d="M80 252v20m160-20v20"/><path class="d" d="M160 238q-10-110 40-170"/><circle cx="205" cy="62" r="9"/><path d="M205 72v26m-14-16 14 8 14-8m-26 34 12-18 12 18"/>',
+    distract: '<path d="M70 150h50l-6 100H76z"/><path d="M64 150h62"/><path class="q" d="M135 120c20-10 40 10 60 0"/><path class="d" d="M140 130q30-40 70-30"/><path d="M230 210c10-6 20-6 30 0m-36-22c16-10 32-10 48 0"/><circle cx="250" cy="250" r="9"/><path d="M228 250h-12m56 0h12"/>'
+  };
+  var svgBox = host.querySelector('.zoe-forms__svg');
   function show(i) {
     var f = F[i];
+    if (f.svg) {
+      svgBox.innerHTML = '<svg viewBox="40 30 260 250" aria-hidden="true">' + SVG[f.svg] + '</svg><small>Diagram · not in public footage</small>';
+      svgBox.hidden = false; img.alt = '';
+    } else svgBox.hidden = true;
     btns.forEach(function (b, j) { b.setAttribute('aria-selected', j === i ? 'true' : 'false'); b.tabIndex = j === i ? 0 : -1; });
     img.classList.add('is-swap');
     var n = new Image();
     n.onload = n.onerror = function () { img.src = n.src; img.alt = f.t; img.classList.remove('is-swap'); };
-    n.src = bb.asset(f.img);
+    if (f.img) n.src = bb.asset(f.img); else img.classList.remove('is-swap');
     h.textContent = f.t; p.textContent = f.d; u.textContent = f.u;
   }
   btns.forEach(function (b, i) {
