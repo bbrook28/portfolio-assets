@@ -246,7 +246,10 @@
     function vid(i) { return media[i].querySelector('video'); }
     function slideDur(i) { return S[i].yt || vid(i) ? 12000 : DUR; }
     hero.querySelectorAll('.home-clip video').forEach(function (v) {
-      v.addEventListener('playing', function () { v.parentNode.classList.add('is-playing'); });
+      var tm;
+      v.setAttribute('disablepictureinpicture', ''); v.setAttribute('disableremoteplayback', '');
+      v.addEventListener('playing', function () { clearTimeout(tm); tm = setTimeout(function () { v.parentNode.classList.add('is-playing'); }, 1000); });
+      ['waiting', 'pause', 'stalled'].forEach(function (ev) { v.addEventListener(ev, function () { clearTimeout(tm); v.parentNode.classList.remove('is-playing'); }); });
     });
     // Official trailers play muted behind the still, fading in once they're running.
     function stopTrailer() { if (yt) { var old = yt; old.classList.remove('is-on'); setTimeout(function () { old.remove(); }, 1200); yt = null; } }
