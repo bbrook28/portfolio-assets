@@ -48,21 +48,32 @@
     <div class="bb-container">
       <div class="bb-split" style="align-items:end">
         <div class="bb-reveal">
-          <p class="bb-kicker">Interactive · Polarity</p>
-          <h2 class="bb-h2" style="margin-bottom:0">Pull together, <em>push</em> apart.</h2>
+          <p class="bb-kicker">Interactive · Three pocket puzzles</p>
+          <h2 class="bb-h2" style="margin-bottom:0">Line up, then <em>pull</em> or push.</h2>
         </div>
-        <p class="bb-prose bb-reveal" style="--d:.1s">Drag either robot, then flip the polarity. Attract closes the gap; repel throws them apart. The magnets only engage when the pair face each other within range, the same rule that made every gap and wall in the levels a question of positioning.</p>
+        <p class="bb-prose bb-reveal" style="--d:.1s">Neither robot can cross a hole or open a door alone. Whoever you control keeps its magnet planted and its partner moves, pulled in or thrown away, but only when they're lined up in range with nothing solid between them. Get both robots onto the green exits.</p>
       </div>
       <div class="bp-toy bb-reveal" data-bp-toy>
-        <canvas aria-label="Polarity demo: drag the robots and toggle attract or repel"></canvas>
+        <div class="bp-toy__top"><span class="bp-toy__level"></span><span class="bp-toy__state" aria-live="polite"></span></div>
+        <canvas tabindex="0" aria-label="Puzzle demo: move Beepo and Pogo on a tile grid and use pull or push to cross holes and hold doors open"></canvas>
         <div class="bp-toy__hud">
-          <div class="bp-toy__modes" role="radiogroup" aria-label="Magnet mode">
-            <button type="button" role="radio" data-m="0">Off</button>
-            <button type="button" role="radio" data-m="1">Attract</button>
-            <button type="button" role="radio" data-m="-1">Repel</button>
+          <div class="bp-toy__group" role="group" aria-label="Robot you control">
+            <button type="button" data-bot="0" class="is-beepo">Beepo</button>
+            <button type="button" data-bot="1" class="is-pogo">Pogo</button>
           </div>
-          <span class="bp-toy__state" aria-live="polite"></span>
+          <div class="bp-toy__group bp-toy__pad" role="group" aria-label="Move">
+            <button type="button" data-dir="-1,0" aria-label="Left">←</button>
+            <button type="button" data-dir="0,-1" aria-label="Up">↑</button>
+            <button type="button" data-dir="0,1" aria-label="Down">↓</button>
+            <button type="button" data-dir="1,0" aria-label="Right">→</button>
+          </div>
+          <div class="bp-toy__group" role="group" aria-label="Magnets">
+            <button type="button" data-act="pull" class="is-main">Pull</button>
+            <button type="button" data-act="push" class="is-main">Push</button>
+            <button type="button" data-act="reset">Reset</button>
+          </div>
         </div>
+        <p class="bp-toy__how"><kbd>WASD</kbd> Beepo · <kbd>Arrows</kbd> Pogo · <kbd>Space</kbd> pull · <kbd>E</kbd> push · <kbd>R</kbd> reset · or tap a robot, then tap where to step</p>
       </div>
     </div>
   </section>
@@ -154,93 +165,211 @@
 .bp-board li:hover { transform: rotate(0) translateY(-3px); }
 .bp-board li.is-pick { background: color-mix(in srgb, var(--bb-accent) 16%, #14161a); border-color: var(--bb-accent); color: #fff; font-weight: 500; box-shadow: 0 10px 30px -14px var(--bb-accent); }
 .bp-toy { margin-top: 40px; border: 1px solid var(--bb-line); border-radius: var(--bb-radius); overflow: hidden; background: #0b1016; }
-.bp-toy canvas { display: block; width: 100%; aspect-ratio: 16 / 6; touch-action: none; cursor: grab; }
-.bp-toy__hud { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; padding: 16px 18px; border-top: 1px solid var(--bb-line); }
-.bp-toy__modes { display: flex; gap: 8px; }
-.bp-toy__modes button { padding: 10px 18px; border-radius: 999px; border: 1px solid var(--bb-line-strong); background: transparent; color: var(--bb-muted); font: 600 13px/1 var(--bb-sans); cursor: pointer; transition: all .25s; }
-.bp-toy__modes button[aria-checked="true"] { background: var(--bb-accent); border-color: var(--bb-accent); color: #0b0b0b; }
-.bp-toy__state { font-size: 13px; color: var(--bb-muted); }
-@media (max-width: 720px) { .bp-toy canvas { aspect-ratio: 4 / 3; } }
+.bp-toy canvas { display: block; width: 100%; aspect-ratio: 13 / 7; touch-action: manipulation; cursor: pointer; user-select: none; -webkit-user-select: none; }
+.bp-toy canvas:focus-visible { outline: 2px solid var(--bb-accent); outline-offset: -2px; }
+.bp-toy__top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; padding: 14px 18px; border-bottom: 1px solid var(--bb-line); font-size: 13px; }
+.bp-toy__level { font-weight: 600; color: var(--bb-text); }
+.bp-toy__state { color: var(--bb-muted); }
+.bp-toy__hud { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-top: 1px solid var(--bb-line); }
+.bp-toy__group { display: flex; gap: 8px; }
+.bp-toy__group button { min-width: 44px; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--bb-line-strong); background: transparent; color: var(--bb-muted); font: 600 13px/1 var(--bb-sans); cursor: pointer; transition: all .2s; }
+.bp-toy__group button:hover { color: var(--bb-text); border-color: var(--bb-accent); }
+.bp-toy__group button:active { transform: scale(.95); }
+.bp-toy__pad button { padding: 0; font-size: 16px; }
+.bp-toy__group .is-main { color: var(--bb-text); }
+.bp-toy__group .is-beepo[aria-pressed="true"] { background: #4fb8ff; border-color: #4fb8ff; color: #0b0b0b; }
+.bp-toy__group .is-pogo[aria-pressed="true"] { background: #ff6b6b; border-color: #ff6b6b; color: #0b0b0b; }
+.bp-toy__how { margin: 0; padding: 0 18px 14px; font-size: 12px; color: var(--bb-muted); }
+.bp-toy__how kbd { font: 600 11px var(--bb-sans); padding: 2px 6px; border: 1px solid var(--bb-line-strong); border-radius: 4px; color: var(--bb-text); }
+@media (hover: none) { .bp-toy__how { display: none; } }
+@media (max-width: 560px) { .bp-toy__hud { justify-content: center; } .bp-toy__group button { padding: 0 12px; } }
 </style>
 
 <script>
 (window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
   var host = root.querySelector('[data-bp-toy]');
   if (!host) return;
-  var cv = host.querySelector('canvas'), ctx = cv.getContext('2d'), stateEl = host.querySelector('.bp-toy__state');
-  var W, H, dpr = Math.min(2, window.devicePixelRatio || 1), mode = 0, drag = null, t = 0, running = false;
-  var R = 22, RANGE = 0.75;
-  var bots = [{ x: 0, y: 0, vx: 0, vy: 0, col: '#4fb8ff', name: 'Beepo' }, { x: 0, y: 0, vx: 0, vy: 0, col: '#ff6b6b', name: 'Pogo' }];
-  var modes = host.querySelectorAll('[data-m]');
-  function setMode(m) { mode = m; modes.forEach(function (b) { b.setAttribute('aria-checked', +b.getAttribute('data-m') === m ? 'true' : 'false'); }); }
-  modes.forEach(function (b) { b.addEventListener('click', function () { setMode(+b.getAttribute('data-m')); }); });
-  setMode(1);
+  var cv = host.querySelector('canvas'), ctx = cv.getContext('2d');
+  var stateEl = host.querySelector('.bp-toy__state'), levelEl = host.querySelector('.bp-toy__level');
+  var W, H, S, dpr = Math.min(2, window.devicePixelRatio || 1), running = false, t = 0;
+  // # wall · . floor · o hole · _ button · D door (open while any button is held) · E exit · B/P start
+  var LEVELS = [
+    { name: 'Mind the gap', hint: 'Line them up across the hole, then pull.', map: [
+      '#############',
+      '#.....oo....#',
+      '#.B...oo..E.#',
+      '#.....oo....#',
+      '#.....oo.P..#',
+      '#.....oo..E.#',
+      '#############'] },
+    { name: 'Launch pad', hint: 'Only one of them can be thrown. The other has to open the door.', map: [
+      '#############',
+      '#.....#...E.#',
+      '#.....D...E.#',
+      '#.BPoooo....#',
+      '#.....#.....#',
+      '#.....#.._..#',
+      '#############'] },
+    { name: 'Hold the door', hint: 'Push through the open door, then pull your partner after you.', map: [
+      '#############',
+      '#.....#.....#',
+      '#_P...Dooo._#',
+      '#.....#.....#',
+      '#..B..#..EE.#',
+      '#.....#.....#',
+      '#############'] }
+  ];
+  var COLS = 13, ROWS = 7, RANGE = 7;
+  var lv, grid, bots, sel, busy, fx, won;
+  function load(i) {
+    lv = i; grid = LEVELS[i].map.map(function (r) { return r.split(''); });
+    bots = [];
+    grid.forEach(function (row, y) { row.forEach(function (ch, x) {
+      if (ch === 'B' || ch === 'P') { bots[ch === 'B' ? 0 : 1] = { x: x, y: y, dx: x, dy: y, fall: 0 }; row[x] = '.'; }
+    }); });
+    bots[0].col = '#4fb8ff'; bots[0].name = 'Beepo'; bots[1].col = '#ff6b6b'; bots[1].name = 'Pogo';
+    busy = false; fx = null; won = false; select(sel || 0);
+    levelEl.textContent = 'Puzzle ' + (i + 1) + ' of ' + LEVELS.length + ' · ' + LEVELS[i].name;
+    say(LEVELS[i].hint);
+  }
+  function say(s) { stateEl.textContent = s; }
+  function tile(x, y) { return y < 0 || y >= ROWS || x < 0 || x >= COLS ? '#' : grid[y][x]; }
+  function doorsOpen() { return bots.some(function (b) { return tile(b.x, b.y) === '_'; }); }
+  function solid(x, y) { var c = tile(x, y); return c === '#' || (c === 'D' && !doorsOpen()); }
+  function botAt(x, y) { return bots.filter(function (b) { return b.x === x && b.y === y; })[0]; }
+  var selBtns = host.querySelectorAll('[data-bot]');
+  function select(i) { sel = i; selBtns.forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-bot') === i ? 'true' : 'false'); }); }
+  selBtns.forEach(function (b) { b.addEventListener('click', function () { select(+b.getAttribute('data-bot')); }); });
+
+  function walk(i, dx, dy) {
+    if (busy || won) return;
+    select(i);
+    var b = bots[i], nx = b.x + dx, ny = b.y + dy;
+    if (solid(nx, ny) || botAt(nx, ny)) return say(tile(nx, ny) === 'D' ? 'The door is powered shut. Someone has to hold a button.' : 'Blocked.');
+    if (tile(nx, ny) === 'o') return say(b.name + " can't walk over holes. Magnets can carry you across.");
+    b.x = nx; b.y = ny; after();
+  }
+  // Magnets: the robot you're controlling stays planted and its partner moves.
+  // They engage only when lined up in a row or column, in range, with nothing solid between.
+  function magnet(dir) {
+    if (busy || won) return;
+    var me = bots[sel], o = bots[1 - sel], dx = Math.sign(o.x - me.x), dy = Math.sign(o.y - me.y);
+    if (me.x !== o.x && me.y !== o.y) return say('Not lined up. Get them in the same row or column first.');
+    var gap = Math.abs(o.x - me.x) + Math.abs(o.y - me.y);
+    if (gap > RANGE) return say('Too far apart for the magnets to engage.');
+    for (var k = 1; k < gap; k++) if (solid(me.x + dx * k, me.y + dy * k)) return say('Something solid is between them.');
+    var path = [], x = o.x, y = o.y, sx = dir > 0 ? -dx : dx, sy = dir > 0 ? -dy : dy;
+    while (true) {
+      var nx = x + sx, ny = y + sy;
+      if (solid(nx, ny) || (nx === me.x && ny === me.y)) break;
+      x = nx; y = ny; path.push([x, y]);
+    }
+    fx = { a: me, b: o, dir: dir, t: 0 };
+    if (!path.length) return say(dir > 0 ? 'Already touching. Clank.' : 'Nowhere to go: pinned against a wall.');
+    busy = true;
+    var i = 0;
+    (function hop() {
+      o.x = path[i][0]; o.y = path[i][1]; i++;
+      if (i < path.length) return setTimeout(hop, 55);
+      busy = false;
+      if (tile(o.x, o.y) === 'o') { o.fall = 1; say(o.name + ' landed on a hole. Resetting…'); busy = true; setTimeout(function () { load(lv); }, 900); return; }
+      say(dir > 0 ? 'Clank. Joined together.' : 'Whoosh.'); after();
+    })();
+  }
+  function after() {
+    var onExit = bots.filter(function (b) { return tile(b.x, b.y) === 'E'; }).length;
+    if (onExit === 2) {
+      won = true;
+      say(lv < LEVELS.length - 1 ? 'Both robots home. Next puzzle…' : 'All three solved. Nice teamwork.');
+      setTimeout(function () { load((lv + 1) % LEVELS.length); }, lv < LEVELS.length - 1 ? 1300 : 3200);
+    } else if (onExit === 1) say('One robot home. The exit only opens for both.');
+  }
+  host.querySelector('[data-act="pull"]').addEventListener('click', function () { magnet(1); });
+  host.querySelector('[data-act="push"]').addEventListener('click', function () { magnet(-1); });
+  host.querySelector('[data-act="reset"]').addEventListener('click', function () { load(lv); });
+  host.querySelectorAll('[data-dir]').forEach(function (b) {
+    b.addEventListener('click', function () { var d = b.getAttribute('data-dir').split(','); walk(sel, +d[0], +d[1]); });
+  });
+  var KEYS = { KeyW: [0, 0, -1], KeyS: [0, 0, 1], KeyA: [0, -1, 0], KeyD: [0, 1, 0], ArrowUp: [1, 0, -1], ArrowDown: [1, 0, 1], ArrowLeft: [1, -1, 0], ArrowRight: [1, 1, 0] };
+  cv.addEventListener('keydown', function (e) {
+    var k = KEYS[e.code];
+    if (k) { walk(k[0], k[1], k[2]); e.preventDefault(); }
+    else if (e.code === 'Space') { magnet(1); e.preventDefault(); }
+    else if (e.code === 'KeyE' || e.code === 'ShiftLeft' || e.code === 'ShiftRight') { magnet(-1); e.preventDefault(); }
+    else if (e.code === 'KeyR') load(lv);
+  });
+  // Tap a robot to take control of it; tap elsewhere to step toward that spot.
+  cv.addEventListener('pointerdown', function (e) {
+    cv.focus({ preventScroll: true });
+    var r = cv.getBoundingClientRect(), gx = Math.floor((e.clientX - r.left - OX) / S), gy = Math.floor((e.clientY - r.top - OY) / S);
+    var hit = bots.indexOf(botAt(gx, gy));
+    if (hit >= 0) { select(hit); say(bots[hit].name + ' selected. Its magnet stays planted; the partner moves.'); return; }
+    var b = bots[sel], ddx = gx - b.x, ddy = gy - b.y;
+    if (!ddx && !ddy) return;
+    if (Math.abs(ddx) >= Math.abs(ddy)) walk(sel, Math.sign(ddx), 0); else walk(sel, 0, Math.sign(ddy));
+  });
+
+  var OX = 0, OY = 0;
   function size() {
     var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
     cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    bots[0].x = W * .3; bots[0].y = H * .55; bots[1].x = W * .7; bots[1].y = H * .45;
+    S = Math.floor(Math.min(W / COLS, H / ROWS)); OX = (W - S * COLS) / 2; OY = (H - S * ROWS) / 2;
   }
-  function pos(e) { var r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
-  cv.addEventListener('pointerdown', function (e) {
-    var p = pos(e);
-    bots.forEach(function (b) { if (Math.hypot(p.x - b.x, p.y - b.y) < R * 1.6) drag = b; });
-    if (drag) { cv.setPointerCapture(e.pointerId); cv.style.cursor = 'grabbing'; }
-  });
-  cv.addEventListener('pointermove', function (e) { if (!drag) return; var p = pos(e); drag.vx = (p.x - drag.x) * .3; drag.vy = (p.y - drag.y) * .3; drag.x = p.x; drag.y = p.y; });
-  cv.addEventListener('pointerup', function () { drag = null; cv.style.cursor = 'grab'; });
-  function step() {
-    var a = bots[0], b = bots[1], dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy) || 1;
-    var inRange = d < Math.max(W, H) * RANGE;
-    if (mode !== 0 && inRange) {
-      var f = mode * Math.min(1.4, 900 / (d * d) * 40) * (mode > 0 ? 1 : 1.6);
-      var fx = dx / d * f, fy = dy / d * f;
-      if (a !== drag) { a.vx += fx; a.vy += fy; }
-      if (b !== drag) { b.vx -= fx; b.vy -= fy; }
-    }
-    bots.forEach(function (o) {
-      if (o === drag) return;
-      o.x += o.vx; o.y += o.vy; o.vx *= .9; o.vy *= .9;
-      if (o.x < R) { o.x = R; o.vx *= -.5; } if (o.x > W - R) { o.x = W - R; o.vx *= -.5; }
-      if (o.y < R) { o.y = R; o.vy *= -.5; } if (o.y > H - R) { o.y = H - R; o.vy *= -.5; }
-    });
-    // keep them from overlapping: they clank and stop
-    dx = b.x - a.x; dy = b.y - a.y; d = Math.hypot(dx, dy) || 1;
-    if (d < R * 2) { var push = (R * 2 - d) / 2; a.x -= dx / d * push; a.y -= dy / d * push; b.x += dx / d * push; b.y += dy / d * push; a.vx = a.vy = b.vx = b.vy = 0; }
-    stateEl.textContent = mode === 0 ? 'Magnets off' : !inRange ? 'Too far apart to engage' : d < R * 2.2 ? 'Clank. Joined together.' : mode > 0 ? 'Attracting' : 'Repelling';
-    t += 1;
-  }
-  function bot(o, faceX, faceY) {
-    ctx.save(); ctx.translate(o.x, o.y);
-    ctx.fillStyle = '#1d2530'; ctx.strokeStyle = o.col; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.arc(0, 0, R, 0, 6.283); ctx.fill(); ctx.stroke();
-    var ang = Math.atan2(faceY, faceX);
-    ctx.rotate(ang);
-    ctx.fillStyle = '#c9ced6'; ctx.fillRect(R - 6, -10, 10, 20);
-    ctx.fillStyle = o.col; ctx.fillRect(R + 2, -10, 4, 20);
-    ctx.restore();
-    ctx.fillStyle = '#cfd6df'; ctx.font = '600 11px Inter, sans-serif'; ctx.textAlign = 'center'; ctx.fillText(o.name, o.x, o.y + R + 16);
-  }
+  function rr(x, y, w, h, rad) { ctx.beginPath(); ctx.roundRect ? ctx.roundRect(x, y, w, h, rad) : ctx.rect(x, y, w, h); }
   function draw() {
     ctx.clearRect(0, 0, W, H);
-    ctx.strokeStyle = 'rgba(111,211,255,.06)';
-    for (var gx = 0; gx < W; gx += 28) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke(); }
-    for (var gy = 0; gy < H; gy += 28) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke(); }
-    var a = bots[0], b = bots[1], dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy) || 1;
-    if (mode !== 0 && d < Math.max(W, H) * RANGE) {
-      ctx.save();
-      ctx.strokeStyle = mode > 0 ? 'rgba(111,211,255,.55)' : 'rgba(255,120,120,.5)';
-      ctx.lineWidth = 2; ctx.setLineDash([6, 10]); ctx.lineDashOffset = -t * (mode > 0 ? 1.5 : -1.5);
-      for (var k = -2; k <= 2; k++) {
-        var nx = -dy / d * k * 9, ny = dx / d * k * 9;
-        ctx.beginPath(); ctx.moveTo(a.x + nx, a.y + ny);
-        ctx.quadraticCurveTo((a.x + b.x) / 2 + nx * 2.2, (a.y + b.y) / 2 + ny * 2.2, b.x + nx, b.y + ny); ctx.stroke();
+    var open = doorsOpen();
+    for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) {
+      var c = grid[y][x], px = OX + x * S, py = OY + y * S;
+      if (c === '#') { ctx.fillStyle = '#26303c'; rr(px + 1, py + 1, S - 2, S - 2, 3); ctx.fill(); ctx.fillStyle = '#323e4d'; ctx.fillRect(px + 1, py + 1, S - 2, 3); continue; }
+      if (c === 'o') {
+        var g = ctx.createLinearGradient(0, py, 0, py + S); g.addColorStop(0, '#000'); g.addColorStop(1, '#0a0e13');
+        ctx.fillStyle = g; ctx.fillRect(px, py, S, S); continue;
       }
-      ctx.restore();
+      ctx.fillStyle = (x + y) % 2 ? '#141b24' : '#17202a'; ctx.fillRect(px, py, S, S);
+      if (c === 'E') {
+        ctx.strokeStyle = 'rgba(126,240,170,' + (.45 + .25 * Math.sin(t / 14)) + ')'; ctx.lineWidth = 2; rr(px + 5, py + 5, S - 10, S - 10, 4); ctx.stroke();
+        ctx.fillStyle = 'rgba(126,240,170,.12)'; ctx.fill();
+      } else if (c === '_') {
+        var held = !!botAt(x, y);
+        ctx.fillStyle = held ? '#ffd166' : '#5a4a22'; ctx.beginPath(); ctx.arc(px + S / 2, py + S / 2, S * .28, 0, 6.283); ctx.fill();
+        ctx.strokeStyle = '#ffd166'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(px + S / 2, py + S / 2, S * .36, 0, 6.283); ctx.stroke();
+      } else if (c === 'D') {
+        ctx.fillStyle = open ? 'rgba(255,209,102,.12)' : 'rgba(255,209,102,.75)';
+        for (var k = 0; k < 3; k++) ctx.fillRect(px + S * (.2 + k * .25), py + 2, S * .1, S - 4);
+      }
     }
-    bot(a, dx, dy); bot(b, -dx, -dy);
+    // show when the pair can engage: that's the read the player plans around
+    var me = bots[sel], o = bots[1 - sel];
+    if (me.x === o.x || me.y === o.y) {
+      var gap = Math.abs(o.x - me.x) + Math.abs(o.y - me.y), dx = Math.sign(o.x - me.x), dy = Math.sign(o.y - me.y), clear = gap <= RANGE;
+      for (var q = 1; q < gap && clear; q++) if (solid(me.x + dx * q, me.y + dy * q)) clear = false;
+      if (clear) {
+        ctx.save(); ctx.strokeStyle = fx && fx.t < 30 ? (fx.dir > 0 ? 'rgba(111,211,255,.9)' : 'rgba(255,120,120,.9)') : 'rgba(111,211,255,.3)';
+        ctx.lineWidth = 2; ctx.setLineDash([5, 8]); ctx.lineDashOffset = -t * (fx && fx.dir < 0 ? -1.5 : 1.5);
+        for (var m = -1; m <= 1; m++) {
+          var ax = OX + (me.x + .5) * S, ay = OY + (me.y + .5) * S, bx = OX + (o.x + .5) * S, by = OY + (o.y + .5) * S, nx = -dy * m * S * .18, ny = dx * m * S * .18;
+          ctx.beginPath(); ctx.moveTo(ax + nx * .4, ay + ny * .4); ctx.quadraticCurveTo((ax + bx) / 2 + nx * 1.6, (ay + by) / 2 + ny * 1.6, bx + nx * .4, by + ny * .4); ctx.stroke();
+        }
+        ctx.restore();
+      }
+    }
+    bots.forEach(function (b, i) {
+      b.dx += (b.x - b.dx) * .4; b.dy += (b.y - b.dy) * .4;
+      if (b.fall) b.fall = Math.min(2, b.fall + .04);
+      var sc = b.fall ? Math.max(0, 2 - b.fall) : 1, cx = OX + (b.dx + .5) * S, cy = OY + (b.dy + .5) * S, R = S * .34 * sc;
+      if (R <= 0) return;
+      var p = bots[1 - i], ang = Math.atan2(p.dy - b.dy, p.dx - b.dx);
+      if (i === sel) { ctx.strokeStyle = 'rgba(255,255,255,.55)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(cx, cy, R + 5, 0, 6.283); ctx.stroke(); }
+      ctx.fillStyle = '#1d2530'; ctx.strokeStyle = b.col; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.283); ctx.fill(); ctx.stroke();
+      ctx.save(); ctx.translate(cx, cy); ctx.rotate(ang);
+      ctx.fillStyle = '#c9ced6'; ctx.fillRect(R - 5, -R * .45, 7, R * .9); ctx.fillStyle = b.col; ctx.fillRect(R + 2, -R * .45, 3, R * .9);
+      ctx.restore();
+    });
+    if (fx) fx.t++;
   }
-  function loop() { if (!running) return; step(); draw(); requestAnimationFrame(loop); }
-  size(); draw();
+  function loop() { if (!running) return; t++; draw(); requestAnimationFrame(loop); }
+  size(); load(0); draw();
   window.addEventListener('resize', size);
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (en) { var v = en[0].isIntersecting; if (v && !running) { running = true; requestAnimationFrame(loop); } else if (!v) running = false; }).observe(host);
