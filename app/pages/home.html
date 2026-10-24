@@ -8,7 +8,7 @@
       <img data-bb-src="behemoth/arch-1.jpg" alt="">
       <img data-bb-src="covers/twd.jpg" alt="">
       <img data-bb-src="lonestar/shot-02.jpg" alt="">
-      <video muted loop playsinline preload="none" data-bb-poster="zoelie/4.jpg" data-bb-src="zoelie/hero-loop.mp4"></video>
+      <video muted loop playsinline preload="none" data-bb-poster="zoelie/4.jpg" data-bb-src="zoelie/hero-loop.mp4" data-bb-src-m="zoelie/hero-loop-m.mp4"></video>
     </div>
     <div class="bb-container bb-hero__inner">
       <a class="home-launch" href="/projects/maplestory-classic"><i></i><span data-home-countdown>Forgotten Hollow opens November 18</span></a>
@@ -260,9 +260,15 @@
       box._frame = frame;
       sizeTrailer();
     }
+    var lastW = 0, lastH = 0;
     function sizeTrailer() {
       if (!yt) return;
-      var W = reel.clientWidth, H = reel.clientHeight, w = Math.max(W, H * 16 / 9) * 1.18;
+      var W = reel.clientWidth, H = reel.clientHeight;
+      // Mobile browser bars change the height while scrolling; only resize
+      // for real width changes or meaningful height growth.
+      if (W === lastW && Math.abs(H - lastH) < 160 && yt.querySelector('iframe').style.width) return;
+      lastW = W; lastH = H;
+      var w = Math.max(W, H * 16 / 9) * 1.18;
       var f = yt.querySelector('iframe'); f.style.width = w + 'px'; f.style.height = (w * 9 / 16) + 'px';
     }
     window.addEventListener('resize', sizeTrailer);
