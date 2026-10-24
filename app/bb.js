@@ -347,6 +347,23 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
     update();
   }
+  function initQuietVideos(root) {
+    root.querySelectorAll('video:not([controls])').forEach(function (v) {
+      if (v.closest('.home-clip')) return;
+      v.setAttribute('disablepictureinpicture', ''); v.setAttribute('disableremoteplayback', '');
+      var poster = v.getAttribute('poster');
+      if (poster) {
+        var host = v.parentNode;
+        host.style.backgroundImage = 'url("' + poster + '")';
+        host.style.backgroundSize = 'cover'; host.style.backgroundPosition = 'center';
+        v.removeAttribute('poster');
+      }
+      v.style.transition = 'opacity .6s ease'; v.style.opacity = '0';
+      var t;
+      v.addEventListener('playing', function () { clearTimeout(t); t = setTimeout(function () { v.style.opacity = '1'; }, 1000); });
+      ['waiting', 'pause', 'stalled'].forEach(function (ev) { v.addEventListener(ev, function () { clearTimeout(t); v.style.opacity = '0'; }); });
+    });
+  }
   function initNoZoom(root) {
     root.querySelectorAll('[data-bp-toy], [data-buba-toy], [data-wm-toy]').forEach(function (el) {
       var last = 0;
@@ -605,6 +622,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     initForms(root);
     initLive(root);
     initNoZoom(root);
+    initQuietVideos(root);
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
