@@ -268,7 +268,7 @@
       // for real width changes or meaningful height growth.
       if (W === lastW && Math.abs(H - lastH) < 160 && yt.querySelector('iframe').style.width) return;
       lastW = W; lastH = H;
-      var w = Math.max(W, H * 16 / 9) * 1.18;
+      var w = Math.max(W, H * 16 / 9) * 1.3;
       var f = yt.querySelector('iframe'); f.style.width = w + 'px'; f.style.height = (w * 9 / 16) + 'px';
     }
     window.addEventListener('resize', sizeTrailer);
@@ -277,7 +277,9 @@
       if (e.source !== yt._frame.contentWindow) return;
       var d; try { d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (err) { return; }
       var st = d && d.info && d.info.playerState;
-      if (st === 1) { var box = yt; setTimeout(function () { if (yt === box) box.classList.add('is-on'); }, 600); }
+      // YouTube shows its title bar and controls for the first ~3 s of play
+      // even with controls=0, so keep the still up until they've faded.
+      if (st === 1 && !yt._shown) { var box = yt; box._shown = true; setTimeout(function () { if (yt === box) box.classList.add('is-on'); }, 3200); }
     });
     S.forEach(function (s, i) {
       var b = document.createElement('button');
