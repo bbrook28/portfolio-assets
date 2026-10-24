@@ -8,7 +8,7 @@
       <p class="bb-kicker">Nexon America · New region · 2026</p>
       <p class="fh-game">MapleStory Classic World</p>
       <h1 class="bb-display"><span class="bb-sr">MapleStory Classic World: </span>Forgotten<br><em>Hollow</em></h1>
-      <p class="bb-hero__sub">A lost fairy homeland buried beneath Ellinia. The first brand-new region built exclusively for MapleStory Classic World. I took it from initial concept to launch: every map, quest, NPC, and monster placement.</p>
+      <p class="bb-hero__sub">A lost fairy homeland buried beneath Ellinia. The first brand-new region built exclusively for MapleStory Classic World. After the initial concept, I took it to launch: every map, quest, NPC, and monster placement.</p>
       <dl class="bb-hero__meta">
         <div><dt>Role</dt><dd>Game Designer · Region Owner</dd></div>
         <div><dt>Studio</dt><dd>Nexon America</dd></div>
@@ -577,6 +577,14 @@
   function show(i, fromUser) {
     current = (i + data.maps.length) % data.maps.length;
     var m = data.maps[current], reg = data.regions[m.region];
+    if (window.bbAchieve) {
+      if (fromUser && m.id === 'someone-elses-grave') window.bbAchieve('grave');
+      try {
+        var seen = JSON.parse(localStorage.getItem('bb-fh-maps') || '{}'); seen[m.id] = 1;
+        localStorage.setItem('bb-fh-maps', JSON.stringify(seen));
+        if (data.maps.every(function (x) { return seen[x.id]; })) window.bbAchieve('cartographer');
+      } catch (e) {}
+    }
     host.style.setProperty('--fh-c', reg.color);
     buttons.forEach(function (b, j) {
       b.classList.toggle('is-active', j === current);

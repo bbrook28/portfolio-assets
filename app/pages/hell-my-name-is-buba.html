@@ -296,6 +296,7 @@
     booms.forEach(function (b) { b.t++; }); booms = booms.filter(function (b) { return b.t < 22; });
     if (flash) flash--;
     var pct = Math.round(reach * 100);
+    if (pct < 12 && shells.length && window.bbAchieve) window.bbAchieve('boxed');
     meter.style.width = pct + "%"; meter.parentNode.setAttribute("aria-valuenow", pct);
     stats.textContent = pct < 12 ? 'Boxed in. Blast a shell to break out.'
       : shells.length + ' shells · ' + pct + '% of the floor in reach · ' + kills + ' damned · ' + hits + ' hits';

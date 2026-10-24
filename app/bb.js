@@ -1,4 +1,4 @@
-window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\">Ben Brook<em>.</em></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/\" data-path=\"/\">Home</a>\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-btn\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9 \u2197</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn \u2197</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io \u2197</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <div class=\"bb-footer__cta\">\n      <div>\n        <p class=\"bb-kicker\">Open to conversations</p>\n        <h2 class=\"bb-footer__big\">Let\u2019s build<br><em>worlds</em> together.</h2>\n        <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n      <a class=\"bb-btn\" href=\"/contact\">Get in touch <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 12 12 4M5 4h7v7\"/></svg></a>\n    </div>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Game &amp; Level Designer \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n      <span class=\"bb-footer__status\">Game Designer at Nexon America</span>\n    </div>\n  </div>\n</footer>\n"};
+window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\">Ben Brook<em>.</em></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/\" data-path=\"/\">Home</a>\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-btn\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9 \u2197</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn \u2197</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io \u2197</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <div class=\"bb-footer__cta\">\n      <div>\n        <p class=\"bb-kicker\">Open to conversations</p>\n        <h2 class=\"bb-footer__big\">Let\u2019s build<br><em>worlds</em> together.</h2>\n        <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n      <a class=\"bb-btn\" href=\"/contact\">Get in touch <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 12 12 4M5 4h7v7\"/></svg></a>\n    </div>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Game &amp; Level Designer \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n      <span class=\"bb-footer__status\">Game Designer at Nexon America<span class=\"bb-footer__updated\" data-bb-updated></span></span>\n    </div>\n  </div>\n</footer>\n"};window.BB_UPDATED="October 2026";
 (function () {
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -650,9 +650,84 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initIntro, initProgress, initTop, initToc, initCardPreview, initSplit, initMotes, initPointerFx, initImageParallax].forEach(function (fn) {
+    [initIntro, initProgress, initTop, initToc, initCardPreview, initSplit, initMotes, initPointerFx, initImageParallax, initAchievements, initKonami, initUpdated].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
+  }
+  var ACH = {
+    grave: ['Grave Robber', 'Found Someone Else’s Grave on the Forgotten Hollow map.'],
+    cartographer: ['Cartographer', 'Visited every map in Forgotten Hollow.'],
+    joined: ['Joined Together', 'Solved all three Beepo & Pogo puzzles.'],
+    boxed: ['Boxed In', 'Trapped Buba behind his own shells.'],
+    completionist: ['Completionist', 'Visited every project page.'],
+    konami: ['Old School', '↑↑↓↓←→←→BA. Respect.']
+  };
+  var PROJECTS = ['fh', 'bs4', 'beh', 'twd', 'lst', 'zoe', 'bsi', 'wm', 'buba', 'bp'];
+  function store(k, v) {
+    try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || 'null'); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; }
+  }
+  var toastQ = [], toastBusy = false;
+  function bbAchieve(id) {
+    if (!ACH[id]) return;
+    var got = store('bb-ach') || {};
+    if (got[id]) return;
+    got[id] = Date.now(); store('bb-ach', got);
+    toastQ.push(id); if (!toastBusy) nextToast();
+  }
+  function nextToast() {
+    var id = toastQ.shift();
+    if (!id) { toastBusy = false; return; }
+    toastBusy = true;
+    var got = store('bb-ach') || {}, n = Object.keys(got).length, total = Object.keys(ACH).length;
+    var t = document.createElement('div');
+    t.className = 'bb-ach'; t.setAttribute('role', 'status');
+    t.innerHTML = '<span class="bb-ach__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h10v3h3v2a5 5 0 0 1-5 5h-.3A5 5 0 0 1 13 15.6V18h3v3H8v-3h3v-2.4A5 5 0 0 1 9.3 13H9a5 5 0 0 1-5-5V6h3zm0 5V8H6a3 3 0 0 0 1 2.2zm10 0v2.2A3 3 0 0 0 18 8z"/></svg></span>' +
+      '<span class="bb-ach__text"><small>Achievement unlocked · ' + n + '/' + total + '</small><strong>' + ACH[id][0] + '</strong><span>' + ACH[id][1] + '</span></span>';
+    document.body.appendChild(t);
+    requestAnimationFrame(function () { t.classList.add('is-on'); });
+    setTimeout(function () { t.classList.remove('is-on'); setTimeout(function () { t.remove(); nextToast(); }, 500); }, 4200);
+  }
+  window.bbAchieve = bbAchieve;
+  function initAchievements() {
+    var page = document.querySelector('.bb-page');
+    if (!page) return;
+    var key = PROJECTS.filter(function (k) { return page.classList.contains(k); })[0];
+    if (!key) return;
+    var seen = store('bb-seen') || {};
+    seen[key] = 1; store('bb-seen', seen);
+    if (PROJECTS.every(function (k) { return seen[k]; })) setTimeout(function () { bbAchieve('completionist'); }, 2500);
+  }
+  function initKonami() {
+    var seq = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'], pos = 0;
+    document.addEventListener('keydown', function (e) {
+      var k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+      pos = k === seq[pos] ? pos + 1 : (k === seq[0] ? 1 : 0);
+      if (pos < seq.length) return;
+      pos = 0; bbAchieve('konami');
+      if (reduceMotion) return;
+      var page = document.querySelector('.bb-page'), key = page && Object.keys(PAGE_THEME).filter(function (c) { return page.classList.contains(c); })[0];
+      var th = THEMES[PAGE_THEME[key]] || THEMES.spores;
+      var cv = document.createElement('canvas'); cv.className = 'bb-konami'; cv.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(cv);
+      var ctx = cv.getContext('2d'), W = cv.width = innerWidth, H = cv.height = innerHeight, t0 = performance.now(), ps = [];
+      for (var i = 0; i < 220; i++) { var q = { col: th.cols[i % th.cols.length], t: Math.random() * 6.28 }; th.spawn(q, W, H, true); q.vx *= 3; q.vy *= 3; ps.push(q); }
+      (function frame(now) {
+        var age = (now - t0) / 1000;
+        ctx.clearRect(0, 0, W, H);
+        ps.forEach(function (q) { q.x += q.vx; q.y += q.vy; q.t += .02; th.move(q, W, H); ctx.globalAlpha = Math.max(0, Math.min(1, q.a + .3) * Math.min(1, (6 - age) / 1.5)); ctx.fillStyle = ctx.strokeStyle = ctx.shadowColor = q.col; th.draw(ctx, q); });
+        if (age < 6) requestAnimationFrame(frame); else cv.remove();
+      })(t0);
+    });
+  }
+  function initConsole() {
+    try {
+      console.log('%cBen Brook%c.', 'font: 28px Georgia, serif; color: #f2ede4', 'font: 28px Georgia, serif; color: #e0b072');
+      console.log('%cHey, fellow dev 👋\nThis site is hand-built: a small design system and page components served from GitHub Pages into Squarespace.\nIf you’re hiring for level, quest or systems design, I’d love to talk: benbrookgames@gmail.com\n(Try ↑↑↓↓←→←→BA on a project page.)', 'font: 13px/1.6 system-ui, sans-serif; color: #b3aea5');
+    } catch (e) {}
+  }
+  function initUpdated() {
+    var el = document.querySelector('[data-bb-updated]');
+    if (el && window.BB_UPDATED) el.textContent = 'Updated ' + window.BB_UPDATED;
   }
   function addChrome() {
     var C = window.BB_CHROME;
@@ -694,6 +769,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     });
   }
   function boot() {
+    initConsole();
     addChrome();
     loadStubs(init);
   }
