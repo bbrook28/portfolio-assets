@@ -152,6 +152,7 @@
 .home-reel .home-clip.is-playing > video { opacity: 1; }
 .home-yt { position: absolute; inset: 0; overflow: hidden; opacity: 0; transition: opacity 1.2s ease; pointer-events: none; }
 .home-yt.is-on { opacity: 1; }
+.home-yt.is-cut { transition: none; opacity: 0; }
 .home-yt iframe { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: 0; pointer-events: none; }
 .home-launch { display: inline-flex; align-items: center; gap: 10px; margin-bottom: clamp(28px, 5vh, 56px); padding: 8px 16px 8px 12px; border-radius: 999px; border: 1px solid rgba(185,226,111,.45); background: rgba(9,9,11,.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #e3f4b5 !important; text-decoration: none !important; font-size: 13px; font-weight: 500; letter-spacing: .02em; transition: border-color .3s, background .3s; }
 .home-launch:hover { border-color: #b9e26f; background: rgba(185,226,111,.12); }
@@ -252,7 +253,9 @@
       ['waiting', 'pause', 'stalled'].forEach(function (ev) { v.addEventListener(ev, function () { clearTimeout(tm); v.parentNode.classList.remove('is-playing'); }); });
     });
     // Official trailers play muted behind the still, fading in once they're running.
-    function stopTrailer() { if (yt) { var old = yt; old.classList.remove('is-on'); setTimeout(function () { old.remove(); }, 1200); yt = null; } }
+    // Hide instantly: YouTube's mobile player draws play/skip buttons as soon as
+    // it pauses, and a fade would let them show through.
+    function stopTrailer() { if (yt) { var old = yt; old.classList.add('is-cut'); old.classList.remove('is-on'); setTimeout(function () { old.remove(); }, 200); yt = null; } }
     function startTrailer(s) {
       stopTrailer();
       if (!s.yt || bb.reduceMotion || saveData) return;
@@ -296,11 +299,12 @@
       var box = yt;
       if (st === 1) {
         clearTimeout(box._t);
-        box._t = setTimeout(function () { if (yt === box) box.classList.add('is-on'); }, box._shown ? 900 : 3200);
+        var touch = window.matchMedia('(hover: none)').matches;
+        box._t = setTimeout(function () { if (yt === box) { box.classList.remove('is-cut'); box.classList.add('is-on'); } }, box._shown ? (touch ? 3200 : 900) : (touch ? 4000 : 3200));
         box._shown = true;
       } else if (st === 2 || st === 3 || st === 0) {
         // Buffering, paused or ended: the player draws its controls, so cover it.
-        clearTimeout(box._t); box.classList.remove('is-on');
+        clearTimeout(box._t); box.classList.add('is-cut'); box.classList.remove('is-on');
       }
     });
     S.forEach(function (s, i) {
