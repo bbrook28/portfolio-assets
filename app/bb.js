@@ -1,4 +1,4 @@
-window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\">Ben Brook<em>.</em></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/\" data-path=\"/\">Home</a>\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-btn\" href=\"https://static1.squarespace.com/static/6057c16ba8128169e9a3e74a/t/6966b1602c02954da9c36e05/1768337760290/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://static1.squarespace.com/static/6057c16ba8128169e9a3e74a/t/6966b1602c02954da9c36e05/1768337760290/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9 \u2197</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn \u2197</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io \u2197</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <div class=\"bb-footer__cta\">\n      <div>\n        <p class=\"bb-kicker\">Open to conversations</p>\n        <h2 class=\"bb-footer__big\">Let\u2019s build<br><em>worlds</em> together.</h2>\n        <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n      <a class=\"bb-btn\" href=\"/contact\">Get in touch <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 12 12 4M5 4h7v7\"/></svg></a>\n    </div>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Game &amp; Level Designer \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n      <span class=\"bb-footer__status\">Game Designer at Nexon America</span>\n    </div>\n  </div>\n</footer>\n"};
+window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\">Ben Brook<em>.</em></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/\" data-path=\"/\">Home</a>\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-btn\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9 \u2197</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn \u2197</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io \u2197</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <div class=\"bb-footer__cta\">\n      <div>\n        <p class=\"bb-kicker\">Open to conversations</p>\n        <h2 class=\"bb-footer__big\">Let\u2019s build<br><em>worlds</em> together.</h2>\n        <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n      <a class=\"bb-btn\" href=\"/contact\">Get in touch <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 12 12 4M5 4h7v7\"/></svg></a>\n    </div>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Game &amp; Level Designer \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n      <span class=\"bb-footer__status\">Game Designer at Nexon America</span>\n    </div>\n  </div>\n</footer>\n"};
 (function () {
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -345,6 +345,85 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     if (Date.now() < Date.UTC(2026, 10, 18, 8)) return;
     root.querySelectorAll('[data-bb-live]').forEach(function (el) { el.textContent = el.getAttribute('data-bb-live'); });
   }
+  function initToc() {
+    var page = document.querySelector('.bb-page');
+    if (!page || document.querySelector('.bb-toc') || page.hasAttribute('data-bb-no-toc')) return;
+    var items = [];
+    page.querySelectorAll(':scope > section').forEach(function (sec, i) {
+      var k = sec.querySelector('.bb-kicker'), h = sec.querySelector('.bb-h2');
+      if (!k || !h || sec.classList.contains('bb-hero')) return;
+      var parts = k.textContent.split('·'), label = sec.getAttribute('data-bb-toc') || parts[parts.length - 1].trim();
+      if (!sec.id) sec.id = 'bb-s' + i;
+      items.push({ sec: sec, label: label });
+    });
+    if (items.length < 4) return;
+    var nav = document.createElement('nav');
+    nav.className = 'bb-toc'; nav.setAttribute('aria-label', 'On this page');
+    nav.innerHTML = '<button type="button" class="bb-toc__pill" aria-expanded="false"><span class="bb-toc__now"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><ol></ol>';
+    var ol = nav.querySelector('ol'), pill = nav.querySelector('.bb-toc__pill'), now = nav.querySelector('.bb-toc__now');
+    items.forEach(function (it) {
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.href = '#' + it.sec.id; a.innerHTML = '<span>' + it.label.replace(/</g, '&lt;') + '</span>';
+      a.addEventListener('click', function (e) {
+        e.preventDefault(); nav.classList.remove('is-open'); pill.setAttribute('aria-expanded', 'false');
+        var y = it.sec.getBoundingClientRect().top + window.pageYOffset - 20;
+        window.scrollTo({ top: y, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+      li.appendChild(a); ol.appendChild(li); it.a = a;
+    });
+    pill.addEventListener('click', function () { var o = nav.classList.toggle('is-open'); pill.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+    document.addEventListener('click', function (e) { if (!nav.contains(e.target)) { nav.classList.remove('is-open'); pill.setAttribute('aria-expanded', 'false'); } });
+    document.body.appendChild(nav);
+    var ticking = false;
+    function update() {
+      var mid = window.innerHeight * 0.35, cur = null;
+      items.forEach(function (it) { if (it.sec.getBoundingClientRect().top < mid) cur = it; });
+      items.forEach(function (it) { it.a.classList.toggle('is-active', it === cur); });
+      now.textContent = cur ? cur.label : items[0].label;
+      var last = items[items.length - 1].sec.getBoundingClientRect();
+      nav.classList.toggle('is-on', !!cur && last.bottom > mid && !document.documentElement.classList.contains('bb-menu-open'));
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+    update();
+  }
+  function initCardPreview() {
+    if (reduceMotion || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    document.querySelectorAll('.bb-pcard[data-bb-yt], .bb-pcard[data-bb-video]').forEach(function (card) {
+      var timer, pv;
+      card.addEventListener('mouseenter', function () {
+        timer = setTimeout(function () {
+          if (pv) { pv.remove(); pv = null; }
+          pv = document.createElement('div'); pv.className = 'bb-pcard__pv';
+          var yt = card.getAttribute('data-bb-yt');
+          if (yt) {
+            var f = document.createElement('iframe');
+            f.src = 'https://www.youtube-nocookie.com/embed/' + yt + '?autoplay=1&mute=1&controls=0&loop=1&playlist=' + yt + '&start=' + (card.getAttribute('data-bb-start') || 0) + '&playsinline=1&modestbranding=1&rel=0&enablejsapi=1';
+            f.allow = 'autoplay; encrypted-media'; f.tabIndex = -1; f.setAttribute('aria-hidden', 'true');
+            f.addEventListener('load', function () { try { f.contentWindow.postMessage('{"event":"listening"}', '*'); } catch (e) {} });
+            pv.appendChild(f);
+            var onMsg = function (e) {
+              if (!pv || e.source !== f.contentWindow) return;
+              try { var d = JSON.parse(e.data); if (d.info && d.info.playerState === 1) pv.classList.add('is-on'); } catch (err) {}
+            };
+            window.addEventListener('message', onMsg); pv._off = function () { window.removeEventListener('message', onMsg); };
+          } else {
+            var v = document.createElement('video');
+            v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true; v.src = assetUrl(card.getAttribute('data-bb-video'));
+            v.addEventListener('playing', function () { pv && pv.classList.add('is-on'); });
+            pv.appendChild(v);
+          }
+          var im = card.querySelector('img'); if (im) im.parentNode.insertBefore(pv, im.nextSibling); else card.insertBefore(pv, card.firstChild);
+        }, 350);
+      });
+      card.addEventListener('mouseleave', function () {
+        clearTimeout(timer);
+        if (!pv) return;
+        var old = pv; pv = null; old.classList.remove('is-on'); if (old._off) old._off();
+        setTimeout(function () { old.remove(); }, 400);
+      });
+    });
+  }
   function initTop() {
     if (!document.querySelector('.bb-page') || document.querySelector('.bb-top')) return;
     var b = document.createElement('button');
@@ -509,7 +588,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initIntro, initProgress, initTop, initSplit, initMotes, initPointerFx, initImageParallax].forEach(function (fn) {
+    [initIntro, initProgress, initTop, initToc, initCardPreview, initSplit, initMotes, initPointerFx, initImageParallax].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
   }
