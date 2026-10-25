@@ -688,7 +688,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     completionist: ['Completionist', 'Visited every project page.'],
     konami: ['Old School', '↑↑↓↓←→←→BA. Respect.']
   };
-  var PROJECTS = ['fh', 'bs4', 'beh', 'twd', 'lst', 'sumo', 'zoe', 'bsi', 'wm', 'buba', 'bp'];
+  var PROJECTS = ['fh', 'bs4', 'beh', 'twd', 'lst', 'sumo', 'zoe', 'bsi', 'buba', 'bp'];
   function store(k, v) {
     try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || 'null'); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; }
   }
