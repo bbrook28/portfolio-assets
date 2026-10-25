@@ -511,9 +511,14 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     paper: { n: 24, cols: ['#f3ead8', '#e7b75f'], spawn: function (p, W, H, init) { p.x = Math.random() * W; p.y = init ? Math.random() * H : -20; p.r = Math.random() * 5 + 4; p.vy = Math.random() * .35 + .2; p.vx = (Math.random() - .5) * .3; p.a = Math.random() * .3 + .25; p.rot = Math.random() * 6; p.spin = (Math.random() - .5) * .03; }, move: function (p) { p.rot += p.spin; p.x += Math.sin(p.t * 1.5) * .5; }, draw: function (c, p) { c.shadowBlur = 0; c.save(); c.translate(p.x, p.y); c.rotate(p.rot); c.scale(1, Math.cos(p.t * 2) * .8 + .2); c.fillRect(-p.r, -p.r * .7, p.r * 2, p.r * 1.4); c.restore(); } },
     arcane: { n: 50, cols: ['#c78bff', '#f0d9ff', '#7fd6ff'], spawn: function (p, W, H, init) { p.x = Math.random() * W; p.y = Math.random() * H; p.r = Math.random() * 3 + 1.5; p.vx = (Math.random() - .5) * .1; p.vy = -(Math.random() * .1); p.a = Math.random() * .7 + .3; }, move: function () {}, draw: function (c, p) { var s = p.r * (.6 + .4 * Math.sin(p.t * 3)); c.shadowBlur = 12; c.beginPath(); c.moveTo(p.x, p.y - s * 2); c.quadraticCurveTo(p.x, p.y, p.x + s * 2, p.y); c.quadraticCurveTo(p.x, p.y, p.x, p.y + s * 2); c.quadraticCurveTo(p.x, p.y, p.x - s * 2, p.y); c.quadraticCurveTo(p.x, p.y, p.x, p.y - s * 2); c.fill(); } },
     embers: { n: 100, cols: ['#ff7a45', '#ffb347', '#ff3d2e'], spawn: function (p, W, H, init) { p.x = Math.random() * W; p.y = init ? Math.random() * H : H + 10; p.r = Math.random() * 2.4 + .8; p.vy = -(Math.random() * .7 + .3); p.vx = 0; p.a = Math.random() * .6 + .4; }, move: function (p) { p.x += Math.sin(p.t * 2.2) * .45; p.a *= .9992; }, draw: function (c, p) { c.shadowBlur = 12; c.beginPath(); c.arc(p.x, p.y, p.r, 0, 6.283); c.fill(); } },
+    feast: { n: 44, cols: ['#ffb7c9', '#ffd1dc', '#ffffff'], spawn: function (p, W, H, init) { p.x = Math.random() * W; p.y = init ? Math.random() * H : -20; p.oni = Math.random() < .22; if (p.oni) p.col = '#ffffff'; p.r = p.oni ? Math.random() * 4 + 6 : Math.random() * 3 + 3; p.vy = Math.random() * .4 + .25; p.vx = .15 + Math.random() * .25; p.a = Math.random() * .35 + .45; p.rot = Math.random() * 6; p.spin = (Math.random() - .5) * .03; }, move: function (p) { p.rot += p.spin; p.x += Math.sin(p.t * 1.4) * .4; }, draw: function (c, p) {
+      c.save(); c.translate(p.x, p.y); c.rotate(p.rot); c.shadowBlur = 6;
+      if (p.oni) { var r = p.r; c.beginPath(); c.moveTo(0, -r); c.quadraticCurveTo(r * 1.1, r * .6, r * .2, r); c.lineTo(-r * .2, r); c.quadraticCurveTo(-r * 1.1, r * .6, 0, -r); c.fill(); c.fillStyle = '#1e2a22'; c.fillRect(-r * .45, r * .25, r * .9, r * .75); }
+      else { c.beginPath(); c.ellipse(0, 0, p.r, p.r * .6, 0, 0, 6.283); c.fill(); }
+      c.restore(); } },
     magnet: { n: 60, cols: ['#4fb8ff', '#ff6b6b'], spawn: function (p, W, H, init) { p.y0 = Math.random() * H; p.x = init ? Math.random() * W : (p.col === '#4fb8ff' ? -10 : W + 10); p.y = p.y0; p.r = Math.random() * 1.6 + .6; p.vx = (p.col === '#4fb8ff' ? 1 : -1) * (Math.random() * .4 + .25); p.vy = 0; p.a = Math.random() * .6 + .3; p.amp = Math.random() * 30 + 10; }, move: function (p, W) { p.y = p.y0 + Math.sin(p.x / W * 6.283 + p.amp) * p.amp; }, draw: function (c, p) { c.shadowBlur = 10; c.beginPath(); c.arc(p.x, p.y, p.r, 0, 6.283); c.fill(); } }
   };
-  var PAGE_THEME = { fh: 'spores', nf: 'spores', bs4: 'bubbles', beh: 'snow', twd: 'ash', lst: 'dust', zoe: 'blooms', bsi: 'paper', wm: 'arcane', buba: 'embers', bp: 'magnet' };
+  var PAGE_THEME = { sumo: 'feast', fh: 'spores', nf: 'spores', bs4: 'bubbles', beh: 'snow', twd: 'ash', lst: 'dust', zoe: 'blooms', bsi: 'paper', wm: 'arcane', buba: 'embers', bp: 'magnet' };
   function initMotes(root) {
     if (reduceMotion) return;
     root.querySelectorAll('.bb-hero').forEach(function (hero) {
@@ -683,7 +688,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     completionist: ['Completionist', 'Visited every project page.'],
     konami: ['Old School', '↑↑↓↓←→←→BA. Respect.']
   };
-  var PROJECTS = ['fh', 'bs4', 'beh', 'twd', 'lst', 'zoe', 'bsi', 'wm', 'buba', 'bp'];
+  var PROJECTS = ['fh', 'bs4', 'beh', 'twd', 'lst', 'sumo', 'zoe', 'bsi', 'wm', 'buba', 'bp'];
   function store(k, v) {
     try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || 'null'); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; }
   }
