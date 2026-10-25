@@ -207,10 +207,23 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
       set();
     });
   }
+  function initMore(root) {
+    root.querySelectorAll('[data-bb-more]').forEach(function (box) {
+      var btn = box.querySelector('.bb-more__toggle'), grid = box.querySelector('.bb-more__grid');
+      var label = btn.textContent;
+      box.setOpen = function (open) {
+        grid.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Hide these projects' : label;
+        box.classList.toggle('is-open', open);
+        if (open) grid.querySelectorAll('.bb-reveal').forEach(function (el) { el.classList.add('is-in'); });
+      };
+      btn.addEventListener('click', function () { box.setOpen(grid.hidden); });
+    });
+  }
   function initFilter(root) {
     root.querySelectorAll('[data-bb-filter]').forEach(function (bar) {
-      var grid = document.querySelector(bar.getAttribute('data-bb-filter'));
-      if (!grid) return;
+      var grids = document.querySelectorAll(bar.getAttribute('data-bb-filter'));
+      if (!grids.length) return;
       var buttons = bar.querySelectorAll('button[data-filter]');
       var apply = function (f) {
         buttons.forEach(function (b) {
@@ -218,9 +231,16 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
           b.classList.toggle('is-active', on);
           b.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
-        grid.querySelectorAll('[data-tags]').forEach(function (card) {
-          var tags = ' ' + card.getAttribute('data-tags') + ' ';
-          card.classList.toggle('is-hidden', f !== 'all' && tags.indexOf(' ' + f + ' ') === -1);
+        grids.forEach(function (grid) {
+          var shown = 0;
+          grid.querySelectorAll('[data-tags]').forEach(function (card) {
+            var tags = ' ' + card.getAttribute('data-tags') + ' ';
+            var hide = f !== 'all' && tags.indexOf(' ' + f + ' ') === -1;
+            card.classList.toggle('is-hidden', hide);
+            if (!hide) shown++;
+          });
+          var more = grid.closest('[data-bb-more]');
+          if (more && f !== 'all' && shown && more.setOpen) more.setOpen(true);
         });
       };
       buttons.forEach(function (b) {
@@ -642,6 +662,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     initCounters(root);
     initLightbox(root);
     initCompare(root);
+    initMore(root);
     initFilter(root);
     initForms(root);
     initLive(root);
