@@ -225,6 +225,7 @@
     var days = Math.round((Date.UTC(2026, 10, 18) - pt) / 864e5);
     cd.textContent = days > 1 ? 'MapleStory Classic: Forgotten Hollow opens in ' + days + ' days'
       : days === 1 ? 'MapleStory Classic: Forgotten Hollow opens tomorrow'
+      : Date.now() < Date.UTC(2026, 10, 18, 19) ? 'MapleStory Classic: Forgotten Hollow opens today at 11 AM PT'
       : 'Forgotten Hollow is live in MapleStory Classic World';
   }
 

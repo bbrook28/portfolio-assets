@@ -398,7 +398,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     });
   }
   function initLive(root) {
-    if (Date.now() < Date.UTC(2026, 10, 18, 8)) return;
+    if (Date.now() < Date.UTC(2026, 10, 18, 19)) return;
     root.querySelectorAll('[data-bb-live]').forEach(function (el) { el.textContent = el.getAttribute('data-bb-live'); });
   }
   function initToc() {
