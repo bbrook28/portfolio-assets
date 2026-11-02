@@ -93,6 +93,7 @@
         <li><span>Stealth path</span><span>Players who decipher the clues can take the stash at any point and let the groups blame each other</span></li>
         <li><span>Security</span><span>Turrets and security systems can be destroyed, disarmed, or hacked, giving players tools to fight or sneak</span></li>
         <li><span>Power</span><span>Cutting the power shuts off security and the secret door. Enemies present go to investigate: if they catch you it's a fight, but it also lures them away from where you need to go</span></li>
+        <li><span>Audio</span><span>I added a combat audio system, in the style of The Last of Us Part II, where enemies react to their comrades' deaths with voice lines</span></li>
       </ul>
     </div>
   </section>
@@ -179,7 +180,7 @@
     if (k === 'c3' && tState === 'no power') { log.textContent = 'The switch is dead. With the power cut, the secret door won’t open.'; list = [{ t: 'Restore the power', restore: 1 }]; }
     list.forEach(function (a) {
       var b = document.createElement('button'); b.type = 'button'; b.className = 'bs4-sim__act'; b.textContent = a.t;
-      b.addEventListener('click', function () { if (a.restore) { tState = 'armed'; mark('restore'); return show('c3', 'The power is back, and so is the security.'); } if (a.via) mark(a.via); if (lured && a.go !== 'combat') mark('slip'); show(a.go, a.fight && tState === 'hacked' ? 'Your hacked turret joins the fight.' : ''); });
+      b.addEventListener('click', function () { if (a.restore) { tState = 'armed'; mark('restore'); return show('c3', 'The power is back, and so is the security.'); } if (a.via) mark(a.via); if (lured && a.go !== 'combat') mark('slip'); show(a.go, a.fight ? (tState === 'hacked' ? 'Your hacked turret joins the fight. ' : '') + 'As each one falls, the others react out loud.' : ''); });
       acts.appendChild(b);
     });
     if (n.end) { found[k] = 1; acts.innerHTML = '<p class="bs4-sim__end">' + host.querySelector('[data-n="' + k + '"]').getAttribute('data-end') + '</p>'; }
