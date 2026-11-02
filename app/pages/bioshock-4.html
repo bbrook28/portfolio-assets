@@ -42,15 +42,16 @@
       <div class="bb-reveal" style="max-width:760px">
         <p class="bb-kicker">Interactive · Side quest</p>
         <h2 class="bb-h2">The museum cache</h2>
-        <p class="bb-prose">Two rival groups are hunting for a hidden supply cache in an abandoned museum. Players can stumble into it, and what they do there decides what they find when they come back. Play it below; the story map fills in as you go.</p>
+        <p class="bb-prose">Two rival groups are hunting for a hidden supply cache in an abandoned museum. Players can stumble into it, and what they do there decides what they find when they come back. Play it below by clicking the highlighted boxes on the story map.</p>
         <p class="bb-small" style="margin-top:12px">Names left out and some details filled in for this demo. It’s my design from development and may have changed since.</p>
       </div>
       <div class="bs4-tw bb-reveal" data-bs4-sim style="margin-top:40px">
         <div class="bs4-tw__passage">
           <div class="bs4-tw__bar"><span class="bs4-tw__title"></span><span class="bs4-tw__state"></span><button type="button" class="bs4-tw__undo">↶ Undo</button><button type="button" class="bs4-tw__restart">↻ Restart</button></div>
           <p class="bs4-tw__text" aria-live="polite"></p>
+          <p class="bs4-tw__hint"></p>
         </div>
-        <div class="bs4-tw__mapwrap"><p class="bs4-tw__maph">Story map · <span class="bs4-tw__found">0</span>/6 endings found</p><div class="bs4-tw__scroll"><svg class="bs4-tw__map" viewBox="0 0 930 360" role="img" aria-label="Map of every passage in the quest"></svg></div></div>
+        <div class="bs4-tw__mapwrap"><p class="bs4-tw__maph">Story map · <span class="bs4-tw__found">0</span>/6 endings found</p><div class="bs4-tw__scroll"><svg class="bs4-tw__map" viewBox="0 0 1110 450" role="group" aria-label="Story map: choose a highlighted passage"></svg></div></div>
       </div>
       <ul class="bb-facts bb-reveal" style="margin-top:40px;max-width:900px">
         <li><span>Memory</span><span>Each choice changes the state the player returns to, so consequences play out between visits</span></li>
@@ -99,24 +100,25 @@
 (window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
   var host = root.querySelector('[data-bs4-sim]');
   if (!host) return;
-  var F; // flags: hacked, dark
+  var F;
   function fallText() { return (F.turret === 'hacked' && !F.dark ? 'Your hacked turret joins the fight. ' : '') + 'As each one falls, the others react out loud.'; }
   var P = {
     start: { t: 'The museum', x: 0, y: 2, txt: function () {
       var tur = F.dark ? 'With the power out, the lobby turret is offline.' : F.turret === 'armed' ? 'A security turret guards the lobby, next to the fuse box.' : 'The lobby turret is ' + F.turret + '.';
-      return 'A group is searching the abandoned museum for a hidden supply cache. ' + tur + '\n\nYou could [[leave them alone->mutual]], [[fight them->fight1]], [[follow the clues->placard]]' +
-        (F.turret === 'armed' && !F.dark ? ', deal with the [[turret->turret]]' : '') + (F.dark ? '.' : ', or [[cut the power->dark]].'); } },
-    turret: { t: 'Turret', x: 1, y: 4, txt: function () { return 'An armed security turret. It’s a tool: use it to fight, or get it out of the way to sneak.\n\n[[Hack it->start|hacked]] so it fights for you, [[disarm it->start|disarmed]] so you can sneak past, or [[destroy it->dark|destroyed]].'; } },
-    fight1: { t: 'Fight', x: 1, y: 1, txt: function () { return 'You fight the group. ' + fallText() + '\n\n[[Leave and come back later->rivals]]'; } },
-    rivals: { t: 'The rivals', x: 2, y: 1, txt: function () { return 'You come back. The rival group has arrived, and they’re happy to find the first group dead. They pick up the search where the others left off.\n\n[[Kill them too->war]], [[leave them be->beaten]], or [[follow the clues->placard]] before they do.'; } },
+      return 'A group is searching the abandoned museum for a hidden supply cache. ' + tur; } },
+    turret: { t: 'Turret', x: 1, y: 4, txt: function () { return 'An armed security turret. It’s a tool: use it to fight, or get it out of the way to sneak.'; } },
+    hack: { t: 'Turret hacked', x: 2, y: 4, enter: function () { F.turret = 'hacked'; }, txt: function () { return 'You hack the turret. It now fights for you.'; } },
+    disarm: { t: 'Turret disarmed', x: 2, y: 5, enter: function () { F.turret = 'disarmed'; }, txt: function () { return 'You disarm the turret, so you can sneak past it.'; } },
+    destroy: { t: 'Turret destroyed', x: 1, y: 5, enter: function () { F.turret = 'destroyed'; F.noise = true; }, txt: function () { return 'The turret goes down, loudly.'; } },
+    fight1: { t: 'Fight', x: 1, y: 1, txt: function () { return 'You fight the group. ' + fallText(); } },
+    rivals: { t: 'The rivals', x: 2, y: 1, txt: function () { return 'You come back. The rival group has arrived, and they’re happy to find the first group dead. They pick up the search where the others left off.'; } },
     dark: { t: 'They investigate', x: 1, y: 3, txt: function () {
-      var why = F.noise && !F.dark ? 'The turret goes down loud. The group hears it and comes to check the lobby' : 'Security goes dark, and so does the secret door. The group notices and heads to the fuse box to investigate';
-      return why + ', away from where you need to go.\n\n[[Slip past and follow the clues->placard]], [[ambush them->fight1]], or [[get caught->combat]].'; } },
-    placard: { t: 'Placard', x: 1, y: 2, txt: function () { return 'Someone has been scrawling notes about the museum’s founders. A placard on one exhibit names a person.\n\n[[Find their portrait->portrait]]'; } },
-    portrait: { t: 'Portrait', x: 2, y: 2, txt: function () { return 'Their portrait hangs in another wing. The plaque beneath it gives a date.\n\n[[Find the exhibit with that date->exhibit]]'; } },
-    exhibit: { t: 'Hidden switch', x: 3, y: 2, txt: function () { return F.dark ? 'The exhibit marked with that date hides a switch, but it’s dead. With the power cut, the secret door won’t open.\n\n[[Restore the power->restore]]' : 'The exhibit marked with that date hides a switch.\n\n[[Flip it->door]]'; } },
-    restore: { t: 'Restore power', x: 4, y: 3, txt: function () { return 'You throw the breaker. The power is back' + (F.turret === 'destroyed' ? '.' : ', and so is the security.') + '\n\n[[Flip the switch->door]]'; } },
-    door: { t: 'Secret door', x: 4, y: 2, txt: function () { return 'A section of wall swings open on a hidden room. The stash is inside.\n\n[[Take it quietly->theft]], or [[take it, but get spotted->caught]].'; } },
+      return (F.dark ? 'Security goes dark, and so does the secret door. The group notices and heads to the fuse box to investigate' : 'The group hears the noise and comes to check the lobby') + ', away from where you need to go.'; } },
+    placard: { t: 'Placard', x: 1, y: 2, txt: function () { return 'Someone has been scrawling notes about the museum’s founders. A placard on one exhibit names a person.'; } },
+    portrait: { t: 'Portrait', x: 2, y: 2, txt: function () { return 'Their portrait hangs in another wing. The plaque beneath it gives a date.'; } },
+    exhibit: { t: 'Hidden switch', x: 3, y: 2, txt: function () { return F.dark ? 'The exhibit marked with that date hides a switch, but it’s dead. With the power cut, the secret door won’t open.' : 'The exhibit marked with that date hides a switch.'; } },
+    restore: { t: 'Power restored', x: 4, y: 3, txt: function () { return 'You throw the breaker. The power is back' + (F.turret === 'destroyed' ? '.' : ', and so is the security.'); } },
+    door: { t: 'Secret door', x: 4, y: 2, txt: function () { return 'A section of wall swings open on a hidden room. The stash is inside.'; } },
     mutual: { t: 'They finished each other off', end: 1, x: 1, y: 0, txt: function () { return 'You leave. When you come back, the rival group has shown up, and the two groups have killed each other. The stash is still hidden.'; } },
     beaten: { t: 'Beaten to it', end: 1, x: 3, y: 0, txt: function () { return 'You leave them to it. When you come back, the rivals have cracked the clues. The hidden room is open, and empty.'; } },
     war: { t: 'A war you started', end: 1, x: 3, y: 1, txt: function () { return fallText() + ' On your third visit, both factions retaliate, and you walk into a faction war you caused.'; } },
@@ -124,62 +126,82 @@
     theft: { t: 'Thieves fall out', end: 1, x: 5, y: 1, txt: function () { return (F.turret === 'disarmed' ? 'With the turret disarmed, you slip out the way you came. ' : 'Nobody saw you. ') + 'Later, each group accuses the other of stealing the stash, and they fight.'; } },
     caught: { t: 'Caught red-handed', end: 1, x: 5, y: 3, txt: function () { return 'They spot you with the stash, call for backup, and try to kill you.'; } }
   };
-  var E = [['start','mutual'],['start','fight1'],['start','placard'],['start','dark'],['start','turret'],['turret','start'],['turret','dark'],['fight1','rivals'],['rivals','war'],['rivals','beaten'],['rivals','placard'],['dark','placard'],['dark','fight1'],['dark','combat'],['placard','portrait'],['portrait','exhibit'],['exhibit','door'],['exhibit','restore'],['restore','door'],['door','theft'],['door','caught']];
-  var BW = 128, BH = 44, CX = 158, CY = 72, OX = 12, OY = 12;
+  var armed = function () { return F.turret === 'armed' && !F.dark; };
+  var E = [
+    ['start', 'mutual', 'Leave them alone'], ['start', 'fight1', 'Fight them'], ['start', 'placard', 'Follow the clues'],
+    ['start', 'dark', 'Cut the power', function () { return !F.dark; }], ['start', 'turret', 'Deal with turret', armed],
+    ['turret', 'hack', 'Hack it'], ['turret', 'disarm', 'Disarm it'], ['turret', 'destroy', 'Destroy it'],
+    ['hack', 'start', 'Back to museum'], ['disarm', 'start', 'Back to museum'], ['destroy', 'dark', 'Continue'],
+    ['fight1', 'rivals', 'Come back later'], ['rivals', 'war', 'Kill them too'], ['rivals', 'beaten', 'Leave them be'], ['rivals', 'placard', 'Follow the clues'],
+    ['dark', 'placard', 'Follow the clues'], ['dark', 'fight1', 'Ambush them'], ['dark', 'combat', 'Get caught'],
+    ['placard', 'portrait', 'Find the portrait'], ['portrait', 'exhibit', 'Find the exhibit'],
+    ['exhibit', 'door', 'Flip the switch', function () { return !F.dark; }], ['exhibit', 'restore', 'Restore power', function () { return F.dark; }],
+    ['restore', 'door', 'Flip the switch'], ['door', 'theft', 'Take it quietly'], ['door', 'caught', 'Get spotted']
+  ];
+  var BW = 150, BH = 44, CX = 180, CY = 72, OX = 50, OY = 12;
   function pos(k) { return { x: OX + P[k].x * CX, y: OY + P[k].y * CY }; }
-  var svg = host.querySelector('.bs4-tw__map'), ns = 'http://www.w3.org/2000/svg';
+  var svg = host.querySelector('.bs4-tw__map'), ns = 'http://www.w3.org/2000/svg', scroller = host.querySelector('.bs4-tw__scroll');
   function el(n, a, p) { var e = document.createElementNS(ns, n); for (var k in a) e.setAttribute(k, a[k]); (p || svg).appendChild(e); return e; }
   var defs = el('defs', {}), mk = el('marker', { id: 'bs4arr', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
   el('path', { d: 'M0 0L10 5L0 10z', fill: 'currentColor' }, mk);
-  var edgeEls = {}, nodeEls = {};
+  var gE = el('g', {}), gN = el('g', {}), edgeEls = {}, nodeEls = {};
   E.forEach(function (e) {
-    var a = pos(e[0]), b = pos(e[1]), d;
-    if (P[e[1]].x > P[e[0]].x) d = 'M' + (a.x + BW) + ' ' + (a.y + BH / 2) + ' C' + (a.x + BW + 24) + ' ' + (a.y + BH / 2) + ' ' + (b.x - 24) + ' ' + (b.y + BH / 2) + ' ' + (b.x - 2) + ' ' + (b.y + BH / 2);
-    else if (P[e[1]].x === P[e[0]].x && Math.abs(P[e[1]].y - P[e[0]].y) > 1) d = 'M' + (a.x + BW) + ' ' + (a.y + BH / 2) + ' C' + (a.x + BW + 22) + ' ' + (a.y + BH / 2) + ' ' + (b.x + BW + 22) + ' ' + (b.y + BH / 2 + 10) + ' ' + (b.x + BW + 1) + ' ' + (b.y + BH / 2 + 10);
-    else if (P[e[1]].x === P[e[0]].x) d = 'M' + (a.x + BW / 2) + ' ' + (a.y + (b.y > a.y ? BH : 0)) + ' L' + (b.x + BW / 2) + ' ' + (b.y + (b.y > a.y ? -2 : BH + 2));
-    else if (b.y < a.y) d = 'M' + a.x + ' ' + (a.y + BH / 2) + ' C' + (a.x - 40) + ' ' + (a.y + BH / 2) + ' ' + (b.x + BW / 2) + ' ' + (b.y + BH + 40) + ' ' + (b.x + BW / 2) + ' ' + (b.y + BH + 2);
+    var a = pos(e[0]), b = pos(e[1]), ax = P[e[0]].x, bx = P[e[1]].x, d, my = BH / 2;
+    if (bx > ax) d = 'M' + (a.x + BW) + ' ' + (a.y + my) + ' C' + (a.x + BW + 24) + ' ' + (a.y + my) + ' ' + (b.x - 24) + ' ' + (b.y + my) + ' ' + (b.x - 2) + ' ' + (b.y + my);
+    else if (bx === 0) { var yy = a.y + BH + 22; d = 'M' + (a.x + BW / 2) + ' ' + (a.y + BH) + ' C' + (a.x + BW / 2) + ' ' + yy + ' ' + (b.x - 34) + ' ' + yy + ' ' + (b.x - 34) + ' ' + ((yy + b.y + my) / 2) + ' S' + (b.x - 34) + ' ' + (b.y + my) + ' ' + (b.x - 2) + ' ' + (b.y + my); }
+    else if (bx === ax && Math.abs(P[e[1]].y - P[e[0]].y) > 1) d = 'M' + (a.x + BW) + ' ' + (a.y + my) + ' C' + (a.x + BW + 22) + ' ' + (a.y + my) + ' ' + (b.x + BW + 22) + ' ' + (b.y + my + 10) + ' ' + (b.x + BW + 1) + ' ' + (b.y + my + 10);
+    else if (bx === ax) d = 'M' + (a.x + BW / 2) + ' ' + (a.y + (b.y > a.y ? BH : 0)) + ' L' + (b.x + BW / 2) + ' ' + (b.y + (b.y > a.y ? -2 : BH + 2));
     else d = 'M' + (a.x + 18) + ' ' + (a.y + BH) + ' C' + (a.x + 18) + ' ' + (a.y + BH + 16) + ' ' + (b.x + BW - 16) + ' ' + (b.y - 14) + ' ' + (b.x + BW - 16) + ' ' + (b.y - 2);
-    edgeEls[e[0] + '>' + e[1]] = el('path', { d: d, class: 'bs4-tw__edge', 'marker-end': 'url(#bs4arr)' });
+    edgeEls[e[0] + '>' + e[1]] = el('path', { d: d, class: 'bs4-tw__edge', 'marker-end': 'url(#bs4arr)' }, gE);
   });
   Object.keys(P).forEach(function (k) {
-    var p = pos(k), g = el('g', { class: 'bs4-tw__node' + (P[k].end ? ' is-end' : '') });
+    var p = pos(k), g = el('g', { class: 'bs4-tw__node' + (P[k].end ? ' is-end' : '') }, gN);
     el('rect', { x: p.x, y: p.y, width: BW, height: BH, rx: 4 }, g);
-    var t = el('text', { x: p.x + 10, y: p.y + 27 }, g); nodeEls[k] = { g: g, t: t };
+    var t = el('text', { x: p.x + 11, y: p.y + 27 }, g);
+    g.addEventListener('click', function () { choose(k); });
+    g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); choose(k); } });
+    nodeEls[k] = { g: g, t: t };
   });
-  var cur, hist, seen, walked, found = {};
-  var title = host.querySelector('.bs4-tw__title'), text = host.querySelector('.bs4-tw__text'), state = host.querySelector('.bs4-tw__state');
-  function go(k, flag, from, quiet) {
-    if (!quiet) hist.push({ cur: cur, F: JSON.parse(JSON.stringify(F)) });
-    if (flag) F.turret = flag; if (flag === 'destroyed') F.noise = true; else if (k === 'dark') F.dark = true; if (k === 'restore') F.dark = false;
+  var cur, hist, seen = {}, walked = {}, found = {}, opts = {};
+  var title = host.querySelector('.bs4-tw__title'), text = host.querySelector('.bs4-tw__text'), hint = host.querySelector('.bs4-tw__hint'), state = host.querySelector('.bs4-tw__state');
+  function choose(k) { if (!opts[k]) return; hist.push({ cur: cur, F: JSON.parse(JSON.stringify(F)) }); go(k, cur); }
+  function go(k, from) {
     if (from) walked[from + '>' + k] = 1;
+    if (k === 'dark' && from === 'start') F.dark = true;
+    if (k === 'restore') F.dark = false;
+    if (P[k].enter) P[k].enter();
     cur = k; seen[k] = 1; if (P[k].end) found[k] = 1;
-    paint();
+    paint(true);
   }
-  function paint() {
+  function paint(anim) {
     var p = P[cur];
+    opts = {};
+    if (!p.end) E.forEach(function (e) { if (e[0] === cur && (!e[3] || e[3]())) opts[e[1]] = e[2]; });
     title.textContent = p.end ? 'Ending' : p.t;
     state.textContent = 'Turret: ' + (F.dark ? 'no power' : F.turret) + ' · Power: ' + (F.dark ? 'off' : 'on');
-    var html = p.txt().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\[\[(.+?)->(\w+)(?:\|(\w+))?\]\]/g, function (m, label, to, flag) {
-      return '<a href="#" data-to="' + to + '"' + (flag ? ' data-flag="' + flag + '"' : '') + '>' + label + '</a>';
-    }).replace(/\n\n/g, '</p><p class="bs4-tw__text">');
-    if (p.end) html += '</p><p class="bs4-tw__text"><strong>' + p.t + '.</strong> <a href="#" data-restart>Play again</a>';
-    text.outerHTML; text.innerHTML = html.split('</p><p class="bs4-tw__text">').join('<br><br>');
-    text.classList.remove('is-in'); void text.offsetWidth; text.classList.add('is-in');
+    text.innerHTML = '';
+    text.appendChild(document.createTextNode(p.txt()));
+    if (p.end) { var s2 = document.createElement('strong'); s2.textContent = ' ' + p.t + '.'; text.appendChild(s2); }
+    hint.innerHTML = p.end ? '<button type="button" class="bs4-tw__again">Play again</button>' : 'Choose a <b>highlighted box</b> on the story map below.';
+    if (p.end) hint.querySelector('button').addEventListener('click', restart);
+    if (anim) { text.classList.remove('is-in'); void text.offsetWidth; text.classList.add('is-in'); }
     Object.keys(nodeEls).forEach(function (k) {
-      var n = nodeEls[k]; n.g.classList.toggle('is-seen', !!seen[k] || !!found[k]); n.g.classList.toggle('is-on', k === cur);
-      n.t.textContent = P[k].end && !found[k] ? '?' : P[k].t;
+      var n = nodeEls[k], live = !!opts[k];
+      n.g.classList.toggle('is-seen', !!seen[k]); n.g.classList.toggle('is-on', k === cur); n.g.classList.toggle('is-opt', live);
+      n.t.textContent = live ? '▸ ' + opts[k] : P[k].end && !found[k] ? '?' : P[k].t;
+      if (live) { n.g.setAttribute('tabindex', '0'); n.g.setAttribute('role', 'button'); n.g.setAttribute('aria-label', opts[k]); }
+      else { n.g.removeAttribute('tabindex'); n.g.removeAttribute('role'); n.g.removeAttribute('aria-label'); }
     });
-    Object.keys(edgeEls).forEach(function (k) { edgeEls[k].classList.toggle('is-walked', !!walked[k]); });
+    Object.keys(edgeEls).forEach(function (k) { var e = edgeEls[k]; e.classList.toggle('is-walked', !!walked[k]); e.classList.toggle('is-opt', k.split('>')[0] === cur && !!opts[k.split('>')[1]]); });
     host.querySelector('.bs4-tw__found').textContent = Object.keys(found).length;
     host.querySelector('.bs4-tw__undo').disabled = !hist.length;
+    if (scroller.scrollWidth > scroller.clientWidth + 4) {
+      var r = svg.getBoundingClientRect().width / 1110, cx = (pos(cur).x + BW) * r - scroller.clientWidth / 2;
+      scroller.scrollTo({ left: Math.max(0, cx), behavior: anim ? 'smooth' : 'auto' });
+    }
   }
-  text.addEventListener('click', function (e) {
-    var a = e.target.closest('a'); if (!a) return; e.preventDefault();
-    if (a.hasAttribute('data-restart')) return restart();
-    go(a.getAttribute('data-to'), a.getAttribute('data-flag'), cur);
-  });
-  host.querySelector('.bs4-tw__undo').addEventListener('click', function () { var h = hist.pop(); if (!h) return; cur = h.cur; F = h.F; paint(); });
-  function restart() { F = { turret: 'armed', dark: false, noise: false }; hist = []; seen = seen || {}; walked = walked || {}; cur = null; go('start', null, null, true); }
+  host.querySelector('.bs4-tw__undo').addEventListener('click', function () { var h = hist.pop(); if (!h) return; cur = h.cur; F = h.F; paint(true); });
+  function restart() { F = { turret: 'armed', dark: false, noise: false }; hist = []; cur = 'start'; seen.start = 1; paint(true); }
   host.querySelector('.bs4-tw__restart').addEventListener('click', restart);
   restart();
 });
@@ -200,14 +222,25 @@
 .bs4-tw__text a { color: var(--bb-accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .bs4-tw__text a:hover { color: var(--bb-accent-2); }
 .bs4-tw__text strong { color: var(--bb-accent-2); }
+.bs4-tw__hint { margin: 18px 0 0; font-size: 14px; color: var(--bb-muted); }
+.bs4-tw__hint b { color: var(--bb-accent); font-weight: 600; }
+.bs4-tw__again { font: inherit; font-size: 14px; color: var(--bb-bg); background: var(--bb-accent); border: 0; padding: 10px 16px; cursor: pointer; }
+.bs4-tw__node.is-opt { cursor: pointer; }
+.bs4-tw__node.is-opt rect { stroke: var(--bb-accent); stroke-width: 2; stroke-dasharray: none; fill: color-mix(in srgb, var(--bb-accent) 10%, var(--bb-surface)); animation: bs4glow 1.6s ease-in-out infinite; }
+.bs4-tw__node.is-opt text { fill: var(--bb-accent-2); }
+.bs4-tw__node.is-opt:hover rect, .bs4-tw__node.is-opt:focus-visible rect { fill: color-mix(in srgb, var(--bb-accent) 30%, var(--bb-surface)); }
+.bs4-tw__node:focus { outline: none; }
+.bs4-tw__edge.is-opt { stroke: var(--bb-accent); color: var(--bb-accent); stroke-dasharray: 5 4; animation: bs4dash 1s linear infinite; }
+@keyframes bs4glow { 50% { stroke-opacity: .45; } }
+@keyframes bs4dash { to { stroke-dashoffset: -18; } }
 .bs4-tw__mapwrap { border-top: 1px solid var(--bb-line); background: var(--bb-bg-2) radial-gradient(color-mix(in srgb, var(--bb-text) 9%, transparent) 1px, transparent 1px) 0 0 / 22px 22px; padding: 16px clamp(12px, 3vw, 28px) 18px; }
 .bs4-tw__maph { margin: 0 0 8px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--bb-dim); }
 .bs4-tw__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.bs4-tw__map { display: block; width: 100%; min-width: 640px; height: auto; color: var(--bb-line-strong); }
+.bs4-tw__map { display: block; width: 100%; min-width: 760px; height: auto; color: var(--bb-line-strong); }
 .bs4-tw__edge { fill: none; stroke: currentColor; stroke-width: 1.5; transition: stroke .3s; }
 .bs4-tw__edge.is-walked { stroke: var(--bb-accent); color: var(--bb-accent); }
 .bs4-tw__node rect { fill: var(--bb-surface); stroke: var(--bb-line-strong); stroke-width: 1.2; transition: fill .3s, stroke .3s; }
-.bs4-tw__node text { font: 600 12.5px var(--bb-sans); fill: var(--bb-dim); }
+.bs4-tw__node text { font: 600 13px var(--bb-sans); pointer-events: none; fill: var(--bb-dim); }
 .bs4-tw__node.is-end rect { stroke-dasharray: 4 3; }
 .bs4-tw__node.is-seen rect { stroke: color-mix(in srgb, var(--bb-accent) 60%, transparent); }
 .bs4-tw__node.is-seen text { fill: var(--bb-text); }
