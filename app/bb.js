@@ -1,4 +1,4 @@
-window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\">Ben Brook<em>.</em></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/\" data-path=\"/\">Home</a>\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-btn\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9 \u2197</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn \u2197</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io \u2197</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <div class=\"bb-footer__cta\">\n      <div>\n        <p class=\"bb-kicker\">Open to conversations</p>\n        <h2 class=\"bb-footer__big\">Let\u2019s build<br><em>worlds</em> together.</h2>\n        <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n      <a class=\"bb-btn\" href=\"/contact\">Get in touch <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 12 12 4M5 4h7v7\"/></svg></a>\n    </div>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Game &amp; Level Designer \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n      <span class=\"bb-footer__status\">Game Designer at Nexon America<span class=\"bb-footer__updated\" data-bb-updated></span></span>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing, and site \u00a9 Ben Brook. Game art, footage, and trademarks belong to their respective studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="October 2026";
+window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\">Ben Brook<em>.</em></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/\" data-path=\"/\">Home</a>\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-btn\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9 \u2197</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn \u2197</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io \u2197</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <div class=\"bb-footer__cta\">\n      <div>\n        <p class=\"bb-kicker\">Open to conversations</p>\n        <h2 class=\"bb-footer__big\">Let\u2019s build<br><em>worlds</em> together.</h2>\n        <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n      </div>\n      <a class=\"bb-btn\" href=\"/contact\">Get in touch <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 12 12 4M5 4h7v7\"/></svg></a>\n    </div>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Game &amp; Level Designer \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n      <span class=\"bb-footer__status\">Game Designer at Nexon America<span class=\"bb-footer__updated\" data-bb-updated></span></span>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing, and site \u00a9 Ben Brook. Game art, footage, and trademarks belong to their respective studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";
 (function () {
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -292,10 +292,29 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
       var intro = document.createElement('div');
       intro.className = 'bb-intro';
       intro.setAttribute('aria-hidden', 'true');
-      intro.innerHTML = '<div class="bb-intro__name"><span>Ben Brook<em>.</em></span></div><div class="bb-intro__line"></div>';
+      var h = document.querySelector('.bb-page .bb-display, .bb-page .bb-h1');
+      var level = 'Ben Brook';
+      if (h) {
+        var c = h.cloneNode(true);
+        c.querySelectorAll('.bb-sr').forEach(function (n) { n.remove(); });
+        c.querySelectorAll('br').forEach(function (n) { n.replaceWith(' '); });
+        level = c.textContent.replace(/\s+/g, ' ').trim();
+      }
+      var tips = [
+        'Rotten Mushmom only spawns in a grave that isn\u2019t hers.',
+        'Catch a Grenadier\u2019s grenade and its fuse gets 2.5 more seconds.',
+        'In Sumo Scuffle, slamming a rival into the wall knocks food loose.',
+        'Every chain in Forgotten Hollow ends back in Ellinia\u2019s Magic Library.',
+        'Eradicators wear helmets, so headshots aren\u2019t the answer.',
+        'The Behemoth courtyard\u2019s arch is visible from everywhere in it.',
+        'Try \u2191\u2191\u2193\u2193\u2190\u2192\u2190\u2192BA.'
+      ];
+      intro.innerHTML = '<div class="bb-intro__card"><small>Loading level</small><strong></strong><div class="bb-intro__line"></div><p><b>Tip</b> <span></span></p></div>';
+      intro.querySelector('strong').textContent = level;
+      intro.querySelector('p span').textContent = tips[Math.floor(Math.random() * tips.length)];
       document.body.appendChild(intro);
-      setTimeout(function () { intro.classList.add('is-out'); }, 1250);
-      setTimeout(function () { intro.remove(); }, 2100);
+      setTimeout(function () { intro.classList.add('is-out'); }, 1700);
+      setTimeout(function () { intro.remove(); }, 2500);
     } else {
       curtain.classList.add('is-boot');
     }
@@ -570,6 +589,8 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     if (!finePointer || reduceMotion) return;
     var ring = document.createElement('div');
     ring.className = 'bb-cursor';
+    var pg = document.querySelector('.bb-page');
+    if (pg) ring.style.setProperty('--bb-accent', getComputedStyle(pg).getPropertyValue('--bb-accent').trim());
     ring.innerHTML = '<span></span>';
     document.body.appendChild(ring);
     var label = ring.firstChild, x = -100, y = -100, rx = x, ry = y;
