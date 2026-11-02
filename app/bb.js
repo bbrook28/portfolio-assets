@@ -299,6 +299,12 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
         b.addEventListener('keydown', function (e) { var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); show((i + d + panels.length) % panels.length, true); } });
         bar.appendChild(b); p.setAttribute('role', 'tabpanel'); p._show = function () { show(i); };
       });
+      panels.forEach(function (p) {
+        var back = document.createElement('div'); back.className = 'bb-container bb-tabs__back';
+        back.innerHTML = '<a href="#">↑ Back to ' + (sec.getAttribute('data-bb-toc') || 'tabs') + ' tabs</a>';
+        back.firstChild.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({ top: bar.getBoundingClientRect().top + scrollY - 110, behavior: reduceMotion ? 'auto' : 'smooth' }); });
+        p.appendChild(back);
+      });
       var h = location.hash && sec.querySelector(location.hash.replace(/[^#\w-]/g, ''));
       var start = 0; panels.forEach(function (p, i) { if (h && (p === h || p.contains(h))) start = i; });
       show(start);
