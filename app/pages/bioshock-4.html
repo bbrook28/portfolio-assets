@@ -46,21 +46,51 @@
         <p class="bb-small" style="margin-top:12px">Names left out and details generalized. This is my design from development and may have changed since.</p>
       </div>
       <div class="bs4-sim bb-reveal" data-bs4-sim style="margin-top:40px">
-        <div class="bs4-sim__visits"></div>
-        <div class="bs4-sim__stage">
-          <p class="bs4-sim__when"></p>
-          <p class="bs4-sim__text"></p>
-          <div class="bs4-sim__acts"></div>
+        <div class="bs4-sim__play">
+          <div class="bs4-map" aria-label="Simplified museum floor plan">
+            <div class="bs4-room" data-room="west"><b>West wing</b><em>Placard</em></div>
+            <div class="bs4-room" data-room="gallery"><b>Main gallery</b><em class="bs4-grp"></em></div>
+            <div class="bs4-room" data-room="east"><b>East wing</b><em>Portrait</em></div>
+            <div class="bs4-room" data-room="hidden"><b>Hidden room</b><em>Stash</em></div>
+            <div class="bs4-room" data-room="lobby"><b>Lobby</b><em class="bs4-tur">Turret: armed</em></div>
+            <div class="bs4-room" data-room="exhibit"><b>Exhibit hall</b><em>Dated exhibit</em></div>
+          </div>
+          <div class="bs4-sim__stage">
+            <p class="bs4-sim__when"></p>
+            <p class="bs4-sim__text"></p>
+            <p class="bs4-sim__log"></p>
+            <div class="bs4-sim__acts"></div>
+            <div class="bs4-sim__sec"><span>Security</span></div>
+          </div>
+        </div>
+        <div class="bs4-tree" aria-label="Every branch of the quest">
+          <p class="bs4-tree__h">Branch map</p>
+          <ul>
+            <li><span data-n="v1">First visit: a group searches the museum</span>
+              <ul>
+                <li><span data-n="leave">Leave them alone</span><ul><li><span data-n="mutual" data-end="They finished each other off">Ending</span></li></ul></li>
+                <li><span data-n="kill1">Kill the group</span><ul><li><span data-n="killA">Return: the rivals arrive, glad they're dead</span><ul>
+                  <li><span data-n="kill2">Kill them too</span><ul><li><span data-n="war" data-end="A war you started">Ending</span></li></ul></li>
+                  <li><span data-n="clues2">Follow the clues instead</span></li></ul></li></ul></li>
+                <li><span data-n="clues">Follow the clues</span><ul><li><span data-n="c1">A placard names a person</span><ul><li><span data-n="c2">Their portrait gives a date</span><ul><li><span data-n="c3">The dated exhibit hides a switch</span><ul><li><span data-n="vault">A secret door opens on the stash</span><ul>
+                  <li><span data-n="theft" data-end="Thieves fall out">Ending</span></li>
+                  <li><span data-n="caught" data-end="Caught red-handed">Ending</span></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+              </ul>
+            </li>
+            <li class="bs4-tree__side"><span data-n="sec">Any time: destroy, disarm, or hack the security</span></li>
+          </ul>
         </div>
         <div class="bs4-sim__foot">
-          <div class="bs4-sim__ends"><span>Endings found <b>0</b>/4</span><ul></ul></div>
+          <div class="bs4-sim__ends"><span>Endings found <b>0</b>/4</span></div>
           <button type="button" class="bs4-sim__reset">Start over</button>
         </div>
       </div>
       <ul class="bb-facts bb-reveal" style="margin-top:40px;max-width:900px">
         <li><span>Memory</span><span>Each choice changes the state the player returns to, so consequences play out between visits</span></li>
         <li><span>Escalation</span><span>Killing both groups doesn't end the story; it starts a faction war the player caused</span></li>
+        <li><span>Clues</span><span>Names and dates point to exhibits around the building and lead to a hidden switch that opens a secret door</span></li>
         <li><span>Stealth path</span><span>Players who decipher the clues can take the stash at any point and let the groups blame each other</span></li>
+        <li><span>Security</span><span>Turrets and security systems can be destroyed, disarmed, or hacked, giving players tools to fight or sneak</span></li>
       </ul>
     </div>
   </section>
@@ -100,65 +130,106 @@
 (window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
   var host = root.querySelector('[data-bs4-sim]');
   if (!host) return;
-  var steal = [
-    { t: 'Decipher the clues and take the stash unseen', go: 'theft' },
-    { t: 'Take the stash, but get spotted', go: 'caught' }
-  ];
+  var steal = [{ t: 'Take it and slip out unseen', go: 'theft' }, { t: 'Take it, but get spotted', go: 'caught' }];
   var S = {
-    v1: { visit: 1, when: 'First visit', text: 'A group is searching the museum for a hidden supply cache. Clues to where it is are scattered through the building.',
-      acts: [{ t: 'Leave them alone', go: 'mutual' }, { t: 'Kill the group', go: 'killA' }].concat(steal) },
-    killA: { visit: 2, when: 'You come back', text: 'The rival group has shown up. They’re happy to find the first group dead.',
-      acts: [{ t: 'Kill them too', go: 'war' }].concat(steal) },
-    mutual: { visit: 2, when: 'You come back', text: 'The rival group showed up while you were gone. The two groups killed each other.', end: 'They finished each other off' },
-    war: { visit: 3, when: 'Third visit', text: 'Both factions retaliate. You walk into a faction war you caused.', end: 'A war you started' },
-    theft: { when: 'Later', text: 'The stash is gone. Each group accuses the other of stealing it, and they fight.', end: 'Thieves fall out' },
-    caught: { when: 'Spotted', text: 'They call for backup and try to kill you.', end: 'Caught red-handed' }
+    v1: { when: 'First visit', room: 'gallery', grp: 'A group searching', text: 'A group is searching the abandoned museum for a hidden supply cache. A security turret still guards the lobby.',
+      acts: [{ t: 'Leave them alone', go: 'mutual', via: 'leave' }, { t: 'Kill the group', go: 'killA', via: 'kill1', fight: 1 }, { t: 'Follow the clues', go: 'c1', via: 'clues' }] },
+    killA: { when: 'You come back', room: 'gallery', grp: 'The rival group', text: 'The rival group has arrived, and they’re happy to find the first group dead.',
+      acts: [{ t: 'Kill them too', go: 'war', via: 'kill2', fight: 1 }, { t: 'Follow the clues', go: 'c1', via: 'clues2' }] },
+    c1: { when: 'Following the clues', room: 'west', text: 'A placard on an exhibit in the west wing names a person.', acts: [{ t: 'Find their portrait', go: 'c2' }] },
+    c2: { when: 'Following the clues', room: 'east', text: 'Their portrait in the east wing gives a date.', acts: [{ t: 'Find the exhibit with that date', go: 'c3' }] },
+    c3: { when: 'Following the clues', room: 'exhibit', text: 'The exhibit marked with that date hides a switch.', acts: [{ t: 'Flip the switch', go: 'vault' }] },
+    vault: { when: 'Secret door', room: 'hidden', text: 'A secret door slides open. The stash is inside.', acts: steal },
+    mutual: { when: 'You come back', room: 'gallery', grp: 'Two dead groups', text: 'The rival group showed up while you were gone. The two groups killed each other.', end: 1 },
+    war: { when: 'Third visit', room: 'gallery', grp: 'Both factions', text: 'Both factions retaliate. You walk into a faction war you caused.', end: 1 },
+    theft: { when: 'Later', room: 'gallery', grp: 'Both groups, fighting', text: 'The stash is gone. Each group accuses the other of stealing it, and they fight.', end: 1 },
+    caught: { when: 'Spotted', room: 'hidden', text: 'They call for backup and try to kill you.', end: 1 }
   };
-  var visits = host.querySelector('.bs4-sim__visits'), when = host.querySelector('.bs4-sim__when'),
-      text = host.querySelector('.bs4-sim__text'), acts = host.querySelector('.bs4-sim__acts'),
-      endsN = host.querySelector('.bs4-sim__ends b'), endsL = host.querySelector('.bs4-sim__ends ul'),
-      found = [], path = [];
-  function show(k) {
-    var n = S[k]; path.push(n.when);
-    visits.innerHTML = path.map(function (p, i) { return '<span' + (i === path.length - 1 ? ' class="is-on"' : '') + '>' + p + '</span>'; }).join('<i>→</i>');
-    when.textContent = n.end ? 'Ending' : n.when;
-    text.textContent = n.text;
+  var SEC = { hack: ['Hack', 'hacked', 'You hack the turret. It now fights for you.'], disarm: ['Disarm', 'disarmed', 'You disarm the turret, so you can sneak past it.'], destroy: ['Destroy', 'destroyed', 'You destroy the turret.'] };
+  var $ = function (q) { return host.querySelector(q); };
+  var when = $('.bs4-sim__when'), text = $('.bs4-sim__text'), log = $('.bs4-sim__log'), acts = $('.bs4-sim__acts'), sec = $('.bs4-sim__sec'),
+      tur = $('.bs4-tur'), grp = $('.bs4-grp'), endsN = $('.bs4-sim__ends b'), seen = {}, found = {}, done = {}, tState, cur;
+  function mark(id) { seen[id] = 1; }
+  function paint() {
+    host.querySelectorAll('[data-n]').forEach(function (n) {
+      var id = n.getAttribute('data-n'), e = n.getAttribute('data-end');
+      n.classList.toggle('is-seen', !!seen[id]); n.classList.toggle('is-on', id === cur);
+      if (e) { n.textContent = found[id] ? 'Ending: ' + e : 'Ending: ?'; n.classList.toggle('is-found', !!found[id]); }
+    });
+    host.querySelectorAll('.bs4-room').forEach(function (r) {
+      var k = r.getAttribute('data-room');
+      r.classList.toggle('is-on', S[cur].room === k); r.classList.toggle('is-done', !!done[k]);
+      if (k === 'hidden') r.classList.toggle('is-locked', !done.hidden && cur !== 'vault' && cur !== 'caught');
+    });
+    grp.textContent = S[cur].grp || '';
+    tur.textContent = 'Turret: ' + tState; tur.parentNode.classList.toggle('is-hacked', tState !== 'armed');
+    endsN.textContent = Object.keys(found).length;
+  }
+  function show(k, note) {
+    cur = k; var n = S[k]; mark(k); if (n.room) done[n.room] = done[n.room] || (k !== 'v1' && k !== 'killA' && n.room !== 'gallery');
+    when.textContent = n.end ? 'Ending' : n.when; text.textContent = n.text; log.textContent = note || '';
     acts.innerHTML = '';
     (n.acts || []).forEach(function (a) {
       var b = document.createElement('button'); b.type = 'button'; b.className = 'bs4-sim__act'; b.textContent = a.t;
-      b.addEventListener('click', function () { show(a.go); }); acts.appendChild(b);
+      b.addEventListener('click', function () { if (a.via) mark(a.via); show(a.go, a.fight && tState === 'hacked' ? 'Your hacked turret joins the fight.' : ''); });
+      acts.appendChild(b);
     });
-    host.classList.toggle('is-end', !!n.end);
-    if (n.end) {
-      acts.innerHTML = '<p class="bs4-sim__end">' + n.end + '</p>';
-      if (found.indexOf(n.end) < 0) { found.push(n.end); endsN.textContent = found.length;
-        endsL.innerHTML = found.map(function (e) { return '<li>' + e + '</li>'; }).join(''); }
-    }
+    if (n.end) { found[k] = 1; acts.innerHTML = '<p class="bs4-sim__end">' + host.querySelector('[data-n="' + k + '"]').getAttribute('data-end') + '</p>'; }
+    sec.hidden = !!n.end || tState !== 'armed';
     text.classList.remove('is-in'); void text.offsetWidth; text.classList.add('is-in');
+    paint();
   }
-  host.querySelector('.bs4-sim__reset').addEventListener('click', function () { path = []; show('v1'); });
-  show('v1');
+  Object.keys(SEC).forEach(function (k) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'bs4-sim__act bs4-sim__act--sec'; b.textContent = SEC[k][0] + ' the turret';
+    b.addEventListener('click', function () { tState = SEC[k][1]; mark('sec'); var c = cur; show(c, SEC[k][2]); });
+    sec.appendChild(b);
+  });
+  function reset() { done = {}; tState = 'armed'; show('v1'); }
+  $('.bs4-sim__reset').addEventListener('click', reset);
+  reset();
 });
 </script>
 
 <style>
-.bs4-sim { border: 1px solid color-mix(in srgb, var(--bb-accent) 30%, transparent); outline: 1px solid color-mix(in srgb, var(--bb-accent) 18%, transparent); outline-offset: -8px; background: var(--bb-surface); padding: clamp(22px, 4vw, 44px); }
-.bs4-sim__visits { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--bb-dim); }
-.bs4-sim__visits span.is-on { color: var(--bb-accent); }
-.bs4-sim__visits i { font-style: normal; opacity: .5; }
-.bs4-sim__stage { min-height: 230px; padding: 26px 0; }
-.bs4-sim__when { font-family: var(--bb-serif); font-size: 18px; letter-spacing: .08em; text-transform: uppercase; color: var(--bb-accent); margin: 0 0 10px; }
-.bs4-sim__text { font-size: clamp(20px, 2.4vw, 28px); line-height: 1.35; color: var(--bb-text); max-width: 760px; margin: 0 0 26px; }
+.bs4-sim { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); border: 1px solid color-mix(in srgb, var(--bb-accent) 30%, transparent); outline: 1px solid color-mix(in srgb, var(--bb-accent) 18%, transparent); outline-offset: -8px; background: var(--bb-surface); padding: clamp(22px, 4vw, 44px); }
+.bs4-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.bs4-room { position: relative; min-height: 74px; padding: 10px 12px; border: 1px solid var(--bb-line-strong); background: var(--bb-bg-2); transition: border-color .3s, background .3s, opacity .3s; }
+.bs4-room b { display: block; font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--bb-dim); }
+.bs4-room em { display: block; margin-top: 6px; font-style: normal; font-size: 13px; color: var(--bb-muted); }
+.bs4-room.is-done { border-color: color-mix(in srgb, var(--bb-accent) 45%, transparent); }
+.bs4-room.is-on { border-color: var(--bb-accent); background: color-mix(in srgb, var(--bb-accent) 14%, var(--bb-bg-2)); }
+.bs4-room.is-on b { color: var(--bb-accent); }
+.bs4-room.is-locked { border-style: dashed; opacity: .45; }
+.bs4-room.is-locked em { visibility: hidden; }
+.bs4-room.is-hacked .bs4-tur { color: var(--bb-accent-2); }
+.bs4-sim__stage { padding-top: 24px; }
+.bs4-sim__when { font-family: var(--bb-serif); font-size: 18px; letter-spacing: .08em; text-transform: uppercase; color: var(--bb-accent); margin: 0 0 8px; }
+.bs4-sim__text { font-size: clamp(19px, 2vw, 24px); line-height: 1.35; color: var(--bb-text); margin: 0; min-height: 3.3em; }
 .bs4-sim__text.is-in { animation: bs4in .5s var(--bb-ease); }
 @keyframes bs4in { from { opacity: 0; transform: translateY(8px); } }
-.bs4-sim__acts { display: flex; flex-wrap: wrap; gap: 10px; }
-.bs4-sim__act { font: inherit; font-size: 14px; color: var(--bb-text); background: transparent; border: 1px solid var(--bb-line-strong); padding: 11px 16px; cursor: pointer; transition: border-color .2s, background .2s; text-align: left; }
-.bs4-sim__act:hover, .bs4-sim__act:focus-visible { border-color: var(--bb-accent); background: color-mix(in srgb, var(--bb-accent) 10%, transparent); }
+.bs4-sim__log { min-height: 1.4em; margin: 8px 0 18px; font-size: 14px; color: var(--bb-accent-2); }
+.bs4-sim__acts, .bs4-sim__sec { display: flex; flex-wrap: wrap; gap: 8px; }
+.bs4-sim__sec { align-items: center; margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--bb-line); }
+.bs4-sim__sec[hidden] { display: none; }
+.bs4-sim__sec span { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--bb-dim); margin-right: 4px; }
+.bs4-sim__act { font: inherit; font-size: 14px; color: var(--bb-text); background: transparent; border: 1px solid var(--bb-line-strong); padding: 10px 14px; cursor: pointer; transition: border-color .2s, background .2s; text-align: left; }
+.bs4-sim__act--sec { font-size: 13px; padding: 7px 12px; color: var(--bb-muted); }
+.bs4-sim__act:hover, .bs4-sim__act:focus-visible { border-color: var(--bb-accent); background: color-mix(in srgb, var(--bb-accent) 10%, transparent); color: var(--bb-text); }
 .bs4-sim__end { margin: 0; font-family: var(--bb-serif); font-size: 26px; font-weight: 800; color: var(--bb-accent); }
-.bs4-sim__foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; padding-top: 18px; border-top: 1px solid var(--bb-line); font-size: 13px; color: var(--bb-muted); }
-.bs4-sim__ends { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-.bs4-sim__ends ul { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
-.bs4-sim__ends li { font-size: 12px; padding: 4px 10px; border: 1px solid color-mix(in srgb, var(--bb-accent) 40%, transparent); color: var(--bb-accent-2); }
+.bs4-tree { font-size: 13px; line-height: 1.35; color: var(--bb-dim); }
+.bs4-tree__h { margin: 0 0 12px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--bb-muted); }
+.bs4-tree ul { list-style: none; margin: 0; padding: 0; }
+.bs4-tree ul ul { margin-left: 7px; padding-left: 14px; border-left: 1px solid var(--bb-line-strong); }
+.bs4-tree li { position: relative; padding: 4px 0; }
+.bs4-tree ul ul > li::before { content: ''; position: absolute; left: -14px; top: 13px; width: 10px; border-top: 1px solid var(--bb-line-strong); }
+.bs4-tree span { display: inline-block; padding: 2px 6px; border: 1px solid transparent; transition: color .3s, border-color .3s, background .3s; }
+.bs4-tree span.is-seen { color: var(--bb-text); }
+.bs4-tree span.is-on { border-color: var(--bb-accent); color: var(--bb-accent); }
+.bs4-tree span[data-end] { font-style: italic; }
+.bs4-tree span.is-found { font-style: normal; color: var(--bb-accent-2); background: color-mix(in srgb, var(--bb-accent) 12%, transparent); }
+.bs4-tree__side { margin-top: 10px; padding-top: 10px !important; border-top: 1px dashed var(--bb-line); }
+.bs4-sim__foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; padding-top: 18px; border-top: 1px solid var(--bb-line); font-size: 13px; color: var(--bb-muted); }
 .bs4-sim__reset { font: inherit; font-size: 13px; color: var(--bb-muted); background: none; border: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .bs4-sim__reset:hover { color: var(--bb-text); }
+@media (max-width: 860px) { .bs4-sim { grid-template-columns: 1fr; } .bs4-room { min-height: 62px; padding: 8px; } .bs4-room em { font-size: 12px; } }
 </style>
