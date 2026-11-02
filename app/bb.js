@@ -780,6 +780,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     var C = window.BB_CHROME;
     var tc = document.querySelector('meta[name="theme-color"]') || document.head.appendChild(document.createElement('meta'));
     tc.name = 'theme-color'; tc.content = '#09090b';
+    setTimeout(function () { tc.content = getComputedStyle(document.documentElement).getPropertyValue('--bb-bg').trim() || '#09090b'; }, 600);
     if (!C) return;
     if (!document.querySelector('.bb-header') && C.header) document.body.insertAdjacentHTML('afterbegin', C.header);
     if (!document.querySelector('.bb-footer') && C.footer) {
