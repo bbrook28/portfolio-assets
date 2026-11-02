@@ -78,7 +78,7 @@
               </ul>
             </li>
             <li class="bs4-tree__side"><span data-n="sec">Any time: destroy, disarm, or hack the turret</span></li>
-            <li class="bs4-tree__side bs4-tree__side--n"><span data-n="power">Or cut the power: security goes dark, and so does the secret door</span><ul><li><span data-n="restore">Restore it to open the door, and the security comes back</span></li></ul></li>
+            <li class="bs4-tree__side bs4-tree__side--n"><span data-n="power">Or cut the power: security goes dark, and so does the secret door. Enemies notice.</span><ul><li><span data-n="restore">Restore it to open the door, and the security comes back</span></li></ul></li>
           </ul>
         </div>
         <div class="bs4-sim__foot">
@@ -92,7 +92,7 @@
         <li><span>Clues</span><span>Names and dates point to exhibits around the building and lead to a hidden switch that opens a secret door</span></li>
         <li><span>Stealth path</span><span>Players who decipher the clues can take the stash at any point and let the groups blame each other</span></li>
         <li><span>Security</span><span>Turrets and security systems can be destroyed, disarmed, or hacked, giving players tools to fight or sneak</span></li>
-        <li><span>Power</span><span>Cutting the power shuts off security but also the secret door, so the easy way in costs the way to the stash</span></li>
+        <li><span>Power</span><span>Cutting the power shuts off security but also the secret door, and any enemies present notice it go out, so the easy way in has a cost</span></li>
       </ul>
     </div>
   </section>
@@ -147,7 +147,7 @@
     theft: { when: 'Later', room: 'gallery', grp: 'Both groups, fighting', text: 'The stash is gone. Each group accuses the other of stealing it, and they fight.', end: 1 },
     caught: { when: 'Spotted', room: 'hidden', text: 'They call for backup and try to kill you.', end: 1 }
   };
-  var SEC = { hack: ['Hack', 'hacked', 'You hack the turret. It now fights for you.'], disarm: ['Disarm', 'disarmed', 'You disarm the turret, so you can sneak past it.'], destroy: ['Destroy', 'destroyed', 'You destroy the turret.'], power: ['Cut the power', 'no power', 'You cut the power. Security goes dark, but so does the secret door.'] };
+  var SEC = { hack: ['Hack', 'hacked', 'You hack the turret. It now fights for you.'], disarm: ['Disarm', 'disarmed', 'You disarm the turret, so you can sneak past it.'], destroy: ['Destroy', 'destroyed', 'You destroy the turret.'], power: ['Cut the power', 'no power', 'You cut the power. Security goes dark, but so does the secret door, and the group in the museum notices the power go out.'] };
   var $ = function (q) { return host.querySelector(q); };
   var when = $('.bs4-sim__when'), text = $('.bs4-sim__text'), log = $('.bs4-sim__log'), acts = $('.bs4-sim__acts'), sec = $('.bs4-sim__sec'),
       tur = $('.bs4-tur'), grp = $('.bs4-grp'), endsN = $('.bs4-sim__ends b'), seen = {}, found = {}, done = {}, tState, cur;
