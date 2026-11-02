@@ -43,14 +43,14 @@
         <p class="bb-kicker">Interactive · Side quest</p>
         <h2 class="bb-h2">The museum cache</h2>
         <p class="bb-prose">Two rival groups are hunting for a hidden supply cache in an abandoned museum. Players can stumble into it, and what they do there decides what they find when they come back. Play it below; the story map fills in as you go.</p>
-        <p class="bb-small" style="margin-top:12px">Names left out and details generalized. This is my design from development and may have changed since.</p>
+        <p class="bb-small" style="margin-top:12px">Names left out and some details filled in for this demo. It’s my design from development and may have changed since.</p>
       </div>
       <div class="bs4-tw bb-reveal" data-bs4-sim style="margin-top:40px">
         <div class="bs4-tw__passage">
           <div class="bs4-tw__bar"><span class="bs4-tw__title"></span><span class="bs4-tw__state"></span><button type="button" class="bs4-tw__undo">↶ Undo</button><button type="button" class="bs4-tw__restart">↻ Restart</button></div>
           <p class="bs4-tw__text" aria-live="polite"></p>
         </div>
-        <div class="bs4-tw__mapwrap"><p class="bs4-tw__maph">Story map · <span class="bs4-tw__found">0</span>/5 endings found</p><div class="bs4-tw__scroll"><svg class="bs4-tw__map" viewBox="0 0 930 360" role="img" aria-label="Map of every passage in the quest"></svg></div></div>
+        <div class="bs4-tw__mapwrap"><p class="bs4-tw__maph">Story map · <span class="bs4-tw__found">0</span>/6 endings found</p><div class="bs4-tw__scroll"><svg class="bs4-tw__map" viewBox="0 0 930 360" role="img" aria-label="Map of every passage in the quest"></svg></div></div>
       </div>
       <ul class="bb-facts bb-reveal" style="margin-top:40px;max-width:900px">
         <li><span>Memory</span><span>Each choice changes the state the player returns to, so consequences play out between visits</span></li>
@@ -102,23 +102,29 @@
   var F; // flags: hacked, dark
   function fallText() { return (F.turret === 'hacked' && !F.dark ? 'Your hacked turret joins the fight. ' : '') + 'As each one falls, the others react out loud.'; }
   var P = {
-    start: { t: 'The museum', x: 0, y: 2, txt: function () { return 'A group is searching the abandoned museum for a hidden supply cache. A security turret guards the lobby, next to the fuse box.\n\nYou could [[leave them alone->mutual]], [[fight them->fight1]], [[follow the clues->placard]], deal with the [[turret->turret]], or [[cut the power->dark]].'; } },
-    turret: { t: 'Turret', x: 1, y: 4, txt: function () { return 'An armed security turret. Players can use it to fight or to sneak.\n\n[[Hack it->start|hacked]] so it fights for you, [[disarm it->start|disarmed]] to sneak past, or [[destroy it->start|destroyed]].'; } },
+    start: { t: 'The museum', x: 0, y: 2, txt: function () {
+      var tur = F.dark ? 'With the power out, the lobby turret is offline.' : F.turret === 'armed' ? 'A security turret guards the lobby, next to the fuse box.' : 'The lobby turret is ' + F.turret + '.';
+      return 'A group is searching the abandoned museum for a hidden supply cache. ' + tur + '\n\nYou could [[leave them alone->mutual]], [[fight them->fight1]], [[follow the clues->placard]]' +
+        (F.turret === 'armed' && !F.dark ? ', deal with the [[turret->turret]]' : '') + (F.dark ? '.' : ', or [[cut the power->dark]].'); } },
+    turret: { t: 'Turret', x: 1, y: 4, txt: function () { return 'An armed security turret. It’s a tool: use it to fight, or get it out of the way to sneak.\n\n[[Hack it->start|hacked]] so it fights for you, [[disarm it->start|disarmed]] so you can sneak past, or [[destroy it->dark|destroyed]].'; } },
     fight1: { t: 'Fight', x: 1, y: 1, txt: function () { return 'You fight the group. ' + fallText() + '\n\n[[Leave and come back later->rivals]]'; } },
-    rivals: { t: 'The rivals', x: 2, y: 1, txt: function () { return 'You come back. The rival group has arrived, and they’re happy to find the first group dead.\n\n[[Kill them too->war]], or [[follow the clues->placard]].'; } },
-    dark: { t: 'Power cut', x: 1, y: 3, txt: function () { return 'Security goes dark, and so does the secret door. The group notices and heads to the fuse box to investigate, away from where you need to go.\n\n[[Slip past and follow the clues->placard]], or [[get caught->combat]].'; } },
-    placard: { t: 'Placard', x: 1, y: 2, txt: function () { return 'A placard on an exhibit names a person.\n\n[[Find their portrait->portrait]]'; } },
-    portrait: { t: 'Portrait', x: 2, y: 2, txt: function () { return 'Their portrait gives a date.\n\n[[Find the exhibit with that date->exhibit]]'; } },
-    exhibit: { t: 'Hidden switch', x: 3, y: 2, txt: function () { return F.dark ? 'Hidden in the exhibit is a switch, but it’s dead. With the power cut, the secret door won’t open.\n\n[[Restore the power->restore]]' : 'Hidden in the exhibit: a switch.\n\n[[Flip it->door]]'; } },
-    restore: { t: 'Restore power', x: 4, y: 3, txt: function () { return 'The power is back, and so is the security.\n\n[[Flip the switch->door]]'; } },
-    door: { t: 'Secret door', x: 4, y: 2, txt: function () { return 'A secret door slides open. The stash is inside.\n\n[[Take it quietly->theft]], or [[take it, but get spotted->caught]].'; } },
-    mutual: { t: 'They finished each other off', end: 1, x: 1, y: 0, txt: function () { return 'You leave. When you come back, the rival group has shown up, and the two groups have killed each other.'; } },
+    rivals: { t: 'The rivals', x: 2, y: 1, txt: function () { return 'You come back. The rival group has arrived, and they’re happy to find the first group dead. They pick up the search where the others left off.\n\n[[Kill them too->war]], [[leave them be->beaten]], or [[follow the clues->placard]] before they do.'; } },
+    dark: { t: 'They investigate', x: 1, y: 3, txt: function () {
+      var why = F.noise && !F.dark ? 'The turret goes down loud. The group hears it and comes to check the lobby' : 'Security goes dark, and so does the secret door. The group notices and heads to the fuse box to investigate';
+      return why + ', away from where you need to go.\n\n[[Slip past and follow the clues->placard]], [[ambush them->fight1]], or [[get caught->combat]].'; } },
+    placard: { t: 'Placard', x: 1, y: 2, txt: function () { return 'Someone has been scrawling notes about the museum’s founders. A placard on one exhibit names a person.\n\n[[Find their portrait->portrait]]'; } },
+    portrait: { t: 'Portrait', x: 2, y: 2, txt: function () { return 'Their portrait hangs in another wing. The plaque beneath it gives a date.\n\n[[Find the exhibit with that date->exhibit]]'; } },
+    exhibit: { t: 'Hidden switch', x: 3, y: 2, txt: function () { return F.dark ? 'The exhibit marked with that date hides a switch, but it’s dead. With the power cut, the secret door won’t open.\n\n[[Restore the power->restore]]' : 'The exhibit marked with that date hides a switch.\n\n[[Flip it->door]]'; } },
+    restore: { t: 'Restore power', x: 4, y: 3, txt: function () { return 'You throw the breaker. The power is back' + (F.turret === 'destroyed' ? '.' : ', and so is the security.') + '\n\n[[Flip the switch->door]]'; } },
+    door: { t: 'Secret door', x: 4, y: 2, txt: function () { return 'A section of wall swings open on a hidden room. The stash is inside.\n\n[[Take it quietly->theft]], or [[take it, but get spotted->caught]].'; } },
+    mutual: { t: 'They finished each other off', end: 1, x: 1, y: 0, txt: function () { return 'You leave. When you come back, the rival group has shown up, and the two groups have killed each other. The stash is still hidden.'; } },
+    beaten: { t: 'Beaten to it', end: 1, x: 3, y: 0, txt: function () { return 'You leave them to it. When you come back, the rivals have cracked the clues. The hidden room is open, and empty.'; } },
     war: { t: 'A war you started', end: 1, x: 3, y: 1, txt: function () { return fallText() + ' On your third visit, both factions retaliate, and you walk into a faction war you caused.'; } },
-    combat: { t: 'Caught in the dark', end: 1, x: 2, y: 3, txt: function () { return 'The group investigating the fuse box catches you, and it turns into a fight.'; } },
-    theft: { t: 'Thieves fall out', end: 1, x: 5, y: 1, txt: function () { return 'Nobody saw you. Later, each group accuses the other of stealing the stash, and they fight.'; } },
+    combat: { t: 'Caught in the open', end: 1, x: 2, y: 3, txt: function () { return (F.dark ? 'The group investigating the fuse box' : 'The group checking on the noise') + ' finds you, and it turns into a fight' + (F.turret === 'hacked' && !F.dark ? ', with your hacked turret on your side.' : '.'); } },
+    theft: { t: 'Thieves fall out', end: 1, x: 5, y: 1, txt: function () { return (F.turret === 'disarmed' ? 'With the turret disarmed, you slip out the way you came. ' : 'Nobody saw you. ') + 'Later, each group accuses the other of stealing the stash, and they fight.'; } },
     caught: { t: 'Caught red-handed', end: 1, x: 5, y: 3, txt: function () { return 'They spot you with the stash, call for backup, and try to kill you.'; } }
   };
-  var E = [['start','mutual'],['start','fight1'],['start','placard'],['start','dark'],['start','turret'],['turret','start'],['fight1','rivals'],['rivals','war'],['rivals','placard'],['dark','placard'],['dark','combat'],['placard','portrait'],['portrait','exhibit'],['exhibit','door'],['exhibit','restore'],['restore','door'],['door','theft'],['door','caught']];
+  var E = [['start','mutual'],['start','fight1'],['start','placard'],['start','dark'],['start','turret'],['turret','start'],['turret','dark'],['fight1','rivals'],['rivals','war'],['rivals','beaten'],['rivals','placard'],['dark','placard'],['dark','fight1'],['dark','combat'],['placard','portrait'],['portrait','exhibit'],['exhibit','door'],['exhibit','restore'],['restore','door'],['door','theft'],['door','caught']];
   var BW = 128, BH = 44, CX = 158, CY = 72, OX = 12, OY = 12;
   function pos(k) { return { x: OX + P[k].x * CX, y: OY + P[k].y * CY }; }
   var svg = host.querySelector('.bs4-tw__map'), ns = 'http://www.w3.org/2000/svg';
@@ -129,6 +135,7 @@
   E.forEach(function (e) {
     var a = pos(e[0]), b = pos(e[1]), d;
     if (P[e[1]].x > P[e[0]].x) d = 'M' + (a.x + BW) + ' ' + (a.y + BH / 2) + ' C' + (a.x + BW + 24) + ' ' + (a.y + BH / 2) + ' ' + (b.x - 24) + ' ' + (b.y + BH / 2) + ' ' + (b.x - 2) + ' ' + (b.y + BH / 2);
+    else if (P[e[1]].x === P[e[0]].x && Math.abs(P[e[1]].y - P[e[0]].y) > 1) d = 'M' + (a.x + BW) + ' ' + (a.y + BH / 2) + ' C' + (a.x + BW + 22) + ' ' + (a.y + BH / 2) + ' ' + (b.x + BW + 22) + ' ' + (b.y + BH / 2 + 10) + ' ' + (b.x + BW + 1) + ' ' + (b.y + BH / 2 + 10);
     else if (P[e[1]].x === P[e[0]].x) d = 'M' + (a.x + BW / 2) + ' ' + (a.y + (b.y > a.y ? BH : 0)) + ' L' + (b.x + BW / 2) + ' ' + (b.y + (b.y > a.y ? -2 : BH + 2));
     else if (b.y < a.y) d = 'M' + a.x + ' ' + (a.y + BH / 2) + ' C' + (a.x - 40) + ' ' + (a.y + BH / 2) + ' ' + (b.x + BW / 2) + ' ' + (b.y + BH + 40) + ' ' + (b.x + BW / 2) + ' ' + (b.y + BH + 2);
     else d = 'M' + (a.x + 18) + ' ' + (a.y + BH) + ' C' + (a.x + 18) + ' ' + (a.y + BH + 16) + ' ' + (b.x + BW - 16) + ' ' + (b.y - 14) + ' ' + (b.x + BW - 16) + ' ' + (b.y - 2);
@@ -143,7 +150,7 @@
   var title = host.querySelector('.bs4-tw__title'), text = host.querySelector('.bs4-tw__text'), state = host.querySelector('.bs4-tw__state');
   function go(k, flag, from, quiet) {
     if (!quiet) hist.push({ cur: cur, F: JSON.parse(JSON.stringify(F)) });
-    if (flag) F.turret = flag; if (k === 'dark') F.dark = true; if (k === 'restore') F.dark = false;
+    if (flag) F.turret = flag; if (flag === 'destroyed') F.noise = true; else if (k === 'dark') F.dark = true; if (k === 'restore') F.dark = false;
     if (from) walked[from + '>' + k] = 1;
     cur = k; seen[k] = 1; if (P[k].end) found[k] = 1;
     paint();
@@ -172,7 +179,7 @@
     go(a.getAttribute('data-to'), a.getAttribute('data-flag'), cur);
   });
   host.querySelector('.bs4-tw__undo').addEventListener('click', function () { var h = hist.pop(); if (!h) return; cur = h.cur; F = h.F; paint(); });
-  function restart() { F = { turret: 'armed', dark: false }; hist = []; seen = seen || {}; walked = walked || {}; cur = null; go('start', null, null, true); }
+  function restart() { F = { turret: 'armed', dark: false, noise: false }; hist = []; seen = seen || {}; walked = walked || {}; cur = null; go('start', null, null, true); }
   host.querySelector('.bs4-tw__restart').addEventListener('click', restart);
   restart();
 });
