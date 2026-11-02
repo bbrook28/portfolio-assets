@@ -78,11 +78,11 @@
               </ul>
             </li>
             <li class="bs4-tree__side"><span data-n="sec">Any time: destroy, disarm, or hack the turret</span></li>
-            <li class="bs4-tree__side bs4-tree__side--n"><span data-n="power">Or cut the power: security goes dark, and so does the secret door. Enemies notice.</span><ul><li><span data-n="restore">Restore it to open the door, and the security comes back</span></li></ul></li>
+            <li class="bs4-tree__side bs4-tree__side--n"><span data-n="power">Or cut the power: security goes dark, and so does the secret door.</span><ul><li><span data-n="lure">The group leaves to investigate</span><ul><li><span data-n="slip">Use the distraction to get where they were</span></li><li><span data-n="combat" data-end="Caught in the dark">Ending</span></li></ul></li><li><span data-n="restore">Restore it to open the door, and the security comes back</span></li></ul></li>
           </ul>
         </div>
         <div class="bs4-sim__foot">
-          <div class="bs4-sim__ends"><span>Endings found <b>0</b>/4</span></div>
+          <div class="bs4-sim__ends"><span>Endings found <b>0</b>/5</span></div>
           <button type="button" class="bs4-sim__reset">Start over</button>
         </div>
       </div>
@@ -92,7 +92,7 @@
         <li><span>Clues</span><span>Names and dates point to exhibits around the building and lead to a hidden switch that opens a secret door</span></li>
         <li><span>Stealth path</span><span>Players who decipher the clues can take the stash at any point and let the groups blame each other</span></li>
         <li><span>Security</span><span>Turrets and security systems can be destroyed, disarmed, or hacked, giving players tools to fight or sneak</span></li>
-        <li><span>Power</span><span>Cutting the power shuts off security but also the secret door, and any enemies present notice it go out, so the easy way in has a cost</span></li>
+        <li><span>Power</span><span>Cutting the power shuts off security and the secret door. Enemies present go to investigate: if they catch you it's a fight, but it also lures them away from where you need to go</span></li>
       </ul>
     </div>
   </section>
@@ -145,12 +145,13 @@
     mutual: { when: 'You come back', room: 'gallery', grp: 'Two dead groups', text: 'The rival group showed up while you were gone. The two groups killed each other.', end: 1 },
     war: { when: 'Third visit', room: 'gallery', grp: 'Both factions', text: 'Both factions retaliate. You walk into a faction war you caused.', end: 1 },
     theft: { when: 'Later', room: 'gallery', grp: 'Both groups, fighting', text: 'The stash is gone. Each group accuses the other of stealing it, and they fight.', end: 1 },
-    caught: { when: 'Spotted', room: 'hidden', text: 'They call for backup and try to kill you.', end: 1 }
+    caught: { when: 'Spotted', room: 'hidden', text: 'They call for backup and try to kill you.', end: 1 },
+    combat: { when: 'Caught', room: 'gallery', text: 'The group investigating the outage finds you, and it turns into a fight.', end: 1 }
   };
-  var SEC = { hack: ['Hack', 'hacked', 'You hack the turret. It now fights for you.'], disarm: ['Disarm', 'disarmed', 'You disarm the turret, so you can sneak past it.'], destroy: ['Destroy', 'destroyed', 'You destroy the turret.'], power: ['Cut the power', 'no power', 'You cut the power. Security goes dark, but so does the secret door, and the group in the museum notices the power go out.'] };
+  var SEC = { hack: ['Hack', 'hacked', 'You hack the turret. It now fights for you.'], disarm: ['Disarm', 'disarmed', 'You disarm the turret, so you can sneak past it.'], destroy: ['Destroy', 'destroyed', 'You destroy the turret.'], power: ['Cut the power', 'no power', 'You cut the power. Security goes dark, but so does the secret door, and the group in the museum notices the power go out and leaves to investigate.'] };
   var $ = function (q) { return host.querySelector(q); };
   var when = $('.bs4-sim__when'), text = $('.bs4-sim__text'), log = $('.bs4-sim__log'), acts = $('.bs4-sim__acts'), sec = $('.bs4-sim__sec'),
-      tur = $('.bs4-tur'), grp = $('.bs4-grp'), endsN = $('.bs4-sim__ends b'), seen = {}, found = {}, done = {}, tState, cur;
+      tur = $('.bs4-tur'), grp = $('.bs4-grp'), endsN = $('.bs4-sim__ends b'), seen = {}, found = {}, done = {}, lured = false, tState, cur;
   function mark(id) { seen[id] = 1; }
   function paint() {
     host.querySelectorAll('[data-n]').forEach(function (n) {
@@ -163,7 +164,9 @@
       r.classList.toggle('is-on', S[cur].room === k); r.classList.toggle('is-done', !!done[k]);
       if (k === 'hidden') r.classList.toggle('is-locked', !done.hidden && cur !== 'vault' && cur !== 'caught');
     });
-    grp.textContent = S[cur].grp || '';
+    var away = lured && !S[cur].end;
+    grp.textContent = away ? 'Empty: they left to investigate' : (S[cur].grp || '');
+    host.querySelector('[data-room="gallery"]').classList.toggle('is-clear', away);
     tur.textContent = 'Turret: ' + tState; tur.parentNode.classList.toggle('is-hacked', tState !== 'armed');
     endsN.textContent = Object.keys(found).length;
   }
@@ -171,11 +174,12 @@
     cur = k; var n = S[k]; mark(k); if (n.room) done[n.room] = done[n.room] || (k !== 'v1' && k !== 'killA' && n.room !== 'gallery');
     when.textContent = n.end ? 'Ending' : n.when; text.textContent = n.text; log.textContent = note || '';
     acts.innerHTML = '';
-    var list = n.acts || [];
+    var list = (n.acts || []).slice();
+    if (lured && !n.end) list.push({ t: 'Get caught by the investigating group', go: 'combat' });
     if (k === 'c3' && tState === 'no power') { log.textContent = 'The switch is dead. With the power cut, the secret door won’t open.'; list = [{ t: 'Restore the power', restore: 1 }]; }
     list.forEach(function (a) {
       var b = document.createElement('button'); b.type = 'button'; b.className = 'bs4-sim__act'; b.textContent = a.t;
-      b.addEventListener('click', function () { if (a.restore) { tState = 'armed'; mark('restore'); return show('c3', 'The power is back, and so is the security.'); } if (a.via) mark(a.via); show(a.go, a.fight && tState === 'hacked' ? 'Your hacked turret joins the fight.' : ''); });
+      b.addEventListener('click', function () { if (a.restore) { tState = 'armed'; mark('restore'); return show('c3', 'The power is back, and so is the security.'); } if (a.via) mark(a.via); if (lured && a.go !== 'combat') mark('slip'); show(a.go, a.fight && tState === 'hacked' ? 'Your hacked turret joins the fight.' : ''); });
       acts.appendChild(b);
     });
     if (n.end) { found[k] = 1; acts.innerHTML = '<p class="bs4-sim__end">' + host.querySelector('[data-n="' + k + '"]').getAttribute('data-end') + '</p>'; }
@@ -185,10 +189,10 @@
   }
   Object.keys(SEC).forEach(function (k) {
     var b = document.createElement('button'); b.type = 'button'; b.className = 'bs4-sim__act bs4-sim__act--sec'; b.textContent = k === 'power' ? SEC[k][0] : SEC[k][0] + ' the turret';
-    b.addEventListener('click', function () { tState = SEC[k][1]; mark(k === 'power' ? 'power' : 'sec'); var c = cur; show(c, SEC[k][2]); });
+    b.addEventListener('click', function () { tState = SEC[k][1]; mark(k === 'power' ? 'power' : 'sec'); if (k === 'power') { lured = true; mark('lure'); } var c = cur; show(c, SEC[k][2]); });
     sec.appendChild(b);
   });
-  function reset() { done = {}; tState = 'armed'; show('v1'); }
+  function reset() { done = {}; lured = false; tState = 'armed'; show('v1'); }
   $('.bs4-sim__reset').addEventListener('click', reset);
   reset();
 });
@@ -203,6 +207,7 @@
 .bs4-room.is-done { border-color: color-mix(in srgb, var(--bb-accent) 45%, transparent); }
 .bs4-room.is-on { border-color: var(--bb-accent); background: color-mix(in srgb, var(--bb-accent) 14%, var(--bb-bg-2)); }
 .bs4-room.is-on b { color: var(--bb-accent); }
+.bs4-room.is-clear em { color: var(--bb-accent-2); }
 .bs4-room.is-locked { border-style: dashed; opacity: .45; }
 .bs4-room.is-locked em { visibility: hidden; }
 .bs4-room.is-hacked .bs4-tur { color: var(--bb-accent-2); }
