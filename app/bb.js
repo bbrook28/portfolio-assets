@@ -548,7 +548,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
       var ctx = c.getContext('2d');
       if (!ctx) return;
       var page = hero.closest('.bb-page');
-      var accent = getComputedStyle(page || document.documentElement).getPropertyValue('--bb-accent').trim() || '#e8b06a';
+      var accent = getComputedStyle(page || document.documentElement).getPropertyValue('--bb-accent').trim() || '#ef6a3a';
       var key = page && Object.keys(PAGE_THEME).filter(function (k) { return page.classList.contains(k); })[0];
       var th = THEMES[PAGE_THEME[key]] || { n: 70, cols: [accent], spawn: function (p, W, H) { p.x = Math.random() * W; p.y = Math.random() * H; p.r = Math.random() * 1.8 + .4; p.vx = (Math.random() - .5) * .12; p.vy = -(Math.random() * .25 + .05); p.a = Math.random() * .6 + .2; }, move: function () {}, draw: function (cx, p) { cx.shadowBlur = 8; cx.beginPath(); cx.arc(p.x, p.y, p.r, 0, 6.283); cx.fill(); } };
       var dpr = Math.min(2, window.devicePixelRatio || 1), W, H, motes = [], running = false, raf;
@@ -779,8 +779,8 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
   function addChrome() {
     var C = window.BB_CHROME;
     var tc = document.querySelector('meta[name="theme-color"]') || document.head.appendChild(document.createElement('meta'));
-    tc.name = 'theme-color'; tc.content = '#09090b';
-    setTimeout(function () { tc.content = getComputedStyle(document.documentElement).getPropertyValue('--bb-bg').trim() || '#09090b'; }, 600);
+    tc.name = 'theme-color'; tc.content = '#100d0b';
+    setTimeout(function () { tc.content = getComputedStyle(document.documentElement).getPropertyValue('--bb-bg').trim() || '#100d0b'; }, 600);
     if (!C) return;
     if (!document.querySelector('.bb-header') && C.header) document.body.insertAdjacentHTML('afterbegin', C.header);
     if (!document.querySelector('.bb-footer') && C.footer) {
