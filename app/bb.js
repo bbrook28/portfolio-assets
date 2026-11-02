@@ -282,6 +282,18 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
       window.sessionStorage.setItem(key, val);
     } catch (e) { return null; }
   }
+  function initBand(root) {
+    var page = (root || document).querySelector('.bb-page'), hero = page && page.querySelector('.bb-hero');
+    if (!hero || page.classList.contains('home') || page.className === 'bb-page' || page.querySelector('.bb-band')) return;
+    var h = hero.querySelector('.bb-display, .bb-h1'); if (!h) return;
+    var c = h.cloneNode(true); c.querySelectorAll('.bb-sr').forEach(function (n) { n.remove(); });
+    c.querySelectorAll('br').forEach(function (n) { n.replaceWith(' '); });
+    var t = c.textContent.replace(/\s+/g, ' ').trim(); if (!t) return;
+    var band = document.createElement('div'); band.className = 'bb-band'; band.setAttribute('aria-hidden', 'true');
+    var run = ''; for (var i = 0; i < 6; i++) run += '<span>' + t.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span><i></i>';
+    band.innerHTML = '<div class="bb-band__track">' + run + run + '</div>';
+    hero.insertAdjacentElement('afterend', band);
+  }
   function initIntro() {
     if (reduceMotion) return;
     var curtain = document.createElement('div');
@@ -697,7 +709,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initIntro, initProgress, initTop, initToc, initCardPreview, initSplit, initMotes, initPointerFx, initImageParallax, initAchievements, initKonami, initUpdated].forEach(function (fn) {
+    [initBand, initIntro, initProgress, initTop, initToc, initCardPreview, initSplit, initMotes, initPointerFx, initImageParallax, initAchievements, initKonami, initUpdated].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
   }
