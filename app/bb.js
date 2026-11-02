@@ -297,13 +297,19 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
         b.innerHTML = '<small>' + String(i + 1).padStart(2, '0') + '</small>' + p.getAttribute('data-tab');
         b.addEventListener('click', function () { show(i); });
         b.addEventListener('keydown', function (e) { var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); show((i + d + panels.length) % panels.length, true); } });
-        bar.appendChild(b); p.setAttribute('role', 'tabpanel');
+        bar.appendChild(b); p.setAttribute('role', 'tabpanel'); p._show = function () { show(i); };
       });
       var h = location.hash && sec.querySelector(location.hash.replace(/[^#\w-]/g, ''));
       var start = 0; panels.forEach(function (p, i) { if (h && (p === h || p.contains(h))) start = i; });
       show(start);
     });
   }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-tab-go]'); if (!a) return;
+    var p = [].find.call(document.querySelectorAll('.bb-tab'), function (t) { return t.getAttribute('data-tab') === a.getAttribute('data-tab-go'); });
+    if (!p || !p._show) return; e.preventDefault(); p._show();
+    var sec = p.closest('section'); window.scrollTo({ top: sec.getBoundingClientRect().top + scrollY - 40, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
   function initBand(root) {
     var pg = (root || document).querySelector('.bb-page');
     if (pg) pg.querySelectorAll(':scope > .bb-section').forEach(function (s) {
@@ -736,7 +742,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initTabs, initBand, initIntro, initProgress, initTop, initToc, initCardPreview, initSplit, initMotes, initPointerFx, initImageParallax, initAchievements, initKonami, initUpdated].forEach(function (fn) {
+    [initTabs, initProgress, initTop, initToc, initCardPreview, initSplit, initPointerFx, initImageParallax, initAchievements, initKonami, initUpdated].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
   }
