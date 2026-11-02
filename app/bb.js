@@ -282,7 +282,34 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
       window.sessionStorage.setItem(key, val);
     } catch (e) { return null; }
   }
+  function initTabs(root) {
+    (root || document).querySelectorAll('.bb-section--tabs').forEach(function (sec) {
+      var bar = sec.querySelector('.bb-tabs__bar'), panels = sec.querySelectorAll(':scope > .bb-tab');
+      if (!bar || bar.childElementCount) return;
+      function show(i, focus) {
+        panels.forEach(function (p, j) { p.hidden = j !== i; bar.children[j].setAttribute('aria-selected', j === i ? 'true' : 'false'); bar.children[j].tabIndex = j === i ? 0 : -1; });
+        if (focus) bar.children[i].focus();
+        panels[i].querySelectorAll('.bb-reveal, .bb-reveal-img').forEach(function (el) { el.classList.add('is-in', 'is-visible'); });
+        window.dispatchEvent(new Event('resize'));
+      }
+      panels.forEach(function (p, i) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'bb-tabs__btn'; b.setAttribute('role', 'tab');
+        b.innerHTML = '<small>' + String(i + 1).padStart(2, '0') + '</small>' + p.getAttribute('data-tab');
+        b.addEventListener('click', function () { show(i); });
+        b.addEventListener('keydown', function (e) { var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); show((i + d + panels.length) % panels.length, true); } });
+        bar.appendChild(b); p.setAttribute('role', 'tabpanel');
+      });
+      var h = location.hash && sec.querySelector(location.hash.replace(/[^#\w-]/g, ''));
+      var start = 0; panels.forEach(function (p, i) { if (h && (p === h || p.contains(h))) start = i; });
+      show(start);
+    });
+  }
   function initBand(root) {
+    var pg = (root || document).querySelector('.bb-page');
+    if (pg) pg.querySelectorAll(':scope > .bb-section').forEach(function (s) {
+      var k = s.querySelector('.bb-kicker'), t = s.getAttribute('data-bb-toc') || (k ? k.textContent.split('·')[0] : '');
+      s.setAttribute('data-sec', t.trim());
+    });
     var page = (root || document).querySelector('.bb-page'), hero = page && page.querySelector('.bb-hero');
     if (!hero || page.classList.contains('home') || page.className === 'bb-page' || page.querySelector('.bb-band')) return;
     var h = hero.querySelector('.bb-display, .bb-h1'); if (!h) return;
@@ -709,7 +736,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initBand, initIntro, initProgress, initTop, initToc, initCardPreview, initSplit, initMotes, initPointerFx, initImageParallax, initAchievements, initKonami, initUpdated].forEach(function (fn) {
+    [initTabs, initBand, initIntro, initProgress, initTop, initToc, initCardPreview, initSplit, initMotes, initPointerFx, initImageParallax, initAchievements, initKonami, initUpdated].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
   }
