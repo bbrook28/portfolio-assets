@@ -473,6 +473,7 @@
 .fh-boss__art { max-width: 200px; }
 @media (max-width: 720px) { .fh-boss { grid-template-columns: 1fr !important; } }
 .fh-boss__art img { max-height: 180px; width: auto; }
+.fh-qlog__list.is-one { grid-template-columns: 1fr !important; }
 </style>
 
 <script type="application/json" id="fh-data">
@@ -804,6 +805,7 @@
       el.hidden = !inChain || !any; if (!el.hidden) shown++;
     });
     empty.hidden = shown > 0;
+    list.classList.toggle('is-one', filter !== 'all' && !input.value.trim());
   }
   function setFilter(id) { filter = id; apply(); }
   input.addEventListener('input', apply);
