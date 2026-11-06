@@ -748,7 +748,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initTabs, initProgress, initTop, initToc, initCardPreview, initSplit, initPointerFx, initImageParallax, initAchievements, initKonami, initUpdated].forEach(function (fn) {
+    [initTabs, initProgress, initTop, initToc, initCardPreview, initSplit, initImageParallax, initAchievements, initUpdated].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
   }
@@ -757,8 +757,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     cartographer: ['Cartographer', 'Visited every map in Forgotten Hollow.'],
     joined: ['Joined Together', 'Solved all three Beepo & Pogo puzzles.'],
     boxed: ['Boxed In', 'Trapped Buba behind his own shells.'],
-    completionist: ['Completionist', 'Visited every project page.'],
-    konami: ['Old School', '↑↑↓↓←→←→BA. Respect.']
+    completionist: ['Completionist', 'Visited every project page.']
   };
   var PROJECTS = ['fh', 'bs4', 'beh', 'twd', 'lst', 'sumo', 'zoe', 'bsi', 'buba', 'bp'];
   function store(k, v) {
@@ -819,8 +818,8 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
   }
   function initConsole() {
     try {
-      console.log('%cBen Brook%c.', 'font: 28px Georgia, serif; color: #f2ede4', 'font: 28px Georgia, serif; color: #e0b072');
-      console.log('%cHey, fellow dev 👋\nThis site is hand-built: a small design system and page components served from GitHub Pages into Squarespace.\nIf you’re hiring for level, quest or systems design, I’d love to talk: benbrookgames@gmail.com\n(Try ↑↑↓↓←→←→BA on a project page.)', 'font: 13px/1.6 system-ui, sans-serif; color: #b3aea5');
+      console.log('%cBen Brook%c.', 'font: 800 28px Archivo, Arial, sans-serif; color: #f2f1ec', 'font: 800 28px Archivo, Arial, sans-serif; color: #ffe500');
+      console.log('%cSquarespace, plus a small design system I wrote for it.\nHiring for level, quest or systems design? benbrookgames@gmail.com', 'font: 13px/1.6 system-ui, sans-serif; color: #aaa8a1');
     } catch (e) {}
   }
   function initUpdated() {

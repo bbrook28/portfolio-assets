@@ -1,4 +1,3 @@
-<!-- PAGE: /projects/the-walking-dead-saints-and-sinners-chapter-2 — TWD: Saints & Sinners Ch. 2 Retribution -->
 <div class="bb-page twd">
 
   <section class="bb-hero">
@@ -30,8 +29,7 @@
     </div>
   </section>
 
-  <!-- ENEMIES -->
-  <section class="bb-section bb-section--tabs" data-bb-toc="Enemies">
+    <section class="bb-section bb-section--tabs" data-bb-toc="Enemies">
     <div class="bb-container"><div class="bb-tabs__bar" role="tablist" aria-label="Enemies"></div></div>
     <div class="bb-tab" data-tab="Eradicators">
     <div class="bb-container">
@@ -86,8 +84,7 @@
     </div>
   </section>
 
-  <!-- WEAPONS -->
-  <section class="bb-section bb-section--tabs" data-bb-toc="Weapons">
+    <section class="bb-section bb-section--tabs" data-bb-toc="Weapons">
     <div class="bb-container"><div class="bb-tabs__bar" role="tablist" aria-label="Weapons"></div></div>
     <div class="bb-tab" data-tab="Chainsaw haptics" id="haptics">
     <div class="bb-container">
@@ -158,10 +155,8 @@
     </div>
   </section>
 
-  <!-- HAPTICS -->
-
-  <!-- MISSION -->
-  <section class="bb-section bb-section--tabs" data-bb-toc="Missions & systems">
+  
+    <section class="bb-section bb-section--tabs" data-bb-toc="Missions & systems">
     <div class="bb-container"><div class="bb-tabs__bar" role="tablist" aria-label="Missions & systems"></div></div>
     <div class="bb-tab" data-tab="Tower Mission 2">
     <div class="bb-container">
@@ -229,10 +224,8 @@
     </div>
   </section>
 
-  <!-- NIGHT MODE -->
-
-  <!-- EXILE CAMPS -->
-
+  
+  
   <section class="bb-section bb-section--flush" style="padding-top:0">
     <div class="bb-container">
       <p class="bb-kicker bb-reveal" id="twd-gameplay">Gameplay</p>
@@ -279,7 +272,6 @@
 (window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root, bb) {
   var host = root.querySelector('[data-twd-haptics]');
   if (!host) return;
-  // Shipped intensity curves from the chainsaw haptics spec (values 0–1, evenly spaced over duration).
   var FX = [
     { g: 'Start-up', n: 'Ripcord', d: 1.5, v: [0.3, 0.3, 0.3, 0.3], note: 'A subtle loop while the cord is being pulled.' },
     { g: 'Start-up', n: 'Ripcord blip', d: 0.5, v: [0, 0.6, 0.6, 0], note: 'The kick you feel as the motor catches, handing off to Motor On.' },
@@ -367,7 +359,6 @@
   var buzz = host.querySelector('.twd-hap__buzz');
   var touch = window.matchMedia('(pointer: coarse)').matches;
   if (navigator.vibrate) {
-    // Android: on/off segments sized by intensity (phones can't vary strength).
     buzz.hidden = false;
     buzz.addEventListener('click', function () {
       var fx = FX[current], seg = fx.d * 1000 / fx.v.length, pattern = [];
@@ -379,14 +370,10 @@
       play();
     });
   } else if (touch) {
-    // iPhone: Safari only gives a web page a haptic tick when your finger toggles
-    // a native switch, one tick per tap. So the button becomes a real switch.
     var lab = document.createElement('label');
     lab.className = buzz.className;
     lab.innerHTML = '<input type="checkbox" switch class="twd-hap__switch" aria-label="Tap to feel the haptic">Tap to feel it';
     buzz.replaceWith(lab);
-    // Taps never restart the curve: the first starts it, and it keeps looping
-    // while you tap along, each tap giving its own tick.
     lab.querySelector('input').addEventListener('change', function () {
       loopUntil = Date.now() + 2500;
       pad.classList.remove('is-tap'); void pad.offsetWidth; pad.classList.add('is-tap');
@@ -395,7 +382,6 @@
     var hint = host.querySelector('.twd-hap__hint');
     if (hint) hint.textContent = 'On iPhone, Apple only lets websites play one haptic tick per tap, so tap along with the pulses to feel the rhythm. Android phones play the full vibration pattern.';
   }
-  // Start when scrolled into view so the first animation is seen.
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); show(current); } }, { threshold: 0.4 });
     io.observe(host);

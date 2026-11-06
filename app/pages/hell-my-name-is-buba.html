@@ -1,4 +1,3 @@
-<!-- PAGE: /projects/hell-my-name-is-bubba — Hell, My Name Is Buba (Epic MegaJam 2021) -->
 <div class="bb-page buba">
 
   <section class="bb-hero bb-hero--short">
@@ -31,8 +30,7 @@
     </div>
   </section>
 
-  <!-- LIFECYCLE -->
-  <section class="bb-section bb-section--alt">
+    <section class="bb-section bb-section--alt">
     <div class="bb-container">
       <div class="bb-reveal" style="max-width:760px">
         <p class="bb-kicker">Systems design</p>
@@ -49,8 +47,7 @@
     </div>
   </section>
 
-  <!-- TOY -->
-  <section class="bb-section">
+    <section class="bb-section">
     <div class="bb-container">
       <div class="bb-split" style="align-items:end">
         <div class="bb-reveal">
@@ -141,7 +138,6 @@
   var cv = host.querySelector('canvas'), ctx = cv.getContext('2d');
   var meter = host.querySelector('.buba-toy__meter i'), stats = host.querySelector('.buba-toy__stats');
   var W, H, dpr = Math.min(2, window.devicePixelRatio || 1), running = false;
-  // SR: shell collision radius, BR/FR: Buba and foe radii, CELL: routing grid size
   var SR = 8, BR = 12, FR = 8, CELL = 12, BLAST = 48;
   var buba, aim, shells, shots, foes, booms, kills, hits, spawnT, flash;
   var cols, rows, blocked, dist, reach, queue, keys = {}, ptr = null;
@@ -162,7 +158,6 @@
     for (var i = 0; i < shells.length; i++) if (Math.hypot(shells[i].x - x, shells[i].y - y) < SR + rad) return true;
     return false;
   }
-  // Slide along shells and walls by trying each axis on its own.
   function move(o, dx, dy, rad) {
     var nx = Math.max(rad, Math.min(W - rad, o.x + dx));
     if (!hitsShell(nx, o.y, rad)) o.x = nx;
@@ -173,7 +168,6 @@
     var dx = tx - buba.x, dy = ty - buba.y, d = Math.hypot(dx, dy) || 1; dx /= d; dy /= d;
     aim = { x: dx, y: dy };
     for (var k = -1; k <= 1; k++) { var a = Math.atan2(dy, dx) + k * .1; shots.push({ x: buba.x + dx * BR, y: buba.y + dy * BR, vx: Math.cos(a) * 10, vy: Math.sin(a) * 10, l: 34 }); }
-    // the spent shell kicks out to Buba's side and stays where it lands
     var side = Math.random() < .5 ? 1 : -1, ex = -dy * side, ey = dx * side;
     var sx = buba.x + ex * (BR + SR + 6) - dx * 6, sy = buba.y + ey * (BR + SR + 6) - dy * 6;
     shells.push({ x: Math.max(SR, Math.min(W - SR, sx)), y: Math.max(SR, Math.min(H - SR, sy)), r: Math.random() * 6.28 });
@@ -187,7 +181,6 @@
   }
 
   function pos(e) { var r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
-  // A quick tap fires; press and hold walks Buba toward the pointer.
   cv.addEventListener('pointerdown', function (e) {
     e.preventDefault(); cv.focus({ preventScroll: true });
     var p = pos(e); ptr = { x: p.x, y: p.y, x0: p.x, y0: p.y, t0: performance.now(), walk: false, id: e.pointerId };
@@ -214,8 +207,6 @@
   cv.addEventListener('keyup', function (e) { if (KEYS[e.code]) keys[KEYS[e.code]] = false; });
   cv.addEventListener('blur', function () { keys = {}; });
 
-  // Flood the grid from Buba: the result is both the damned's route map and
-  // how much of the floor he can still reach.
   function route() {
     blocked.fill(0); dist.fill(-1);
     var pad = SR + FR - 2;
@@ -244,7 +235,6 @@
     for (var dr = -1; dr <= 1; dr++) for (var dc = -1; dc <= 1; dc++) {
       var nc = c + dc, nr = r + dr;
       if ((!dr && !dc) || nc < 0 || nr < 0 || nc >= cols || nr >= rows) continue;
-      // no cutting corners between two blocked cells
       if (dr && dc && (blocked[r * cols + nc] || blocked[nr * cols + c])) continue;
       var v = dist[nr * cols + nc];
       if (v >= 0 && v < bd) { bd = v; best = { x: (nc + .5) * CELL, y: (nr + .5) * CELL }; }
@@ -299,7 +289,6 @@
   function draw() {
     var g = ctx.createRadialGradient(W / 2, H / 2, 10, W / 2, H / 2, Math.max(W, H) * .7);
     g.addColorStop(0, '#2a1410'); g.addColorStop(1, '#120807'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    // floor Buba can no longer reach goes dark
     ctx.fillStyle = 'rgba(5,2,2,.62)';
     for (var i = 0; i < dist.length; i++) if (dist[i] < 0 && !blocked[i]) ctx.fillRect((i % cols) * CELL, Math.floor(i / cols) * CELL, CELL, CELL);
     shells.forEach(function (s) {
