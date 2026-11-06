@@ -88,8 +88,8 @@
         <p class="bb-prose bb-reveal" style="--d:.1s">The story is a rot spreading through the World Tree's roots, so the art carries it first: green and lit near the surface, bruised purples and rusted reds by the Deep Passage. Glowshrooms and Aqumanders give way to undead Rotten Mushrooms and the regenerating Sporewood, so <strong>level, difficulty, and dread rise together</strong>.</p>
       </div>
       <div class="bb-compare fh-compare bb-reveal" style="margin-top:48px" aria-label="Comparison of Forgotten Entrance III near the surface and Another Sanctuary in the depths">
-        <img data-bb-src="fh/maps/another-sanctuary.webp" alt="Another Sanctuary, the deepest map, overgrown with purple rot">
-        <div class="bb-compare__top"><img data-bb-src="fh/maps/forgotten-entrance-3.webp" alt="Forgotten Entrance III, green and lit near the surface"></div>
+        <img data-bb-src="fh/compare/depths.webp" alt="Another Sanctuary, the deepest map, overgrown with purple rot">
+        <div class="bb-compare__top"><img data-bb-src="fh/compare/surface.webp" alt="Forgotten Entrance III, green and lit near the surface"></div>
         <div class="bb-compare__handle"></div>
         <span class="bb-compare__label bb-compare__label--l">Surface · Forgotten Entrance III</span>
         <span class="bb-compare__label bb-compare__label--r">Depths · Another Sanctuary</span>
@@ -107,14 +107,23 @@
         <p class="bb-prose">The story opens in Ellinia's Magic Library and closes there too. A short linear act pulls players into the Hollow, then opens three parallel chains gated by level instead of order, so players progress as they grow without waiting on one long chain.</p>
       </div>
 
-      <div class="bb-grid bb-grid--3" style="margin-top:40px">
-        <div class="bb-card bb-reveal"><div class="bb-card__num">01</div><h3 class="bb-h3">Starts and ends in Ellinia</h3><p>Starting and ending with Grendel in the Magic Library stitches a brand-new region into a town players already love, and sets up what comes next.</p></div>
-        <div class="bb-card bb-reveal" style="--d:.08s"><div class="bb-card__num">02</div><h3 class="bb-h3">Chains gated by level</h3><p>Once players are inside, three chains open at once and unlock at 39, 45, and 49. Nobody is stuck behind a single bottleneck quest.</p></div>
-        <div class="bb-card bb-reveal" style="--d:.16s"><div class="bb-card__num">03</div><h3 class="bb-h3">Quests that teach the map</h3><p>Objectives send players to specific maps for specific monsters, so finishing the questlines naturally tours them through the whole Hollow.</p></div>
+      <div class="fh-flow bb-reveal" style="margin-top:40px" aria-label="Quest structure">
+        <div class="fh-flow__node fh-flow__node--town"><span class="fh-flow__who"><img data-bb-src="fh/tiles/grendel-the-really-old.png" alt=""></span><b>Starts in Ellinia</b><i>Grendel · Magic Library</i></div>
+        <div class="fh-flow__arrow" aria-hidden="true"></div>
+        <button type="button" class="fh-flow__chain" data-chain="act1"><span class="fh-flow__who"><img data-bb-src="fh/tiles/arwen-the-fairy.png" alt=""></span><b>Act I · The Disturbance</b><i>Lv 39 · 5 quests</i><span class="fh-flow__maps"><img loading="lazy" data-bb-src="fh/maps/forgotten-entrance-3.webp" alt="" title="Forgotten Entrance 3"><img loading="lazy" data-bb-src="fh/maps/forgotten-hollow.webp" alt="" title="Forgotten Hollow"></span><small>Linear: pulls players down into the Hollow</small></button>
+        <div class="fh-flow__arrow fh-flow__arrow--fork" aria-hidden="true"><span>Opens 3 chains at once</span></div>
+        <div class="fh-flow__chains">
+          <button type="button" class="fh-flow__chain" data-chain="zelya"><span class="fh-flow__who"><img data-bb-src="fh/tiles/zelya.png" alt=""></span><b>Zelya</b><i>Lv 39–43 · 3 quests</i><span class="fh-flow__maps"><img loading="lazy" data-bb-src="fh/maps/cave-fairy-sanctuary.webp" alt="" title="Cave Fairy Sanctuary"><img loading="lazy" data-bb-src="fh/maps/forgotten-entrance-2.webp" alt="" title="Forgotten Entrance 2"><img loading="lazy" data-bb-src="fh/maps/primeval-forest-2.webp" alt="" title="Primeval Forest 2"></span><small>Rebuild a torn cave map</small></button>
+          <button type="button" class="fh-flow__chain" data-chain="nyroth"><span class="fh-flow__who"><img data-bb-src="fh/tiles/nyroth.png" alt=""></span><b>Nyroth</b><i>Lv 45–50 · 5 quests</i><span class="fh-flow__maps"><img loading="lazy" data-bb-src="fh/maps/forgotten-hollow.webp" alt="" title="Forgotten Hollow"><img loading="lazy" data-bb-src="fh/maps/forbidden-entrance.webp" alt="" title="Forbidden Entrance"><img loading="lazy" data-bb-src="fh/maps/perilous-descent-2.webp" alt="" title="Perilous Descent 2"><img loading="lazy" data-bb-src="fh/maps/decayed-tunnel-3.webp" alt="" title="Decayed Tunnel 3"><img loading="lazy" data-bb-src="fh/maps/precipice-of-darkness.webp" alt="" title="Precipice Of Darkness"></span><small>Follow the rot into the depths</small></button>
+          <button type="button" class="fh-flow__chain" data-chain="myra"><span class="fh-flow__who"><img data-bb-src="fh/tiles/myra.png" alt=""></span><b>Myra</b><i>Lv 49 · 2 quests</i><span class="fh-flow__maps"><img loading="lazy" data-bb-src="fh/maps/lingering-regret.webp" alt="" title="Lingering Regret"></span><small>Put her companions to rest</small></button>
+        </div>
+        <div class="fh-flow__arrow" aria-hidden="true"></div>
+        <div class="fh-flow__node fh-flow__node--town"><span class="fh-flow__who"><img data-bb-src="fh/tiles/grendel-the-really-old.png" alt=""></span><b>Ends in Ellinia</b><i>Back to the Magic Library</i></div>
+        <p class="fh-flow__note">Each chain is gated by level, not order, and its objectives tour the maps shown, so finishing the questlines walks players through the region. Pick a chain to see its quests below.</p>
       </div>
 
         <div class="fh-qlog bb-reveal" data-fh-qlog>
-          <div class="fh-qlog__time" aria-label="Quest level timeline"><div class="fh-qlog__track"></div><div class="fh-qlog__axis"></div></div>
+          <div class="fh-qlog__time" hidden aria-label="Quest level timeline"><div class="fh-qlog__track"></div><div class="fh-qlog__axis"></div></div>
           <div class="fh-qlog__bar">
             <div class="fh-qlog__chips" role="group" aria-label="Filter by questline"></div>
             <label class="fh-qlog__search"><span class="bb-sr">Search quests</span><input type="search" placeholder="Search quests, NPCs, maps"></label>
@@ -222,6 +231,21 @@
   <p class="bb-credits">MapleStory and all related game art © Nexon. Map renders are from the in-game client. Used here for portfolio purposes.</p>
 </div>
 
+<script>
+(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
+  var flow = root.querySelector('.fh-flow'); if (!flow) return;
+  var names = { act1: 'Act I', zelya: 'Zelya', nyroth: 'Nyroth', myra: 'Myra' };
+  flow.querySelectorAll('.fh-flow__chain').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var want = names[b.getAttribute('data-chain')];
+      var chip = [].find.call(root.querySelectorAll('.fh-qlog__chips button'), function (c) { return c.textContent.trim() === want; });
+      flow.querySelectorAll('.fh-flow__chain').forEach(function (x) { x.classList.toggle('is-on', x === b); });
+      if (chip) { chip.click(); var list = root.querySelector('.fh-qlog'); window.scrollTo({ top: list.getBoundingClientRect().top + scrollY - 100, behavior: 'smooth' }); }
+    });
+  });
+});
+</script>
+
 <style>
 /* ---- Forgotten Hollow page components ---- */
 .fh-game { margin: 18px 0 -6px; font-family: var(--bb-serif); font-size: clamp(26px, 4.4vw, 46px); line-height: 1.05; color: var(--bb-text); opacity: .9; }
@@ -246,7 +270,7 @@
 .fh-mapx__frame { position: relative; aspect-ratio: 16 / 9; background: radial-gradient(circle at 50% 40%, #16161b, #050507); display: grid; place-items: center; overflow: hidden; }
 .fh-mapx__bg { position: absolute; inset: -30px; width: calc(100% + 60px) !important; height: calc(100% + 60px); max-width: none !important; object-fit: cover; filter: blur(24px) brightness(.4) saturate(1.3); transform: scale(1.05); }
 .fh-mapx__img { position: absolute; inset: 0; width: 100% !important; height: 100% !important; max-width: none !important; object-fit: contain; filter: drop-shadow(0 20px 40px rgba(0,0,0,.6)); transition: opacity .35s ease, transform .6s var(--bb-ease); }
-.fh-compare { aspect-ratio: 2.6 / 1; }
+.fh-compare { aspect-ratio: 1600 / 665; }
 
 .fh-mapx__img.is-loading { opacity: 0; transform: scale(.98); }
 .fh-mapx__zoom { position: absolute; right: 14px; bottom: 14px; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--bb-line-strong); background: rgba(0,0,0,.55); color: #fff; font-size: 18px; cursor: zoom-in; }
@@ -331,8 +355,8 @@
 }
 @media (max-width: 720px) {
   .fh-mapx__frame { aspect-ratio: 4 / 3; }
-  .fh-compare { aspect-ratio: 4 / 3; }
-  .fh-compare img { object-position: 30% 50%; }
+  .fh-compare { aspect-ratio: 16 / 10; }
+  .fh-compare img { object-position: 50% 50%; }
   .fh-mapx__head { flex-direction: column; }
   .fh-boss { grid-template-columns: 1fr; text-align: left; }
   .fh-boss__art { max-width: 220px; }
@@ -432,6 +456,28 @@
 .fh-chart { position: relative; }
 .fh-routetag span { margin-left: 8px; color: var(--bb-muted); }
 @media (max-width: 860px) { .fh-qlog__list { grid-template-columns: 1fr; } .fh-qlog__span span { font-size: 11px; } }
+
+.fh-qlog__time[hidden] { display: none !important; }
+.fh-flow { display: grid; justify-items: center; gap: 0; }
+.fh-flow__node, .fh-flow__chain { display: grid; grid-template-columns: 56px 1fr; grid-template-areas: "who name" "who lv" "maps maps" "note note"; column-gap: 14px; align-items: center; text-align: left; width: min(100%, 420px); padding: 14px 16px; border: 1px solid var(--bb-line-strong); background: var(--bb-surface); color: var(--bb-text); font: inherit; }
+.fh-flow__node--town { width: min(100%, 320px); grid-template-areas: "who name" "who lv"; background: var(--bb-bg-2); }
+.fh-flow__who { grid-area: who; width: 56px; height: 56px; display: grid; place-items: center; background: radial-gradient(circle, color-mix(in srgb, var(--bb-accent) 22%, transparent), transparent 70%); }
+.fh-flow__who img { width: 52px; height: 52px; object-fit: contain; image-rendering: pixelated; }
+.fh-flow b { grid-area: name; font-family: var(--bb-serif); font-weight: 800; font-size: 17px; letter-spacing: -0.02em; text-transform: uppercase; }
+.fh-flow i { grid-area: lv; font-style: normal; font-family: var(--bb-mono); font-size: 12px; color: var(--bb-muted); }
+.fh-flow__maps { grid-area: maps; display: flex; gap: 4px; margin-top: 12px; }
+.fh-flow__maps img { flex: 1; min-width: 0; height: 38px; object-fit: cover; border: 1px solid var(--bb-line); }
+.fh-flow small { grid-area: note; margin-top: 8px; font-size: 13px; color: var(--bb-muted); }
+.fh-flow__chain { cursor: pointer; transition: border-color .2s, transform .2s; }
+.fh-flow__chain:hover, .fh-flow__chain.is-on { border-color: var(--bb-accent); transform: translateY(-2px); }
+.fh-flow__chains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; width: 100%; }
+.fh-flow__chains .fh-flow__chain { width: 100%; }
+.fh-flow__arrow { width: 2px; height: 28px; background: var(--bb-line-strong); position: relative; }
+.fh-flow__arrow::after { content: ''; position: absolute; left: 50%; bottom: -1px; width: 8px; height: 8px; border-right: 2px solid var(--bb-line-strong); border-bottom: 2px solid var(--bb-line-strong); transform: translate(-50%, 0) rotate(45deg); }
+.fh-flow__arrow--fork { height: 44px; }
+.fh-flow__arrow--fork span { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); white-space: nowrap; font: 500 11px var(--bb-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--bb-accent); }
+.fh-flow__note { margin: 22px 0 0; max-width: 640px; text-align: center; font-size: 14px; color: var(--bb-muted); }
+@media (max-width: 760px) { .fh-flow__chains { grid-template-columns: 1fr; } }
 </style>
 
 <script type="application/json" id="fh-data">
