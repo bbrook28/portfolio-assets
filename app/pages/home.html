@@ -1,4 +1,3 @@
-<!-- PAGE: / (Home) -->
 <div class="bb-page home" data-bb-no-toc>
 
   <section class="bb-hero home-hero" data-home-reel aria-roledescription="carousel" aria-label="Featured projects">
@@ -135,12 +134,11 @@
 </div>
 
 <style>
-/* Showreel hero */
+
 .home-hero { min-height: 100vh; min-height: 100svh; padding-bottom: 28px; }
 .home-reel img, .home-reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s ease; animation: none; }
 .home-reel .is-on { opacity: 1; animation: bb-pushin 9s linear both; }
-/* Clip slides: a still holds the frame and the video fades in only once it's
-   playing, so iOS never shows its play button or a blank player. */
+
 .home-reel .home-clip { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
 .home-reel .home-clip.is-on { opacity: 1; }
 .home-reel .home-clip > img { opacity: 1; animation: none; }
@@ -171,7 +169,7 @@
 .home-tabs button:hover, .home-tabs button[aria-selected="true"] { color: var(--bb-text); }
 .home-tabs button[aria-selected="true"] b { color: var(--bb-accent); }
 
-/* Marquee */
+
 .home-marquee { overflow: hidden; border-top: 1px solid var(--bb-line); border-bottom: 1px solid var(--bb-line); padding: 26px 0; background: var(--bb-bg); }
 .home-marquee__track { display: flex; align-items: center; gap: 36px; width: max-content; animation: home-marquee 38s linear infinite; }
 .home-marquee:hover .home-marquee__track { animation-play-state: paused; }
@@ -180,7 +178,7 @@
 .home-marquee b { color: var(--bb-accent); font-weight: 400; font-size: 22px; }
 @keyframes home-marquee { to { transform: translateX(-50%); } }
 
-/* Design-docs strip */
+
 .home-strip { display: flex; gap: 18px; overflow-x: auto; padding: 8px max(var(--bb-gutter), calc((100vw - var(--bb-max)) / 2 + var(--bb-gutter))) 28px; scroll-snap-type: x proximity; scrollbar-width: none; cursor: grab; }
 .home-strip::-webkit-scrollbar { display: none; }
 .home-strip.is-drag { cursor: grabbing; scroll-snap-type: none; }
@@ -208,10 +206,9 @@
 
 <script>
 (window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root, bb) {
-  /* Countdown to the Forgotten Hollow launch (Nov 18, 2026, Pacific) */
+  
   var cd = root.querySelector('[data-home-countdown]');
   if (cd) {
-    // Count calendar days in Pacific time so the number matches the launch date.
     var pt = new Date(), parts;
     try {
       parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(pt);
@@ -225,7 +222,7 @@
       : 'Forgotten Hollow is live in MapleStory Classic World';
   }
 
-  /* Showreel */
+  
   var hero = root.querySelector('[data-home-reel]');
   if (hero) {
     var S = [
@@ -249,14 +246,9 @@
       v.addEventListener('playing', function () { clearTimeout(tm); tm = setTimeout(function () { v.parentNode.classList.add('is-playing'); }, 1000); });
       ['waiting', 'pause', 'stalled'].forEach(function (ev) { v.addEventListener(ev, function () { clearTimeout(tm); v.parentNode.classList.remove('is-playing'); }); });
     });
-    // Official trailers play muted behind the still, fading in once they're running.
-    // Hide instantly: YouTube's mobile player draws play/skip buttons as soon as
-    // it pauses, and a fade would let them show through.
     function stopTrailer() { if (yt) { var old = yt; old.classList.add('is-cut'); old.classList.remove('is-on'); setTimeout(function () { old.remove(); }, 200); yt = null; } }
     function startTrailer(s) {
       stopTrailer();
-      // Touch devices get the stills: YouTube's mobile player draws its own
-      // play/skip buttons over muted embeds and the page can't suppress them.
       if (!s.yt || bb.reduceMotion || saveData || window.matchMedia('(hover: none)').matches) return;
       var box = document.createElement('div');
       box.className = 'home-yt';
@@ -265,8 +257,6 @@
       reel.appendChild(box);
       yt = box;
       var frame = box.querySelector('iframe');
-      // Ask the player for state updates; only reveal it once it reports "playing",
-      // so an unavailable video never shows YouTube's error screen.
       frame.addEventListener('load', function () {
         var n = 0, ping = setInterval(function () {
           if (yt !== box || box.classList.contains('is-on') || ++n > 20) return clearInterval(ping);
@@ -280,8 +270,6 @@
     function sizeTrailer() {
       if (!yt) return;
       var W = reel.clientWidth, H = reel.clientHeight;
-      // Mobile browser bars change the height while scrolling; only resize
-      // for real width changes or meaningful height growth.
       if (W === lastW && Math.abs(H - lastH) < 160 && yt.querySelector('iframe').style.width) return;
       lastW = W; lastH = H;
       var w = Math.max(W, H * 16 / 9) * 1.3;
@@ -293,8 +281,6 @@
       if (e.source !== yt._frame.contentWindow) return;
       var d; try { d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (err) { return; }
       var st = d && d.info && d.info.playerState;
-      // YouTube shows its title bar and controls for the first ~3 s of play
-      // even with controls=0, so keep the still up until they've faded.
       var box = yt;
       if (st === 1) {
         clearTimeout(box._t);
@@ -302,7 +288,6 @@
         box._t = setTimeout(function () { if (yt === box) { box.classList.remove('is-cut'); box.classList.add('is-on'); } }, box._shown ? (touch ? 3200 : 900) : (touch ? 4000 : 3200));
         box._shown = true;
       } else if (st === 2 || st === 3 || st === 0) {
-        // Buffering, paused or ended: the player draws its controls, so cover it.
         clearTimeout(box._t); box.classList.add('is-cut'); box.classList.remove('is-on');
       }
     });
@@ -370,7 +355,7 @@
     }
   }
 
-  /* Seamless marquee: repeat the run once */
+  
   var track = root.querySelector('.home-marquee__track');
   if (track && !track.dataset.dup) {
     track.dataset.dup = '1';
@@ -379,7 +364,7 @@
     });
   }
 
-  /* Drag-to-scroll strip */
+  
   var strip = root.querySelector('[data-home-strip]');
   if (strip) {
     var down = false, moved = false, x0 = 0, s0 = 0;
