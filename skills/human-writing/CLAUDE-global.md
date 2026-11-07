@@ -1,0 +1,3 @@
+## Writing
+
+Anything written for Ben to publish or send as his own (site copy, captions, résumé, cover letters, posts, emails, store text, commit-free docs) follows the human-writing skill: `~/.claude/skills/human-writing/SKILL.md` (a copy also lives in the website repo at `.claude/skills/human-writing/`). Read it before drafting and run its scanner on the result. In short: no em dashes, curly quotes, emoji, bold "Label:" lead-ins or Title Case headings; plain "is"/"has" instead of "serves as"/"features"; no "not just X but Y"; no rule-of-three flourishes; none of the AI-favorite words (delve, crucial, pivotal, showcase, highlight, enhance, foster, vibrant, testament, landscape, seamless and the rest of the list in the skill).
