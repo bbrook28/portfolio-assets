@@ -26,7 +26,7 @@
         <div class="bb-prose" style="margin-top:26px">
           <p>Most specifics are under NDA. Below is one side quest, with names left out, that shows how it worked.</p>
         </div>
-        <div class="bb-tiles bb-tiles--2" style="margin-top:36px"><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>01</span></div><div class="bb-tile__body"><h3>End-to-end mission ownership</h3><p>Core narrative missions from paper design and blockout through Alpha, defining critical-path pacing and combat beats in Unreal Engine 5.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>02</span></div><div class="bb-tile__body"><h3>Content direction</h3><p>Critical-path objectives, dynamic AI combat encounters, and complex layouts, kept aligned with the creative director's vision.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>03</span></div><div class="bb-tile__body"><h3>Blueprint ownership</h3><p>Scripted bespoke gameplay moments and interaction chains myself, reducing engineering overhead and connecting narrative intent to systemic play.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>04</span></div><div class="bb-tile__body"><h3>Cross-discipline alignment</h3><p>Led Art, Audio, and Narrative partners through data-informed iteration and late polish to set the quality bar for our content.</p></div></div></div>
+        <div class="bb-tiles bb-tiles--2" style="margin-top:36px"><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>01</span></div><div class="bb-tile__body"><h3>End-to-end mission ownership</h3><p>Core narrative missions from paper design and blockout through Alpha, defining critical-path pacing and combat beats in Unreal Engine 5.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>02</span></div><div class="bb-tile__body"><h3>Content direction</h3><p>Critical-path objectives, dynamic AI combat encounters, and complex layouts, following the creative director's vision.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>03</span></div><div class="bb-tile__body"><h3>Blueprint ownership</h3><p>Scripted bespoke gameplay moments and interaction chains myself, reducing engineering overhead and connecting narrative intent to systemic play.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>04</span></div><div class="bb-tile__body"><h3>Cross-discipline alignment</h3><p>Led Art, Audio, and Narrative partners through data-informed iteration and late polish to set the quality bar for our content.</p></div></div></div>
       </div>
     </div>
   </section>
@@ -36,8 +36,8 @@
       <div class="bb-reveal" style="max-width:760px">
         <p class="bb-kicker">Interactive · Side quest</p>
         <h2 class="bb-h2">The museum cache</h2>
-        <p class="bb-prose">Two rival groups are hunting for a hidden supply cache in an abandoned museum. Players can stumble into it, and what they do there decides what they find when they come back. Play it below by clicking the highlighted boxes on the story map.</p>
-        <p class="bb-small" style="margin-top:12px">Names left out and some details filled in for this demo. It’s my design from development and may have changed since.</p>
+        <p class="bb-prose">Two rival groups are hunting for a hidden supply cache in an abandoned museum. Players can stumble into it, and what they do there decides what they find when they come back. Play it below by clicking the glowing boxes on the story map.</p>
+        <p class="bb-small" style="margin-top:12px">Names left out and some details filled in for this demo. It's my design from development and may have changed since.</p>
       </div>
       <div class="bs4-tw bb-reveal" data-bs4-sim style="margin-top:40px">
         <div class="bs4-tw__passage">
@@ -52,7 +52,7 @@
         <li><span>Escalation</span><span>Killing both groups doesn't end the story; it starts a faction war the player caused</span></li>
         <li><span>Clues</span><span>Names and dates point to exhibits around the building and lead to a hidden switch that opens a secret door</span></li>
         <li><span>Stealth path</span><span>Players who decipher the clues can take the stash at any point and let the groups blame each other</span></li>
-        <li><span>Security</span><span>Turrets and security systems can be destroyed, disarmed, or hacked, giving players tools to fight or sneak</span></li>
+        <li><span>Security</span><span>Turrets and security systems can be destroyed, disarmed, or hacked. Players can use them to fight or to sneak</span></li>
         <li><span>Power</span><span>Cutting the power at the fuse box shuts off security and the secret door. Enemies present go to investigate the fuse box: if they catch you it's a fight, but it also lures them away from where you need to go</span></li>
         <li><span>Audio</span><span>I added a combat audio system where enemies react to their comrades' deaths with voice lines</span></li>
       </ul>
@@ -100,17 +100,17 @@
     start: { t: 'The museum', x: 0, y: 2, txt: function () {
       var tur = F.dark ? 'With the power out, the lobby turret is offline.' : F.turret === 'armed' ? 'A security turret guards the lobby, next to the fuse box.' : 'The lobby turret is ' + F.turret + '.';
       return 'A group is searching the abandoned museum for a hidden supply cache. ' + tur; } },
-    turret: { t: 'Turret', x: 1, y: 4, txt: function () { return 'An armed security turret. It’s a tool: use it to fight, or get it out of the way to sneak.'; } },
+    turret: { t: 'Turret', x: 1, y: 4, txt: function () { return 'An armed security turret. It\'s a tool: use it to fight, or get it out of the way to sneak.'; } },
     hack: { t: 'Turret hacked', x: 2, y: 4, enter: function () { F.turret = 'hacked'; }, txt: function () { return 'You hack the turret. It now fights for you.'; } },
     disarm: { t: 'Turret disarmed', x: 2, y: 5, enter: function () { F.turret = 'disarmed'; }, txt: function () { return 'You disarm the turret, so you can sneak past it.'; } },
     destroy: { t: 'Turret destroyed', x: 1, y: 5, enter: function () { F.turret = 'destroyed'; F.noise = true; }, txt: function () { return 'The turret goes down, loudly.'; } },
     fight1: { t: 'Fight', x: 1, y: 1, txt: function () { return 'You fight the group. ' + fallText(); } },
-    rivals: { t: 'The rivals', x: 2, y: 1, txt: function () { return 'You come back. The rival group has arrived, and they’re happy to find the first group dead. They pick up the search where the others left off.'; } },
+    rivals: { t: 'The rivals', x: 2, y: 1, txt: function () { return 'You come back. The rival group has arrived, and they\'re happy to find the first group dead. They pick up the search where the others left off.'; } },
     dark: { t: 'They investigate', x: 1, y: 3, txt: function () {
       return (F.dark ? 'Security goes dark, and so does the secret door. The group notices and heads to the fuse box to investigate' : 'The group hears the noise and comes to check the lobby') + ', away from where you need to go.'; } },
-    placard: { t: 'Placard', x: 1, y: 2, txt: function () { return 'Someone has been scrawling notes about the museum’s founders. A placard on one exhibit names a person.'; } },
+    placard: { t: 'Placard', x: 1, y: 2, txt: function () { return 'Someone has been scrawling notes about the museum\'s founders. A placard on one exhibit names a person.'; } },
     portrait: { t: 'Portrait', x: 2, y: 2, txt: function () { return 'Their portrait hangs in another wing. The plaque beneath it gives a date.'; } },
-    exhibit: { t: 'Hidden switch', x: 3, y: 2, txt: function () { return F.dark ? 'The exhibit marked with that date hides a switch, but it’s dead. With the power cut, the secret door won’t open.' : 'The exhibit marked with that date hides a switch.'; } },
+    exhibit: { t: 'Hidden switch', x: 3, y: 2, txt: function () { return F.dark ? 'The exhibit marked with that date hides a switch, but it\'s dead. With the power cut, the secret door won\'t open.' : 'The exhibit marked with that date hides a switch.'; } },
     restore: { t: 'Power restored', x: 4, y: 3, txt: function () { return 'You throw the breaker. The power is back' + (F.turret === 'destroyed' ? '.' : ', and so is the security.'); } },
     door: { t: 'Secret door', x: 4, y: 2, txt: function () { return 'A section of wall swings open on a hidden room. The stash is inside.'; } },
     mutual: { t: 'They finished each other off', end: 1, x: 1, y: 0, txt: function () { return 'You leave. When you come back, the rival group has shown up, and the two groups have killed each other. The stash is still hidden.'; } },
