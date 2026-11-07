@@ -748,7 +748,7 @@ window.BB_CHROME={"header": "<header class=\"bb-header\" id=\"bbHeader\">\n  <di
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initTabs, initSplit, initImageParallax, initUpdated].forEach(function (fn) {
+    [initTabs, initImageParallax, initUpdated].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
   }
