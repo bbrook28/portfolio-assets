@@ -165,11 +165,11 @@
 </div>
 
 <style>
-.beh-map { color: var(--bb-text); border: 1px solid var(--bb-line); border-radius: var(--bb-radius); background: var(--bb-bg); padding: clamp(12px, 2vw, 24px); }
+.beh-map { color: var(--bb-text); border: 1px solid var(--bb-line); border-radius: 0; background: var(--bb-bg); padding: clamp(12px, 2vw, 24px); }
 .beh-map svg { display: block; width: 100%; height: auto; }
 .beh-map .beh-bg { stroke: none !important; }
 .beh-map path, .beh-map rect:not(.beh-bg) { fill: none; stroke: var(--bb-muted); stroke-width: 2; transition: stroke .3s, fill .3s; }
-.beh-map text { fill: var(--bb-muted); font: 600 13px var(--bb-sans); letter-spacing: .12em; text-transform: uppercase; text-anchor: middle; transition: fill .3s; }
+.beh-map text { fill: var(--bb-muted); font: 600 13px var(--bb-sans); letter-spacing: .12em;  text-anchor: middle; transition: fill .3s; }
 .beh-map .beh-court path { fill: color-mix(in srgb, var(--bb-accent) 6%, transparent); }
 .beh-map .beh-entry path:first-child { stroke-width: 3; }
 .beh-map .beh-arch path { stroke: var(--bb-accent); stroke-width: 6; stroke-linecap: round; }
@@ -179,11 +179,11 @@
 .beh-map g.is-hot path, .beh-map g.is-hot rect { stroke: var(--bb-accent-2); }
 .beh-map g.is-hot text { fill: var(--bb-text); }
 .beh-legend { list-style: none; margin: 30px 0 0; padding: 0; display: grid; gap: 4px; }
-.beh-legend li { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 8px; color: var(--bb-muted); font-size: 15px; cursor: default; transition: background .25s, color .25s; }
+.beh-legend li { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 0; color: var(--bb-muted); font-size: 15px; cursor: default; transition: background .25s, color .25s; }
 .beh-legend li:hover, .beh-legend li:focus-visible { background: rgba(255,255,255,.04); color: var(--bb-text); }
-.beh-legend b { width: 14px; height: 14px; border-radius: 4px; border: 2px solid var(--bb-accent); }
+.beh-legend b { width: 14px; height: 14px; border-radius: 0; border: 2px solid var(--bb-accent); }
 .beh-credits { margin-top: 32px; border-top: 1px solid var(--bb-line); padding-top: 18px; }
-.beh-credits__title { margin: 0 0 10px !important; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--bb-muted); }
+.beh-credits__title { margin: 0 0 10px !important; font-size: 12px; font-weight: 600; letter-spacing: .18em;  color: var(--bb-muted); }
 .beh-credits .bb-small { max-width: 60em; font-size: 13px; }
 </style>
 
