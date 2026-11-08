@@ -6,12 +6,22 @@
       <p class="bb-kicker">Solo indie release · iPhone &amp; iPad · 2026</p>
       <h1 class="bb-display">Sumo <em>Scuffle</em></h1>
       <p class="bb-hero__sub">Eat the most, shove the rest: a 45-second sumo party game where rolling wrestlers fight over falling food and slam each other into the walls.</p>
+      <div class="bb-btn-row" style="margin-top:28px"><a class="bb-btn" href="#trailer">Watch the trailer</a></div>
       <dl class="bb-hero__meta">
         <div><dt>Role</dt><dd>Solo developer</dd></div>
         <div><dt>Platform</dt><dd>iPhone · iPad</dd></div>
         <div><dt>Players</dt><dd>1–4 on one device, or with up to four controllers</dd></div>
         <div><dt>Status</dt><dd>Submitted to the App Store, with version 1.2 in TestFlight</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <section class="bb-section bb-section--tight" id="trailer" data-bb-toc="Trailer">
+    <div class="bb-container">
+      <div class="sumo-trailer bb-reveal">
+        <video preload="metadata" playsinline data-bb-poster="sumo/trailer-poster.jpg" data-bb-src="sumo/trailer.mp4" aria-label="Sumo Scuffle gameplay trailer"></video>
+        <button type="button" class="sumo-trailer__play" aria-label="Play the trailer"><span>▶</span>Watch the trailer</button>
+      </div>
     </div>
   </section>
 
@@ -102,8 +112,6 @@
         <li><span>Seasons</span><span>Yokai Night and a Winter Festival, each with its own arena, food, and music, and cosmetic rewards players keep</span></li>
         <li><span>Readability</span><span>Colorblind cues on top of color: star-shaped edges on power-up rings and spikes on bad food</span></li>
       </ul>
-      <div class="bb-embed bb-reveal" style="margin-top:48px"><video controls preload="none" playsinline data-bb-poster="sumo/trailer-poster.jpg" data-bb-src="sumo/trailer.mp4" aria-label="Sumo Scuffle gameplay trailer"></video></div>
-      <p class="bb-small" style="margin-top:10px">Gameplay trailer.</p>
 
     </div>
     </div>
@@ -152,7 +160,23 @@
 .bb-press .is-soon { opacity: .6; cursor: default; }
 .bb-press .is-soon:hover { transform: none; border-color: var(--bb-line); }
 @media (max-width: 720px) { .sumo-play { aspect-ratio: 4 / 3; } .sumo-play__btn { padding: 14px 22px; font-size: 12px; } }
+.sumo-trailer { position: relative; aspect-ratio: 1280 / 590; background: #000; border: 1px solid var(--bb-line); overflow: hidden; }
+.sumo-trailer video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sumo-trailer__play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 12px; padding: 16px 26px; border: 0; background: var(--bb-accent); color: #0b0b0b; font: 700 16px var(--bb-sans); cursor: pointer; transition: transform .2s; }
+.sumo-trailer__play:hover { transform: translate(-50%, -50%) scale(1.05); }
+.sumo-trailer__play span { font-size: 12px; }
+.sumo-trailer.is-playing .sumo-trailer__play { display: none; }
+@media (max-width: 720px) { .sumo-trailer__play { padding: 12px 18px; font-size: 14px; } }
 </style>
+
+<script>
+(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
+  var box = root.querySelector('.sumo-trailer'); if (!box) return;
+  var v = box.querySelector('video'), b = box.querySelector('.sumo-trailer__play');
+  b.addEventListener('click', function () { box.classList.add('is-playing'); v.controls = true; v.play(); });
+  v.addEventListener('ended', function () { box.classList.remove('is-playing'); v.controls = false; });
+});
+</script>
 
 <script>
 (window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
