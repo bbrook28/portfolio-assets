@@ -1,7 +1,12 @@
 <div class="bb-page lst">
 
   <section class="bb-hero">
-    <div class="bb-hero__media"><img data-bb-src="lonestar/shot-02.jpg" alt="The Lonestar courthouse in a fenced-off rural Texas town, in-engine" fetchpriority="high"></div>
+    <div class="bb-hero__media bb-hero__media--doc" style="--ar:1325/839"><img data-bb-src="lonestar/map-police-tunnel.jpg" alt="Site plan: the courthouse connects underground through the old jail to the police station, impound lot and auto shop" fetchpriority="high">
+      <span class="bb-pin bb-pin--l" style="left:38%;top:76%"><i></i><span>The courthouse hub</span></span>
+      <span class="bb-pin bb-pin--l" style="left:54.5%;top:50%"><i></i><span>Tunnel: room for two, a 45° turn blocks sightlines</span></span>
+      <span class="bb-pin" style="left:63%;top:68%"><i></i><span>Old jail, underground</span></span>
+      <span class="bb-pin" style="left:77%;top:38%"><i></i><span>Police station</span></span>
+    </div>
     <div class="bb-container bb-hero__inner">
       <p class="bb-kicker">Unannounced VR title · Vertical slice 2024</p>
       <h1 class="bb-display">Project:<br><em>Lonestar</em></h1>
@@ -10,6 +15,7 @@
         <div><dt>Role</dt><dd>Level Designer</dd></div>
         <div><dt>Engine</dt><dd>Unreal Engine 5</dd></div>
         <div><dt>Genre</dt><dd>VR survival action</dd></div>
+        <div><dt>Scale</dt><dd>2 buildings and a tunnel, 3 courthouse floors, 12+ ways in</dd></div>
         <div><dt>Status</dt><dd>Canceled after vertical slice</dd></div>
       </dl>
     </div>
@@ -26,11 +32,6 @@
         <p class="bb-lead">I owned the hub of the vertical slice: a multi-story courthouse built as a "Swiss cheese" stronghold with many ways in, connected underground to a police station and old jail. The project was canceled so the studio could focus on other IP after the vertical slice was complete, with the hub fully playable.</p>
         <div class="bb-prose" style="margin-top:26px">
           <p>I worked from the narrative team's room-by-room brief, where the lobby, courtroom, and offices each carried a piece of the town's story. My job was to turn that into a layout that supports stealth, combat, and exploration in VR.</p>
-        </div>
-        <div class="bb-stats" style="margin-top:44px">
-          <div class="bb-stat"><div class="bb-stat__num">12<sup>+</sup></div><div class="bb-stat__label">Entry vectors</div></div>
-          <div class="bb-stat"><div class="bb-stat__num">3</div><div class="bb-stat__label">Courthouse floors</div></div>
-          <div class="bb-stat"><div class="bb-stat__num">2</div><div class="bb-stat__label">Buildings, one tunnel</div></div>
         </div>
       </div>
     </div>
@@ -74,10 +75,6 @@
         </div>
       </div>
 
-      <figure class="bb-figure bb-reveal-img" style="margin-top:clamp(60px,8vw,100px)">
-        <div class="bb-figure__frame" data-bb-lightbox="lst-maps"><img loading="lazy" data-bb-src="lonestar/map-police-tunnel.jpg" alt="Site plan connecting the courthouse, tunnel, old jail, police station, impound lot, and auto shop"></div>
-        <figcaption>Site plan. The courthouse (left) connects underground through the old jail to the police station, impound lot, and auto shop.</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -97,7 +94,7 @@
       <div class="bb-grid bb-grid--3">
         <div class="bb-card bb-reveal"><div class="bb-card__num">Permeability</div><h3 class="bb-h3">"Swiss cheese" layout</h3><p>Sewers, roof, windows, and broken walls: more than a dozen ways in, so stealth and aggressive players each find their own approach.</p></div>
         <div class="bb-card bb-reveal" style="--d:.08s"><div class="bb-card__num">Gating</div><h3 class="bb-h3">Locks you can see</h3><p>Broken stairwells, flooded basements, and barricaded doors are diegetic locks. Keys and upgrades reopen wings players already passed, like a Metroidvania.</p></div>
-        <div class="bb-card bb-reveal" style="--d:.16s"><div class="bb-card__num">Connection</div><h3 class="bb-h3">One continuous world</h3><p>The tunnel joins two distinct biomes, a civic courthouse and an industrial police compound, with sightlines and streaming managed so it never breaks immersion.</p></div>
+        <div class="bb-card bb-reveal" style="--d:.16s"><div class="bb-card__num">Connection</div><h3 class="bb-h3">One continuous world</h3><p>The tunnel joins two distinct biomes, a civic courthouse and an industrial police compound, with sightlines and streaming set up so the walk between them has no break.</p></div>
       </div>
     </div>
   </section>
@@ -128,8 +125,8 @@
   </section>
 
   <nav class="bb-next" aria-label="More projects">
-    <a href="/projects/the-walking-dead-saints-and-sinners-chapter-2"><img data-bb-src="covers/twd.jpg" alt=""><small>← Previous</small><strong>TWD: Retribution</strong></a>
-    <a href="/projects/sumo-scuffle"><img data-bb-src="sumo/keyart.jpg" alt=""><small>Next project →</small><strong>Sumo Scuffle</strong></a>
+    <a href="/projects/the-walking-dead-saints-and-sinners-chapter-2"><img data-bb-src="covers/twd.jpg" alt=""><small>Previous project</small><strong>TWD: Retribution</strong></a>
+    <a href="/projects/sumo-scuffle"><img data-bb-src="sumo/keyart.jpg" alt=""><small>Next project</small><strong>Sumo Scuffle</strong></a>
   </nav>
   <p class="bb-credits">Unreleased project. Development images shown for portfolio purposes.</p>
 </div>
@@ -141,5 +138,5 @@
 .lst-log time { display: block; font-family: var(--bb-serif); font-size: 28px; color: var(--bb-text); margin-bottom: 12px; }
 .lst-log ul { list-style: none; margin: 0; padding: 0; }
 .lst-log ul li { padding: 9px 0; border-bottom: 1px solid var(--bb-line); color: var(--bb-muted); font-size: 15.5px; }
-.lst-log ul li::before { content: '→  '; color: var(--bb-accent); }
+.lst-log ul li::before { content: '–  '; color: var(--bb-accent); }
 </style>
