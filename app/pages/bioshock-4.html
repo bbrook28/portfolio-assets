@@ -26,7 +26,7 @@
         <div class="bb-prose" style="margin-top:26px">
           <p>Most specifics are under NDA. Below is one side quest, with names left out, that shows how it worked.</p>
         </div>
-        <div class="bb-tiles bb-tiles--2" style="margin-top:36px"><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Missions</span></div><div class="bb-tile__body"><h3>End-to-end mission ownership</h3><p>Core narrative missions from paper design and blockout through Alpha, defining critical-path pacing and combat beats in Unreal Engine 5.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Direction</span></div><div class="bb-tile__body"><h3>Content direction</h3><p>Critical-path objectives, dynamic AI combat encounters, and complex layouts, following the creative director's vision.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Blueprints</span></div><div class="bb-tile__body"><h3>Blueprint ownership</h3><p>Scripted bespoke gameplay moments and interaction chains myself, reducing engineering overhead and connecting narrative intent to systemic play.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Alignment</span></div><div class="bb-tile__body"><h3>Cross-discipline alignment</h3><p>Led Art, Audio, and Narrative partners through data-informed iteration and late polish to set the quality bar for our content.</p></div></div></div>
+        <div class="bb-tiles bb-tiles--2" style="margin-top:36px"><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Missions</span></div><div class="bb-tile__body"><h3>End-to-end mission ownership</h3><p>Core narrative missions from paper design and blockout through Alpha, defining critical-path pacing and combat beats in Unreal Engine 5.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Direction</span></div><div class="bb-tile__body"><h3>Content direction</h3><p>Critical-path objectives, dynamic AI combat encounters, and complex layouts, following the creative director's vision.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Blueprints</span></div><div class="bb-tile__body"><h3>Blueprint ownership</h3><p>Scripted custom gameplay moments and interaction chains myself, reducing engineering overhead and connecting narrative intent to systemic play.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Alignment</span></div><div class="bb-tile__body"><h3>Cross-discipline alignment</h3><p>Led Art, Audio, and Narrative partners through data-informed iteration and late polish to set the quality bar for our content.</p></div></div></div>
       </div>
     </div>
   </section>
@@ -223,7 +223,8 @@
 .bs4-tw__node.is-opt rect { stroke: var(--bb-accent); stroke-width: 2; stroke-dasharray: none; fill: color-mix(in srgb, var(--bb-accent) 10%, var(--bb-surface)); animation: bs4glow 1.6s ease-in-out infinite; }
 .bs4-tw__node.is-opt text { fill: var(--bb-accent-2); }
 .bs4-tw__node.is-opt:hover rect, .bs4-tw__node.is-opt:focus-visible rect { fill: color-mix(in srgb, var(--bb-accent) 30%, var(--bb-surface)); }
-.bs4-tw__node:focus { outline: none; }
+.bs4-tw__node:focus:not(:focus-visible) { outline: none; }
+.bs4-tw__node:focus-visible rect { stroke: var(--bb-text); stroke-width: 2px; }
 .bs4-tw__edge.is-opt { stroke: var(--bb-accent); color: var(--bb-accent); stroke-dasharray: 5 4; animation: bs4dash 1s linear infinite; }
 @keyframes bs4glow { 50% { stroke-opacity: .45; } }
 @keyframes bs4dash { to { stroke-dashoffset: -18; } }
