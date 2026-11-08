@@ -1,7 +1,11 @@
 <div class="bb-page beh">
 
   <section class="bb-hero">
-    <div class="bb-hero__media"><img data-bb-src="behemoth/arch-1.jpg" alt="The snow-covered castle courtyard I designed for Behemoth's opening chapter" fetchpriority="high"></div>
+    <div class="bb-hero__media"><img data-bb-src="behemoth/arch-1.jpg" alt="The snow-covered castle courtyard I designed for Behemoth's opening chapter" fetchpriority="high">
+      <span class="bb-pin bb-pin--l" style="left:80%;top:42%"><i></i><span>Gate entrance</span></span>
+      <span class="bb-pin" style="left:43%;top:24%"><i></i><span>Chapel ruins</span></span>
+      <span class="bb-pin" style="left:56%;top:57%"><i></i><span>Arched bridge, the landmark</span></span>
+    </div>
     <div class="bb-container bb-hero__inner">
       <p class="bb-kicker">Skydance Games · Shipped December 2024</p>
       <h1 class="bb-display">Skydance's<br><em>Behemoth</em></h1>
@@ -24,14 +28,14 @@
       </div>
       <div class="bb-reveal" style="--d:.1s">
         <p class="bb-lead">Behemoth's levels are large and open, so players can approach objectives their own way between the giant boss fights. I worked on both ends of the campaign: the concept for the final area, and a castle hub in the opening chapter that teaches players how these spaces work.</p>
-        <div class="bb-tiles bb-tiles--2" style="margin-top:36px"><a href="#" data-tab-go="Concept" class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="covers/behemoth-boss.jpg" alt=""></div><div class="bb-tile__body"><h3>Final area concept</h3><p>The space the whole campaign builds toward</p></div></a><a href="#" data-tab-go="Layout" class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="behemoth/arch-1.jpg" alt=""></div><div class="bb-tile__body"><h3>Opening castle hub</h3><p>Entryway, courtyard, and connections</p></div></a><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="behemoth/arch-1.jpg" alt=""></div><div class="bb-tile__body"><h3>VR scale</h3><p>Grand spaces that stay comfortable to move through</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="behemoth/steam-2.jpg" alt=""></div><div class="bb-tile__body"><h3>Combat spaces</h3><p>Room for physics melee, bow, and grapple</p></div></div></div>
+        <div class="bb-tiles bb-tiles--2" style="margin-top:36px"><a href="#tab-concept" data-tab-go="Concept" class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="covers/behemoth-boss.jpg" alt=""></div><div class="bb-tile__body"><h3>Final area concept</h3><p>The space the whole campaign builds toward</p></div></a><a href="#tab-layout" data-tab-go="Layout" class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="behemoth/arch-1.jpg" alt=""></div><div class="bb-tile__body"><h3>Opening castle hub</h3><p>Entryway, courtyard, and connections</p></div></a><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="behemoth/arch-1.jpg" alt=""></div><div class="bb-tile__body"><h3>VR scale</h3><p>Grand spaces that stay comfortable to move through</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="behemoth/steam-2.jpg" alt=""></div><div class="bb-tile__body"><h3>Combat spaces</h3><p>Room for physics melee, bow, and grapple</p></div></div></div>
       </div>
     </div>
   </section>
 
     <section class="bb-section bb-section--tabs" data-bb-toc="Castle hub">
     <div class="bb-container"><div class="bb-tabs__bar" role="tablist" aria-label="Castle hub"></div></div>
-    <div class="bb-tab" data-tab="Layout">
+    <div class="bb-tab" id="tab-layout" data-tab="Layout">
     <div class="bb-container">
       <div class="bb-split" style="align-items:center">
         <div class="bb-reveal">
@@ -83,7 +87,7 @@
       </div>
     </div>
     </div>
-    <div class="bb-tab" data-tab="Shipped">
+    <div class="bb-tab" id="tab-shipped" data-tab="Shipped">
     <div class="bb-container">
       <div class="bb-reveal" style="max-width:780px">
         <p class="bb-kicker">In the shipped game</p>
@@ -127,7 +131,7 @@
   
     <section class="bb-section bb-section--tabs" data-bb-toc="Finale">
     <div class="bb-container"><div class="bb-tabs__bar" role="tablist" aria-label="Finale"></div></div>
-    <div class="bb-tab" data-tab="Concept">
+    <div class="bb-tab" id="tab-concept" data-tab="Concept">
     <div class="bb-container bb-split bb-split--rev" style="align-items:center">
       <figure class="bb-figure bb-reveal-img"><div class="bb-figure__frame" data-bb-lightbox="beh"><img loading="lazy" data-bb-src="covers/behemoth-boss.jpg" alt="Behemoth's climactic final area"></div></figure>
       <div class="bb-reveal" style="--d:.1s">
@@ -139,7 +143,7 @@
       </div>
     </div>
     </div>
-    <div class="bb-tab" data-tab="In game">
+    <div class="bb-tab" id="tab-in-game" data-tab="In game">
     <div class="bb-container">
       <p class="bb-kicker bb-reveal">From the game</p>
       <div class="bb-gallery" style="margin-top:12px">
@@ -158,8 +162,8 @@
 
 
   <nav class="bb-next" aria-label="More projects">
-    <a href="/projects/t-7xfc6"><img data-bb-src="covers/bioshock.jpg" alt=""><small>← Previous</small><strong>BioShock 4</strong></a>
-    <a href="/projects/the-walking-dead-saints-and-sinners-chapter-2"><img data-bb-src="covers/twd.jpg" alt=""><small>Next project →</small><strong>TWD: Retribution</strong></a>
+    <a href="/projects/t-7xfc6"><img data-bb-src="covers/bioshock.jpg" alt=""><small>Previous project</small><strong>BioShock 4</strong></a>
+    <a href="/projects/the-walking-dead-saints-and-sinners-chapter-2"><img data-bb-src="covers/twd.jpg" alt=""><small>Next project</small><strong>TWD: Retribution</strong></a>
   </nav>
   <p class="bb-credits">Skydance's Behemoth © Skydance Games. Courtyard renders by Dana Klaren; other screenshots from the official store page.</p>
 </div>
