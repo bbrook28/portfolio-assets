@@ -296,6 +296,19 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
   }
   var finePtr = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   function initPins(root) {
+    var plates = [];
+    root.querySelectorAll('.bb-pin').forEach(function (pin) { var host = pin.parentNode; if (plates.indexOf(host) < 0) plates.push(host); });
+    plates.forEach(function (host) {
+      var pins = host.querySelectorAll('.bb-pin'), list = document.createElement('ol');
+      list.className = 'bb-pinlist'; list.setAttribute('aria-hidden', 'true');
+      pins.forEach(function (pin, k) {
+        pin.querySelector('i').setAttribute('data-n', k + 1);
+        var li = document.createElement('li'); li.innerHTML = '<b>' + (k + 1) + '</b><span></span>';
+        li.lastChild.textContent = pin.textContent.trim(); list.appendChild(li);
+      });
+      var after = host.closest('.bb-hero__media, .bb-figure') || host;
+      after.parentNode.insertBefore(list, after.nextSibling);
+    });
     root.querySelectorAll('.bb-pin').forEach(function (pin, i) {
       var note = pin.textContent.trim();
       pin.style.setProperty('--i', i % 8);
@@ -328,10 +341,12 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       if (pts.length < 2) return;
       var ns = 'http://www.w3.org/2000/svg';
       var svg = document.createElementNS(ns, 'svg');
-      svg.setAttribute('class', 'bb-route'); svg.setAttribute('viewBox', '0 0 100 100');
+      var ar = (getComputedStyle(fig).getPropertyValue('--ar') || '16/9').split('/').map(parseFloat);
+      var VW = 1000, VH = 1000 * (ar[1] || 9) / (ar[0] || 16);
+      svg.setAttribute('class', 'bb-route'); svg.setAttribute('viewBox', '0 0 ' + VW + ' ' + VH.toFixed(1));
       svg.setAttribute('preserveAspectRatio', 'none'); svg.setAttribute('aria-hidden', 'true');
       var path = document.createElementNS(ns, 'path');
-      path.setAttribute('d', pts.map(function (q, i) { return (i ? 'L' : 'M') + q[0] + ' ' + q[1]; }).join(' '));
+      path.setAttribute('d', pts.map(function (q, i) { return (i ? 'L' : 'M') + (q[0] * VW / 100).toFixed(1) + ' ' + (q[1] * VH / 100).toFixed(1); }).join(' '));
       path.setAttribute('pathLength', '1');
       svg.appendChild(path);
       fig.insertBefore(svg, fig.querySelector('.bb-pin'));
