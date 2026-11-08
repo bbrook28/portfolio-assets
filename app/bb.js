@@ -1,4 +1,4 @@
-window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";
+window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";window.BB_ROUTES={"/":"home","/portfolio-1":"portfolio","/about":"about","/contact":"contact","/projects/maplestory-classic":"maplestory-classic","/projects/t-7xfc6":"bioshock-4","/projects/tbehemoth":"behemoth","/projects/the-walking-dead-saints-and-sinners-chapter-2":"twd-retribution","/projects/level-design-blockout-canceled-title":"lonestar","/projects/zoelie":"zoelie","/projects/game-design-pitch-deck":"bioshock-infinite-redux","/projects/sumo-scuffle":"sumo-scuffle","/projects/hell-my-name-is-bubba":"hell-my-name-is-buba","/projects/beepo":"beepo"};
 (function () {
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -294,6 +294,156 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     if (Date.now() < Date.UTC(2026, 10, 18, 19)) return;
     root.querySelectorAll('[data-bb-live]').forEach(function (el) { el.textContent = el.getAttribute('data-bb-live'); });
   }
+  var finePtr = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function initPins(root) {
+    root.querySelectorAll('.bb-pin').forEach(function (pin, i) {
+      var note = pin.textContent.trim();
+      pin.style.setProperty('--i', i % 8);
+      pin.setAttribute('role', 'button');
+      pin.setAttribute('tabindex', '0');
+      pin.setAttribute('aria-label', note);
+      pin.setAttribute('aria-expanded', 'false');
+      function toggle(e) {
+        if (e) { e.preventDefault(); e.stopPropagation(); }
+        var open = !pin.classList.contains('is-open');
+        pin.parentNode.querySelectorAll('.bb-pin.is-open').forEach(function (p) { p.classList.remove('is-open'); p.setAttribute('aria-expanded', 'false'); });
+        pin.classList.toggle('is-open', open);
+        pin.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      pin.addEventListener('click', toggle);
+      pin.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') toggle(e); });
+    });
+    document.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('.bb-pin')) return;
+      document.querySelectorAll('.bb-pin.is-open').forEach(function (p) { p.classList.remove('is-open'); p.setAttribute('aria-expanded', 'false'); });
+    });
+  }
+  function initRoutes(root) {
+    root.querySelectorAll('[data-bb-route]').forEach(function (fig) {
+      var pts = [].map.call(fig.querySelectorAll('.bb-pin'), function (p) {
+        return [parseFloat(p.style.left), parseFloat(p.style.top)];
+      }).filter(function (q) { return !isNaN(q[0]) && !isNaN(q[1]); });
+      var order = (fig.getAttribute('data-bb-route') || '').split(',').map(Number).filter(function (n) { return !isNaN(n) && n < pts.length; });
+      if (order.length > 1) pts = order.map(function (n) { return pts[n]; });
+      if (pts.length < 2) return;
+      var ns = 'http://www.w3.org/2000/svg';
+      var svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('class', 'bb-route'); svg.setAttribute('viewBox', '0 0 100 100');
+      svg.setAttribute('preserveAspectRatio', 'none'); svg.setAttribute('aria-hidden', 'true');
+      var path = document.createElementNS(ns, 'path');
+      path.setAttribute('d', pts.map(function (q, i) { return (i ? 'L' : 'M') + q[0] + ' ' + q[1]; }).join(' '));
+      path.setAttribute('pathLength', '1');
+      svg.appendChild(path);
+      fig.insertBefore(svg, fig.querySelector('.bb-pin'));
+      if (!reduceMotion) requestAnimationFrame(function () { requestAnimationFrame(function () { svg.classList.add('is-drawn'); }); });
+      else svg.classList.add('is-drawn', 'is-still');
+    });
+    var chart = root.querySelector('.fh-chart');
+    if (chart && !reduceMotion && 'IntersectionObserver' in window) {
+      chart.classList.add('bb-route-wait');
+      var io = new IntersectionObserver(function (en) {
+        if (!en[0].isIntersecting) return;
+        io.disconnect();
+        chart.querySelectorAll('.fh-chart__lines path').forEach(function (p, i) {
+          p.setAttribute('pathLength', '1'); p.style.setProperty('--d', Math.min(i * 0.025, 0.7) + 's');
+        });
+        requestAnimationFrame(function () { chart.classList.add('bb-route-go'); });
+      }, { threshold: 0.35 });
+      io.observe(chart);
+    }
+  }
+  function initPreviews(root) {
+    if (!finePtr) return;
+    root.querySelectorAll('.bb-index a[data-bb-preview], .bb-index a[data-bb-flip]').forEach(function (a) {
+      var thumb = a.querySelector('.bb-index__thumb'); if (!thumb) return;
+      var clip = a.getAttribute('data-bb-preview'), flip = (a.getAttribute('data-bb-flip') || '').split(',').filter(Boolean);
+      var layer = null, timer = null, k = 0;
+      function start() {
+        if (!layer) {
+          if (clip) {
+            layer = document.createElement('video');
+            layer.muted = true; layer.loop = true; layer.playsInline = true; layer.preload = 'auto';
+            layer.setAttribute('muted', ''); layer.setAttribute('playsinline', ''); layer.setAttribute('aria-hidden', 'true');
+            layer.src = assetUrl(clip);
+          } else {
+            layer = document.createElement('div');
+            layer.innerHTML = flip.map(function (f) { return '<img alt="" src="' + assetUrl(f) + '">'; }).join('');
+          }
+          layer.className = 'bb-index__preview';
+          thumb.appendChild(layer);
+        }
+        thumb.classList.add('is-previewing');
+        if (clip) { var pr = layer.play(); if (pr && pr.catch) pr.catch(function () {}); }
+        else if (!reduceMotion) {
+          var imgs = layer.children; k = 0; imgs[0].classList.add('is-on');
+          clearInterval(timer);
+          timer = setInterval(function () { imgs[k].classList.remove('is-on'); k = (k + 1) % imgs.length; imgs[k].classList.add('is-on'); }, 850);
+        } else layer.children[0].classList.add('is-on');
+      }
+      function stop() {
+        thumb.classList.remove('is-previewing');
+        clearInterval(timer);
+        if (layer && clip) layer.pause();
+      }
+      a.addEventListener('mouseenter', start);
+      a.addEventListener('mouseleave', stop);
+      a.addEventListener('focus', start);
+      a.addEventListener('blur', stop);
+    });
+  }
+  function initReadout(root) {
+    if (!finePtr) return;
+    root.querySelectorAll('[data-bb-readout]').forEach(function (fig) {
+      var img = fig.querySelector('img'); if (!img) return;
+      var tag = document.createElement('span');
+      tag.className = 'bb-readout'; tag.setAttribute('aria-hidden', 'true');
+      fig.appendChild(tag);
+      fig.addEventListener('pointermove', function (e) {
+        var r = img.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        if (x < 0 || y < 0 || x > 1 || y > 1) { tag.classList.remove('is-on'); return; }
+        var fr = fig.getBoundingClientRect();
+        tag.textContent = 'X ' + Math.round(x * (img.naturalWidth || 1000)) + '  Y ' + Math.round(y * (img.naturalHeight || 1000));
+        tag.style.transform = 'translate(' + (e.clientX - fr.left + 14) + 'px,' + (e.clientY - fr.top + 14) + 'px)';
+        tag.classList.add('is-on');
+      });
+      fig.addEventListener('pointerleave', function () { tag.classList.remove('is-on'); });
+    });
+  }
+  var PF = 'bb-pf:';
+  function pageFor(href) {
+    try {
+      var u = new URL(href, location.href);
+      if (u.origin !== location.origin) return null;
+      var routes = window.BB_ROUTES || {};
+      return routes[u.pathname.replace(/\/$/, '') || '/'] || null;
+    } catch (e) { return null; }
+  }
+  function initPrefetch() {
+    if (!window.fetch || !APP_BASE && !window.BB_APP_BASE) return;
+    var base = window.BB_APP_BASE || APP_BASE, seen = {};
+    function warm(e) {
+      var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+      var name = pageFor(a.getAttribute('href')); if (!name || seen[name]) return;
+      seen[name] = 1;
+      fetch(base + 'pages/' + name + '.html', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : null; })
+        .then(function (t) { if (t) try { sessionStorage.setItem(PF + name, t); } catch (err) {} }).catch(function () {});
+    }
+    document.addEventListener('pointerover', warm, { passive: true });
+    document.addEventListener('focusin', warm);
+    document.addEventListener('touchstart', warm, { passive: true });
+  }
+  function takePrefetched(name) {
+    try { var t = sessionStorage.getItem(PF + name); if (t) sessionStorage.removeItem(PF + name); return t; } catch (e) { return null; }
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('.bb-index a, .bb-next a');
+    if (!a || reduceMotion) return;
+    var t = a.querySelector('.bb-index__title, strong');
+    document.querySelectorAll('[style*="view-transition-name"]').forEach(function (n) { n.style.viewTransitionName = ''; });
+    document.querySelectorAll('.bb-hero__inner > .bb-display, .bb-hero__inner > .bb-h1').forEach(function (h) { h.style.viewTransitionName = 'none'; });
+    if (t) t.style.viewTransitionName = 'bb-title';
+  });
   function init() {
     var root = document;
     var pg = document.querySelector('.bb-page'); if (pg && !pg.id) pg.id = 'bb-main';
@@ -310,7 +460,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initTabs, initUpdated].forEach(function (fn) {
+    [initTabs, initUpdated, initPins, initRoutes, initPreviews, initReadout].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
   }
@@ -350,6 +500,8 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     var base = window.BB_APP_BASE || APP_BASE || ((window.BB_ASSET_BASE || '') + 'app/');
     var left = stubs.length;
     stubs.forEach(function (el) {
+      var cached = takePrefetched(el.getAttribute('data-bb-page'));
+      if (cached) { el.innerHTML = cached; runScripts(el); if (--left === 0) done(); return; }
       fetch(base + 'pages/' + el.getAttribute('data-bb-page') + '.html', { cache: 'no-cache' })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
         .then(function (html) { el.innerHTML = html; runScripts(el); })
@@ -362,6 +514,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
   }
   function boot() {
     addChrome();
+    initPrefetch();
     loadStubs(init);
   }
   window.BB_COMPONENTS = window.BB_COMPONENTS || [];
