@@ -460,6 +460,8 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     if (t) t.style.viewTransitionName = 'bb-title';
   });
   function initCine(root) {
+    var pg = document.querySelector('.bb-page[data-title]');
+    if (pg) document.title = pg.getAttribute('data-title');
     var header = document.querySelector('.bb-header');
     if (header) {
       var solid = function () { header.classList.toggle('is-solid', window.scrollY > 40 || !document.querySelector('.cine-hero')); };
