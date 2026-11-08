@@ -7,7 +7,6 @@
         <h1 class="bb-h1">Levels and quests, from paper map to <em>shipped game</em>.</h1>
         <p class="bb-lead" style="margin-top:24px">I'm a game designer on MapleStory Classic World, focused on level and quest design for Forgotten Hollow, a brand-new region. Before that I built levels for BioShock 4, The Walking Dead: Saints &amp; Sinners and Skydance's Behemoth.</p>
         <div class="bb-btn-row"><a class="bb-btn" href="#work">See the work</a><a class="bb-btn bb-btn--ghost" href="https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf" target="_blank" rel="noopener">Résumé</a></div>
-        <p class="home-launch"><a class="bb-link" href="/projects/maplestory-classic" data-home-countdown>MapleStory Classic: Forgotten Hollow opens November 18</a></p>
       </div>
       <figure class="bb-figure home-fig">
         <a class="bb-figure__frame bb-tick home-fig__frame" href="/projects/maplestory-classic" aria-label="Forgotten Hollow case study" data-bb-route="2,0,1" data-bb-readout>
@@ -81,7 +80,6 @@
 <style>
 .home-hero { padding-top: calc(var(--bb-header-h) + clamp(48px, 8vw, 112px)); }
 .home-hero__grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
-.home-launch { margin: 22px 0 0; font: 500 12px/1.6 var(--bb-mono); letter-spacing: .04em; text-transform: uppercase; }
 .home-fig__frame { display: block; padding: 10px; overflow: visible; }
 .home-fig__frame img { aspect-ratio: 2000 / 1131; object-fit: cover; }
 .home-docs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
@@ -96,22 +94,3 @@
 }
 @media (max-width: 520px) { .home-docs { grid-template-columns: 1fr; } }
 </style>
-
-<script>
-(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
-  
-  var cd = root.querySelector('[data-home-countdown]');
-  if (!cd) return;
-  var pt = new Date(), parts;
-  try {
-    parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(pt);
-    var get = function (k) { return +parts.filter(function (x) { return x.type === k; })[0].value; };
-    pt = Date.UTC(get('year'), get('month') - 1, get('day'));
-  } catch (e) { pt = Date.UTC(pt.getFullYear(), pt.getMonth(), pt.getDate()); }
-  var days = Math.round((Date.UTC(2026, 10, 18) - pt) / 864e5);
-  cd.textContent = days > 1 ? 'Forgotten Hollow opens in ' + days + ' days'
-    : days === 1 ? 'Forgotten Hollow opens tomorrow'
-    : Date.now() < Date.UTC(2026, 10, 18, 19) ? 'Forgotten Hollow opens today at 11 AM PT'
-    : 'Forgotten Hollow is live in MapleStory Classic World';
-});
-</script>
