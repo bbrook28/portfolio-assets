@@ -1,367 +1,78 @@
-<div class="bb-page bp">
+<div class="bb-page cine bp" style="--bb-accent:#6fa8ff">
 
-  <section class="bb-hero bb-hero--short">
-    <div class="bb-hero__media"><img data-bb-src="beepo/robots.jpg" alt="Beepo and Pogo, two magnet-headed robots" fetchpriority="high"></div>
-    <div class="bb-container bb-hero__inner">
-      <p class="bb-kicker">GMTK Game Jam 2021 · Theme: "Joined together"</p>
-      <h1 class="bb-display">Beepo <em>&amp;</em> Pogo</h1>
-      <p class="bb-hero__sub">A co-op puzzle game about two robots with magnets on their heads. Line them up, then pull together or push apart to get past each obstacle.</p>
-      <dl class="bb-hero__meta">
-        <div><dt>Role</dt><dd>Game Design · VFX · UI</dd></div>
-        <div><dt>Team</dt><dd>8 developers</dd></div>
-        <div><dt>Engine</dt><dd>Unreal Engine 4</dd></div>
-        <div><dt>Mode</dt><dd>Single-player or co-op</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <section class="bb-section bb-section--tight">
-    <div class="bb-container">
-      <div class="bb-stats bb-reveal">
-        <div class="bb-stat"><div class="bb-stat__num">48<sup>h</sup></div><div class="bb-stat__label">Jam length</div></div>
-        <div class="bb-stat"><div class="bb-stat__num">2</div><div class="bb-stat__label">Robots, one magnet each</div></div>
-        <div class="bb-stat"><div class="bb-stat__num">5</div><div class="bb-stat__label">Puzzles</div></div>
-        <div class="bb-stat"><div class="bb-stat__num">1–2</div><div class="bb-stat__label">Players</div></div>
+  <section class="cine-hero">
+    <div class="cine-hero__bg"><img loading="eager" fetchpriority="high" data-bb-src="covers/beepo.jpg" alt="Beepo and Pogo, two magnet-headed robots"></div>
+    <div class="cine-hero__in">
+      <span class="cine-label">GMTK Game Jam 2021 · Theme: "Joined together"</span>
+      <h1 class="cine-d">Beepo &amp; Pogo</h1>
+      <p class="cine-hero__sub">A co-op puzzle game about two robots with magnets on their heads. Line them up, then pull together or push apart to get past each obstacle.</p>
+      <div class="cine-facts">
+        <div><b>Design</b><span>plus VFX and UI</span></div>
+        <div><b>8</b><span>developers</span></div>
+        <div><b>48 h</b><span>jam length</span></div>
+        <div><b>1–2</b><span>players</span></div>
       </div>
     </div>
   </section>
 
-    <section class="bb-section">
-    <div class="bb-container bb-split">
-      <div class="bb-sticky bb-reveal">
-        <p class="bb-kicker">Day one · Brainstorm</p>
-        <h2 class="bb-h2">Our brainstorm for the theme</h2>
-        <p class="bb-prose">These are the team's real brainstorm notes for "Joined together." Magnetism won because it turns the theme into something the player does every second: the two robots are literally bound by a force you switch on and off.</p>
-      </div>
-      <ul class="bp-board bb-reveal" style="--d:.1s" aria-label="Brainstorm notes">
-        <li class="is-pick">Magnetism</li><li>Welding objects</li><li class="is-pick">Attracting / repelling</li><li>Sockets &amp; plugs</li>
-        <li>Soldering</li><li>Cloned movement</li><li>Hyperlinks</li><li>Potions &amp; alchemy</li><li>Necromancy</li>
-        <li>Linked-room dungeon crawler</li><li>Trains</li><li>Car related</li><li class="is-pick">Magnet puzzle</li><li>Sandwich game</li>
-      </ul>
-    </div>
+  <section class="cine-sec">
+    <span class="cine-label">Day one</span>
+    <h2 class="cine-d">Why magnets</h2>
+    <p class="cine-lede">These were the team's real brainstorm notes for "Joined together." Magnetism won because it turns the theme into something the player does every second: the two robots are bound by a force you switch on and off.</p>
+    <ul class="cine-tags">
+      <li class="is-on">Magnetism</li><li>Welding objects</li><li>Attracting and repelling</li><li>Sockets and plugs</li><li>Soldering</li><li>Cloned movement</li><li>Hyperlinks</li><li>Potions and alchemy</li><li>Necromancy</li><li>Linked-room dungeon crawler</li><li>Trains</li><li>Sandwich game</li>
+    </ul>
   </section>
 
-    <section data-bb-toc="Puzzle demo" class="bb-section bb-section--alt">
-    <div class="bb-container">
-      <div class="bb-split" style="align-items:end">
-        <div class="bb-reveal">
-          <p class="bb-kicker">Interactive · Three pocket puzzles</p>
-          <h2 class="bb-h2" style="margin-bottom:0">Try the magnet puzzles</h2>
-        </div>
-        <p class="bb-prose bb-reveal" style="--d:.1s">Neither robot can cross a hole or open a door alone. Whoever you control keeps its magnet planted and its partner moves, pulled in or thrown away, but only when they're lined up in range with nothing solid between them. Get both robots onto the green exits.</p>
-      </div>
-      <div class="bp-toy bb-reveal" data-bp-toy>
-        <div class="bp-toy__top"><span class="bp-toy__level"></span><span class="bp-toy__state" aria-live="polite"></span></div>
-        <canvas tabindex="0" aria-label="Puzzle demo: move Beepo and Pogo on a tile grid and use pull or push to cross holes and hold doors open"></canvas>
-        <div class="bp-toy__hud">
-          <div class="bp-toy__group" role="group" aria-label="Robot you control">
-            <button type="button" data-bot="0" class="is-beepo">Beepo</button>
-            <button type="button" data-bot="1" class="is-pogo">Pogo</button>
-          </div>
-          <div class="bp-toy__group bp-toy__pad" role="group" aria-label="Move">
-            <button type="button" data-dir="-1,0" aria-label="Left">←</button>
-            <button type="button" data-dir="0,-1" aria-label="Up">↑</button>
-            <button type="button" data-dir="0,1" aria-label="Down">↓</button>
-            <button type="button" data-dir="1,0" aria-label="Right">→</button>
-          </div>
-          <div class="bp-toy__group" role="group" aria-label="Magnets">
-            <button type="button" data-act="pull" class="is-main">Pull</button>
-            <button type="button" data-act="push" class="is-main">Push</button>
-            <button type="button" data-act="reset">Reset</button>
-          </div>
-        </div>
-        <p class="bp-toy__how"><kbd>WASD</kbd> Beepo · <kbd>Arrows</kbd> Pogo · <kbd>Space</kbd> pull · <kbd>E</kbd> push · <kbd>R</kbd> reset · or tap a robot, then tap where to step</p>
+  <section class="cine-sec">
+    <span class="cine-label">My part</span>
+    <h2 class="cine-d">Making magnetism readable</h2>
+    <p class="cine-lede">Magnetism is invisible, so my VFX and UI work was about readability: when the magnets are live, which way the force acts, and whether the pair is lined up close enough to engage. Audio did the same job, so each sound below maps to a state.</p>
+    <div class="cine-2col">
+      <figure class="cine-wide" style="margin:0"><video class="cine-clip" muted playsinline loop autoplay preload="metadata" data-bb-src="beepo/gameplay.mp4" data-bb-poster="beepo/robots.jpg"></video><figcaption>Gameplay capture.</figcaption></figure>
+      <div class="cine-list cine-list--one">
+        <div><b>Attract</b><p>An electric hum, like a lightning mower.</p></div>
+        <div><b>Repel</b><p>A lightning whoosh.</p></div>
+        <div><b>Collide</b><p>A hard metal clink.</p></div>
+        <div><b>Win</b><p>A fanfare when the stage is complete.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="bb-section">
-    <div class="bb-container bb-split">
-      <div class="bb-sticky bb-reveal">
-        <p class="bb-kicker">Making force visible</p>
-        <h2 class="bb-h2">Making magnetism readable</h2>
-        <div class="bb-prose">
-          <p>Magnetism is invisible, so my VFX and UI work was about readability: when the magnets are live, what direction the force is acting, and whether the pair is lined up close enough to engage.</p>
-          <p>Audio did the same job. The team's sound list ties each effect to the state it has to communicate.</p>
-        </div>
-        <ul class="bb-facts" style="margin-top:24px">
-          <li><span>Players</span><span>Solo players drive both robots; pairs split them</span></li>
-          <li><span>Level kit</span><span>A tile grid of floor, holes, buttons, and powered walls</span></li>
-        </ul>
-      </div>
-      <div class="bb-reveal" style="--d:.1s">
-        <div class="bb-embed"><video autoplay muted loop playsinline data-bb-src="beepo/gameplay.mp4" aria-label="Beepo and Pogo gameplay"></video></div>
-        <p class="bb-small" style="margin-top:10px">Gameplay capture.</p>
-        <h3 class="bb-h4" style="margin-top:40px">Sound spec</h3>
-        <ul class="bb-facts">
-          <li><span>Attract</span><span>Electric hum, like a lightning mower</span></li>
-          <li><span>Repel</span><span>Lightning whoosh</span></li>
-          <li><span>Collide</span><span>Hard metal clink</span></li>
-          <li><span>Walk</span><span>Metallic skitter</span></li>
-          <li><span>Idle</span><span>Tiny engine and beeps</span></li>
-          <li><span>Button</span><span>Chirpy shirp and hum</span></li>
-          <li><span>Boxes</span><span>Metal scraping as they move and drop</span></li>
-          <li><span>Win</span><span>Fanfare on stage complete</span></li>
-        </ul>
-      </div>
+  <section class="cine-sec">
+    <span class="cine-label">Level layouts</span>
+    <h2 class="cine-d">Five puzzles, one tile kit</h2>
+    <p class="cine-lede">Every level uses the same floor, holes, buttons and powered walls, so new ideas come from how the pieces combine.</p>
+    <div class="cine-gallery cine-gallery--3">
+      <figure><img data-bb-src="beepo/puzzle-1.jpg" alt="Puzzle 1 layout, top-down" data-bb-lightbox="bp"></figure>
+      <figure><img data-bb-src="beepo/puzzle-2.jpg" alt="Puzzle 2 layout" data-bb-lightbox="bp"></figure>
+      <figure><img data-bb-src="beepo/puzzle-3.jpg" alt="Puzzle 3 layout" data-bb-lightbox="bp"></figure>
+      <figure><img data-bb-src="beepo/puzzle-4.jpg" alt="Puzzle 4 layout" data-bb-lightbox="bp"></figure>
+      <figure><img data-bb-src="beepo/puzzle-5.jpg" alt="Puzzle 5 layout" data-bb-lightbox="bp"></figure>
+      <figure><img data-bb-src="beepo/controls.jpg" alt="Controls: WASD moves one robot, arrow keys move the other, Space toggles the magnets" data-bb-lightbox="bp"></figure>
     </div>
   </section>
 
-  <section class="bb-section bb-section--alt">
-    <div class="bb-container">
-      <div class="bb-reveal" style="max-width:760px">
-        <p class="bb-kicker">Level layouts</p>
-        <h2 class="bb-h2">The five puzzle layouts</h2>
-        <p class="bb-prose">Every level is built from the same tile kit, so new ideas come from how the pieces combine, not from new mechanics.</p>
-      </div>
-      <div class="bb-gallery" style="margin-top:40px">
-        <figure class="bb-figure bb-g-full bb-reveal"><div class="bb-figure__frame" style="aspect-ratio:2304/1248;background:#000" data-bb-lightbox="beepo"><img loading="lazy" data-bb-src="beepo/puzzle-1.jpg" alt="Puzzle layout, top-down"></div></figure>
-        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" style="background:#000" data-bb-lightbox="beepo"><img loading="lazy" data-bb-src="beepo/puzzle-2.jpg" alt="Puzzle layout" style="object-fit:contain"></div></figure>
-        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" style="background:#000" data-bb-lightbox="beepo"><img loading="lazy" data-bb-src="beepo/puzzle-3.jpg" alt="Puzzle layout" style="object-fit:contain"></div></figure>
-        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" style="background:#000" data-bb-lightbox="beepo"><img loading="lazy" data-bb-src="beepo/puzzle-4.jpg" alt="Puzzle layout" style="object-fit:contain"></div></figure>
-        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" style="background:#000" data-bb-lightbox="beepo"><img loading="lazy" data-bb-src="beepo/puzzle-5.jpg" alt="Puzzle layout" style="object-fit:contain"></div></figure>
-      </div>
-      <figure class="bb-figure bb-reveal" style="margin-top:28px;max-width:760px"><div class="bb-figure__frame" style="background:#0e1116" data-bb-lightbox="beepo"><img loading="lazy" data-bb-src="beepo/controls.jpg" alt="Controls: WASD moves one robot, arrow keys move the other, Space toggles the magnets"></div><figcaption>Controls. One hand per robot, one shared magnet key.</figcaption></figure>
+  <section class="cine-sec">
+    <span class="cine-label">Post-jam</span>
+    <h2 class="cine-d">What I took from it</h2>
+    <p class="cine-lede">Players liked the idea and the puzzles, and their notes gave me a short list for next time.</p>
+    <div class="cine-cards3">
+      <article><h3>Teach the reset</h3><p>The reset key was there, but players didn't know about it. It belongs in the tutorial.</p></article>
+      <article><h3>Check both robots</h3><p>A co-op exit should only count when both robots reach it.</p></article>
+      <article><h3>Tame the physics</h3><p>Limiting magnet range and pushing objects out of walls would keep the puzzles smooth.</p></article>
+    </div>
+    <div class="cine-press cine-press--one" style="margin-top:clamp(12px,1.6vw,24px)">
+      <a><q>Really nice concept and engaging puzzles!</q><span>GMTK Jam player</span></a>
     </div>
   </section>
 
-  <section class="bb-section">
-    <div class="bb-container">
-      <div class="bb-reveal" style="max-width:760px">
-        <p class="bb-kicker">Post-jam</p>
-        <h2 class="bb-h2">What players found, and what I'd fix</h2>
-        <p class="bb-prose">Players liked the idea and the puzzles. They also found the edges of a physics puzzle built in a weekend, which is the most useful feedback a jam gives you.</p>
-      </div>
-      <div class="bb-grid bb-grid--3" style="margin-top:40px">
-        <figure class="bb-card bb-quote-card bb-reveal"><blockquote>"Really nice concept and engaging puzzles! Maybe include R to restart in the tutorial as well."</blockquote><figcaption>GMTK Jam player</figcaption></figure>
-        <figure class="bb-card bb-quote-card bb-reveal" style="--d:.06s"><blockquote>"A really cool idea, and the puzzles were fun to work through, but I also encountered glitches quite often that left me softlocked."</blockquote><figcaption>GMTK Jam player</figcaption></figure>
-        <figure class="bb-card bb-quote-card bb-reveal" style="--d:.12s"><blockquote>"I really liked the game! The only bug I encountered was a fence clipping, and it somehow fixed itself when I used the magnetism."</blockquote><figcaption>GMTK Jam player</figcaption></figure>
-      </div>
-      <div class="bb-tiles bb-tiles--3" style="margin-top:40px"><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>R</span></div><div class="bb-tile__body"><h3>Teach the escape hatch</h3><p>The reset key existed, but players didn't know. Next time the reset key goes in the tutorial.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>2 / 2</span></div><div class="bb-tile__body"><h3>Guard the goal</h3><p>One robot could reach the exit alone and leave the other stranded. Win states for co-op should check for both.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Clamp</span></div><div class="bb-tile__body"><h3>Clamp the physics</h3><p>Magnet force plus collision produced clipping and softlocks. Limiting range and pushing objects out of walls would have closed most of them.</p></div></div></div>
-      <div class="bb-embed bb-embed--itch bb-reveal" style="margin-top:48px;max-width:560px"><iframe loading="lazy" src="https://itch.io/embed/1081555" title="Beepo and Pogo on itch.io"></iframe></div>
-      <div class="bb-card bb-reveal" style="margin-top:28px"><div class="bb-card__num">Team</div><p>Ben Brook · Game design, VFX, UI programming · Darrien Blanchard · Prop modeling · Dylan Klimeck · Character art · Greg González · Motion graphics · Joey Belt · Environment art · John Washington · Game and systems design, programming · Phillip Corrado · Game and level design, music · Spencer Hamm · Animation, rigging</p></div>
-    </div>
+  <section class="cine-sec">
+    <span class="cine-label">Play it</span>
+    <div class="cine-itch"><iframe loading="lazy" src="https://itch.io/embed/1081555" title="Beepo and Pogo on itch.io"></iframe></div>
+    <p class="cine-note">Team: Ben Brook (game design, VFX, UI programming), Darrien Blanchard (props), Dylan Klimeck (character art), Greg González (motion graphics), Joey Belt (environment art), John Washington (game and systems design, programming), Phillip Corrado (game and level design, music), Spencer Hamm (animation, rigging).</p>
   </section>
 
-  <nav class="bb-next" aria-label="More projects">
-    <a href="/projects/hell-my-name-is-bubba"><img data-bb-src="buba/shot-2.jpg" alt=""><small>Previous project</small><strong>Hell, My Name Is Buba</strong></a>
-    <a href="/projects/maplestory-classic"><img data-bb-src="fh/maps/forgotten-hollow.webp" alt=""><small>Back to the top</small><strong>MapleStory Classic</strong></a>
-  </nav>
+  <a class="cine-next" href="/projects/maplestory-classic" style="--c:#a6e35f"><img data-bb-src="fh/maps/forgotten-hollow.webp" alt=""><div><span class="cine-label">Back to the top</span><strong>MapleStory Classic</strong></div></a>
+  <p class="cine-credit">GMTK Game Jam 2021 entry.</p>
 </div>
-
-<style>
-.bb-quote-card blockquote { margin: 0; font-family: var(--bb-serif); font-size: 22px; line-height: 1.3; color: var(--bb-text); }
-.bb-quote-card figcaption { margin-top: 18px; font-size: 11px; font-weight: 600; letter-spacing: .2em;  color: var(--bb-accent); }
-.bp-board { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; }
-.bp-board li { padding: 14px 18px; border-radius: 0; background: #1b1d22; border: 1px solid var(--bb-line); color: var(--bb-muted); font-size: 15px; transform: rotate(var(--r, 0deg)); transition: transform .4s var(--bb-ease); }
-.bp-board li:nth-child(3n) { --r: -1.5deg; } .bp-board li:nth-child(4n+1) { --r: 1.2deg; } .bp-board li:nth-child(5n) { --r: -.8deg; }
-.bp-board li:hover { transform: rotate(0) translateY(-3px); }
-.bp-board li.is-pick { background: color-mix(in srgb, var(--bb-accent) 16%, #14161a); border-color: var(--bb-accent); color: #fff; font-weight: 500; box-shadow: 0 10px 30px -14px var(--bb-accent); }
-.bp-toy { margin-top: 40px; border: 1px solid var(--bb-line); border-radius: 0; overflow: hidden; background: #0b1016; }
-.bp-toy canvas { display: block; width: 100%; aspect-ratio: 13 / 7; touch-action: manipulation; cursor: pointer; user-select: none; -webkit-user-select: none; }
-.bp-toy canvas:focus-visible { outline: 2px solid var(--bb-accent); outline-offset: -2px; }
-.bp-toy__top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; padding: 14px 18px; border-bottom: 1px solid var(--bb-line); font-size: 13px; }
-.bp-toy__level { font-weight: 600; color: var(--bb-text); }
-.bp-toy__state { color: var(--bb-muted); }
-.bp-toy__hud { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-top: 1px solid var(--bb-line); }
-.bp-toy__group { display: flex; gap: 8px; }
-.bp-toy__group button { min-width: 44px; min-height: 44px; padding: 0 16px; border-radius: 0; border: 1px solid var(--bb-line-strong); background: transparent; color: var(--bb-muted); font: 600 13px/1 var(--bb-sans); cursor: pointer; transition: color .2s, background-color .2s, border-color .2s; }
-.bp-toy__group button:hover { color: var(--bb-text); border-color: var(--bb-accent); }
-.bp-toy__group button:active { transform: scale(.95); }
-.bp-toy__pad button { padding: 0; font-size: 16px; }
-.bp-toy__group .is-main { color: var(--bb-text); }
-.bp-toy__group .is-beepo[aria-pressed="true"] { background: #4fb8ff; border-color: #4fb8ff; color: #0b0b0b; }
-.bp-toy__group .is-pogo[aria-pressed="true"] { background: #ff6b6b; border-color: #ff6b6b; color: #0b0b0b; }
-.bp-toy__how { margin: 0; padding: 0 18px 14px; font-size: 12px; color: var(--bb-muted); }
-.bp-toy__how kbd { font: 600 11px var(--bb-sans); padding: 2px 6px; border: 1px solid var(--bb-line-strong); border-radius: 0; color: var(--bb-text); }
-@media (hover: none) { .bp-toy__how { display: none; } }
-@media (max-width: 560px) { .bp-toy__hud { justify-content: center; } .bp-toy__group button { padding: 0 12px; } }
-</style>
-
-<script>
-(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
-  var host = root.querySelector('[data-bp-toy]');
-  if (!host) return;
-  var cv = host.querySelector('canvas'), ctx = cv.getContext('2d');
-  var stateEl = host.querySelector('.bp-toy__state'), levelEl = host.querySelector('.bp-toy__level');
-  var W, H, S, dpr = Math.min(2, window.devicePixelRatio || 1), running = false, t = 0;
-  var LEVELS = [
-    { name: 'Mind the gap', hint: 'Line them up across the hole, then pull.', map: [
-      '#############',
-      '#.....oo....#',
-      '#.B...oo..E.#',
-      '#.....oo....#',
-      '#.....oo.P..#',
-      '#.....oo..E.#',
-      '#############'] },
-    { name: 'Launch pad', hint: 'Only one of them can be thrown. The other has to open the door.', map: [
-      '#############',
-      '#.....#...E.#',
-      '#.....D...E.#',
-      '#.BPoooo....#',
-      '#.....#.....#',
-      '#.....#.._..#',
-      '#############'] },
-    { name: 'Hold the door', hint: 'Push through the open door, then pull your partner after you.', map: [
-      '#############',
-      '#.....#.....#',
-      '#_P...Dooo._#',
-      '#.....#.....#',
-      '#..B..#..EE.#',
-      '#.....#.....#',
-      '#############'] }
-  ];
-  var COLS = 13, ROWS = 7, RANGE = 7;
-  var lv, grid, bots, sel, busy, fx, won;
-  function load(i) {
-    lv = i; grid = LEVELS[i].map.map(function (r) { return r.split(''); });
-    bots = [];
-    grid.forEach(function (row, y) { row.forEach(function (ch, x) {
-      if (ch === 'B' || ch === 'P') { bots[ch === 'B' ? 0 : 1] = { x: x, y: y, dx: x, dy: y, fall: 0 }; row[x] = '.'; }
-    }); });
-    bots[0].col = '#4fb8ff'; bots[0].name = 'Beepo'; bots[1].col = '#ff6b6b'; bots[1].name = 'Pogo';
-    busy = false; fx = null; won = false; select(sel || 0);
-    levelEl.textContent = 'Puzzle ' + (i + 1) + ' of ' + LEVELS.length + ' · ' + LEVELS[i].name;
-    say(LEVELS[i].hint);
-  }
-  function say(s) { stateEl.textContent = s; }
-  function tile(x, y) { return y < 0 || y >= ROWS || x < 0 || x >= COLS ? '#' : grid[y][x]; }
-  function doorsOpen() { return bots.some(function (b) { return tile(b.x, b.y) === '_'; }); }
-  function solid(x, y) { var c = tile(x, y); return c === '#' || (c === 'D' && !doorsOpen()); }
-  function botAt(x, y) { return bots.filter(function (b) { return b.x === x && b.y === y; })[0]; }
-  var selBtns = host.querySelectorAll('[data-bot]');
-  function select(i) { sel = i; selBtns.forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-bot') === i ? 'true' : 'false'); }); }
-  selBtns.forEach(function (b) { b.addEventListener('click', function () { select(+b.getAttribute('data-bot')); }); });
-
-  function walk(i, dx, dy) {
-    if (busy || won) return;
-    select(i);
-    var b = bots[i], nx = b.x + dx, ny = b.y + dy;
-    if (solid(nx, ny) || botAt(nx, ny)) return say(tile(nx, ny) === 'D' ? 'The door is powered shut. Someone has to hold a button.' : 'Blocked.');
-    if (tile(nx, ny) === 'o') return say(b.name + " can't walk over holes. Magnets can carry you across.");
-    b.x = nx; b.y = ny; after();
-  }
-  function magnet(dir) {
-    if (busy || won) return;
-    var me = bots[sel], o = bots[1 - sel], dx = Math.sign(o.x - me.x), dy = Math.sign(o.y - me.y);
-    if (me.x !== o.x && me.y !== o.y) return say('Not lined up. Get them in the same row or column first.');
-    var gap = Math.abs(o.x - me.x) + Math.abs(o.y - me.y);
-    if (gap > RANGE) return say('Too far apart for the magnets to engage.');
-    for (var k = 1; k < gap; k++) if (solid(me.x + dx * k, me.y + dy * k)) return say('Something solid is between them.');
-    var path = [], x = o.x, y = o.y, sx = dir > 0 ? -dx : dx, sy = dir > 0 ? -dy : dy;
-    while (true) {
-      var nx = x + sx, ny = y + sy;
-      if (solid(nx, ny) || (nx === me.x && ny === me.y)) break;
-      x = nx; y = ny; path.push([x, y]);
-    }
-    fx = { a: me, b: o, dir: dir, t: 0 };
-    if (!path.length) return say(dir > 0 ? 'Already touching. Clank.' : 'Nowhere to go: pinned against a wall.');
-    busy = true;
-    var i = 0;
-    (function hop() {
-      o.x = path[i][0]; o.y = path[i][1]; i++;
-      if (i < path.length) return setTimeout(hop, 55);
-      busy = false;
-      if (tile(o.x, o.y) === 'o') { o.fall = 1; say(o.name + ' landed on a hole. Resetting…'); busy = true; setTimeout(function () { load(lv); }, 900); return; }
-      say(dir > 0 ? 'Clank. Joined together.' : 'Whoosh.'); after();
-    })();
-  }
-  function after() {
-    var onExit = bots.filter(function (b) { return tile(b.x, b.y) === 'E'; }).length;
-    if (onExit === 2) {
-      won = true;
-      if (lv === LEVELS.length - 1 && window.bbAchieve) window.bbAchieve('joined');
-      say(lv < LEVELS.length - 1 ? 'Both robots home. Next puzzle…' : 'All three solved. Nice teamwork.');
-      setTimeout(function () { load((lv + 1) % LEVELS.length); }, lv < LEVELS.length - 1 ? 1300 : 3200);
-    } else if (onExit === 1) say('One robot home. The exit only opens for both.');
-  }
-  host.querySelector('[data-act="pull"]').addEventListener('click', function () { magnet(1); });
-  host.querySelector('[data-act="push"]').addEventListener('click', function () { magnet(-1); });
-  host.querySelector('[data-act="reset"]').addEventListener('click', function () { load(lv); });
-  host.querySelectorAll('[data-dir]').forEach(function (b) {
-    b.addEventListener('click', function () { var d = b.getAttribute('data-dir').split(','); walk(sel, +d[0], +d[1]); });
-  });
-  var KEYS = { KeyW: [0, 0, -1], KeyS: [0, 0, 1], KeyA: [0, -1, 0], KeyD: [0, 1, 0], ArrowUp: [1, 0, -1], ArrowDown: [1, 0, 1], ArrowLeft: [1, -1, 0], ArrowRight: [1, 1, 0] };
-  cv.addEventListener('keydown', function (e) {
-    var k = KEYS[e.code];
-    if (k) { walk(k[0], k[1], k[2]); e.preventDefault(); }
-    else if (e.code === 'Space') { magnet(1); e.preventDefault(); }
-    else if (e.code === 'KeyE' || e.code === 'ShiftLeft' || e.code === 'ShiftRight') { magnet(-1); e.preventDefault(); }
-    else if (e.code === 'KeyR') load(lv);
-  });
-  cv.addEventListener('pointerdown', function (e) {
-    cv.focus({ preventScroll: true });
-    var r = cv.getBoundingClientRect(), gx = Math.floor((e.clientX - r.left - OX) / S), gy = Math.floor((e.clientY - r.top - OY) / S);
-    var hit = bots.indexOf(botAt(gx, gy));
-    if (hit >= 0) { select(hit); say(bots[hit].name + ' selected. Its magnet stays planted; the partner moves.'); return; }
-    var b = bots[sel], ddx = gx - b.x, ddy = gy - b.y;
-    if (!ddx && !ddy) return;
-    if (Math.abs(ddx) >= Math.abs(ddy)) walk(sel, Math.sign(ddx), 0); else walk(sel, 0, Math.sign(ddy));
-  });
-
-  var OX = 0, OY = 0;
-  function size() {
-    var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
-    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    S = Math.floor(Math.min(W / COLS, H / ROWS)); OX = (W - S * COLS) / 2; OY = (H - S * ROWS) / 2;
-  }
-  function rr(x, y, w, h, rad) { ctx.beginPath(); ctx.roundRect ? ctx.roundRect(x, y, w, h, rad) : ctx.rect(x, y, w, h); }
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    var open = doorsOpen();
-    for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) {
-      var c = grid[y][x], px = OX + x * S, py = OY + y * S;
-      if (c === '#') { ctx.fillStyle = '#26303c'; rr(px + 1, py + 1, S - 2, S - 2, 3); ctx.fill(); ctx.fillStyle = '#323e4d'; ctx.fillRect(px + 1, py + 1, S - 2, 3); continue; }
-      if (c === 'o') {
-        var g = ctx.createLinearGradient(0, py, 0, py + S); g.addColorStop(0, '#000'); g.addColorStop(1, '#0a0e13');
-        ctx.fillStyle = g; ctx.fillRect(px, py, S, S); continue;
-      }
-      ctx.fillStyle = (x + y) % 2 ? '#141b24' : '#17202a'; ctx.fillRect(px, py, S, S);
-      if (c === 'E') {
-        ctx.strokeStyle = 'rgba(126,240,170,' + (.45 + .25 * Math.sin(t / 14)) + ')'; ctx.lineWidth = 2; rr(px + 5, py + 5, S - 10, S - 10, 4); ctx.stroke();
-        ctx.fillStyle = 'rgba(126,240,170,.12)'; ctx.fill();
-      } else if (c === '_') {
-        var held = !!botAt(x, y);
-        ctx.fillStyle = held ? '#ffd166' : '#5a4a22'; ctx.beginPath(); ctx.arc(px + S / 2, py + S / 2, S * .28, 0, 6.283); ctx.fill();
-        ctx.strokeStyle = '#ffd166'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(px + S / 2, py + S / 2, S * .36, 0, 6.283); ctx.stroke();
-      } else if (c === 'D') {
-        ctx.fillStyle = open ? 'rgba(255,209,102,.12)' : 'rgba(255,209,102,.75)';
-        for (var k = 0; k < 3; k++) ctx.fillRect(px + S * (.2 + k * .25), py + 2, S * .1, S - 4);
-      }
-    }
-    var me = bots[sel], o = bots[1 - sel];
-    if (me.x === o.x || me.y === o.y) {
-      var gap = Math.abs(o.x - me.x) + Math.abs(o.y - me.y), dx = Math.sign(o.x - me.x), dy = Math.sign(o.y - me.y), clear = gap <= RANGE;
-      for (var q = 1; q < gap && clear; q++) if (solid(me.x + dx * q, me.y + dy * q)) clear = false;
-      if (clear) {
-        ctx.save(); ctx.strokeStyle = fx && fx.t < 30 ? (fx.dir > 0 ? 'rgba(111,211,255,.9)' : 'rgba(255,120,120,.9)') : 'rgba(111,211,255,.3)';
-        ctx.lineWidth = 2; ctx.setLineDash([5, 8]); ctx.lineDashOffset = -t * (fx && fx.dir < 0 ? -1.5 : 1.5);
-        for (var m = -1; m <= 1; m++) {
-          var ax = OX + (me.x + .5) * S, ay = OY + (me.y + .5) * S, bx = OX + (o.x + .5) * S, by = OY + (o.y + .5) * S, nx = -dy * m * S * .18, ny = dx * m * S * .18;
-          ctx.beginPath(); ctx.moveTo(ax + nx * .4, ay + ny * .4); ctx.quadraticCurveTo((ax + bx) / 2 + nx * 1.6, (ay + by) / 2 + ny * 1.6, bx + nx * .4, by + ny * .4); ctx.stroke();
-        }
-        ctx.restore();
-      }
-    }
-    bots.forEach(function (b, i) {
-      b.dx += (b.x - b.dx) * .4; b.dy += (b.y - b.dy) * .4;
-      if (b.fall) b.fall = Math.min(2, b.fall + .04);
-      var sc = b.fall ? Math.max(0, 2 - b.fall) : 1, cx = OX + (b.dx + .5) * S, cy = OY + (b.dy + .5) * S, R = S * .34 * sc;
-      if (R <= 0) return;
-      var p = bots[1 - i], ang = Math.atan2(p.dy - b.dy, p.dx - b.dx);
-      if (i === sel) { ctx.strokeStyle = 'rgba(255,255,255,.55)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(cx, cy, R + 5, 0, 6.283); ctx.stroke(); }
-      ctx.fillStyle = '#1d2530'; ctx.strokeStyle = b.col; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.283); ctx.fill(); ctx.stroke();
-      ctx.save(); ctx.translate(cx, cy); ctx.rotate(ang);
-      ctx.fillStyle = '#c9ced6'; ctx.fillRect(R - 5, -R * .45, 7, R * .9); ctx.fillStyle = b.col; ctx.fillRect(R + 2, -R * .45, 3, R * .9);
-      ctx.restore();
-    });
-    if (fx) fx.t++;
-  }
-  function loop() { if (!running) return; t++; draw(); requestAnimationFrame(loop); }
-  size(); load(0); draw();
-  window.addEventListener('resize', size);
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (en) { var v = en[0].isIntersecting; if (v && !running) { running = true; requestAnimationFrame(loop); } else if (!v) running = false; }).observe(host);
-  } else { running = true; loop(); }
-});
-</script>

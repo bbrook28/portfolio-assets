@@ -1,181 +1,87 @@
-<div class="bb-page sumo">
+<div class="bb-page cine sumo" style="--bb-accent:#ffd23c">
 
-  <section class="bb-hero">
-    <div class="bb-hero__media"><img data-bb-src="sumo/keyart.jpg" alt="Four sumo wrestlers diving for falling food in the ring" fetchpriority="high"></div>
-    <div class="bb-container bb-hero__inner">
-      <p class="bb-kicker">Solo indie release · iPhone &amp; iPad · 2026</p>
-      <h1 class="bb-display">Sumo <em>Scuffle</em></h1>
-      <p class="bb-hero__sub">Eat the most, shove the rest: a 45-second sumo party game where rolling wrestlers fight over falling food and slam each other into the walls.</p>
-      <dl class="bb-hero__meta">
-        <div><dt>Role</dt><dd>Solo developer</dd></div>
-        <div><dt>Platform</dt><dd>iPhone · iPad</dd></div>
-        <div><dt>Players</dt><dd>1–4 on one device, or with up to four controllers</dd></div>
-        <div><dt>Status</dt><dd>Submitted to the App Store, with version 1.2 in TestFlight</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <section class="bb-section bb-section--tight" id="trailer" data-bb-toc="Trailer">
-    <div class="bb-container">
-      <div class="sumo-trailer bb-reveal">
-        <video preload="metadata" playsinline data-bb-poster="sumo/trailer-poster.jpg" data-bb-src="sumo/trailer.mp4" aria-label="Sumo Scuffle gameplay trailer"></video>
-        <button type="button" class="sumo-trailer__play" aria-label="Play the trailer"><span>▶</span>Watch the trailer</button>
+  <section class="cine-hero">
+    <div class="cine-hero__bg"><video muted playsinline loop autoplay preload="auto" data-bb-src="sumo/trailer.mp4" data-bb-src-m="sumo/reel.mp4" data-bb-poster="sumo/keyart.jpg"></video></div>
+    <div class="cine-hero__in">
+      <span class="cine-label">Solo indie release · iPhone and iPad · 2026</span>
+      <h1 class="cine-d">Sumo Scuffle</h1>
+      <p class="cine-hero__sub">Eat the most, shove the rest. A 45-second sumo party game where rolling wrestlers fight over falling food and slam each other into the walls.</p>
+      <div class="cine-facts">
+        <div><b>45 s</b><span>per bout</span></div>
+        <div><b>1–4</b><span>players on one device</span></div>
+        <div><b>4 modes</b><span>and two seasonal events</span></div>
+        <div><b>1 dev</b><span>design, code, art and audio direction</span></div>
       </div>
     </div>
   </section>
 
-  <section class="bb-section bb-section--tight">
-    <div class="bb-container">
-      <div class="bb-stats bb-reveal">
-        <div class="bb-stat"><div class="bb-stat__num">45<sup>s</sup></div><div class="bb-stat__label">Per bout</div></div>
-        <div class="bb-stat"><div class="bb-stat__num">1–4</div><div class="bb-stat__label">Players on one device</div></div>
-        <div class="bb-stat"><div class="bb-stat__num">4</div><div class="bb-stat__label">Languages</div></div>
-        <div class="bb-stat"><div class="bb-stat__num">1</div><div class="bb-stat__label">Developer</div></div>
-      </div>
+  <section class="cine-sec">
+    <span class="cine-label">Play it here</span>
+    <h2 class="cine-d">A bout in your browser</h2>
+    <p class="cine-lede">This is the browser build of the real game, made from the same code as the App Store version. Grab the falling food and slam rivals into the wall.</p>
+    <div class="sumo-play" data-sumo-play>
+      <img class="sumo-play__poster" data-bb-src="sumo/feast-slam.jpg" alt="">
+      <button type="button" class="sumo-play__btn"><span>▶</span>Play Sumo Scuffle</button>
+      <a class="sumo-play__out" href="https://bbrook28.github.io/sumo-scuffle/" target="_blank" rel="noopener">Open full screen</a>
     </div>
   </section>
 
-  <section class="bb-section">
-    <div class="bb-container bb-split">
-      <div class="bb-sticky bb-reveal">
-        <p class="bb-kicker">Origin</p>
-        <h2 class="bb-h2">From a class project to a commercial release</h2>
-      </div>
-      <div class="bb-reveal" style="--d:.1s">
-        <p class="bb-lead">Sumo Scuffle started as a four-person SCAD prototype that I designed and programmed. I then rebuilt it alone as a full commercial release: design, programming, art and audio direction, playtesting, App Store submission, and marketing.</p>
-        <div class="bb-prose" style="margin-top:24px">
-          <p>The goal was a game anyone can pick up at a party. That meant short bouts, simple controls, and chaos that stays readable when four people are crowded around one phone.</p>
-        </div>
-        <div class="bb-tiles bb-tiles--3 bb-tiles--row3" style="margin-top:28px"><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="sumo/feast-1.jpg" alt=""></div><div class="bb-tile__body"><h3>Four modes</h3><p>Feast, King of the Ring, Keep-Away, and Sumo Bowling</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>2–4</span></div><div class="bb-tile__body"><h3>Couch-first</h3><p>Up to four players on one device, with a face-to-face layout and a mirrored scoreboard for a phone lying flat on a table. Bluetooth controllers work too.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>CPU</span></div><div class="bb-tile__body"><h3>Solo too</h3><p>Opponents tuned by a hidden skill rating</p></div></div></div>
-      </div>
+  <section class="cine-sec">
+    <span class="cine-label">Origin</span>
+    <h2 class="cine-d">Class project to App Store</h2>
+    <p class="cine-lede">It started as a four-person SCAD prototype that I designed and programmed. I rebuilt it alone as a commercial release: design, programming, art and audio direction, playtesting, App Store submission and marketing. The goal was a game anyone can pick up at a party.</p>
+    <div class="cine-cards3">
+      <article><img data-bb-src="sumo/king.jpg" alt="King of the Ring mode"><h3>Couch first</h3><p>Up to four players on one phone, with a face-to-face layout and a mirrored scoreboard for a phone lying flat on a table. Controllers work too.</p></article>
+      <article><img data-bb-src="sumo/feast-1.jpg" alt="Feast mode, food falling into the ring"><h3>Readable chaos</h3><p>Four players and falling food get noisy fast, so every system keeps the bout readable and the score close.</p></article>
+      <article><img data-bb-src="sumo/menu.jpg" alt="The Sumo Scuffle menu"><h3>Solo too</h3><p>CPU opponents adjust to a hidden skill rating after every bout, so nobody can pick Easy and coast.</p></article>
     </div>
   </section>
 
-    <section class="bb-section bb-section--alt" data-bb-toc="Play it">
-    <div class="bb-container">
-      <div class="bb-split" style="align-items:end">
-        <div class="bb-reveal">
-          <p class="bb-kicker">Interactive · Play it right here</p>
-          <h2 class="bb-h2" style="margin-bottom:0">Play a bout in your browser</h2>
-        </div>
-        <p class="bb-prose bb-reveal" style="--d:.1s">This is the browser build of the real game, made from the same code as the App Store version. Grab the falling food and slam rivals into the wall. On a computer you play with the keyboard; on a phone it starts on touch controls.</p>
-      </div>
-      <div class="sumo-play bb-reveal" data-sumo-play>
-        <img class="sumo-play__poster" data-bb-src="sumo/feast-slam.jpg" alt="">
-        <button type="button" class="sumo-play__btn"><span>▶</span>Play Sumo Scuffle</button>
-        <a class="sumo-play__out" href="https://bbrook28.github.io/sumo-scuffle/" target="_blank" rel="noopener">Open full screen</a>
-      </div>
+  <section class="cine-sec">
+    <span class="cine-label">Playtesting</span>
+    <h2 class="cine-d">Designing for non-gamers</h2>
+    <p class="cine-lede">I playtested with people who rarely play games. Each round changed how the game is controlled and taught.</p>
+    <div class="cine-list">
+      <div><b>Tilt by default</b><p>Testers fought the joystick, so I added tilt controls: tip the phone to roll, tap anywhere to charge. They're now the default.</p></div>
+      <div><b>Flick to charge</b><p>One tester steered with a finger they never lifted, so they couldn't charge. I added flick-to-charge and a tip that teaches it.</p></div>
+      <div><b>Play first</b><p>New players had to pick controls before they'd moved. Now the Dojo starts them rolling right away and asks afterwards.</p></div>
+      <div><b>Tips step aside</b><p>Lesson tips covered what testers were trying to do, so they shrink out of the way once you move.</p></div>
+      <div><b>Reward the aim</b><p>A tester mashed the charge button, so missed charges now recharge more slowly.</p></div>
+      <div><b>Let players tune it</b><p>A sensitivity slider covers stick, tilt, follow and gamepad.</p></div>
     </div>
   </section>
 
-    <section class="bb-section bb-section--tabs" data-bb-toc="Design">
-    <div class="bb-container"><div class="bb-tabs__bar" role="tablist" aria-label="Design"></div></div>
-    <div class="bb-tab" data-tab="Playtesting">
-    <div class="bb-container">
-      <div class="bb-reveal" style="max-width:760px">
-        <p class="bb-kicker">Playtesting · Designing for non-gamers</p>
-        <h2 class="bb-h2">What playtesting changed</h2>
-        <p class="bb-prose">I playtested with people who rarely play games, and each round reshaped how the game is controlled and taught.</p>
-      </div>
-      <ol class="bb-steps bb-reveal" style="margin-top:44px">
-        <li><h4 class="bb-h4">Tilt by default</h4><p>Testers fought the joystick, so I added tilt controls: tip the phone to roll, tap anywhere to charge. They're now the default.</p></li>
-        <li><h4 class="bb-h4">Flick to charge</h4><p>One tester held the phone in one hand and steered with a finger they never lifted, so they couldn't charge. I added flick-to-charge and an in-game tip that teaches it.</p></li>
-        <li><h4 class="bb-h4">Play first, choose later</h4><p>New players were asked to pick controls before they'd moved at all. Now the Dojo starts them rolling straight away, asks "Like these controls?" afterwards, and lets them switch schemes live.</p></li>
-        <li><h4 class="bb-h4">Tips that step aside</h4><p>Lesson tips covered what testers were trying to do, so they now shrink out of the way once you start moving.</p></li>
-        <li><h4 class="bb-h4">Reward the aim</h4><p>A tester mashed the charge button, so missed charges now recharge more slowly.</p></li>
-        <li><h4 class="bb-h4">Show the gesture</h4><p>First-time players get a short lesson with an animated demo of each control scheme. A new scheme has to be tried once before they can keep it.</p></li>
-        <li><h4 class="bb-h4">Let players tune it</h4><p>A sensitivity slider covers stick, tilt, follow, and gamepad, so each player can set how quickly their sumo turns.</p></li>
-      </ol>
+  <section class="cine-sec">
+    <span class="cine-label">Modes</span>
+    <h2 class="cine-d">Four ways to scuffle</h2>
+    <div class="cine-gallery">
+      <figure class="is-wide"><img data-bb-src="sumo/feast-slam.jpg" alt="Feast mode with a wall slam"><figcaption>Feast: eat the most in 45 seconds. Wall slams knock food loose.</figcaption></figure>
+      <figure><img data-bb-src="sumo/king.jpg" alt="King of the Ring"><figcaption>King of the Ring</figcaption></figure>
+      <figure><img data-bb-src="sumo/keepaway.jpg" alt="Keep-Away"><figcaption>Keep-Away</figcaption></figure>
+      <figure class="is-span2"><img data-bb-src="sumo/bowling.jpg" alt="Sumo Bowling"><figcaption>Sumo Bowling</figcaption></figure>
     </div>
-    </div>
-    <div class="bb-tab" data-tab="Modes">
-    <div class="bb-container">
-      <div class="bb-reveal" style="max-width:760px">
-        <p class="bb-kicker">Modes · Readable chaos</p>
-        <h2 class="bb-h2">The four modes</h2>
-        <p class="bb-prose">Four players and falling food can turn into noise fast. Every system is there to keep the bout readable and the score close.</p>
-      </div>
-      <div class="bb-gallery" style="margin-top:40px">
-        <figure class="bb-figure bb-g-full bb-reveal"><div class="bb-figure__frame" style="aspect-ratio:1920/884" data-bb-lightbox="sumo"><img loading="lazy" data-bb-src="sumo/feast-1.jpg" alt="Feast mode: eat the most, shove the rest"></div><figcaption>Feast. The core mode: eat the most falling food in 45 seconds.</figcaption></figure>
-        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" style="aspect-ratio:1920/884" data-bb-lightbox="sumo"><img loading="lazy" data-bb-src="sumo/king.jpg" alt="King of the Ring mode"></div><figcaption>King of the Ring.</figcaption></figure>
-        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" style="aspect-ratio:1920/884" data-bb-lightbox="sumo"><img loading="lazy" data-bb-src="sumo/keepaway.jpg" alt="Keep-Away mode"></div><figcaption>Keep-Away.</figcaption></figure>
-        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" style="aspect-ratio:1920/884" data-bb-lightbox="sumo"><img loading="lazy" data-bb-src="sumo/bowling.jpg" alt="Sumo Bowling mode"></div><figcaption>Sumo Bowling.</figcaption></figure>
-        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" style="aspect-ratio:1920/884" data-bb-lightbox="sumo"><img loading="lazy" data-bb-src="sumo/feast-slam.jpg" alt="A wall slam knocking food loose"></div><figcaption>Wall slams. Slamming a rival into the wall knocks food loose.</figcaption></figure>
-      </div>
-      <ul class="bb-facts bb-reveal" style="margin-top:40px;max-width:900px">
-        <li><span>Power-ups</span><span>Six of them, built on sumo food and festival themes: Wasabi Rush, Giant Mochi, Magnet Belly, Belly Flop, Konnyaku Slick, and Taiko Frenzy. Each one is easy to read: a short slow-down and a light pillar on pickup, then a colored ring under your sumo that blinks before it wears off.</span></li>
-        <li><span>Ricochets</span><span>Pinball-style drums bounce wrestlers around the ring</span></li>
-        <li><span>Catch-up</span><span>An aura on whoever is behind, a crown on the leader, and a double-points final rush with a Last Bite countdown</span></li>
-        <li><span>Replay</span><span>An automatic slow-motion replay of each bout's best moment, which players can share as a video clip</span></li>
-        <li><span>Surprises</span><span>Mid-bout events that shake up a match</span></li>
-        <li><span>Seasons</span><span>Yokai Night and a Winter Festival, each with its own arena, food, and music, and cosmetic rewards players keep</span></li>
-        <li><span>Readability</span><span>Colorblind cues on top of color: star-shaped edges on power-up rings and spikes on bad food</span></li>
-      </ul>
-
-    </div>
-    </div>
-    <div class="bb-tab" data-tab="Systems">
-    <div class="bb-container bb-split">
-      <div class="bb-sticky bb-reveal">
-        <p class="bb-kicker">Systems design</p>
-        <h2 class="bb-h2">Adaptive difficulty</h2>
-        <p class="bb-prose">A hidden skill rating tunes the CPU opponents after every bout, so nobody can pick Easy and coast. Each CPU also picks a play style for the bout (greedy, bully, drummer, or careful), and the rating now reaches an Expert tier for strong players.</p>
-        <ul class="bb-facts" style="margin-top:28px"><li><span>iOS</span><span>Custom extension for Game Center, sharing, reminders, and deep links</span></li><li><span>Builds</span><span>Automated straight to TestFlight</span></li><li><span>Stats</span><span>Optional, anonymous play stats, asked for once, that show where new players drop out of the tutorial</span></li><li><span>Balance</span><span>A simulation tool for tuning the modes</span></li></ul>
-      </div>
-      <div class="bb-tiles bb-tiles--2 bb-reveal" style="--d:.1s"><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--cover"><img loading="lazy" data-bb-src="sumo/menu.jpg" alt=""></div><div class="bb-tile__body"><h3>Career ladder</h3><p>Ten real sumo ranks, rank gear to earn on the way up, and a champion boss bout.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Daily</span></div><div class="bb-tile__body"><h3>Daily Challenge</h3><p>A new challenge every day, with Game Center leaderboards and a reward for a seven-day streak.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Unlock</span></div><div class="bb-tile__body"><h3>Staged unlocks</h3><p>Modes unlock in stages instead of all at once.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Locker</span></div><div class="bb-tile__body"><h3>Cosmetics</h3><p>Patterned mawashi, topknots, hats, and nine victory poses in the Locker.</p></div></div></div>
-    </div>
+    <div class="cine-list" style="margin-top:36px">
+      <div><b>Power-ups</b><p>There are six, built on sumo food and festival themes. Each has a clear pickup and a ring that blinks before it wears off.</p></div>
+      <div><b>Catch-up</b><p>Whoever is behind gets an aura, the leader wears a crown, and the last seconds are worth double.</p></div>
+      <div><b>Replay</b><p>Each bout's best moment plays back in slow motion, and players can share it as a clip.</p></div>
+      <div><b>Seasons</b><p>Yokai Night and a Winter Festival, each with its own arena, food and music.</p></div>
+      <div><b>Career</b><p>Ten real sumo ranks to climb, with gear on the way up and a champion boss bout at the top.</p></div>
+      <div><b>Readability</b><p>Colorblind cues on top of color: star edges on power-up rings and spikes on bad food.</p></div>
     </div>
   </section>
 
-  
-  
-  <section class="bb-section">
-    <div class="bb-container">
-      <p class="bb-kicker bb-reveal">Links</p>
-      <div class="bb-press bb-reveal" style="--d:.08s">
-        <a href="https://bbrook28.github.io/sumo-scuffle/" target="_blank" rel="noopener"><small>Browser build</small><strong>Play Sumo Scuffle</strong><span>Play ↗</span></a>
-        <a href="https://bbrook28.github.io/sumo-scuffle/presskit.html" target="_blank" rel="noopener"><small>Press kit</small><strong>Facts, art, and trailer</strong><span>Open ↗</span></a>
-        <a aria-disabled="true" class="is-soon"><small>App Store</small><strong>Coming soon to iPhone and iPad</strong><span>In review</span></a>
-      </div>
-      <div class="bb-card bb-reveal" style="margin-top:28px"><div class="bb-card__num">Original SCAD prototype team</div><p>Ben Brook · Game design, programming · Hagar Baruch · UX design · Ethan McKelvin · Graphic and UI design · Zohaib Qureshi · Characters and objects. The commercial release was rebuilt solo by Ben Brook.</p></div>
+  <section class="cine-sec">
+    <span class="cine-label">Links</span>
+    <div class="cine-press">
+      <a href="https://bbrook28.github.io/sumo-scuffle/" target="_blank" rel="noopener"><q>Play Sumo Scuffle</q><span>Browser build</span></a>
+      <a href="https://bbrook28.github.io/sumo-scuffle/presskit.html" target="_blank" rel="noopener"><q>Press kit</q><span>Facts, art and trailer</span></a>
+      <a><q>App Store</q><span>Submitted for iPhone and iPad, with version 1.2 in TestFlight</span></a>
     </div>
+    <p class="cine-note">Original SCAD prototype team: Ben Brook (game design, programming), Hagar Baruch (UX design), Ethan McKelvin (graphic and UI design), Zohaib Qureshi (characters and objects). I rebuilt the commercial release on my own.</p>
   </section>
 
-  <nav class="bb-next" aria-label="More projects">
-    <a href="/projects/level-design-blockout-canceled-title"><img data-bb-src="lonestar/shot-02.jpg" alt=""><small>Previous project</small><strong>Project: Lonestar</strong></a>
-    <a href="/projects/zoelie"><img data-bb-src="zoelie/12.jpg" alt=""><small>Next project</small><strong>Zoélie</strong></a>
-  </nav>
+  <a class="cine-next" href="/projects/zoelie" style="--c:#5fd6c8"><img data-bb-src="zoelie/1.jpg" alt=""><div><span class="cine-label">Next project</span><strong>Zoélie</strong></div></a>
 </div>
-
-<style>
-.sumo-play { position: relative; margin-top: 40px; aspect-ratio: 1920 / 884; border: 1px solid var(--bb-line); border-radius: 0; overflow: hidden; background: #000; }
-.sumo-play__poster { position: absolute; inset: 0; width: 100% !important; height: 100% !important; object-fit: cover; filter: brightness(.55) saturate(1.1); }
-.sumo-play iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.sumo-play__btn { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 12px; padding: 18px 30px; border: 0; border-radius: 0; background: linear-gradient(135deg, #ffd6e2, var(--bb-accent)); color: #3a1724; font: 700 14px/1 var(--bb-sans); letter-spacing: .12em;  cursor: pointer; box-shadow: 0 18px 40px -12px var(--bb-accent); transition: transform .3s var(--bb-ease); }
-.sumo-play__btn:hover { transform: translate(-50%, -50%) scale(1.05); }
-.sumo-play__btn span { font-size: 12px; }
-.sumo-play__out { position: absolute; right: 14px; bottom: 12px; font-size: 12px; font-weight: 600; color: #fff !important; text-decoration: none !important; padding: 8px 12px; border-radius: 0; background: rgba(0,0,0,.55); }
-.sumo-play.is-live .sumo-play__poster, .sumo-play.is-live .sumo-play__btn { display: none; }
-.bb-press .is-soon { opacity: .6; cursor: default; }
-.bb-press .is-soon:hover { transform: none; border-color: var(--bb-line); }
-@media (max-width: 720px) { .sumo-play { aspect-ratio: 4 / 3; } .sumo-play__btn { padding: 14px 22px; font-size: 12px; } }
-.sumo-trailer { position: relative; aspect-ratio: 1280 / 590; background: #000; border: 1px solid var(--bb-line); overflow: hidden; }
-.sumo-trailer video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.sumo-trailer__play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 12px; padding: 16px 26px; border: 0; background: var(--bb-accent); color: #0b0b0b; font: 700 16px var(--bb-sans); cursor: pointer; transition: transform .2s; }
-.sumo-trailer__play:hover { transform: translate(-50%, -50%) scale(1.05); }
-.sumo-trailer__play span { font-size: 12px; }
-.sumo-trailer.is-playing .sumo-trailer__play { display: none; }
-@media (max-width: 720px) { .sumo-trailer__play { padding: 12px 18px; font-size: 14px; } }
-</style>
-
-<script>
-(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
-  var box = root.querySelector('.sumo-trailer'); if (!box) return;
-  var v = box.querySelector('video'), b = box.querySelector('.sumo-trailer__play');
-  b.addEventListener('click', function () { box.classList.add('is-playing'); v.controls = true; v.play(); });
-  v.addEventListener('ended', function () { box.classList.remove('is-playing'); v.controls = false; });
-});
-</script>
 
 <script>
 (window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
