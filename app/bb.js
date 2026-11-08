@@ -1,4 +1,4 @@
-window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";window.BB_ROUTES={"/":"home","/portfolio-1":"portfolio","/about":"about","/contact":"contact","/projects/maplestory-classic":"maplestory-classic","/projects/t-7xfc6":"bioshock-4","/projects/tbehemoth":"behemoth","/projects/the-walking-dead-saints-and-sinners-chapter-2":"twd-retribution","/projects/level-design-blockout-canceled-title":"lonestar","/projects/zoelie":"zoelie","/projects/game-design-pitch-deck":"bioshock-infinite-redux","/projects/sumo-scuffle":"sumo-scuffle","/projects/hell-my-name-is-bubba":"hell-my-name-is-buba","/projects/beepo":"beepo"};
+window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <span class=\"bb-footer__label\">Say hi</span>\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames<wbr>@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";window.BB_ROUTES={"/":"home","/portfolio-1":"portfolio","/about":"about","/contact":"contact","/projects/maplestory-classic":"maplestory-classic","/projects/t-7xfc6":"bioshock-4","/projects/tbehemoth":"behemoth","/projects/the-walking-dead-saints-and-sinners-chapter-2":"twd-retribution","/projects/level-design-blockout-canceled-title":"lonestar","/projects/zoelie":"zoelie","/projects/game-design-pitch-deck":"bioshock-infinite-redux","/projects/sumo-scuffle":"sumo-scuffle","/projects/hell-my-name-is-bubba":"hell-my-name-is-buba","/projects/beepo":"beepo"};
 (function () {
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -459,6 +459,54 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     document.querySelectorAll('.bb-hero__inner > .bb-display, .bb-hero__inner > .bb-h1').forEach(function (h) { h.style.viewTransitionName = 'none'; });
     if (t) t.style.viewTransitionName = 'bb-title';
   });
+  function initCine(root) {
+    var header = document.querySelector('.bb-header');
+    if (header) {
+      var solid = function () { header.classList.toggle('is-solid', window.scrollY > 40 || !document.querySelector('.cine-hero')); };
+      solid(); window.addEventListener('scroll', solid, { passive: true });
+    }
+    root.querySelectorAll('[data-cine-reel]').forEach(function (hero) {
+      var slides = [].slice.call(hero.querySelectorAll('.cine-slide')), tabs = [].slice.call(hero.querySelectorAll('.cine-ch'));
+      var now = hero.querySelector('.cine-now'), page = hero.closest('.bb-page') || document.documentElement, i = 0, t;
+      if (!slides.length) return;
+      function go(n) {
+        slides[i].classList.remove('is-on'); tabs[i].classList.remove('is-on');
+        var v0 = slides[i].querySelector('video'); if (v0) v0.pause();
+        i = (n + slides.length) % slides.length;
+        tabs.forEach(function (b, k) { b.classList.toggle('is-done', k < i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+        slides[i].classList.add('is-on'); void tabs[i].offsetWidth; tabs[i].classList.add('is-on');
+        if (slides[i].getAttribute('data-tint')) page.style.setProperty('--bb-accent', slides[i].getAttribute('data-tint'));
+        if (now) now.textContent = tabs[i].getAttribute('data-now') || tabs[i].textContent;
+        var v = slides[i].querySelector('video'); if (v) { try { v.currentTime = 0; } catch (e) {} var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        clearTimeout(t); if (!paused) t = setTimeout(function () { go(i + 1); }, 7000);
+      }
+      var paused = reduceMotion, pause = hero.querySelector('.cine-pause');
+      function setPaused(on) {
+        paused = on; hero.classList.toggle('is-paused', on);
+        if (pause) { pause.setAttribute('aria-pressed', on ? 'true' : 'false'); pause.setAttribute('aria-label', on ? 'Play the slideshow' : 'Pause the slideshow'); }
+        var v = slides[i].querySelector('video');
+        if (on) { clearTimeout(t); if (v) v.pause(); } else { if (v) { var pp = v.play(); if (pp && pp.catch) pp.catch(function () {}); } t = setTimeout(function () { go(i + 1); }, 7000); }
+      }
+      if (pause) pause.addEventListener('click', function () { setPaused(!paused); });
+      slides.forEach(function (sl) {
+        var im = sl.classList.contains('cine-slide--pan') && sl.querySelector('img');
+        if (im && !im.complete) im.addEventListener('load', function () { im.style.animation = 'none'; void im.offsetWidth; im.style.animation = ''; }, { once: true });
+      });
+      tabs.forEach(function (b, k) { b.addEventListener('click', function () { go(k); }); });
+      go(0); if (paused) setPaused(true);
+    });
+    if (reduceMotion) root.querySelectorAll('.cine-hero video[autoplay], video.cine-clip').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+    var touch = window.matchMedia('(hover: none)').matches;
+    root.querySelectorAll('[data-cine-play]').forEach(function (card) {
+      var v = card.querySelector('video'); if (!v) return;
+      var play = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+      if (touch && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (e) { if (e[0].isIntersecting) play(); else v.pause(); }, { threshold: .6 }).observe(card);
+      } else {
+        card.addEventListener('mouseenter', play); card.addEventListener('mouseleave', function () { v.pause(); });
+      }
+    });
+  }
   function init() {
     var root = document;
     var pg = document.querySelector('.bb-page'); if (pg && !pg.id) pg.id = 'bb-main';
@@ -475,7 +523,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
-    [initTabs, initUpdated, initPins, initRoutes, initPreviews, initReadout].forEach(function (fn) {
+    [initCine, initTabs, initUpdated, initPins, initRoutes, initPreviews, initReadout].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
     });
   }

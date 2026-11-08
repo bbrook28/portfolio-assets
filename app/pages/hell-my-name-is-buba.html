@@ -1,320 +1,61 @@
-<div class="bb-page buba">
+<div class="bb-page cine buba" style="--bb-accent:#ff7a3c">
 
-  <section class="bb-hero bb-hero--short">
-    <div class="bb-hero__media"><img data-bb-src="buba/shot-2.jpg" alt="Buba surrounded by spent shells in the Hellfire Arena" fetchpriority="high"></div>
-    <div class="bb-container bb-hero__inner">
-      <p class="bb-kicker">Epic MegaJam 2021 · Theme: "Running out of space"</p>
-      <h1 class="bb-h1">Hell, My Name<br>Is <em>Buba</em></h1>
-      <p class="bb-hero__sub">Hell's lone janitor holds the Hellfire Arena with a blunderbuss. Every shell he fires stays on the floor, so the arena literally runs out of space.</p>
-      <dl class="bb-hero__meta">
-        <div><dt>Role</dt><dd>Game Design · Programming · SFX</dd></div>
-        <div><dt>Team</dt><dd>5 developers</dd></div>
-        <div><dt>Engine</dt><dd>Unreal Engine 4</dd></div>
-        <div><dt>Jam</dt><dd>One of 473 entries</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <section class="bb-section">
-    <div class="bb-container bb-split">
-      <div class="bb-sticky bb-reveal">
-        <p class="bb-kicker">Reading the theme</p>
-        <h2 class="bb-h2">Spent shells become the level</h2>
-      </div>
-      <div class="bb-reveal" style="--d:.1s">
-        <p class="bb-lead">Instead of a timer or a shrinking room, we made the player the cause. Spent shells turn into permanent, collidable geometry, so an open floor slowly becomes a cluttered battlefield shaped by how you played.</p>
-        <div class="bb-prose" style="margin-top:24px">
-          <p>I programmed the persistent-shell system so it stayed performant as hundreds of casings piled up, and owned the SFX logic that gives each shell its weight and clink. It plays like a siege: hold out as long as you can, and spend every shot knowing it costs you room to move.</p>
-        </div>
+  <section class="cine-hero">
+    <div class="cine-hero__bg"><img loading="eager" fetchpriority="high" data-bb-src="covers/bubba.jpg" alt="Buba in the Hellfire Arena"></div>
+    <div class="cine-hero__in">
+      <span class="cine-label">Epic MegaJam 2021 · Theme: "Running out of space"</span>
+      <h1 class="cine-d">Hell, My Name Is Buba</h1>
+      <p class="cine-hero__sub">Hell's lone janitor holds the Hellfire Arena with a blunderbuss. Every shell he fires stays on the floor, so the arena literally runs out of space.</p>
+      <div class="cine-facts">
+        <div><b>Design</b><span>plus programming and SFX</span></div>
+        <div><b>5</b><span>developers</span></div>
+        <div><b>UE4</b><span>engine</span></div>
+        <div><b>473</b><span>jam entries</span></div>
       </div>
     </div>
   </section>
 
-    <section class="bb-section bb-section--alt">
-    <div class="bb-container">
-      <div class="bb-reveal" style="max-width:760px">
-        <p class="bb-kicker">Systems design</p>
-        <h2 class="bb-h2">What one shell does</h2>
-        <p class="bb-prose">One object does four jobs: it's your ammo, then your cover, then a trap, then the reason you lose.</p>
-      </div>
-      <ol class="bb-steps bb-steps--flow bb-reveal" style="margin-top:44px">
-        <li><h4 class="bb-h4">Fire</h4><p>Buba's single-round shotgun reloads after every shot, so each one is a decision.</p></li>
-        <li><h4 class="bb-h4">Settle</h4><p>The spent casing drops and stays, becoming solid geometry with real collision.</p></li>
-        <li><h4 class="bb-h4">Cover</h4><p>Aggressive play builds more cover to hide behind, a reward for risk.</p></li>
-        <li><h4 class="bb-h4">Trap</h4><p>Discarded shells can explode when touched, for Buba and for the enemies trying to turn his weapons on him.</p></li>
-        <li><h4 class="bb-h4">Crowd</h4><p>Eventually the floor fills. The run ends when you've boxed yourself in.</p></li>
-      </ol>
+  <section class="cine-sec">
+    <span class="cine-label">Reading the theme</span>
+    <h2 class="cine-d">Spent shells become the level</h2>
+    <p class="cine-lede">Instead of a timer or a shrinking room, we made the player the cause. Spent shells turn into permanent, solid geometry, so an open floor slowly fills up based on how you played. I programmed the shell system so it stayed fast with hundreds of casings on the floor, and owned the SFX that give each shell its clink.</p>
+    <ol class="cine-steps" style="--n:5">
+      <li><small>Fire</small><b>Every shot counts</b><p>The single-round shotgun reloads after every shot.</p></li>
+      <li><small>Settle</small><b>The shell stays</b><p>The casing drops and becomes solid geometry.</p></li>
+      <li><small>Cover</small><b>Risk builds walls</b><p>Aggressive play builds more cover to hide behind.</p></li>
+      <li><small>Trap</small><b>Shells explode</b><p>Touched shells can blow up, for Buba and for enemies.</p></li>
+      <li><small>Crowd</small><b>You box yourself in</b><p>The run ends when the floor is full.</p></li>
+    </ol>
+  </section>
+
+  <section class="cine-sec">
+    <span class="cine-label">The game</span>
+    <h2 class="cine-d">In the arena</h2>
+    <div class="cine-gallery">
+      <figure class="is-wide"><img data-bb-src="buba/shot-5.jpg" alt="Shells piling up across the arena"><figcaption>Shells pile up across the arena</figcaption></figure>
+      <figure><img data-bb-src="buba/shot-1.jpg" alt="Buba firing his blunderbuss"></figure>
+      <figure><img data-bb-src="buba/shot-3.jpg" alt="The Hellfire Arena with lava pillars"></figure>
+      <figure><img data-bb-src="buba/shot-2.jpg" alt="Buba surrounded by spent shells in the Hellfire Arena"></figure>
+      <figure><img data-bb-src="buba/shot-4.jpg" alt="Buba in the arena with HUD"></figure>
+    </div>
+    <div class="cine-list" style="margin-top:36px">
+      <div><b>Hellfire Shells</b><p>The default ammo, and it never runs out. Basic enemies take two shots, so most of the clutter comes from these.</p></div>
+      <div><b>Satan's Breath</b><p>Fireballs that one-shot weak enemies with area damage.</p></div>
+      <div><b>Sulfur Shot</b><p>A gas burst that launches enemies and debris, and can push Buba back mid-air.</p></div>
+      <div><b>Angel's Tears</b><p>A field that heals 25 to 35% of health while you stand in it.</p></div>
+      <div><b>The damned</b><p>Some enemies shoot their way to freedom. Others pick up Buba's shells to use against him.</p></div>
     </div>
   </section>
 
-    <section class="bb-section">
-    <div class="bb-container">
-      <div class="bb-split" style="align-items:end">
-        <div class="bb-reveal">
-          <p class="bb-kicker">Interactive · Hold the arena</p>
-          <h2 class="bb-h2" style="margin-bottom:0">Try the arena</h2>
-        </div>
-        <p class="bb-prose bb-reveal" style="--d:.1s">Every shot drops a solid shell beside you, so the path you take becomes the walls. The damned reroute around whatever you've built, and the meter shows how much floor you can still reach. Shoot a shell to blast a path back open.</p>
-      </div>
-      <div class="buba-toy bb-reveal" data-buba-toy>
-        <canvas tabindex="0" aria-label="Arena demo: move Buba, fire, and watch spent shells reshape the routes enemies take"></canvas>
-        <p class="buba-toy__how"><span><kbd>WASD</kbd> or arrows to move · click or <kbd>Space</kbd> to fire</span><span>Touch: hold to walk · tap to fire</span></p>
-        <div class="buba-toy__hud">
-          <div class="buba-toy__meter" role="progressbar" aria-label="Floor in reach" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><i></i></div>
-          <span class="buba-toy__stats" aria-live="polite"></span>
-          <button type="button" class="bb-btn bb-btn--ghost buba-toy__reset">Clear the arena</button>
-        </div>
-      </div>
+  <section class="cine-sec">
+    <span class="cine-label">Play it</span>
+    <div class="cine-itch"><iframe loading="lazy" src="https://itch.io/embed/1183977" title="Hell, My Name Is Buba on itch.io"></iframe></div>
+    <div class="cine-press cine-press--one">
+      <a><q>Funny implementation of the theme! Love the enemy model!</q><span>Epic MegaJam player</span></a>
     </div>
+    <p class="cine-note">Team: Joey Belt (materials, environment, characters, VFX), Ben Brook (game design, programming, SFX), Phillip Corrado (game design, team support), Spencer Hamm (animation, rigging), John Washington (game design, gameplay and AI programming).</p>
   </section>
 
-  <section class="bb-section bb-section--alt">
-    <div class="bb-container">
-      <p class="bb-kicker bb-reveal">The arsenal</p>
-      <div class="bb-tiles bb-tiles--4"><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>∞</span></div><div class="bb-tile__body"><h3>Hellfire Shells</h3><p>Default. Infinite, and two shots per base enemy, so most of the floor clutter comes from this one.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Fire</span></div><div class="bb-tile__body"><h3>Satan's Breath</h3><p>Fire. Massive fireballs that one-shot weak enemies with area damage on impact.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>Gas</span></div><div class="bb-tile__body"><h3>Sulfur Shot</h3><p>Utility. A gas burst that launches enemies and debris and can push Buba back mid-air.</p></div></div><div class="bb-tile bb-reveal"><div class="bb-tile__media bb-tile__media--text"><span>+25–35%</span></div><div class="bb-tile__body"><h3>Angel's Tears</h3><p>Sustain. An area field that heals 25–35% of health while you stand in it.</p></div></div></div>
-      <div class="bb-split" style="margin-top:64px">
-        <div class="bb-reveal">
-          <h3 class="bb-h3">The damned</h3>
-          <p class="bb-prose">Enemies work together. The lost and the damned try to shoot their way to freedom, while others go after Buba's own discarded shells to use them against him, so the clutter you create is never only yours.</p>
-        </div>
-        <div class="bb-reveal" style="--d:.1s">
-          <h3 class="bb-h3">Controls</h3>
-          <ul class="bb-facts">
-            <li><span>Left mouse</span><span>Fire normal shells</span></li>
-            <li><span>Right mouse</span><span>Fire special shells</span></li>
-            <li><span>Wheel or 1–3</span><span>Switch ammo type</span></li>
-            <li><span>Space</span><span>Jump</span></li>
-            <li><span>R</span><span>Reload early (Buba reloads after every shot)</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bb-section">
-    <div class="bb-container">
-      <div class="bb-gallery">
-        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="buba"><img loading="lazy" data-bb-src="buba/shot-1.jpg" alt="Buba firing his blunderbuss"></div></figure>
-        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="buba"><img loading="lazy" data-bb-src="buba/shot-5.jpg" alt="Shells piling up across the arena"></div></figure>
-        <figure class="bb-figure bb-g-half bb-reveal"><div class="bb-figure__frame" data-bb-lightbox="buba"><img loading="lazy" data-bb-src="buba/shot-3.jpg" alt="The Hellfire Arena with lava pillars"></div></figure>
-        <figure class="bb-figure bb-g-half bb-reveal" style="--d:.06s"><div class="bb-figure__frame" data-bb-lightbox="buba"><img loading="lazy" data-bb-src="buba/shot-4.jpg" alt="Buba in the arena with HUD"></div></figure>
-      </div>
-      <div class="bb-split" style="margin-top:48px;align-items:center">
-        <figure class="bb-card bb-quote-card bb-reveal"><blockquote>"Funny implementation of the theme! Love the enemy model!"</blockquote><figcaption>Epic MegaJam player</figcaption></figure>
-        <div class="bb-embed bb-embed--itch bb-reveal" style="--d:.06s"><iframe loading="lazy" src="https://itch.io/embed/1183977" title="Hell, My Name Is Buba on itch.io"></iframe></div>
-      </div>
-      <div class="bb-card bb-reveal" style="margin-top:28px"><div class="bb-card__num">Team</div><p>Joey Belt · Materials, environment, characters, VFX · Ben Brook · Game design, general programming, SFX · Phillip Corrado · Game design, team support · Spencer Hamm · Character animation, rigging · John Washington · Game design, gameplay and AI programming</p></div>
-    </div>
-  </section>
-
-  <nav class="bb-next" aria-label="More projects">
-    <a href="/projects/game-design-pitch-deck"><img data-bb-src="covers/bsi.jpg" alt=""><small>Previous project</small><strong>BioShock Infinite</strong></a>
-    <a href="/projects/beepo"><img data-bb-src="beepo/robots.jpg" alt=""><small>Next project</small><strong>Beepo &amp; Pogo</strong></a>
-  </nav>
+  <a class="cine-next" href="/projects/beepo" style="--c:#6fa8ff"><img data-bb-src="covers/beepo.jpg" alt=""><div><span class="cine-label">Next project</span><strong>Beepo &amp; Pogo</strong></div></a>
+  <p class="cine-credit">Epic MegaJam 2021 entry.</p>
 </div>
-
-<style>
-.bb-quote-card blockquote { margin: 0; font-family: var(--bb-serif); font-size: 22px; line-height: 1.3; color: var(--bb-text); }
-.bb-quote-card figcaption { margin-top: 18px; font-size: 11px; font-weight: 600; letter-spacing: .2em;  color: var(--bb-accent); }
-.buba-toy { margin-top: 40px; border: 1px solid var(--bb-line); border-radius: 0; overflow: hidden; background: #160b0a; }
-.buba-toy canvas { display: block; width: 100%; aspect-ratio: 16 / 8; cursor: crosshair; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
-.buba-toy__hud { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--bb-line); }
-.buba-toy__meter { flex: 1 1 200px; height: 8px; border-radius: 0; background: rgba(255,255,255,.08); overflow: hidden; }
-.buba-toy__meter i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #ff3d2e, #ff7a45, #ffc3a3); transition: width .3s; }
-.buba-toy__stats { font-size: 13px; color: var(--bb-muted); font-variant-numeric: tabular-nums; min-width: 14em; }
-.buba-toy canvas:focus-visible { outline: 2px solid var(--bb-accent); outline-offset: -2px; }
-.buba-toy__how { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; margin: 0; padding: 10px 18px; font-size: 12px; color: var(--bb-muted); border-top: 1px solid var(--bb-line); }
-.buba-toy__how kbd { font: 600 11px var(--bb-sans); padding: 2px 6px; border: 1px solid var(--bb-line-strong); border-radius: 0; color: var(--bb-text); }
-@media (hover: none) { .buba-toy__how span:first-child { display: none; } }
-@media (hover: hover) { .buba-toy__how span:last-child { display: none; } }
-.buba-toy .bb-btn { padding: 10px 18px; font-size: 12px; }
-@media (max-width: 720px) { .buba-toy canvas { aspect-ratio: 1 / 1; } }
-</style>
-
-<script>
-(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
-  var host = root.querySelector('[data-buba-toy]');
-  if (!host) return;
-  var cv = host.querySelector('canvas'), ctx = cv.getContext('2d');
-  var meter = host.querySelector('.buba-toy__meter i'), stats = host.querySelector('.buba-toy__stats');
-  var W, H, dpr = Math.min(2, window.devicePixelRatio || 1), running = false;
-  var SR = 8, BR = 12, FR = 8, CELL = 12, BLAST = 48;
-  var buba, aim, shells, shots, foes, booms, kills, hits, spawnT, flash;
-  var cols, rows, blocked, dist, reach, queue, keys = {}, ptr = null;
-  function reset() {
-    buba = { x: W / 2, y: H / 2 }; aim = { x: 1, y: 0 };
-    shells = []; shots = []; foes = []; booms = []; kills = 0; hits = 0; spawnT = 60; flash = 0;
-  }
-  function size() {
-    var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
-    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cols = Math.ceil(W / CELL); rows = Math.ceil(H / CELL);
-    blocked = new Uint8Array(cols * rows); dist = new Int32Array(cols * rows); queue = new Int32Array(cols * rows);
-    reset();
-  }
-  host.querySelector('.buba-toy__reset').addEventListener('click', reset);
-
-  function hitsShell(x, y, rad) {
-    for (var i = 0; i < shells.length; i++) if (Math.hypot(shells[i].x - x, shells[i].y - y) < SR + rad) return true;
-    return false;
-  }
-  function move(o, dx, dy, rad) {
-    var nx = Math.max(rad, Math.min(W - rad, o.x + dx));
-    if (!hitsShell(nx, o.y, rad)) o.x = nx;
-    var ny = Math.max(rad, Math.min(H - rad, o.y + dy));
-    if (!hitsShell(o.x, ny, rad)) o.y = ny;
-  }
-  function fire(tx, ty) {
-    var dx = tx - buba.x, dy = ty - buba.y, d = Math.hypot(dx, dy) || 1; dx /= d; dy /= d;
-    aim = { x: dx, y: dy };
-    for (var k = -1; k <= 1; k++) { var a = Math.atan2(dy, dx) + k * .1; shots.push({ x: buba.x + dx * BR, y: buba.y + dy * BR, vx: Math.cos(a) * 10, vy: Math.sin(a) * 10, l: 34 }); }
-    var side = Math.random() < .5 ? 1 : -1, ex = -dy * side, ey = dx * side;
-    var sx = buba.x + ex * (BR + SR + 6) - dx * 6, sy = buba.y + ey * (BR + SR + 6) - dy * 6;
-    shells.push({ x: Math.max(SR, Math.min(W - SR, sx)), y: Math.max(SR, Math.min(H - SR, sy)), r: Math.random() * 6.28 });
-  }
-  function blast(x, y) {
-    booms.push({ x: x, y: y, t: 0 });
-    var chain = [];
-    shells = shells.filter(function (s) { var near = Math.hypot(s.x - x, s.y - y) < BLAST; if (near) chain.push(s); return !near; });
-    foes.forEach(function (f) { if (f.hp > 0 && Math.hypot(f.x - x, f.y - y) < BLAST + FR) { f.hp = 0; kills++; } });
-    chain.forEach(function (s) { if (Math.hypot(s.x - x, s.y - y) > 4) booms.push({ x: s.x, y: s.y, t: -4 }); });
-  }
-
-  function pos(e) { var r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
-  cv.addEventListener('pointerdown', function (e) {
-    e.preventDefault(); cv.focus({ preventScroll: true });
-    var p = pos(e); ptr = { x: p.x, y: p.y, x0: p.x, y0: p.y, t0: performance.now(), walk: false, id: e.pointerId };
-    cv.setPointerCapture(e.pointerId);
-  });
-  cv.addEventListener('pointermove', function (e) {
-    var p = pos(e);
-    if (!ptr || ptr.id !== e.pointerId) { if (e.pointerType === 'mouse') { var dx = p.x - buba.x, dy = p.y - buba.y, d = Math.hypot(dx, dy) || 1; aim = { x: dx / d, y: dy / d }; } return; }
-    ptr.x = p.x; ptr.y = p.y;
-    if (Math.hypot(p.x - ptr.x0, p.y - ptr.y0) > 12) ptr.walk = true;
-  });
-  function release(e) {
-    if (!ptr || ptr.id !== e.pointerId) return;
-    if (!ptr.walk && performance.now() - ptr.t0 < 220) fire(ptr.x, ptr.y);
-    ptr = null;
-  }
-  cv.addEventListener('pointerup', release);
-  cv.addEventListener('pointercancel', function () { ptr = null; });
-  var KEYS = { KeyW: 'u', ArrowUp: 'u', KeyS: 'd', ArrowDown: 'd', KeyA: 'l', ArrowLeft: 'l', KeyD: 'r', ArrowRight: 'r' };
-  cv.addEventListener('keydown', function (e) {
-    if (KEYS[e.code]) { keys[KEYS[e.code]] = true; e.preventDefault(); }
-    else if (e.code === 'Space') { fire(buba.x + aim.x * 100, buba.y + aim.y * 100); e.preventDefault(); }
-  });
-  cv.addEventListener('keyup', function (e) { if (KEYS[e.code]) keys[KEYS[e.code]] = false; });
-  cv.addEventListener('blur', function () { keys = {}; });
-
-  function route() {
-    blocked.fill(0); dist.fill(-1);
-    var pad = SR + FR - 2;
-    shells.forEach(function (s) {
-      var c0 = Math.max(0, Math.floor((s.x - pad) / CELL)), c1 = Math.min(cols - 1, Math.floor((s.x + pad) / CELL));
-      var r0 = Math.max(0, Math.floor((s.y - pad) / CELL)), r1 = Math.min(rows - 1, Math.floor((s.y + pad) / CELL));
-      for (var r = r0; r <= r1; r++) for (var c = c0; c <= c1; c++) {
-        if (Math.hypot((c + .5) * CELL - s.x, (r + .5) * CELL - s.y) < pad) blocked[r * cols + c] = 1;
-      }
-    });
-    var start = Math.min(rows - 1, Math.floor(buba.y / CELL)) * cols + Math.min(cols - 1, Math.floor(buba.x / CELL));
-    var head = 0, tail = 0, free = 0;
-    for (var i = 0; i < blocked.length; i++) if (!blocked[i]) free++;
-    dist[start] = 0; queue[tail++] = start;
-    while (head < tail) {
-      var cur = queue[head++], cc = cur % cols, cr = (cur - cc) / cols;
-      if (cc > 0) visit(cur - 1); if (cc < cols - 1) visit(cur + 1);
-      if (cr > 0) visit(cur - cols); if (cr < rows - 1) visit(cur + cols);
-    }
-    function visit(n) { if (dist[n] < 0 && !blocked[n]) { dist[n] = dist[cur] + 1; queue[tail++] = n; } }
-    reach = Math.min(1, tail / Math.max(1, free));
-  }
-  function nextStep(f) {
-    var c = Math.min(cols - 1, Math.max(0, Math.floor(f.x / CELL))), r = Math.min(rows - 1, Math.max(0, Math.floor(f.y / CELL)));
-    var here = dist[r * cols + c], best = null, bd = here < 0 ? 1e9 : here;
-    for (var dr = -1; dr <= 1; dr++) for (var dc = -1; dc <= 1; dc++) {
-      var nc = c + dc, nr = r + dr;
-      if ((!dr && !dc) || nc < 0 || nr < 0 || nc >= cols || nr >= rows) continue;
-      if (dr && dc && (blocked[r * cols + nc] || blocked[nr * cols + c])) continue;
-      var v = dist[nr * cols + nc];
-      if (v >= 0 && v < bd) { bd = v; best = { x: (nc + .5) * CELL, y: (nr + .5) * CELL }; }
-    }
-    return best;
-  }
-
-  function step() {
-    var mx = (keys.r ? 1 : 0) - (keys.l ? 1 : 0), my = (keys.d ? 1 : 0) - (keys.u ? 1 : 0);
-    if (ptr && (ptr.walk || performance.now() - ptr.t0 > 220)) {
-      ptr.walk = true;
-      var px = ptr.x - buba.x, py = ptr.y - buba.y, pd = Math.hypot(px, py);
-      if (pd > 6) { mx = px / pd; my = py / pd; }
-    }
-    var ml = Math.hypot(mx, my);
-    if (ml) { move(buba, mx / ml * 2.6, my / ml * 2.6, BR); if (!ptr) aim = { x: mx / ml, y: my / ml }; }
-    route();
-
-    if (--spawnT <= 0 && foes.length < 16) {
-      spawnT = Math.max(40, 120 - kills * 2);
-      var side = Math.floor(Math.random() * 4), p = Math.random();
-      foes.push({ x: side === 0 ? FR : side === 1 ? W - FR : p * W, y: side === 2 ? FR : side === 3 ? H - FR : p * H, hp: 2, wob: Math.random() * 6 });
-    }
-    shots.forEach(function (s) {
-      s.x += s.vx; s.y += s.vy; s.l--;
-      if (s.x < 0 || s.y < 0 || s.x > W || s.y > H) s.l = 0;
-      for (var i = 0; i < shells.length && s.l > 0; i++) if (Math.hypot(shells[i].x - s.x, shells[i].y - s.y) < SR + 2) { s.l = 0; blast(shells[i].x, shells[i].y); }
-      foes.forEach(function (f) { if (s.l > 0 && f.hp > 0 && Math.hypot(f.x - s.x, f.y - s.y) < FR + 3) { f.hp--; s.l = 0; if (f.hp <= 0) kills++; } });
-    });
-    shots = shots.filter(function (s) { return s.l > 0; });
-    foes.forEach(function (f) {
-      if (f.hp <= 0) return;
-      var t = nextStep(f), dx, dy;
-      f.lost = !t;
-      if (t) { dx = t.x - f.x; dy = t.y - f.y; }
-      else { f.wob += .05; dx = Math.cos(f.wob); dy = Math.sin(f.wob); }
-      var d = Math.hypot(dx, dy) || 1, sp = f.lost ? .5 : 1.25;
-      foes.forEach(function (o) { if (o !== f && o.hp > 0) { var ox = f.x - o.x, oy = f.y - o.y, od = Math.hypot(ox, oy); if (od < FR * 2 && od > 0) { dx += ox / od * .6 * d; dy += oy / od * .6 * d; } } });
-      d = Math.hypot(dx, dy) || 1;
-      move(f, dx / d * sp, dy / d * sp, FR);
-      if (Math.hypot(f.x - buba.x, f.y - buba.y) < BR + FR) { f.hp = 0; hits++; flash = 14; }
-    });
-    foes = foes.filter(function (f) { return f.hp > 0; });
-    booms.forEach(function (b) { b.t++; }); booms = booms.filter(function (b) { return b.t < 22; });
-    if (flash) flash--;
-    var pct = Math.round(reach * 100);
-    if (pct < 12 && shells.length && window.bbAchieve) window.bbAchieve('boxed');
-    meter.style.width = pct + "%"; meter.parentNode.setAttribute("aria-valuenow", pct);
-    stats.textContent = pct < 12 ? 'Boxed in. Blast a shell to break out.'
-      : shells.length + ' shells · ' + pct + '% of the floor in reach · ' + kills + ' damned · ' + hits + ' hits';
-  }
-  function draw() {
-    var g = ctx.createRadialGradient(W / 2, H / 2, 10, W / 2, H / 2, Math.max(W, H) * .7);
-    g.addColorStop(0, '#2a1410'); g.addColorStop(1, '#120807'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    ctx.fillStyle = 'rgba(5,2,2,.62)';
-    for (var i = 0; i < dist.length; i++) if (dist[i] < 0 && !blocked[i]) ctx.fillRect((i % cols) * CELL, Math.floor(i / cols) * CELL, CELL, CELL);
-    shells.forEach(function (s) {
-      ctx.save(); ctx.translate(s.x, s.y); ctx.rotate(s.r);
-      ctx.fillStyle = 'rgba(0,0,0,.35)'; ctx.fillRect(-SR + 2, -SR * .5 + 3, SR * 2, SR);
-      ctx.fillStyle = '#c8402c'; ctx.fillRect(-SR, -SR * .5, SR * 1.4, SR);
-      ctx.fillStyle = '#e8b04a'; ctx.fillRect(SR * .4, -SR * .5, SR * .6, SR);
-      ctx.restore();
-    });
-    booms.forEach(function (b) { if (b.t < 0) return; ctx.globalAlpha = 1 - b.t / 22; ctx.fillStyle = '#ffb347'; ctx.beginPath(); ctx.arc(b.x, b.y, 8 + b.t * (BLAST / 22), 0, 6.283); ctx.fill(); });
-    ctx.globalAlpha = 1;
-    shots.forEach(function (s) { ctx.fillStyle = '#ffd27a'; ctx.fillRect(s.x - 2, s.y - 2, 4, 4); });
-    foes.forEach(function (f) {
-      ctx.fillStyle = f.lost ? '#4e8f6b' : '#7fe0a6'; ctx.beginPath(); ctx.arc(f.x, f.y, FR, 0, 6.283); ctx.fill();
-      ctx.fillStyle = '#0b0b0b'; ctx.fillRect(f.x - 4, f.y - 2, 2, 2); ctx.fillRect(f.x + 2, f.y - 2, 2, 2);
-    });
-    if (ptr && ptr.walk) { ctx.strokeStyle = 'rgba(255,170,120,.35)'; ctx.setLineDash([3, 6]); ctx.beginPath(); ctx.moveTo(buba.x, buba.y); ctx.lineTo(ptr.x, ptr.y); ctx.stroke(); ctx.setLineDash([]); }
-    ctx.strokeStyle = '#ffd27a'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(buba.x + aim.x * 8, buba.y + aim.y * 8); ctx.lineTo(buba.x + aim.x * (BR + 8), buba.y + aim.y * (BR + 8)); ctx.stroke(); ctx.lineWidth = 1;
-    ctx.fillStyle = flash % 4 > 1 ? '#fff' : '#ff7a45'; ctx.beginPath(); ctx.arc(buba.x, buba.y, BR, 0, 6.283); ctx.fill();
-    ctx.fillStyle = '#2b120c'; ctx.beginPath(); ctx.arc(buba.x, buba.y - 4, 4.5, 0, 6.283); ctx.fill();
-  }
-  function loop() { if (!running) return; step(); draw(); requestAnimationFrame(loop); }
-  size(); route(); draw();
-  window.addEventListener('resize', size);
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (en) { var v = en[0].isIntersecting; if (v && !running) { running = true; requestAnimationFrame(loop); } else if (!v) running = false; }).observe(host);
-  } else { running = true; loop(); }
-});
-</script>

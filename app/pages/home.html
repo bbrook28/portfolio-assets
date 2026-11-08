@@ -1,144 +1,104 @@
-<div class="bb-page home">
+<div class="bb-page cine home" style="--bb-accent:#a6e35f">
 
-  <section class="bb-section home-hero">
-    <div class="bb-container home-hero__grid">
-      <div>
-        <p class="bb-kicker">Game Designer · Nexon America</p>
-        <h1 class="bb-h1">Levels and quests, from paper map to <em>shipped game</em>.</h1>
-        <p class="bb-lead" style="margin-top:24px">I'm a game designer on MapleStory Classic World, focused on level and quest design for Forgotten Hollow, a brand-new region. Before that I built levels for BioShock 4, The Walking Dead: Saints &amp; Sinners and Skydance's Behemoth.</p>
-        <div class="bb-btn-row"><a class="bb-btn" href="#work">See the work</a><a class="bb-btn bb-btn--ghost" href="https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf" target="_blank" rel="noopener">Résumé</a></div>
+  <section class="cine-hero cine-reel" aria-label="Featured projects" data-cine-reel>
+    <div class="cine-hero__bg">
+      <div class="cine-slide cine-slide--pan is-on" data-tint="#a6e35f"><img loading="eager" fetchpriority="high" data-bb-src="fh/maps/forgotten-hollow.webp" alt="Forgotten Hollow, the fairy town at the center of the region"></div>
+      <div class="cine-slide" data-tint="#e9b04f"><img loading="eager" data-bb-src="covers/bioshock.jpg" alt="A Big Daddy from BioShock"></div>
+      <div class="cine-slide" data-tint="#ff5a3c"><img loading="eager" data-bb-src="covers/twd.jpg" alt="Fighting walkers with the chainsaw in The Walking Dead: Saints &amp; Sinners"></div>
+      <div class="cine-slide" data-tint="#8fb8ff"><img loading="eager" data-bb-src="covers/behemoth-boss.jpg" alt="A giant chained in the fog in Skydance's Behemoth"></div>
+      <div class="cine-slide" data-tint="#5fd6c8"><video muted playsinline loop preload="none" data-bb-src="zoelie/hero-loop.mp4" data-bb-src-m="zoelie/hero-loop-m.mp4" data-bb-poster="zoelie/1.jpg"></video></div>
+      <div class="cine-slide" data-tint="#ffd23c"><video muted playsinline loop preload="none" data-bb-src="sumo/trailer.mp4" data-bb-src-m="sumo/reel.mp4" data-bb-poster="sumo/trailer-poster.jpg"></video></div>
+    </div>
+    <div class="cine-hero__in">
+      <h1 class="cine-d">Ben Brook</h1>
+      <p class="cine-hero__sub">Game designer at Nexon. <span data-bb-live="Right now I'm working on Forgotten Hollow, a new region for MapleStory Classic World that opened November 18.">Right now I'm finishing Forgotten Hollow, a new region for MapleStory Classic World that opens November 18.</span> Before that I worked on BioShock 4, The Walking Dead: Saints &amp; Sinners and Skydance's Behemoth.</p>
+    </div>
+    <div class="cine-chapters" role="group" aria-label="Featured projects" style="--n:6">
+      <button type="button" class="cine-ch" data-now="MapleStory Classic · Nexon · 2026"><i></i><b>MapleStory Classic</b><span>Nexon · 2026</span></button>
+      <button type="button" class="cine-ch" data-now="BioShock 4 · Cloud Chamber · 2024–25"><i></i><b>BioShock 4</b><span>Cloud Chamber · 2024–25</span></button>
+      <button type="button" class="cine-ch" data-now="TWD: Retribution · Skydance · 2022"><i></i><b>TWD: Retribution</b><span>Skydance · 2022</span></button>
+      <button type="button" class="cine-ch" data-now="Behemoth · Skydance · 2024"><i></i><b>Behemoth</b><span>Skydance · 2024</span></button>
+      <button type="button" class="cine-ch" data-now="Zoélie · SCAD · 2021"><i></i><b>Zoélie</b><span>SCAD · Intel award · 2021</span></button>
+      <button type="button" class="cine-ch" data-now="Sumo Scuffle · Solo · iPhone · 2026"><i></i><b>Sumo Scuffle</b><span>Solo · iPhone · 2026</span></button>
+    </div>
+    <button type="button" class="cine-pause" aria-pressed="false" aria-label="Pause the slideshow"><span></span></button>
+    <p class="cine-now" aria-live="polite">MapleStory Classic · Nexon · 2026</p>
+  </section>
+
+  <section class="cine-sec" id="work">
+    <div class="cine-head"><h2 class="cine-d">Selected work</h2><a href="/portfolio-1">All projects</a></div>
+    <div class="cine-cards">
+      <a class="cine-card" href="/projects/maplestory-classic" style="--c:#a6e35f">
+        <img data-bb-src="fh/maps/primeval-forest-1.webp" alt="">
+        <div class="cine-card__txt"><span class="cine-label">Nexon · MMORPG · 2026</span>
+          <h3>MapleStory Classic: Forgotten Hollow</h3>
+          <p>A new region hidden under Ellinia, <span data-bb-live="out now">opening November 18</span>. I built most of its 26 maps and wrote dozens of its quests.</p></div>
+      </a>
+      <a class="cine-card cine-card--half" href="/projects/t-7xfc6" style="--c:#e9b04f">
+        <img data-bb-src="covers/bioshock.jpg" alt="">
+        <div class="cine-card__txt"><span class="cine-label">Cloud Chamber · 2024–2025</span>
+          <h3>BioShock 4</h3><p>I designed locations and quests for the first two regions, from paper design to Alpha.</p></div>
+      </a>
+      <a class="cine-card cine-card--half" href="/projects/the-walking-dead-saints-and-sinners-chapter-2" style="--c:#ff5a3c">
+        <img data-bb-src="covers/twd.jpg" alt="">
+        <div class="cine-card__txt"><span class="cine-label">Skydance · VR · 2022</span>
+          <h3>The Walking Dead: Retribution</h3><p>I designed every new weapon in Chapter 2, the Eradicator and Grenadier enemies, and the chainsaw haptics.</p></div>
+      </a>
+      <a class="cine-card cine-card--wide" href="/projects/tbehemoth" style="--c:#8fb8ff">
+        <img data-bb-src="covers/behemoth-boss.jpg" alt="">
+        <div class="cine-card__txt"><span class="cine-label">Skydance · VR · 2024</span>
+          <h3>Skydance's Behemoth</h3><p>I designed the castle hub in chapter one and wrote the concept for the final area.</p></div>
+      </a>
+      <a class="cine-card cine-card--narrow" href="/projects/sumo-scuffle" style="--c:#ffd23c" data-cine-play>
+        <video muted playsinline loop preload="none" data-bb-src="sumo/reel.mp4" data-bb-poster="sumo/reel-poster.jpg"></video>
+        <span class="cine-card__badge">Play it in your browser</span>
+        <div class="cine-card__txt"><span class="cine-label">Solo release · iPhone · 2026</span>
+          <h3>Sumo Scuffle</h3><p>A 45-second sumo party game I took from a class prototype to the App Store.</p></div>
+      </a>
+      <a class="cine-card" href="/projects/zoelie" style="--c:#5fd6c8" data-cine-play>
+        <video muted playsinline loop preload="none" data-bb-src="zoelie/hero-loop.mp4" data-bb-src-m="zoelie/hero-loop-m.mp4" data-bb-poster="zoelie/1.jpg"></video>
+        <div class="cine-card__txt"><span class="cine-label">SCAD Games Studio · 2021</span>
+          <h3>Zoélie</h3><p>I was lead gameplay designer on a 39-person student team. We won Best Gameplay at the Intel University Games Showcase.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="cine-sec">
+    <div class="cine-head"><h2 class="cine-d">How I work</h2></div>
+    <div class="cine-panels">
+      <div class="cine-panel">
+        <div class="cine-panel__img"><img data-bb-src="behemoth/arch-2.jpg" alt="The central arch in Behemoth's castle courtyard, with the tower beyond"></div>
+        <div class="cine-panel__body"><h3>Spaces that explain themselves</h3>
+          <p>I want players to know where they are without a map. In Behemoth's castle hub, a central arch reads from every corner of the courtyard, so you always have your bearings.</p></div>
       </div>
-      <figure class="bb-figure home-fig" data-home-reel aria-roledescription="carousel" aria-label="Selected work">
-        <div class="bb-figure__frame bb-tick home-reel">
-          <a class="home-reel__slide is-on" href="/projects/maplestory-classic"><img fetchpriority="high" data-bb-src="fh/crops/forgotten-hollow.webp" alt="The Forgotten Hollow town under a shaft of light"></a>
-          <a class="home-reel__slide" href="/projects/tbehemoth" tabindex="-1" aria-hidden="true"><img loading="lazy" data-bb-src="behemoth/arch-1.jpg" alt="The snow-covered castle courtyard in Behemoth"></a>
-          <a class="home-reel__slide" href="/projects/maplestory-classic" tabindex="-1" aria-hidden="true"><img loading="lazy" data-bb-src="fh/crops/the-end-of-fleeting-light.webp" alt="The End of Fleeting Light, a Forgotten Hollow map"></a>
-          <a class="home-reel__slide" href="/projects/level-design-blockout-canceled-title" tabindex="-1" aria-hidden="true"><img loading="lazy" data-bb-src="lonestar/shot-02.jpg" alt="The Lonestar courthouse behind a fenced-off town square"></a>
-          <a class="home-reel__slide" href="/projects/the-walking-dead-saints-and-sinners-chapter-2" tabindex="-1" aria-hidden="true"><img loading="lazy" data-bb-src="covers/twd.jpg" alt="The chainsaw cutting through a walker"></a>
-          <a class="home-reel__slide" href="/projects/zoelie" tabindex="-1" aria-hidden="true"><img loading="lazy" data-bb-src="zoelie/4.jpg" alt="Zoélie gliding over the plaza with Sueño"></a>
+      <div class="cine-panel">
+        <div class="cine-pair cine-pair--maps">
+          <figure class="is-doc"><img data-bb-src="lonestar/map-police-overview.jpg" alt="Lonestar police station layout: cells, interrogation, bullpen, foyer and sheriff's office"><figcaption>Layout</figcaption></figure>
+          <figure class="is-doc"><img data-bb-src="lonestar/map-police-gameplay.jpg" alt="The same police station with the player route, walkers and loot drawn on"><figcaption>Gameplay pass</figcaption></figure>
         </div>
-        <figcaption><span class="home-reel__caps" aria-live="polite"><span class="is-on">Forgotten Hollow, the town at the center of the region. MapleStory Classic World, Nexon.</span><span>The castle hub in Behemoth's opening chapter. Skydance.</span><span>The End of Fleeting Light, west of the town. MapleStory Classic World.</span><span>The Lonestar courthouse hub, in-engine. Canceled VR title.</span><span>The chainsaw. I designed and tuned every haptic curve. TWD: Retribution, Skydance.</span><span>Zoélie gliding with Sueño. Best Gameplay, Intel University Games Showcase.</span></span></figcaption>
-        <div class="home-reel__ctl bb-mono">
-          <button type="button" data-reel="prev" aria-label="Previous image">Prev</button>
-          <span class="home-reel__n"><b>01</b> / 06</span>
-          <button type="button" data-reel="next" aria-label="Next image">Next</button>
-          <button type="button" data-reel="pause" aria-pressed="false">Pause</button>
-        </div>
-      </figure>
-    </div>
-  </section>
-
-  <section class="bb-section" id="work">
-    <div class="bb-container">
-      <div class="bb-head"><h2 class="bb-h2">Selected work</h2><a class="bb-link bb-mono" href="/portfolio-1">All 10 projects</a></div>
-      <ul class="bb-index">
-        <li><a href="/projects/maplestory-classic" data-bb-flip="fh/crops/the-end-of-fleeting-light.webp,fh/crops/forgotten-hollow.webp,fh/crops/primeval-forest-2.webp,fh/crops/cave-fairy-sanctuary.webp"><span><span class="bb-index__title">MapleStory Classic: Forgotten Hollow</span></span><span><span class="bb-index__meta">Nexon · 2026</span><span class="bb-index__desc" data-bb-live="Live now. Dozens of quests, most of the region's 26 maps, NPCs, items and monster placement.">Dozens of quests, most of the region's 26 maps, NPCs, items and monster placement. Opens November 18.</span></span><span class="bb-index__thumb"><img loading="lazy" data-bb-src="fh/crops/the-end-of-fleeting-light.webp" alt=""></span></a></li>
-        <li><a href="/projects/t-7xfc6"><span><span class="bb-index__title">BioShock 4</span></span><span><span class="bb-index__meta">Cloud Chamber · 2024–2025</span><span class="bb-index__desc">Locations and quests for the first two regions, from paper design to Alpha.</span></span><span class="bb-index__thumb"><img loading="lazy" data-bb-src="covers/bioshock.jpg" alt="" width="1600" height="900"></span></a></li>
-        <li><a href="/projects/tbehemoth" data-bb-flip="behemoth/arch-1.jpg,behemoth/arch-2.jpg,behemoth/arch-3.jpg,behemoth/steam-2.jpg"><span><span class="bb-index__title">Skydance's Behemoth</span></span><span><span class="bb-index__meta">Skydance · VR · 2024</span><span class="bb-index__desc">Concept for the final area and a castle hub in the opening chapter.</span></span><span class="bb-index__thumb"><img loading="lazy" data-bb-src="behemoth/arch-1.jpg" alt="" width="1600" height="900"></span></a></li>
-        <li><a href="/projects/the-walking-dead-saints-and-sinners-chapter-2" data-bb-flip="twd/weapon-chainsaw.jpg,twd/eradicator-lineup.jpg,twd/camp-mansion-night.jpg,twd/patricia.jpg"><span><span class="bb-index__title">TWD: Retribution</span></span><span><span class="bb-index__meta">Skydance · VR · 2022</span><span class="bb-index__desc">New weapons and enemies, chainsaw haptics and Night Mode systems.</span></span><span class="bb-index__thumb"><img loading="lazy" data-bb-src="covers/twd.jpg" alt="" width="1600" height="900"></span></a></li>
-        <li><a href="/projects/level-design-blockout-canceled-title" data-bb-flip="lonestar/shot-02.jpg,lonestar/shot-05.jpg,lonestar/shot-12.jpg,lonestar/map-courthouse-gameplay.jpg"><span><span class="bb-index__title">Project: Lonestar</span></span><span><span class="bb-index__meta">Canceled VR title · 2024</span><span class="bb-index__desc">A courthouse hub from paper map to Unreal Engine 5 vertical slice.</span></span><span class="bb-index__thumb"><img loading="lazy" data-bb-src="lonestar/shot-02.jpg" alt="" width="1920" height="868"></span></a></li>
-        <li><a href="/projects/zoelie" data-bb-preview="zoelie/hero-loop-m.mp4"><span><span class="bb-index__title">Zoélie</span></span><span><span class="bb-index__meta">SCAD · 2021</span><span class="bb-index__desc">Lead gameplay design. Best Gameplay at the Intel University Games Showcase.</span></span><span class="bb-index__thumb"><img loading="lazy" data-bb-src="zoelie/4.jpg" alt="" width="1600" height="900"></span></a></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="bb-section">
-    <div class="bb-container">
-      <div class="bb-head"><h2 class="bb-h2">Pages from my design docs</h2></div>
-      <div class="home-docs">
-        <figure class="bb-figure"><a class="bb-figure__frame" href="/projects/level-design-blockout-canceled-title"><img loading="lazy" data-bb-src="lonestar/map-police-gameplay.jpg" alt="Police station gameplay map with walkers, loot and crawl-throughs"></a><figcaption>Lonestar. Police station paper map with walkers, loot and crawl-throughs.</figcaption></figure>
-        <figure class="bb-figure"><a class="bb-figure__frame" href="/projects/maplestory-classic"><img loading="lazy" data-bb-src="fh/crops/precipice-of-darkness.webp" alt="Precipice of Darkness map"></a><figcaption>MapleStory Classic. Precipice of Darkness, deep in the rot.</figcaption></figure>
-        <figure class="bb-figure"><a class="bb-figure__frame" href="/projects/the-walking-dead-saints-and-sinners-chapter-2"><img loading="lazy" data-bb-src="twd/grenadier-blueprint.jpg" alt="Grenadier grenade-throw Blueprint graph"></a><figcaption>TWD: Retribution. The Grenadier's grenade-throw Blueprint.</figcaption></figure>
-        <figure class="bb-figure"><a class="bb-figure__frame" href="/projects/game-design-pitch-deck"><img loading="lazy" data-bb-src="bsi/level-design-doc.jpg" alt="One-room level design document on a 1 ft grid"></a><figcaption>BioShock Infinite pitch. A one-room level design doc on a 1 ft grid.</figcaption></figure>
+        <div class="cine-panel__body"><h3>Layout first, then the route</h3>
+          <p>Almost everything I make starts as a top-down layout. Then I draw the route on it: where players go, where the walkers wait, and where the loot and hidden crawl-throughs are. This is the police station from Lonestar.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="bb-section">
-    <div class="bb-container bb-split">
-      <div>
-        <h2 class="bb-h2">I build what I design</h2>
-        <p class="bb-prose">I script gameplay, AI and combat in Blueprints, and at Nexon I build quests, maps and NPCs directly in the game's data.</p>
-        <div class="bb-btn-row"><a class="bb-btn" href="/about">About me</a></div>
-      </div>
-      <ul class="bb-facts">
-        <li><span>In the industry</span><span>Since 2022</span></li>
-        <li><span>Studios</span><span>Nexon, Cloud Chamber, Skydance</span></li>
-        <li><span>Shipped</span><span>3 AAA titles</span></li>
-        <li><span>Award</span><span>Intel University Games Showcase, Best Gameplay, 1st place</span></li>
-        <li><span>Tools</span><span>Unreal Engine 5, Blueprints, Perforce, Jira</span></li>
-        <li><span>Focus</span><span>Level design, mission and quest design, combat and AI, VR interaction, live ops</span></li>
-      </ul>
+  <section class="cine-sec">
+    <div class="cine-head"><h2 class="cine-d">In the press</h2></div>
+    <div class="cine-press">
+      <a href="https://www.roadtovr.com/skydances-behemoth-review-quest-3-psvr-2-steam/" target="_blank" rel="noopener"><q>A colossal step forward in VR action-adventure gaming</q><span>Road to VR on Behemoth</span></a>
+      <a href="https://www.dreadcentral.com/reviews/491381/the-walking-dead-saints-sinners-chapter-2-retribution-review-a-sideways-step/" target="_blank" rel="noopener"><q>The new weapons the game adds... are amazing.</q><span>Dread Central on TWD: Retribution</span></a>
+      <a href="https://mmohuts.com/news/maplestory-classic-world-is-now-live-globally-as-a-free-to-play-legacy-server" target="_blank" rel="noopener"><q>Classic World is live globally, with Forgotten Hollow opening in November</q><span>MMOHuts, October 2026</span></a>
     </div>
   </section>
 
-  <section class="bb-section">
-    <div class="bb-container">
-      <div class="bb-head"><h2 class="bb-h2">Press on games I've worked on</h2></div>
-      <div class="bb-press">
-        <a href="https://mmohuts.com/news/maplestory-classic-world-is-now-live-globally-as-a-free-to-play-legacy-server" target="_blank" rel="noopener"><small>MMOHuts · Oct 2026</small><strong>MapleStory Classic World is live, with Forgotten Hollow next</strong></a>
-        <a href="https://www.roadtovr.com/skydances-behemoth-review-quest-3-psvr-2-steam/" target="_blank" rel="noopener"><small>Road to VR · Behemoth</small><strong>"A colossal step forward in VR action-adventure gaming"</strong></a>
-        <a href="https://www.dreadcentral.com/reviews/491381/the-walking-dead-saints-sinners-chapter-2-retribution-review-a-sideways-step/" target="_blank" rel="noopener"><small>Dread Central · TWD</small><strong>"The new weapons the game adds… are amazing."</strong></a>
-        <a href="https://gamesbeat.com/intel-honors-the-top-university-game-projects/" target="_blank" rel="noopener"><small>GamesBeat · Zoélie</small><strong>Intel honors the top university game projects</strong></a>
-      </div>
+  <section class="cine-sec">
+    <div class="cine-head"><h2 class="cine-d">More projects</h2><a href="/portfolio-1">All projects</a></div>
+    <div class="cine-minis">
+      <a class="cine-mini" href="/projects/level-design-blockout-canceled-title"><div><img data-bb-src="lonestar/shot-02.jpg" alt=""></div><b>Project: Lonestar</b><span>Canceled VR title · 2024</span></a>
+      <a class="cine-mini" href="/projects/game-design-pitch-deck"><div><img data-bb-src="covers/bsi.jpg" alt=""></div><b>BioShock Infinite: Elizabeth</b><span>Personal design docs</span></a>
+      <a class="cine-mini" href="/projects/hell-my-name-is-bubba"><div><img data-bb-src="covers/bubba.jpg" alt=""></div><b>Hell, My Name Is Buba</b><span>Epic MegaJam 2021</span></a>
+      <a class="cine-mini" href="/projects/beepo"><div><img data-bb-src="covers/beepo.jpg" alt=""></div><b>Beepo &amp; Pogo</b><span>GMTK Jam 2021</span></a>
     </div>
   </section>
+
 </div>
-
-<style>
-.home-hero { padding-top: calc(var(--bb-header-h) + clamp(48px, 8vw, 112px)); }
-.home-hero__grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
-.home-reel { position: relative; display: block; padding: 10px; overflow: visible; aspect-ratio: 16 / 10; }
-.home-reel__slide { position: absolute; inset: 10px; opacity: 0; transition: opacity .9s ease; overflow: hidden; }
-.home-reel__slide.is-on { opacity: 1; z-index: 1; }
-.home-reel__slide img { width: 100%; height: 100%; object-fit: cover; }
-.home-reel__slide:hover img { transform: scale(1.02); }
-.home-reel__caps { display: grid; }
-.home-reel__caps span { grid-area: 1 / 1; opacity: 0; transition: opacity .4s; }
-.home-reel__caps span.is-on { opacity: 1; }
-.home-reel__ctl { display: flex; align-items: center; gap: 4px 18px; margin-top: 6px; color: var(--bb-muted); }
-.home-reel__ctl button { min-height: 44px; padding: 0; background: none; border: 0; color: var(--bb-muted); cursor: pointer; font: inherit; text-transform: inherit; letter-spacing: inherit; }
-.home-reel__ctl button:hover { color: var(--bb-text); }
-.home-reel__ctl [data-reel="pause"] { margin-left: auto; }
-.home-reel__n b { color: var(--bb-text); font-weight: 500; }
-.home-docs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.home-docs .bb-figure__frame { display: block; aspect-ratio: 4 / 3; }
-.home-docs .bb-figure__frame img { height: 100%; object-fit: cover; }
-.home-docs .bb-figure__frame:hover img { transform: scale(1.03); }
-@media (max-width: 960px) { .home-docs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 860px) {
-  .home-hero__grid { grid-template-columns: 1fr; }
-  .home-reel { padding: 6px; }
-  .home-reel__slide { inset: 6px; }
-}
-@media (max-width: 520px) { .home-docs { grid-template-columns: 1fr; } }
-</style>
-
-<script>
-(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root, bb) {
-  
-  var reel = root.querySelector('[data-home-reel]');
-  if (!reel) return;
-  var slides = reel.querySelectorAll('.home-reel__slide'), caps = reel.querySelectorAll('.home-reel__caps span');
-  var num = reel.querySelector('.home-reel__n b'), pauseBtn = reel.querySelector('[data-reel="pause"]');
-  var i = 0, timer = null, held = false, stopped = !!(bb && bb.reduceMotion);
-  function show(n) {
-    i = (n + slides.length) % slides.length;
-    slides.forEach(function (s, k) { var on = k === i; s.classList.toggle('is-on', on); s.tabIndex = on ? 0 : -1; s.setAttribute('aria-hidden', on ? 'false' : 'true'); });
-    caps.forEach(function (c, k) { c.classList.toggle('is-on', k === i); });
-    num.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
-    var next = slides[(i + 1) % slides.length].querySelector('img'); if (next) next.loading = 'eager';
-  }
-  function tick() { clearTimeout(timer); if (!stopped && !held) timer = setTimeout(function () { show(i + 1); tick(); }, 6000); }
-  reel.querySelector('[data-reel="prev"]').addEventListener('click', function () { show(i - 1); tick(); });
-  reel.querySelector('[data-reel="next"]').addEventListener('click', function () { show(i + 1); tick(); });
-  pauseBtn.addEventListener('click', function () { stopped = !stopped; pauseBtn.textContent = stopped ? 'Play' : 'Pause'; pauseBtn.setAttribute('aria-pressed', stopped ? 'true' : 'false'); tick(); });
-  if (stopped) { pauseBtn.textContent = 'Play'; pauseBtn.setAttribute('aria-pressed', 'true'); }
-  reel.addEventListener('mouseenter', function () { held = true; clearTimeout(timer); });
-  reel.addEventListener('mouseleave', function () { held = false; tick(); });
-  reel.addEventListener('focusin', function () { held = true; clearTimeout(timer); });
-  reel.addEventListener('focusout', function () { held = false; tick(); });
-  document.addEventListener('visibilitychange', function () { if (document.hidden) clearTimeout(timer); else tick(); });
-  tick();
-});
-</script>

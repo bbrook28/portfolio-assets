@@ -1,249 +1,80 @@
-<div class="bb-page bs4">
+<div class="bb-page cine bs4" style="--bb-accent:#e9b04f">
 
-  <section class="bb-hero bb-hero--short">
-    <div class="bb-hero__media"><img data-bb-src="covers/bioshock.jpg" alt="BioShock franchise art" fetchpriority="high"></div>
-    <div class="bb-container bb-hero__inner">
-      <p class="bb-kicker">Cloud Chamber · 2K · 2024–2025</p>
-      <h1 class="bb-display">BioShock <em>4</em></h1>
-      <p class="bb-hero__sub">Locations and quests for the first two regions of the next BioShock, built so the world changes based on what the player does.</p>
-      <dl class="bb-hero__meta">
-        <div><dt>Role</dt><dd>Level Designer</dd></div>
-        <div><dt>Team</dt><dd>Level Design</dd></div>
-        <div><dt>Engine</dt><dd>Unreal Engine 5</dd></div>
-        <div><dt>Status</dt><dd>In development · NDA</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <section class="bb-section">
-    <div class="bb-container bb-split">
-      <div class="bb-sticky bb-reveal">
-        <p class="bb-kicker">Directive</p>
-        <h2 class="bb-h2">Building a world that reacts</h2>
-      </div>
-      <div class="bb-reveal" style="--d:.1s">
-        <p class="bb-lead">On the Level Design team, I worked on the first two regions of the game. I designed locations and quests where the world changes based on what the player does, and keeps changing when they leave.</p>
-        <div class="bb-prose" style="margin-top:26px">
-          <p>Most specifics are under NDA. Below is one side quest, with names left out, that shows how it worked.</p>
-        </div>
-        <ul class="bb-facts" style="margin-top:32px">
-          <li><span>Missions</span><span>I took core narrative missions from paper design and blockout through Alpha, and set their critical-path pacing and combat beats in Unreal Engine 5.</span></li>
-          <li><span>Encounters</span><span>Critical-path objectives, AI combat encounters and layouts, built to the creative director's vision.</span></li>
-          <li><span>Scripting</span><span>I scripted gameplay moments and interaction chains in Blueprints myself, so fewer requests went to engineering.</span></li>
-          <li><span>Polish</span><span>I led iteration and late polish on our content with Art, Audio and Narrative.</span></li>
-        </ul>
+  <section class="cine-hero">
+    <div class="cine-hero__bg"><img loading="eager" fetchpriority="high" data-bb-src="covers/bioshock.jpg" alt="BioShock franchise art"></div>
+    <div class="cine-hero__in">
+      <span class="cine-label">Cloud Chamber · 2K · 2024–2025</span>
+      <h1 class="cine-d">BioShock 4</h1>
+      <p class="cine-hero__sub">Level design on the first two regions of the next BioShock, at Cloud Chamber.</p>
+      <div class="cine-facts">
+        <div><b>Level designer</b><span>my role</span></div>
+        <div><b>2 regions</b><span>the first two in the game</span></div>
+        <div><b>UE5</b><span>engine</span></div>
+        <div><b>NDA</b><span>still unannounced</span></div>
       </div>
     </div>
   </section>
 
-  <section class="bb-section bb-section--alt" data-bb-toc="The museum cache">
-    <div class="bb-container">
-      <div class="bb-reveal" style="max-width:760px">
-        <p class="bb-kicker">Interactive · Side quest</p>
-        <h2 class="bb-h2">The museum cache</h2>
-        <p class="bb-prose">Two rival groups are hunting for a hidden supply cache in an abandoned museum. Players can stumble into it, and what they do there decides what they find when they come back. Play it below by clicking the glowing boxes on the story map.</p>
-        <p class="bb-small" style="margin-top:12px">Names left out and some details filled in for this demo. It's my design from development and may have changed since.</p>
-      </div>
-      <div class="bs4-tw bb-reveal" data-bs4-sim style="margin-top:40px">
-        <div class="bs4-tw__passage">
-          <div class="bs4-tw__bar"><span class="bs4-tw__title"></span><span class="bs4-tw__state"></span><button type="button" class="bs4-tw__undo">↶ Undo</button><button type="button" class="bs4-tw__restart">↻ Restart</button></div>
-          <p class="bs4-tw__text" aria-live="polite"></p>
-          <p class="bs4-tw__hint"></p>
-        </div>
-        <div class="bs4-tw__mapwrap"><p class="bs4-tw__maph">Story map · <span class="bs4-tw__found">0</span>/6 endings found</p><div class="bs4-tw__scroll"><svg class="bs4-tw__map" viewBox="0 0 1110 450" role="group" aria-label="Story map: choose a highlighted passage"></svg></div></div>
-      </div>
-      <ul class="bb-facts bb-reveal" style="margin-top:40px;max-width:900px">
-        <li><span>Memory</span><span>Each choice changes the state the player returns to, so consequences play out between visits</span></li>
-        <li><span>Escalation</span><span>Killing both groups doesn't end the story; it starts a faction war the player caused</span></li>
-        <li><span>Clues</span><span>Names and dates point to exhibits around the building and lead to a hidden switch that opens a secret door</span></li>
-        <li><span>Stealth path</span><span>Players who decipher the clues can take the stash at any point and let the groups blame each other</span></li>
-        <li><span>Security</span><span>Turrets and security systems can be destroyed, disarmed, or hacked. Players can use them to fight or to sneak</span></li>
-        <li><span>Power</span><span>Cutting the power at the fuse box shuts off security and the secret door. Enemies present go to investigate the fuse box: if they catch you it's a fight, but it also lures them away from where you need to go</span></li>
-        <li><span>Audio</span><span>I added a combat audio system where enemies react to their comrades' deaths with voice lines</span></li>
-      </ul>
+  <section class="cine-sec">
+    <span class="cine-label">My part</span>
+    <h2 class="cine-d">A world that reacts</h2>
+    <p class="cine-lede">I designed locations and quests where the world changes based on what the player does, and keeps changing after they leave. Most of it is under NDA, so below is one side quest with the names left out.</p>
+    <div class="cine-cards3 cine-cards3--4">
+      <article><h3>Missions</h3><p>I took core narrative missions from paper design and blockout through Alpha, including their pacing and combat beats.</p></article>
+      <article><h3>Encounters</h3><p>I built critical-path objectives, AI combat encounters and their layouts to the creative director's vision.</p></article>
+      <article><h3>Scripting</h3><p>I scripted gameplay moments and interaction chains in Blueprints myself, so fewer requests went to engineering.</p></article>
+      <article><h3>Polish</h3><p>I led iteration and late polish on our content with Art, Audio and Narrative.</p></article>
     </div>
   </section>
 
-  <section class="bb-section">
-    <div class="bb-container bb-split">
-      <div class="bb-sticky bb-reveal">
-        <p class="bb-kicker">On the record</p>
-        <h2 class="bb-h2">What's been announced</h2>
-        <p class="bb-prose">Everything below comes from 2K's announcement and press coverage.</p>
+  <section class="cine-sec">
+    <span class="cine-label">Side quest</span>
+    <h2 class="cine-d">The museum cache</h2>
+    <p class="cine-lede">Two rival groups are hunting for a supply cache hidden in an abandoned museum. Players can stumble into it at any point. What they do there decides what they find when they come back.</p>
+    <div class="cine-lanes">
+      <div class="cine-lane">
+        <div class="cine-lane__head"><span>01</span><h3>Leave them alone</h3><p>Walk away and come back later.</p></div>
+        <div class="cine-end"><b>They finished each other off</b><p>The rival group showed up while you were gone, and the two groups killed each other. The stash is still hidden.</p></div>
+        <div class="cine-end"><b>Beaten to it</b><p>The rivals cracked the clues. The hidden room is open, and empty.</p></div>
       </div>
-      <ol class="bb-timeline bb-timeline--stack bb-reveal" style="--d:.1s">
-        <li><b>2019</b><span>2K founds Cloud Chamber, in the Bay Area and Montréal, to make the next BioShock</span></li>
-        <li><b>Dec 2019</b><span>The next BioShock is confirmed, with no title, platforms, or date</span></li>
-        <li><b>2024–25</b><span>My time on it: locations and quests for the first two regions</span></li>
-        <li class="is-next"><b>Today</b><span>Still unrevealed</span></li>
-      </ol>
+      <div class="cine-lane">
+        <div class="cine-lane__head"><span>02</span><h3>Fight them</h3><p>Kill the group in the museum, and later the rivals too.</p></div>
+        <div class="cine-end"><b>A war you started</b><p>Killing both groups doesn't end it. On your third visit both factions retaliate, and you walk into a faction war you caused.</p></div>
+      </div>
+      <div class="cine-lane">
+        <div class="cine-lane__head"><span>03</span><h3>Take the stash</h3><p>Follow the clues to a secret door. The turret and the fuse box are tools along the way.</p></div>
+        <div class="cine-end"><b>Thieves fall out</b><p>Nobody sees you. Later each group accuses the other of stealing the stash, and they fight.</p></div>
+        <div class="cine-end"><b>Caught red-handed</b><p>They spot you with the stash, call for backup and try to kill you.</p></div>
+        <div class="cine-end"><b>Caught in the open</b><p>The group checking the noise or the fuse box finds you, and it turns into a fight. A hacked turret fights on your side.</p></div>
+      </div>
+    </div>
+    <p class="cine-note">Names left out and some details filled in. It's my design from development and may have changed since.</p>
+
+    <h3 class="cine-sub">The systems behind it</h3>
+    <div class="cine-list">
+      <div><b>Memory</b><p>Each choice changes the state you come back to, so consequences play out between visits.</p></div>
+      <div><b>Clues</b><p>Names and dates point to exhibits around the building and lead to a hidden switch for the secret door.</p></div>
+      <div><b>Security</b><p>Turrets can be destroyed, disarmed or hacked, and used to fight or to sneak.</p></div>
+      <div><b>Power</b><p>Cutting power at the fuse box shuts off security and the secret door. Enemies go to check the fuse box, which can mean a fight, but it also pulls them away from where you need to go.</p></div>
+      <div><b>Audio</b><p>I added a combat audio system where enemies react to their comrades' deaths with voice lines.</p></div>
     </div>
   </section>
 
-  <section class="bb-section bb-section--tight">
-    <div class="bb-container">
-      <div class="bb-press">
-        <a class="bb-reveal" href="https://ew.com/gaming/2019/12/09/bioshock-4-announced-2k-games/" target="_blank" rel="noopener"><small>Entertainment Weekly · 2019</small><strong>BioShock 4 officially announced</strong><span>Read ↗</span></a>
-      </div>
+  <section class="cine-sec">
+    <span class="cine-label">On the record</span>
+    <h2 class="cine-d">What's been announced</h2>
+    <p class="cine-lede">Everything here comes from 2K's announcement and press coverage.</p>
+    <div class="cine-tl" style="--n:4">
+      <div><b>2019</b><span>2K founds Cloud Chamber, in the Bay Area and Montréal, to make the next BioShock</span></div>
+      <div><b>Dec 2019</b><span>The next BioShock is confirmed, with no title, platforms or date</span></div>
+      <div><b>2024–25</b><span>My time on it: locations and quests for the first two regions</span></div>
+      <div class="is-now"><b>Today</b><span>Still unrevealed</span></div>
+    </div>
+    <div class="cine-press cine-press--one">
+      <a href="https://ew.com/gaming/2019/12/09/bioshock-4-announced-2k-games/" target="_blank" rel="noopener"><q>BioShock 4 officially announced</q><span>Entertainment Weekly · 2019</span></a>
     </div>
   </section>
 
-  <nav class="bb-next" aria-label="More projects">
-    <a href="/projects/maplestory-classic"><img data-bb-src="fh/maps/forgotten-hollow.webp" alt=""><small>Previous project</small><strong>MapleStory Classic</strong></a>
-    <a href="/projects/tbehemoth"><img data-bb-src="covers/behemoth-gematsu.jpg" alt=""><small>Next project</small><strong>Skydance's Behemoth</strong></a>
-  </nav>
-  <p class="bb-credits">BioShock © 2K / Take-Two Interactive. Franchise art shown for context only.</p>
+  <a class="cine-next" href="/projects/the-walking-dead-saints-and-sinners-chapter-2" style="--c:#ff5a3c"><img data-bb-src="covers/twd.jpg" alt=""><div><span class="cine-label">Next project</span><strong>The Walking Dead: Retribution</strong></div></a>
+  <p class="cine-credit">BioShock © 2K / Take-Two Interactive. Franchise art shown for context only.</p>
 </div>
-
-<script>
-(window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root) {
-  var host = root.querySelector('[data-bs4-sim]');
-  if (!host) return;
-  var F;
-  function fallText() { return (F.turret === 'hacked' && !F.dark ? 'Your hacked turret joins the fight. ' : '') + 'As each one falls, the others react out loud.'; }
-  var P = {
-    start: { t: 'The museum', x: 0, y: 2, txt: function () {
-      var tur = F.dark ? 'With the power out, the lobby turret is offline.' : F.turret === 'armed' ? 'A security turret guards the lobby, next to the fuse box.' : 'The lobby turret is ' + F.turret + '.';
-      return 'A group is searching the abandoned museum for a hidden supply cache. ' + tur; } },
-    turret: { t: 'Turret', x: 1, y: 4, txt: function () { return 'An armed security turret. It\'s a tool: use it to fight, or get it out of the way to sneak.'; } },
-    hack: { t: 'Turret hacked', x: 2, y: 4, enter: function () { F.turret = 'hacked'; }, txt: function () { return 'You hack the turret. It now fights for you.'; } },
-    disarm: { t: 'Turret disarmed', x: 2, y: 5, enter: function () { F.turret = 'disarmed'; }, txt: function () { return 'You disarm the turret, so you can sneak past it.'; } },
-    destroy: { t: 'Turret destroyed', x: 1, y: 5, enter: function () { F.turret = 'destroyed'; F.noise = true; }, txt: function () { return 'The turret goes down, loudly.'; } },
-    fight1: { t: 'Fight', x: 1, y: 1, txt: function () { return 'You fight the group. ' + fallText(); } },
-    rivals: { t: 'The rivals', x: 2, y: 1, txt: function () { return 'You come back. The rival group has arrived, and they\'re happy to find the first group dead. They pick up the search where the others left off.'; } },
-    dark: { t: 'They investigate', x: 1, y: 3, txt: function () {
-      return (F.dark ? 'Security goes dark, and so does the secret door. The group notices and heads to the fuse box to investigate' : 'The group hears the noise and comes to check the lobby') + ', away from where you need to go.'; } },
-    placard: { t: 'Placard', x: 1, y: 2, txt: function () { return 'Someone has been scrawling notes about the museum\'s founders. A placard on one exhibit names a person.'; } },
-    portrait: { t: 'Portrait', x: 2, y: 2, txt: function () { return 'Their portrait hangs in another wing. The plaque beneath it gives a date.'; } },
-    exhibit: { t: 'Hidden switch', x: 3, y: 2, txt: function () { return F.dark ? 'The exhibit marked with that date hides a switch, but it\'s dead. With the power cut, the secret door won\'t open.' : 'The exhibit marked with that date hides a switch.'; } },
-    restore: { t: 'Power restored', x: 4, y: 3, txt: function () { return 'You throw the breaker. The power is back' + (F.turret === 'destroyed' ? '.' : ', and so is the security.'); } },
-    door: { t: 'Secret door', x: 4, y: 2, txt: function () { return 'A section of wall swings open on a hidden room. The stash is inside.'; } },
-    mutual: { t: 'They finished each other off', end: 1, x: 1, y: 0, txt: function () { return 'You leave. When you come back, the rival group has shown up, and the two groups have killed each other. The stash is still hidden.'; } },
-    beaten: { t: 'Beaten to it', end: 1, x: 3, y: 0, txt: function () { return 'You leave them to it. When you come back, the rivals have cracked the clues. The hidden room is open, and empty.'; } },
-    war: { t: 'A war you started', end: 1, x: 3, y: 1, txt: function () { return fallText() + ' On your third visit, both factions retaliate, and you walk into a faction war you caused.'; } },
-    combat: { t: 'Caught in the open', end: 1, x: 2, y: 3, txt: function () { return (F.dark ? 'The group investigating the fuse box' : 'The group checking on the noise') + ' finds you, and it turns into a fight' + (F.turret === 'hacked' && !F.dark ? ', with your hacked turret on your side.' : '.'); } },
-    theft: { t: 'Thieves fall out', end: 1, x: 5, y: 1, txt: function () { return (F.turret === 'disarmed' ? 'With the turret disarmed, you slip out the way you came. ' : 'Nobody saw you. ') + 'Later, each group accuses the other of stealing the stash, and they fight.'; } },
-    caught: { t: 'Caught red-handed', end: 1, x: 5, y: 3, txt: function () { return 'They spot you with the stash, call for backup, and try to kill you.'; } }
-  };
-  var armed = function () { return F.turret === 'armed' && !F.dark; };
-  var E = [
-    ['start', 'mutual', 'Leave them alone'], ['start', 'fight1', 'Fight them'], ['start', 'placard', 'Follow the clues'],
-    ['start', 'dark', 'Cut the power', function () { return !F.dark; }], ['start', 'turret', 'Deal with turret', armed],
-    ['turret', 'hack', 'Hack it'], ['turret', 'disarm', 'Disarm it'], ['turret', 'destroy', 'Destroy it'],
-    ['hack', 'start', 'Back to museum'], ['disarm', 'start', 'Back to museum'], ['destroy', 'dark', 'Continue'],
-    ['fight1', 'rivals', 'Come back later'], ['rivals', 'war', 'Kill them too'], ['rivals', 'beaten', 'Leave them be'], ['rivals', 'placard', 'Follow the clues'],
-    ['dark', 'placard', 'Follow the clues'], ['dark', 'fight1', 'Ambush them'], ['dark', 'combat', 'Get caught'],
-    ['placard', 'portrait', 'Find the portrait'], ['portrait', 'exhibit', 'Find the exhibit'],
-    ['exhibit', 'door', 'Flip the switch', function () { return !F.dark; }], ['exhibit', 'restore', 'Restore power', function () { return F.dark; }],
-    ['restore', 'door', 'Flip the switch'], ['door', 'theft', 'Take it quietly'], ['door', 'caught', 'Get spotted']
-  ];
-  var BW = 150, BH = 44, CX = 180, CY = 72, OX = 50, OY = 12;
-  function pos(k) { return { x: OX + P[k].x * CX, y: OY + P[k].y * CY }; }
-  var svg = host.querySelector('.bs4-tw__map'), ns = 'http://www.w3.org/2000/svg', scroller = host.querySelector('.bs4-tw__scroll');
-  function el(n, a, p) { var e = document.createElementNS(ns, n); for (var k in a) e.setAttribute(k, a[k]); (p || svg).appendChild(e); return e; }
-  var defs = el('defs', {}), mk = el('marker', { id: 'bs4arr', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
-  el('path', { d: 'M0 0L10 5L0 10z', fill: 'currentColor' }, mk);
-  var gE = el('g', {}), gN = el('g', {}), edgeEls = {}, nodeEls = {};
-  E.forEach(function (e) {
-    var a = pos(e[0]), b = pos(e[1]), ax = P[e[0]].x, bx = P[e[1]].x, d, my = BH / 2;
-    if (bx > ax) d = 'M' + (a.x + BW) + ' ' + (a.y + my) + ' C' + (a.x + BW + 24) + ' ' + (a.y + my) + ' ' + (b.x - 24) + ' ' + (b.y + my) + ' ' + (b.x - 2) + ' ' + (b.y + my);
-    else if (bx === 0) { var yy = a.y + BH + 22; d = 'M' + (a.x + BW / 2) + ' ' + (a.y + BH) + ' C' + (a.x + BW / 2) + ' ' + yy + ' ' + (b.x - 34) + ' ' + yy + ' ' + (b.x - 34) + ' ' + ((yy + b.y + my) / 2) + ' S' + (b.x - 34) + ' ' + (b.y + my) + ' ' + (b.x - 2) + ' ' + (b.y + my); }
-    else if (bx === ax && Math.abs(P[e[1]].y - P[e[0]].y) > 1) d = 'M' + (a.x + BW) + ' ' + (a.y + my) + ' C' + (a.x + BW + 22) + ' ' + (a.y + my) + ' ' + (b.x + BW + 22) + ' ' + (b.y + my + 10) + ' ' + (b.x + BW + 1) + ' ' + (b.y + my + 10);
-    else if (bx === ax) d = 'M' + (a.x + BW / 2) + ' ' + (a.y + (b.y > a.y ? BH : 0)) + ' L' + (b.x + BW / 2) + ' ' + (b.y + (b.y > a.y ? -2 : BH + 2));
-    else d = 'M' + (a.x + 18) + ' ' + (a.y + BH) + ' C' + (a.x + 18) + ' ' + (a.y + BH + 16) + ' ' + (b.x + BW - 16) + ' ' + (b.y - 14) + ' ' + (b.x + BW - 16) + ' ' + (b.y - 2);
-    edgeEls[e[0] + '>' + e[1]] = el('path', { d: d, class: 'bs4-tw__edge', 'marker-end': 'url(#bs4arr)' }, gE);
-  });
-  Object.keys(P).forEach(function (k) {
-    var p = pos(k), g = el('g', { class: 'bs4-tw__node' + (P[k].end ? ' is-end' : '') }, gN);
-    el('rect', { x: p.x, y: p.y, width: BW, height: BH, rx: 4 }, g);
-    var t = el('text', { x: p.x + 11, y: p.y + 27 }, g);
-    g.addEventListener('click', function () { choose(k); });
-    g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); choose(k); } });
-    nodeEls[k] = { g: g, t: t };
-  });
-  var cur, hist, seen = {}, walked = {}, found = {}, opts = {};
-  var title = host.querySelector('.bs4-tw__title'), text = host.querySelector('.bs4-tw__text'), hint = host.querySelector('.bs4-tw__hint'), state = host.querySelector('.bs4-tw__state');
-  function choose(k) { if (!opts[k]) return; hist.push({ cur: cur, F: JSON.parse(JSON.stringify(F)) }); go(k, cur); }
-  function go(k, from) {
-    if (from) walked[from + '>' + k] = 1;
-    if (k === 'dark' && from === 'start') F.dark = true;
-    if (k === 'restore') F.dark = false;
-    if (P[k].enter) P[k].enter();
-    cur = k; seen[k] = 1; if (P[k].end) found[k] = 1;
-    paint(true);
-  }
-  function paint(anim) {
-    var p = P[cur];
-    opts = {};
-    if (!p.end) E.forEach(function (e) { if (e[0] === cur && (!e[3] || e[3]())) opts[e[1]] = e[2]; });
-    title.textContent = p.end ? 'Ending' : p.t;
-    state.textContent = 'Turret: ' + (F.dark ? 'no power' : F.turret) + ' · Power: ' + (F.dark ? 'off' : 'on');
-    text.innerHTML = '';
-    text.appendChild(document.createTextNode(p.txt()));
-    if (p.end) { var s2 = document.createElement('strong'); s2.textContent = ' ' + p.t + '.'; text.appendChild(s2); }
-    hint.innerHTML = p.end ? '<button type="button" class="bs4-tw__again">Play again</button>' : 'Choose a <b>highlighted box</b> on the story map below.';
-    if (p.end) hint.querySelector('button').addEventListener('click', restart);
-    if (anim) { text.classList.remove('is-in'); void text.offsetWidth; text.classList.add('is-in'); }
-    Object.keys(nodeEls).forEach(function (k) {
-      var n = nodeEls[k], live = !!opts[k];
-      n.g.classList.toggle('is-seen', !!seen[k]); n.g.classList.toggle('is-on', k === cur); n.g.classList.toggle('is-opt', live);
-      n.t.textContent = live ? '▸ ' + opts[k] : P[k].end && !found[k] ? '?' : P[k].t;
-      if (live) { n.g.setAttribute('tabindex', '0'); n.g.setAttribute('role', 'button'); n.g.setAttribute('aria-label', opts[k]); }
-      else { n.g.removeAttribute('tabindex'); n.g.removeAttribute('role'); n.g.removeAttribute('aria-label'); }
-    });
-    Object.keys(edgeEls).forEach(function (k) { var e = edgeEls[k]; e.classList.toggle('is-walked', !!walked[k]); e.classList.toggle('is-opt', k.split('>')[0] === cur && !!opts[k.split('>')[1]]); });
-    host.querySelector('.bs4-tw__found').textContent = Object.keys(found).length;
-    host.querySelector('.bs4-tw__undo').disabled = !hist.length;
-    if (scroller.scrollWidth > scroller.clientWidth + 4) {
-      var r = svg.getBoundingClientRect().width / 1110, cx = (pos(cur).x + BW) * r - scroller.clientWidth / 2;
-      scroller.scrollTo({ left: Math.max(0, cx), behavior: anim ? 'smooth' : 'auto' });
-    }
-  }
-  host.querySelector('.bs4-tw__undo').addEventListener('click', function () { var h = hist.pop(); if (!h) return; cur = h.cur; F = h.F; paint(true); });
-  function restart() { F = { turret: 'armed', dark: false, noise: false }; hist = []; cur = 'start'; seen.start = 1; paint(true); }
-  host.querySelector('.bs4-tw__restart').addEventListener('click', restart);
-  restart();
-});
-</script>
-
-<style>
-.bs4-tw { border: 1px solid color-mix(in srgb, var(--bb-accent) 30%, transparent); background: var(--bb-surface); }
-.bs4-tw__passage { padding: clamp(20px, 3.5vw, 40px); min-height: 250px; }
-.bs4-tw__bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 18px; }
-.bs4-tw__title { font-family: var(--bb-serif); font-size: 22px; letter-spacing: .05em;  color: var(--bb-accent); margin-right: auto; }
-.bs4-tw__state { font-size: 11px; letter-spacing: .14em;  color: var(--bb-dim); }
-.bs4-tw__undo, .bs4-tw__restart { font: inherit; font-size: 13px; color: var(--bb-muted); background: none; border: 0; padding: 0; cursor: pointer; }
-.bs4-tw__undo:hover, .bs4-tw__restart:hover { color: var(--bb-text); }
-.bs4-tw__undo:disabled { opacity: .35; cursor: default; }
-.bs4-tw__text { font-size: clamp(18px, 2vw, 22px); line-height: 1.55; color: var(--bb-text); margin: 0; max-width: 780px; }
-.bs4-tw__text.is-in { animation: bs4in .45s var(--bb-ease); }
-@keyframes bs4in { from { opacity: 0; transform: translateY(6px); } }
-.bs4-tw__text a { color: var(--bb-accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-.bs4-tw__text a:hover { color: var(--bb-accent-2); }
-.bs4-tw__text strong { color: var(--bb-accent-2); }
-.bs4-tw__hint { margin: 18px 0 0; font-size: 14px; color: var(--bb-muted); }
-.bs4-tw__hint b { color: var(--bb-accent); font-weight: 600; }
-.bs4-tw__again { font: inherit; font-size: 14px; color: var(--bb-bg); background: var(--bb-accent); border: 0; padding: 10px 16px; cursor: pointer; }
-.bs4-tw__node.is-opt { cursor: pointer; }
-.bs4-tw__node.is-opt rect { stroke: var(--bb-accent); stroke-width: 2; stroke-dasharray: none; fill: color-mix(in srgb, var(--bb-accent) 10%, var(--bb-surface)); animation: bs4glow 1.6s ease-in-out infinite; }
-.bs4-tw__node.is-opt text { fill: var(--bb-accent-2); }
-.bs4-tw__node.is-opt:hover rect, .bs4-tw__node.is-opt:focus-visible rect { fill: color-mix(in srgb, var(--bb-accent) 30%, var(--bb-surface)); }
-.bs4-tw__node:focus-visible rect { stroke: var(--bb-text); stroke-width: 2px; }
-.bs4-tw__edge.is-opt { stroke: var(--bb-accent); color: var(--bb-accent); stroke-dasharray: 5 4; animation: bs4dash 1s linear infinite; }
-@keyframes bs4glow { 50% { stroke-opacity: .45; } }
-@keyframes bs4dash { to { stroke-dashoffset: -18; } }
-.bs4-tw__mapwrap { border-top: 1px solid var(--bb-line); background: var(--bb-bg-2) radial-gradient(color-mix(in srgb, var(--bb-text) 9%, transparent) 1px, transparent 1px) 0 0 / 22px 22px; padding: 16px clamp(12px, 3vw, 28px) 18px; }
-.bs4-tw__maph { margin: 0 0 8px; font-size: 11px; letter-spacing: .16em;  color: var(--bb-dim); }
-.bs4-tw__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.bs4-tw__map { display: block; width: 100%; min-width: 760px; height: auto; color: var(--bb-line-strong); }
-.bs4-tw__edge { fill: none; stroke: currentColor; stroke-width: 1.5; transition: stroke .3s; }
-.bs4-tw__edge.is-walked { stroke: var(--bb-accent); color: var(--bb-accent); }
-.bs4-tw__node rect { fill: var(--bb-surface); stroke: var(--bb-line-strong); stroke-width: 1.2; transition: fill .3s, stroke .3s; }
-.bs4-tw__node text { font: 600 13px var(--bb-sans); pointer-events: none; fill: var(--bb-dim); }
-.bs4-tw__node.is-end rect { stroke-dasharray: 4 3; }
-.bs4-tw__node.is-seen rect { stroke: color-mix(in srgb, var(--bb-accent) 60%, transparent); }
-.bs4-tw__node.is-seen text { fill: var(--bb-text); }
-.bs4-tw__node.is-end.is-seen rect { stroke-dasharray: none; fill: color-mix(in srgb, var(--bb-accent) 14%, var(--bb-surface)); }
-.bs4-tw__node.is-on rect { stroke: var(--bb-accent); stroke-width: 2.5; fill: color-mix(in srgb, var(--bb-accent) 22%, var(--bb-surface)); }
-.bs4-tw__node.is-on text { fill: var(--bb-accent-2); }
-</style>
