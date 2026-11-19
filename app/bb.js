@@ -512,11 +512,11 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
   function initStage(root) {
     root.querySelectorAll('[data-bb-stage]').forEach(function (stage) {
       var layers = [].slice.call(stage.querySelectorAll('.bb-layer[data-depth]'));
-      var canvas = stage.querySelector('canvas.bb-stage__motes');
       stage.classList.add('is-ready');
       if (reduceMotion) return;
       var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
       var px = 0, py = 0, tx = 0, ty = 0, sy = 0, visible = true, raf = 0;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
       if (fine) {
         stage.addEventListener('pointermove', function (e) {
           var r = stage.getBoundingClientRect();
@@ -525,41 +525,86 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
         });
         stage.addEventListener('pointerleave', function () { tx = 0; ty = 0; });
       }
-      var ctx = canvas && canvas.getContext('2d'), motes = [], dpr = Math.min(window.devicePixelRatio || 1, 2);
-      var colors = canvas ? (canvas.getAttribute('data-colors') || '#ffffff').split(',') : [];
-      var dir = canvas && canvas.getAttribute('data-dir') === 'down' ? 1 : -1;
-      function newMote(anywhere) {
-        var w = canvas.width, h = canvas.height;
-        return {
-          x: Math.random() * w, y: anywhere ? Math.random() * h : (dir < 0 ? h + 10 : -10),
-          r: (Math.random() * 2.2 + 0.6) * dpr, s: (Math.random() * 0.35 + 0.12) * dpr,
-          sway: Math.random() * Math.PI * 2, z: Math.random(),
-          c: colors[Math.floor(Math.random() * colors.length)].trim(), a: Math.random() * 0.5 + 0.35
+      var fields = [].slice.call(stage.querySelectorAll('canvas.bb-stage__motes')).map(function (canvas) {
+        var f = {
+          canvas: canvas, ctx: canvas.getContext('2d'), motes: [],
+          kind: canvas.getAttribute('data-kind') || 'glow',
+          dir: canvas.getAttribute('data-dir') || 'up',
+          scale: parseFloat(canvas.getAttribute('data-size') || '1'),
+          colors: (canvas.getAttribute('data-colors') || '#ffffff').split(',').map(function (c) { return c.trim(); })
         };
-      }
-      function size() {
-        if (!canvas) return;
-        canvas.width = canvas.offsetWidth * dpr; canvas.height = canvas.offsetHeight * dpr;
-        var n = parseInt(canvas.getAttribute('data-count') || '60', 10);
-        if (window.innerWidth < 760) n = Math.round(n * 0.45);
-        motes = [];
-        for (var i = 0; i < n; i++) motes.push(newMote(true));
-      }
-      function drawMotes(t) {
-        var w = canvas.width, h = canvas.height;
-        ctx.clearRect(0, 0, w, h);
-        ctx.globalCompositeOperation = 'lighter';
-        motes.forEach(function (m, i) {
-          m.y += m.s * dir; m.x += Math.sin(t / 1400 + m.sway) * 0.25 * dpr;
-          if (m.y < -12 || m.y > h + 12) motes[i] = m = newMote(false);
-          var x = m.x + px * 40 * m.z * dpr, y = m.y + py * 24 * m.z * dpr;
-          var g = ctx.createRadialGradient(x, y, 0, x, y, m.r * 4);
-          g.addColorStop(0, m.c); g.addColorStop(1, 'transparent');
-          ctx.globalAlpha = m.a * (0.6 + 0.4 * Math.sin(t / 700 + m.sway * 3)); ctx.fillStyle = g;
-          ctx.beginPath(); ctx.arc(x, y, m.r * 4, 0, Math.PI * 2); ctx.fill();
-        });
-        ctx.globalAlpha = 1;
-      }
+        var flat = f.kind === 'petal' || f.kind === 'confetti';
+        f.make = function (anywhere) {
+          var w = canvas.width, h = canvas.height, k = f.kind, s = dpr * f.scale;
+          var m = {
+            x: Math.random() * w, y: Math.random() * h, z: Math.random(),
+            r: (Math.random() * 2.2 + 0.6) * s, v: (Math.random() * 0.35 + 0.12) * dpr,
+            sway: Math.random() * Math.PI * 2, rot: Math.random() * Math.PI * 2, spin: (Math.random() - 0.5) * 0.06,
+            c: f.colors[Math.floor(Math.random() * f.colors.length)], a: Math.random() * 0.5 + 0.35, life: Math.random()
+          };
+          if (k === 'snow') { m.r = (Math.random() * 1.8 + 0.6) * s; m.v = (Math.random() * 0.6 + 0.3) * dpr * (0.5 + m.z); }
+          if (k === 'ember') { m.r = (Math.random() * 1.3 + 0.5) * s; m.v = (Math.random() * 0.9 + 0.4) * dpr; }
+          if (k === 'bubble') { m.r = (Math.random() * 4 + 1.5) * s; m.v = (Math.random() * 0.5 + 0.25) * dpr * (0.6 + m.r / 6); }
+          if (flat) { m.r = (Math.random() * 3 + 3) * s; m.v = (Math.random() * 0.6 + 0.45) * dpr; m.a = Math.random() * 0.3 + 0.6; }
+          if (k === 'dust') { m.r = (Math.random() * 1 + 0.4) * s; m.v = (Math.random() * 0.25 + 0.08) * dpr; m.a *= 0.7; }
+          if (k === 'bokeh') { m.r = (Math.random() * 26 + 14) * s; m.v = (Math.random() * 0.12 + 0.04) * dpr; m.a = Math.random() * 0.18 + 0.06; }
+          if (!anywhere) {
+            if (f.dir === 'down') m.y = -20 * s; else if (f.dir === 'side') m.x = -20 * s; else m.y = h + 20 * s;
+          }
+          return m;
+        };
+        f.size = function () {
+          canvas.width = canvas.offsetWidth * dpr; canvas.height = canvas.offsetHeight * dpr;
+          var n = parseInt(canvas.getAttribute('data-count') || '60', 10);
+          if (window.innerWidth < 760) n = Math.round(n * 0.45);
+          f.motes = [];
+          for (var i = 0; i < n; i++) f.motes.push(f.make(true));
+        };
+        f.draw = function (t) {
+          var ctx = f.ctx, w = canvas.width, h = canvas.height, k = f.kind, par = k === 'bokeh' ? 3 : 1;
+          ctx.clearRect(0, 0, w, h);
+          ctx.globalCompositeOperation = (flat || k === 'snow') ? 'source-over' : 'lighter';
+          f.motes.forEach(function (m, i) {
+            var wob = Math.sin(t / 1400 + m.sway);
+            if (f.dir === 'side') { m.x += m.v * 2.2; m.y += wob * 0.35 * dpr + 0.1 * dpr; }
+            else { m.y += m.v * (f.dir === 'down' ? 1 : -1); m.x += wob * (flat ? 0.7 : 0.25) * dpr + (k === 'snow' ? 0.15 * dpr : 0); }
+            m.rot += m.spin;
+            var pad = m.r * 5;
+            if (m.y < -pad || m.y > h + pad || m.x > w + pad || m.x < -pad) { f.motes[i] = m = f.make(false); }
+            var x = m.x + px * 40 * m.z * dpr * par, y = m.y + py * 24 * m.z * dpr * par;
+            ctx.globalAlpha = m.a;
+            if (flat) {
+              ctx.save(); ctx.translate(x, y); ctx.rotate(m.rot); ctx.scale(1, Math.abs(Math.sin(t / 500 + m.sway)) * 0.8 + 0.2);
+              ctx.fillStyle = m.c; ctx.beginPath();
+              if (k === 'petal') ctx.ellipse(0, 0, m.r, m.r * 0.55, 0, 0, Math.PI * 2); else ctx.rect(-m.r * 0.5, -m.r, m.r, m.r * 2);
+              ctx.fill(); ctx.restore(); return;
+            }
+            if (k === 'bubble') {
+              ctx.strokeStyle = m.c; ctx.lineWidth = dpr; ctx.globalAlpha = m.a * 0.7;
+              ctx.beginPath(); ctx.arc(x, y, m.r, 0, Math.PI * 2); ctx.stroke();
+              ctx.globalAlpha = m.a * 0.5; ctx.fillStyle = m.c;
+              ctx.beginPath(); ctx.arc(x - m.r * 0.35, y - m.r * 0.35, m.r * 0.22, 0, Math.PI * 2); ctx.fill(); return;
+            }
+            if (k === 'snow') {
+              ctx.fillStyle = m.c; ctx.globalAlpha = m.a * (0.4 + m.z * 0.6);
+              ctx.beginPath(); ctx.arc(x, y, m.r * (0.6 + m.z), 0, Math.PI * 2); ctx.fill(); return;
+            }
+            var rr = k === 'bokeh' ? m.r : m.r * 4;
+            if (k === 'ember') {
+              m.life += 0.004; if (m.life > 1) m.life = 0;
+              ctx.globalAlpha = m.a * Math.sin(m.life * Math.PI) * (0.7 + 0.3 * Math.sin(t / 90 + m.sway * 9));
+            } else if (k !== 'bokeh') ctx.globalAlpha = m.a * (0.6 + 0.4 * Math.sin(t / 700 + m.sway * 3));
+            var g = ctx.createRadialGradient(x, y, 0, x, y, rr);
+            g.addColorStop(0, m.c);
+            if (k === 'bokeh') g.addColorStop(0.7, m.c);
+            g.addColorStop(1, 'transparent');
+            ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, rr, 0, Math.PI * 2); ctx.fill();
+            if (k === 'ember') { ctx.fillStyle = '#fff3d6'; ctx.beginPath(); ctx.arc(x, y, m.r * 0.7, 0, Math.PI * 2); ctx.fill(); }
+          });
+          ctx.globalAlpha = 1;
+        };
+        return f;
+      });
       function frame(t) {
         raf = 0;
         if (!visible) return;
@@ -569,7 +614,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
           var d = parseFloat(l.getAttribute('data-depth')) || 0;
           l.style.transform = 'translate3d(' + (-px * 60 * d).toFixed(1) + 'px,' + (-py * 34 * d + sy * (0.35 - d * 0.3)).toFixed(1) + 'px,0)';
         });
-        if (ctx) drawMotes(t);
+        fields.forEach(function (f) { f.draw(t); });
         raf = requestAnimationFrame(frame);
       }
       if ('IntersectionObserver' in window) {
@@ -578,8 +623,9 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
           if (visible && !raf) raf = requestAnimationFrame(frame);
         }).observe(stage);
       }
-      size();
-      window.addEventListener('resize', size);
+      function sizeAll() { fields.forEach(function (f) { f.size(); }); }
+      sizeAll();
+      window.addEventListener('resize', sizeAll);
       raf = requestAnimationFrame(frame);
     });
   }
