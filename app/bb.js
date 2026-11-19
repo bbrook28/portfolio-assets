@@ -462,6 +462,13 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
   function initCine(root) {
     var pg = document.querySelector('.bb-page[data-title]');
     if (pg) document.title = pg.getAttribute('data-title');
+    var desc = document.querySelector('.bb-page[data-description]');
+    if (desc) {
+      var m = document.querySelector('meta[name="description"]');
+      if (!m) { m = document.createElement('meta'); m.name = 'description'; document.head.appendChild(m); }
+      m.content = desc.getAttribute('data-description');
+    }
+    document.querySelectorAll('.item-pagination').forEach(function (el) { el.remove(); });
     var header = document.querySelector('.bb-header');
     if (header) {
       var solid = function () { header.classList.toggle('is-solid', window.scrollY > 40 || !document.querySelector('.cine-hero')); };
