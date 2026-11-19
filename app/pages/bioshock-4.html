@@ -1,23 +1,13 @@
 <div class="bb-page cine bs4" data-title="BioShock 4 · Ben Brook" data-description="Level Designer on BioShock 4 at Cloud Chamber (2K), 2024 to 2025: locations, missions and quests for the first two regions in Unreal Engine 5." style="--bb-accent:#e9b04f">
 
-  <section class="cine-hero bb-stage hero-bioshock-4" data-bb-stage>
-    <div class="bb-stage__layers">
-      <div class="bb-layer" data-depth="0.05" aria-hidden="true"><img class="bb-layer__fill bb-layer__fill--far" data-bb-src="covers/bioshock.jpg" alt=""></div>
-      <div class="bb-layer bb-layer--main" data-depth="0.14"><img class="bb-layer__fill bb-idle-pan" loading="eager" fetchpriority="high" data-bb-src="covers/bioshock.jpg" alt="BioShock franchise art"></div>
-      <div class="bb-layer" data-depth="0.2" aria-hidden="true"><span class="bb-fx bb-caustic"></span></div>
-      <div class="bb-layer" data-depth="0.28" aria-hidden="true"><span class="bb-fx bb-rays"></span></div>
-      <div class="bb-layer" data-depth="0.45" aria-hidden="true"><canvas class="bb-stage__motes" data-kind="bubble" data-colors="#bfeaff,#e9b04f" data-count="50" data-dir="up"></canvas></div>
-      <div class="bb-layer bb-layer--wide-only" data-depth="0.9" aria-hidden="true"><canvas class="bb-stage__motes" data-kind="bokeh" data-colors="#e9b04f,#7fd4ff" data-count="9" data-dir="up" data-size="1.3"></canvas></div>
-    </div>
+  <section class="cine-hero cine-hero--plain">
     <div class="cine-hero__in">
-      <span class="cine-label">Cloud Chamber · 2K · 2024–2025</span>
+      <span class="cine-label">Cloud Chamber · 2K · In development</span>
       <h1 class="cine-d">BioShock 4</h1>
       <p class="cine-hero__sub">Level design on the first two regions of the next BioShock, at Cloud Chamber.</p>
       <div class="cine-facts">
-        <div><b>3 choices</b><span>6 outcomes in one side quest</span></div>
         <div><b>2 regions</b><span>the first two in the game</span></div>
-        <div><b>Alpha</b><span>missions taken from paper to Alpha</span></div>
-        <div><b>NDA</b><span>still unannounced</span></div>
+        <div><b>12 months</b><span>August 2024 to August 2025</span></div>
       </div>
     </div>
   </section>
@@ -35,47 +25,14 @@
     <h2 class="cine-d">A world that reacts</h2>
     <div class="bb-case">
       <div><b>The goal</b><p>Locations and quests where the world changes based on what the player does, and keeps changing after they leave.</p></div>
-      <div><b>What I did</b><p>I took missions from paper design and blockout through Alpha, built their encounters, and scripted the interaction chains in Blueprints myself, so fewer requests went to engineering. Most of it is under NDA, so below is one side quest with the names left out.</p></div>
+      <div><b>What I did</b><p>I took missions from paper design and blockout through Alpha, built their encounters, and scripted the interaction chains in Blueprints myself, so fewer requests went to engineering. Most of it is still under NDA.</p></div>
       <div><b>What I learned</b><p>How to tell a story in an immersive sim. Players can miss any part of it, so each quest's story had to bend around what they skip and still hold up on its own.</p></div>
     </div>
     <div class="cine-cards3 cine-cards3--4">
       <article><h3>Missions</h3><p>I took core narrative missions from paper design and blockout through Alpha, including their pacing and combat beats.</p></article>
       <article><h3>Encounters</h3><p>I built critical-path objectives, AI combat encounters and their layouts to the creative director's vision.</p></article>
-      <article><h3>Scripting</h3><p>I scripted gameplay moments and interaction chains in Blueprints myself, so fewer requests went to engineering.</p></article>
+      <article><h3>Scripting</h3><p>I scripted gameplay moments and interaction chains in Blueprints.</p></article>
       <article><h3>Polish</h3><p>I led iteration and late polish on our content with Art, Audio and Narrative.</p></article>
-    </div>
-  </section>
-
-  <section class="cine-sec">
-    <span class="cine-label">Side quest</span>
-    <h2 class="cine-d">The museum cache</h2>
-    <p class="cine-lede">Two rival groups are hunting for a supply cache hidden in an abandoned museum. Players can stumble into it at any point. What they do there decides what they find when they come back.</p>
-    <div class="cine-lanes">
-      <div class="cine-lane">
-        <div class="cine-lane__head"><span>01</span><h3>Leave them alone</h3><p>Walk away and come back later.</p></div>
-        <div class="cine-end"><b>They finished each other off</b><p>The rival group showed up while you were gone, and the two groups killed each other. The stash is still hidden.</p></div>
-        <div class="cine-end"><b>Beaten to it</b><p>The rivals cracked the clues. The hidden room is open, and empty.</p></div>
-      </div>
-      <div class="cine-lane">
-        <div class="cine-lane__head"><span>02</span><h3>Fight them</h3><p>Kill the group in the museum, and later the rivals too.</p></div>
-        <div class="cine-end"><b>A war you started</b><p>Killing both groups doesn't end it. On your third visit both factions retaliate, and you walk into a faction war you caused.</p></div>
-      </div>
-      <div class="cine-lane">
-        <div class="cine-lane__head"><span>03</span><h3>Take the stash</h3><p>Follow the clues to a secret door. The turret and the fuse box are tools along the way.</p></div>
-        <div class="cine-end"><b>Thieves fall out</b><p>Nobody sees you. Later each group accuses the other of stealing the stash, and they fight.</p></div>
-        <div class="cine-end"><b>Caught red-handed</b><p>They spot you with the stash, call for backup and try to kill you.</p></div>
-        <div class="cine-end"><b>Caught in the open</b><p>The group checking the noise or the fuse box finds you, and it turns into a fight. A hacked turret fights on your side.</p></div>
-      </div>
-    </div>
-    <p class="cine-note">Names left out and some details filled in. It's my design from development and may have changed since.</p>
-
-    <h3 class="cine-sub">The systems behind it</h3>
-    <div class="cine-list">
-      <div><b>Memory</b><p>Each choice changes the state you come back to, so consequences play out between visits.</p></div>
-      <div><b>Clues</b><p>Names and dates point to exhibits around the building and lead to a hidden switch for the secret door.</p></div>
-      <div><b>Security</b><p>Turrets can be destroyed, disarmed or hacked, and used to fight or to sneak.</p></div>
-      <div><b>Power</b><p>Cutting power at the fuse box shuts off security and the secret door. Enemies go to check the fuse box, which can mean a fight, but it also pulls them away from where you need to go.</p></div>
-      <div><b>Audio</b><p>I added a combat audio system where enemies react to their comrades' deaths with voice lines.</p></div>
     </div>
   </section>
 
@@ -94,6 +51,6 @@
     </div>
   </section>
 
-  <a class="cine-next" href="/projects/the-walking-dead-saints-and-sinners-chapter-2" style="--c:#ff5a3c"><img data-bb-src="covers/twd.jpg" alt=""><div><span class="cine-label">Next project</span><strong>The Walking Dead: Retribution</strong></div></a>
-  <p class="cine-credit">BioShock © 2K / Take-Two Interactive. Franchise art shown for context only.</p>
+  <a class="cine-next" href="/projects/the-walking-dead-saints-and-sinners-chapter-2" style="--c:#ff5a3c"><img data-bb-src="covers/twd.jpg" alt="" aria-hidden="true"><div><span class="cine-label">Next project</span><strong>The Walking Dead: Retribution</strong></div></a>
+  <p class="cine-credit">BioShock © 2K / Take-Two Interactive.</p>
 </div>

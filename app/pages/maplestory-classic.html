@@ -1,31 +1,23 @@
 <div class="bb-page cine fh" data-title="MapleStory Classic: Forgotten Hollow · Ben Brook" data-description="Game Designer on Forgotten Hollow, a new level 39 to 60 region for MapleStory Classic World (Nexon, 2026). Level design, quests and tools." style="--bb-accent:#a6e35f">
-<section class="cine-hero bb-stage fh-stage" data-bb-stage>
-  <div class="bb-stage__layers" aria-hidden="true">
-    <div class="bb-layer" data-depth="0.05"><img class="bb-layer__fill fh-stage__far" data-bb-src="fh/maps/dilapidated-tomb.webp" alt=""></div>
-    <div class="bb-layer" data-depth="0.15"><img class="bb-layer__fill bb-idle-pan fh-stage__town" data-bb-src="fh/maps/forgotten-hollow.webp" alt="" fetchpriority="high"></div>
-    <div class="bb-layer" data-depth="0.25"><span class="fh-stage__beam bb-idle-glow"></span></div>
-    <div class="bb-layer bb-layer--wide-only" data-depth="0.35"><span class="bb-stage__word">Hollow</span></div>
-    <div class="bb-layer" data-depth="0.45"><canvas class="bb-stage__motes" data-colors="#b9f27a,#7fe0c8,#c9a2ff,#ffe9a8" data-count="80" data-dir="up"></canvas></div>
-    <div class="bb-layer bb-layer--pixel" data-depth="0.6">
-      <span class="fh-sprite fh-sprite--zelya bb-idle-bob"><img data-bb-src="fh/npcs-hires/zelya.png" alt=""></span>
-      <span class="fh-sprite fh-sprite--glim bb-idle-bob-slow bb-layer--wide-only"><img data-bb-src="fh/npcs-hires/glimmer.png" alt=""></span>
-    </div>
-    <div class="bb-layer bb-layer--pixel" data-depth="0.85">
-      <span class="fh-sprite fh-sprite--shroom bb-idle-sway"><img data-bb-src="fh/mobs/glowshroom.png" alt=""></span>
-      <span class="fh-sprite fh-sprite--rot bb-idle-sway bb-layer--wide-only"><img data-bb-src="fh/mobs/rotten-mushroom.png" alt=""></span>
-    </div>
-  </div>
-  <div class="cine-hero__in">
+<section class="cine-hero fh-hero">
+  <div class="fh-hero__title">
     <span class="cine-label">MapleStory Classic World · Nexon America · 2026</span>
     <h1 class="cine-d fh-title">Forgotten Hollow</h1>
-    <p class="cine-hero__sub">A new level 39 to 60 region added to a live MMO, built to sit beside maps players have known for twenty years. Opened November 18, 2026.</p>
-    <div class="cine-facts">
+  </div>
+  <div class="fh-scene">
+    <img class="fh-scene__bg" data-bb-src="fh/maps/forgotten-hollow.webp" alt="The Forgotten Hollow town map" fetchpriority="high" loading="eager">
+    <span class="fh-px fh-px--zelya" style="--d:.15s"><img data-bb-src="fh/npcs-hires/zelya.png" alt="Zelya"></span>
+    <span class="fh-px fh-px--tamya" style="--d:.35s"><img data-bb-src="fh/npcs-hires/tamya.png" alt="Tamya"></span>
+    <span class="fh-px fh-px--shroom" style="--d:.55s"><img data-bb-src="fh/mobs/glowshroom.png" alt="Glowshroom"></span>
+  </div>
+</section>
+<section class="cine-sec fh-hero__after">
+  <p class="cine-hero__sub">A new level 39 to 60 region added to a live MMO, built to sit beside maps players have known for twenty years. Opened November 18, 2026.</p>
+  <div class="cine-facts fh-facts">
       <div><b>13 of 27</b><span>maps in the region built or rebuilt by me</span></div>
       <div><b>34</b><span>quests in 7 questlines</span></div>
       <div><b>4</b><span>tools shipped to the team</span></div>
       <div><b>3</b><span>launches in 5 months: Founder's Access, Grand Launch, Forgotten Hollow</span></div>
-    </div>
-  </div>
 </section>
 
 <section class="cine-sec">
@@ -58,7 +50,7 @@
       <img data-bb-src="fh/maps-annotated/decayed-tunnel-3.webp" alt="Decayed Tunnel III as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Decayed Tunnel III as shipped">
       <img data-bb-src="fh/maps-annotated/lingering-regret.webp" alt="Lingering Regret as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Lingering Regret as shipped">
     </div>
-    <figcaption class="bb-figcap">Where the spawns went. Three Myewood spawns moved off the bottom floor of Decayed Tunnel III (left) to Lingering Regret next door (right), taking that floor from 75% to 47% crowded. Both maps as shipped; tap to see them full size.</figcaption>
+    <figcaption class="bb-figcap">Where the spawns went. Three Myewood spawns moved off the bottom floor of Decayed Tunnel III (top) to Lingering Regret next door (bottom), taking that floor from 75% to 47% crowded. Both maps as shipped; tap to see them full size.</figcaption>
   </figure>
 </section>
 
@@ -207,27 +199,34 @@
 </div>
 
 <style>
-.fh-stage .fh-stage__far { filter: blur(14px) saturate(1.2) brightness(.45); transform: scale(1.15); }
-.fh-stage .fh-stage__town { object-position: 50% 62%; filter: saturate(1.05) brightness(.75); }
-.fh-stage__beam { left: 52%; top: -10%; width: 22%; height: 95%; background: linear-gradient(180deg, rgba(220,255,240,.32), rgba(185,242,122,.08) 55%, transparent); clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%); filter: blur(10px); mix-blend-mode: screen; }
-.fh-sprite img { display: block; width: 100%; height: auto; filter: drop-shadow(0 0 18px rgba(185,242,122,.35)); }
-.fh-sprite--zelya { right: 18%; top: 26%; width: clamp(70px, 7vw, 120px); }
-.fh-sprite--glim { right: 32%; top: 16%; width: clamp(60px, 5vw, 92px); opacity: .85; }
-.fh-sprite--shroom { right: 9%; bottom: 30%; width: clamp(70px, 7vw, 128px); }
-.fh-sprite--rot { right: 25%; bottom: 33%; width: clamp(90px, 9vw, 160px); filter: brightness(.8); }
-@media (max-width: 760px) {
-  .fh-sprite--zelya { right: 7%; top: 13%; width: 54px; }
-  .fh-sprite--shroom { right: 8%; top: 24%; bottom: auto; width: 44px; }
-}
+.fh-hero { min-height: 0 !important; display: block !important; background: #050805; padding-top: clamp(88px, 9vw, 120px); }
+.fh-hero::after { content: none !important; }
+.fh-hero__title { position: relative; z-index: 2; text-align: center; padding: 0 var(--bb-gutter); margin-bottom: calc(-1 * clamp(40px, 7vw, 120px)); animation: fh-in .6s ease-out both; }
+.fh-hero__title .cine-label { justify-content: center; }
+.fh-hero .fh-title { font-size: clamp(54px, 10vw, 172px) !important; margin: 10px 0 0; text-shadow: 0 4px 40px rgba(0,0,0,.8); }
+.fh-scene { position: relative; width: max(100%, 1060px); left: 50%; transform: translateX(-50%); aspect-ratio: 2000 / 1049; }
+.fh-scene__bg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.fh-px { position: absolute; transform: translate(-50%, -100%); animation: fh-in .6s ease-out var(--d) both; }
+.fh-px img { display: block; image-rendering: pixelated; height: auto; animation: fh-bob 4s ease-in-out calc(var(--d) + 1s) infinite; }
+.fh-px--zelya { left: 30.5%; top: 70.8%; } .fh-px--zelya img { width: calc(232px / 2); }
+.fh-px--tamya { left: 77%; top: 72.5%; } .fh-px--tamya img { width: calc(256px / 2); }
+.fh-px--shroom { left: 45%; top: 86.6%; } .fh-px--shroom img { width: 128px; animation-duration: 5s; }
+@media (max-width: 760px) { .fh-scene { width: max(100%, 620px); } .fh-px--zelya img { width: 58px; } .fh-px--tamya { display: none; } .fh-px--shroom img { width: 64px; } }
+@keyframes fh-in { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
+@keyframes fh-bob { 50% { translate: 0 -6px; } }
+@media (prefers-reduced-motion: reduce) { .fh-hero__title, .fh-px, .fh-px img { animation: none !important; } }
+.fh-hero__after { padding-top: clamp(28px, 4vw, 48px) !important; }
+.fh-hero__after .cine-hero__sub { max-width: 760px; color: var(--bb-text); }
+.fh-facts { margin-top: clamp(20px, 3vw, 32px); }
 .fh-numbers { margin-top: clamp(28px, 4vw, 48px); }
 .fh-numbers > div { background: var(--bb-bg-2); }
 .fh-h3 { font: 800 clamp(26px, 2.6vw, 38px)/1 var(--bb-display); font-stretch: 72%; text-transform: uppercase; margin: 8px 0 12px; }
-.fh-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.fh-pair img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #0e0e10; display: block; border-radius: var(--bb-radius); cursor: zoom-in; }
+.fh-pair { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.fh-pair img { width: 100%; height: auto; padding: clamp(8px, 1.2vw, 16px); background: #2b2e33; display: block; border-radius: var(--bb-radius); cursor: zoom-in; }
 @media (max-width: 640px) { .fh-pair { grid-template-columns: 1fr; } }
 .fh-zones { margin: clamp(28px, 3.4vw, 48px) 0 0; }
 .fh-zones__pic { position: relative; }
-.fh-zones__pic img { width: 100%; height: auto; display: block; border-radius: var(--bb-radius); cursor: zoom-in; }
+.fh-zones__pic img { width: 100%; height: auto; display: block; box-shadow: 0 0 0 12px #2b2e33; border-radius: var(--bb-radius); cursor: zoom-in; }
 .fh-pin, .fh-zones__key b { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--bb-accent); color: #0b0b0c; font: 800 15px/1 var(--bb-sans); }
 .fh-pin { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px rgba(11,11,12,.55); pointer-events: none; }
 .fh-zones__key { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; max-width: 860px; }
