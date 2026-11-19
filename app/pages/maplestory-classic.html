@@ -54,15 +54,11 @@
     <li><b>Every change gets a before and after.</b>Rendered images go to QA with each map edit.</li>
   </ul>
   <figure class="fh-craft-fig">
-    <div class="bb-compare fh-compare" aria-label="Decayed Tunnel III before and after the spawn changes">
-      <img data-bb-src="fh/craft/ledge-after.webp" alt="Decayed Tunnel III after the change">
-      <div class="bb-compare__top"><img data-bb-src="fh/craft/ledge-before.webp" alt="Decayed Tunnel III before the change"></div>
-      <div class="bb-compare__handle"></div>
-      <span class="bb-compare__label bb-compare__label--l">Before</span>
-      <span class="bb-compare__label bb-compare__label--r">After</span>
-      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+    <div class="fh-pair">
+      <img data-bb-src="fh/maps-annotated/decayed-tunnel-3.webp" alt="Decayed Tunnel III as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Decayed Tunnel III as shipped">
+      <img data-bb-src="fh/maps-annotated/lingering-regret.webp" alt="Lingering Regret as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Lingering Regret as shipped">
     </div>
-    <figcaption class="bb-figcap">Decayed Tunnel III, from the same audit: a Myewood spawn moved off a ledge too small for it.</figcaption>
+    <figcaption class="bb-figcap">Where the spawns went. Three Myewood spawns moved off the bottom floor of Decayed Tunnel III (left) to Lingering Regret next door (right), taking that floor from 75% to 47% crowded. Both maps as shipped; tap to see them full size.</figcaption>
   </figure>
 </section>
 
@@ -88,14 +84,26 @@
   <div class="bb-case">
     <div><b>The problem</b><p>The first versions of the maps went into a team playtest at the end of July. Two things came up again and again: how many monsters each floor had, and whether every class could hunt there. Some players camped a single platform for hours, which I hadn't planned for coming from single-player games.</p></div>
     <div><b>What I did</b><p>I rebuilt Precipice of Darkness the same night from what I had watched. Then I wrote a map standard for the whole region: maps had to work for solo players, parties and crowds; have one clear main route plus alternates and shortcuts; give players safe places to rest and regroup; and never trap players, pets or dropped items. I broke it into a checklist per map and reworked seven maps against it in three weeks, some from the ground up.</p></div>
-    <div><b>Example: Hanging Gardens of Rot</b><p>The bottom path became a travel corridor with no monsters on it. The upper right became the hunting area, with a second route up and a drop-down shortcut back. The camp in the lower left became a safe zone with room for a party to stand. Every platform got a way in and a way out. Before launch I added 11 spawn points up top so the climb was worth making.</p></div>
+    <div><b>Example: Hanging Gardens of Rot</b><p>Every platform got a way in and a way out, and the map was split by job, marked below. Before launch I added 11 spawn points up top so the climb was worth making.</p></div>
   </div>
-  <div class="cine-gallery cine-gallery--slides">
-    <figure class="is-wide"><img data-bb-src="fh/maps-annotated/hanging-gardens-of-rot.webp" alt="Hanging Gardens of Rot as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Hanging Gardens of Rot as shipped"><figcaption>Hanging Gardens of Rot, as shipped</figcaption></figure>
-    <figure><img data-bb-src="fh/maps-annotated/precipice-of-darkness.webp" alt="Precipice of Darkness with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Precipice of Darkness, Daniel's camp"><figcaption>Precipice of Darkness</figcaption></figure>
-    <figure><img data-bb-src="fh/maps-annotated/decayed-tunnel-3.webp" alt="Decayed Tunnel III with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Decayed Tunnel III, Jaime's camp"><figcaption>Decayed Tunnel III</figcaption></figure>
+  <figure class="fh-zones">
+    <div class="fh-zones__pic">
+      <img data-bb-src="fh/maps-annotated/hanging-gardens-of-rot.webp" alt="Hanging Gardens of Rot as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Hanging Gardens of Rot as shipped">
+      <span class="fh-pin" style="left:46%;top:91%">1</span>
+      <span class="fh-pin" style="left:80%;top:27%">2</span>
+      <span class="fh-pin" style="left:27%;top:41%">3</span>
+    </div>
+    <ol class="fh-zones__key">
+      <li><b>1</b>The bottom path is a travel corridor with no monsters on it.</li>
+      <li><b>2</b>The upper right is the hunting area, with a second route up and a drop-down shortcut back.</li>
+      <li><b>3</b>Tamya's camp is a safe zone with room for a party to stand.</li>
+    </ol>
+  </figure>
+  <div class="fh-pair" style="margin-top:clamp(24px,3vw,40px)">
+    <figure style="margin:0"><img data-bb-src="fh/maps-annotated/precipice-of-darkness.webp" alt="Precipice of Darkness as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Precipice of Darkness as shipped"><figcaption class="bb-figcap">Precipice of Darkness, the map I rebuilt the night of the playtest.</figcaption></figure>
+    <figure style="margin:0"><img data-bb-src="fh/maps-annotated/perilous-descent-3.webp" alt="Perilous Descent III as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Perilous Descent III as shipped"><figcaption class="bb-figcap">Perilous Descent III, in the Deep Passage.</figcaption></figure>
   </div>
-  <p class="cine-hint">Footholds, ladders, portals and spawn points drawn on from the map data. Tap a map to see it full size.</p>
+  <p class="cine-hint">Footholds, ladders, portals and spawn points are drawn on from the map data. Tap a map to see it full size.</p>
 </section>
 
 <section class="cine-sec">
@@ -103,7 +111,7 @@
   <h2 class="cine-d">Tools I wrote for the team</h2>
   <p class="cine-lede">The game's data is edited by hand, and mistakes only show up in the client. I wrote four Python tools to catch them earlier, published them to the team's tool repository and documented them.</p>
   <div class="cine-cards3 cine-cards3--2">
-    <article><img data-bb-src="fh/maps-annotated/lingering-regret.webp" alt="Lingering Regret drawn with footholds, portals and spawns"><h3>MapView</h3><p>Draws any map from the game data, clean or with footholds, portals and spawns, and renders a before and after of each change. Flags floors that run past the camera, walls too close to portals, drop-downs through solid rock and overcrowded floors. It caught small problems early, which cut two or three passes from QA and spared me several balance passes of my own. Every map image on this page came from it.</p></article>
+    <article><img data-bb-src="fh/maps-annotated/the-end-of-fleeting-light.webp" alt="The End of Fleeting Light drawn with footholds, portals and spawns"><h3>MapView</h3><p>Draws any map from the game data, clean or with footholds, portals and spawns, and renders a before and after of each change. Flags floors that run past the camera, walls too close to portals, drop-downs through solid rock and overcrowded floors. It caught small problems early, which cut two or three passes from QA and spared me several balance passes of my own. Every map image on this page came from it.</p></article>
     <article><div class="fh-sprites"><img data-bb-src="fh/npcs-hires/luma.png" alt="Luma"><img data-bb-src="fh/npcs-hires/nyroth.png" alt="Nyroth"><img data-bb-src="fh/npcs-hires/jaime-the-explorer.png" alt="Jaime the Explorer"><img data-bb-src="fh/npcs-hires/daniel-the-scholar.png" alt="Daniel the Scholar"></div><h3>NPC Hi-Res</h3><p>Exports NPC, monster and item sprites at four times their size, as PNGs, layered PSDs and pose sheets, plus a reference pack for outside artists. The marketing team used it instead of spending days digging through files for art.</p></article>
     <article><h3>Quest Tool</h3><p>Compares each quest's written spec on the wiki with the quest data and lists every place they disagree. Its tester runs test plans through quests and party quests in a local client. Writing a plan and running it myself saved tens of hours.</p></article>
     <article><h3>Dev Tool</h3><p>One window that sets up and starts the local servers and test client for a playtest, and saves hours of syncing across every repository.</p></article>
@@ -213,6 +221,18 @@
 .fh-numbers { margin-top: clamp(28px, 4vw, 48px); }
 .fh-numbers > div { background: var(--bb-bg-2); }
 .fh-h3 { font: 800 clamp(26px, 2.6vw, 38px)/1 var(--bb-display); font-stretch: 72%; text-transform: uppercase; margin: 8px 0 12px; }
+.fh-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fh-pair img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #0e0e10; display: block; border-radius: var(--bb-radius); cursor: zoom-in; }
+@media (max-width: 640px) { .fh-pair { grid-template-columns: 1fr; } }
+.fh-zones { margin: clamp(28px, 3.4vw, 48px) 0 0; }
+.fh-zones__pic { position: relative; }
+.fh-zones__pic img { width: 100%; height: auto; display: block; border-radius: var(--bb-radius); cursor: zoom-in; }
+.fh-pin, .fh-zones__key b { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--bb-accent); color: #0b0b0c; font: 800 15px/1 var(--bb-sans); }
+.fh-pin { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px rgba(11,11,12,.55); pointer-events: none; }
+.fh-zones__key { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; max-width: 860px; }
+.fh-zones__key li { display: flex; gap: 12px; align-items: center; font-size: clamp(15px, 1.15vw, 17px); color: var(--bb-text); }
+.fh-zones__key b { flex: none; width: 26px; height: 26px; font-size: 13px; }
+@media (max-width: 640px) { .fh-pin { width: 22px; height: 22px; font-size: 12px; } }
 .fh-craft-fig { margin: clamp(32px, 4vw, 56px) 0 0; max-width: 1100px; }
 .fh-compare { aspect-ratio: 1599 / 711; border-radius: var(--bb-radius); overflow: hidden; }
 .fh-split5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
