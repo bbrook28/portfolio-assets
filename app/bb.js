@@ -516,6 +516,14 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       }
     });
   }
+  function initHero(root) {
+    root.querySelectorAll('[data-sh-hero]').forEach(function (h) {
+      var done = function () { h.classList.add('is-done'); };
+      if (document.hidden || reduceMotion) return done();
+      setTimeout(done, 4200);
+      document.addEventListener('visibilitychange', function () { if (document.hidden) done(); });
+    });
+  }
   function initStage(root) {
     root.querySelectorAll('[data-bb-stage]').forEach(function (stage) {
       var layers = [].slice.call(stage.querySelectorAll('.bb-layer[data-depth]'));
@@ -650,6 +658,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     initNoZoom(root);
     initQuietVideos(root);
     initStage(root);
+    initHero(root);
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion, lightbox: initLightbox }); } catch (err) { console.error(err); }
     });
