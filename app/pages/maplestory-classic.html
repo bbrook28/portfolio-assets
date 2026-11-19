@@ -1,28 +1,50 @@
 <div class="bb-page cine fh" data-title="MapleStory Classic: Forgotten Hollow · Ben Brook" data-description="Game Designer on Forgotten Hollow, a new level 39 to 60 region for MapleStory Classic World (Nexon, 2026). Level design, quests and tools." style="--bb-accent:#a6e35f">
-<section class="cine-hero fh-hero">
+<section class="cine-hero fh-hero" data-fh-hero>
+  <span class="fh-hero__flare" aria-hidden="true"></span>
   <div class="fh-hero__title">
     <span class="cine-label">MapleStory Classic World · Nexon America · 2026</span>
     <h1 class="cine-d fh-title">Forgotten Hollow</h1>
   </div>
-  <div class="fh-scene">
-    <img class="fh-scene__bg" data-bb-src="fh/maps/forgotten-hollow.webp" alt="The Forgotten Hollow town map" fetchpriority="high" loading="eager">
-    <span class="fh-px fh-px--zelya" style="--d:.15s"><img data-bb-src="fh/npcs-hires/zelya.png" alt="Zelya"></span>
-    <span class="fh-px fh-px--tamya" style="--d:.35s"><img data-bb-src="fh/npcs-hires/tamya.png" alt="Tamya"></span>
-    <span class="fh-px fh-px--shroom" style="--d:.55s"><img data-bb-src="fh/mobs/glowshroom.png" alt="Glowshroom"></span>
+  <div class="fh-stagewrap">
+    <span class="fh-hero__word" aria-hidden="true">Hollow</span>
+    <div class="fh-cast">
+      <figure class="fh-cast__m" style="--w:64;--h:86;--pb:10;--i:0"><img data-bb-src="fh/mobs/glowshroom.png" alt="Glowshroom" width="64" height="86"><figcaption>Glowshroom</figcaption></figure>
+      <figure class="fh-cast__m fh-cast__m--wide fh-cast__m--xl" style="--w:56;--h:62;--pb:0;--i:1"><img data-bb-src="fh/npcs/glimmer.png" alt="Glimmer" width="56" height="62"><figcaption>Glimmer</figcaption></figure>
+      <figure class="fh-cast__m" style="--w:47;--h:67;--pb:0;--i:2"><img data-bb-src="fh/npcs/jaime-the-explorer.png" alt="Jaime the Explorer" width="47" height="67"><figcaption>Jaime</figcaption></figure>
+      <figure class="fh-cast__m fh-cast__m--wide fh-cast__m--xl" style="--w:53;--h:70;--pb:0;--i:3"><img data-bb-src="fh/npcs/daniel-the-scholar.png" alt="Daniel the Scholar" width="53" height="70"><figcaption>Daniel</figcaption></figure>
+      <figure class="fh-cast__m fh-cast__m--wide fh-cast__m--xl" style="--w:53;--h:73;--pb:0;--i:4"><img data-bb-src="fh/npcs/myen.png" alt="Myen" width="53" height="73"><figcaption>Myen</figcaption></figure>
+      <figure class="fh-cast__m fh-cast__m--bob" style="--w:58;--h:73;--pb:0;--i:5;--dur:6s"><img data-bb-src="fh/npcs/zelya.png" alt="Zelya" width="58" height="73"><figcaption>Zelya</figcaption></figure>
+      <figure class="fh-cast__m" style="--w:64;--h:80;--pb:0;--i:6"><img data-bb-src="fh/npcs/tamya.png" alt="Tamya" width="64" height="80"><figcaption>Tamya</figcaption></figure>
+      <figure class="fh-cast__m fh-cast__m--wide fh-cast__m--bob" style="--w:153;--h:161;--pb:0;--i:7;--dur:9s"><img data-bb-src="fh/npcs/myra.png" alt="Myra" width="153" height="161"><figcaption>Myra</figcaption></figure>
+      <figure class="fh-cast__m fh-cast__boss" style="--w:164;--h:149;--pb:8"><img data-bb-src="fh/mobs/rotten-mushmom.png" alt="Rotten Mushmom" width="164" height="149"><figcaption>Rotten Mushmom</figcaption></figure>
+    </div>
   </div>
-</section>
-<section class="cine-sec fh-hero__after">
-  <p class="cine-hero__sub">A new level 39 to 60 region added to a live MMO, built to sit beside maps players have known for twenty years. Opened November 18, 2026.</p>
-  <div class="cine-facts fh-facts">
+  <div class="fh-hero__foot">
+    <p class="cine-hero__sub fh-hero__sub">A new level 39 to 60 region added to a live MMO, built to sit beside maps players have known for twenty years. Opened November 18, 2026.</p>
+    <div class="cine-facts fh-facts">
       <div><b>13 of 27</b><span>maps in the region built or rebuilt by me</span></div>
       <div><b>34</b><span>quests in 7 questlines</span></div>
       <div><b>4</b><span>tools shipped to the team</span></div>
-      <div><b>3</b><span>launches in 5 months: Founder's Access, Grand Launch, Forgotten Hollow</span></div>
+      <div><b>3</b><span>launches in 6 weeks: Founder's Access, Grand Launch, Forgotten Hollow</span></div>
+    </div>
+  </div>
 </section>
+<section class="cine-sec fh-hero__after">
+</section>
+<script>
+(function () {
+  var h = document.querySelector('[data-fh-hero]');
+  if (!h) return;
+  var done = function () { h.classList.add('is-done'); };
+  if (document.hidden || matchMedia('(prefers-reduced-motion: reduce)').matches) done();
+  else setTimeout(done, 4200);
+  document.addEventListener('visibilitychange', function () { if (document.hidden) done(); });
+})();
+</script>
 
 <section class="cine-sec">
   <dl class="bb-role">
-    <dt>Role</dt><dd>Game Designer, June to November 2026</dd>
+    <dt>Role</dt><dd>Game Designer, May to November 2026</dd>
     <dt>Team</dt><dd>8 developers in the US: 3 designers (my lead, a combat and abilities designer, and me), 3 engineers, a user researcher and a producer, plus 2 to 4 developers at Nexon Korea</dd>
     <dt>What I owned</dt><dd>Level layout, monster placement, quests, NPCs, items, and the tools used to check all of it. I worked from my lead's initial concept and took the region through QA to launch.</dd>
   </dl>
@@ -34,13 +56,13 @@
   <div class="bb-case">
     <div><b>The problem</b><p>New maps in a classic game get compared with the old ones, and "this feels off" is not something a team can review. I needed a standard that anyone could check.</p></div>
     <div><b>What I did</b><p>I wrote a tool, MapView, that reads map data and measures it. I ran it over about 90 of Nexon's original Victoria Island maps and recorded what they actually do: how wide the platform is under a large monster, how close monsters spawn to NPCs and portals, and how much of each floor is taken up by monsters alive at once. Those numbers became the region's rulebook.</p></div>
-    <div><b>What the data changed</b><p>My first rules were too cautious. I had big monsters restricted to 700 px platforms; the originals use platforms as small as 355 px, so the rule became 350. I had a 200 px buffer around NPCs; the originals spawn monsters 92 px away and right on top of portals, so the rule became 90. Where my rule and the original maps disagreed, the original maps won.</p></div>
+    <div><b>What the data changed</b><p>My first rules were too cautious. I had limited big monsters to platforms about twice as wide as the smallest the original maps use, and I kept monsters much further from NPCs than the originals do. I loosened both to match. Where my rule and the original maps disagreed, the original maps won.</p></div>
     <div><b>The result</b><p>I audited every map in the region against the rulebook three weeks before launch. Seven maps were too empty, so I raised their spawn rates and added 59 spawn points. Quest camps were cleared of monsters. One floor of Decayed Tunnel III was 75% crowded; moving three spawns to the next map brought it to 47% without changing the kill count a quest depends on. Every change went to QA with a rendered before and after.</p></div>
   </div>
   <ul class="bb-rules">
     <li><b>Spawns run weak to strong.</b>The level ceiling rises with depth.</li>
     <li><b>Camps stay clear.</b>No spawns on the floors under Jaime's, Daniel's and Tamya's camps.</li>
-    <li><b>Big monsters need big platforms.</b>Myewoods and Sporewoods only spawn on platforms 350 px or wider.</li>
+    <li><b>Big monsters need big platforms.</b>Big monsters only spawn on platforms as wide as the originals use.</li>
     <li><b>Crowding is measured.</b>Monsters alive at once per floor, compared with the original maps.</li>
     <li><b>Quest monsters keep their numbers.</b>A spawn can move maps, but a quest's total stays the same.</li>
     <li><b>Every change gets a before and after.</b>Rendered images go to QA with each map edit.</li>
@@ -58,7 +80,7 @@
   <div style="padding:0 var(--g)">
     <span class="cine-label">The route</span>
     <h2 class="cine-d">Entrance to dead end</h2>
-    <p class="cine-lede">Every map from the Ellinia entrance to Another Sanctuary, in travel order. The level ceiling climbs from 40 at the entrance to 59 at the dead end. A few maps along the way sit lower than the ones around them.</p>
+    <p class="cine-lede">Every map from the Ellinia entrance to Another Sanctuary, in travel order. The level ceiling climbs from 40 at the entrance to 59 at the dead end. The dips after the town are side maps, and Decayed Tunnel II drops to 47 on purpose, as a short break before the deepest maps.</p>
   </div>
   <div class="cine-route"><div class="cine-route__scroll" tabindex="0" aria-label="Maps in route order, scroll sideways"><div class="cine-route__track" data-fh-route></div></div></div>
   <div class="cine-legend">
@@ -75,7 +97,7 @@
   <h2 class="cine-d">Rebuilding the region after the first playtest</h2>
   <div class="bb-case">
     <div><b>The problem</b><p>The first versions of the maps went into a team playtest at the end of July. Two things came up again and again: how many monsters each floor had, and whether every class could hunt there. Some players camped a single platform for hours. In an MMO a map is somewhere people live, and my first layouts were built for passing through.</p></div>
-    <div><b>What I did</b><p>I rebuilt Precipice of Darkness the same night from what I had watched. Then I wrote a map standard for the whole region: maps had to work for solo players, parties and crowds; have one clear main route plus alternates and shortcuts; give players safe places to rest and regroup; and never trap players, pets or dropped items. I broke it into a checklist per map and reworked seven maps against it in three weeks, some from the ground up.</p></div>
+    <div><b>What I did</b><p>I rebuilt Precipice of Darkness the same night from what I had watched. Then I wrote a map standard for the whole region: maps had to work for solo players, parties and crowds; have one clear main route plus alternates and shortcuts; give players safe places to rest and regroup; and never trap players, pets or dropped items. For class balance, my lead set a rule of no safe hunting spots: no place where a ranged class can hit a monster that cannot reach them. I reviewed every map for those spots and fixed each one by spawning monsters on that platform or connecting it with a rope or ladder. I also removed small platforms that had no purpose and evened out spawns floor by floor, so no single platform was the best place to stand. I broke it into a checklist per map and reworked seven maps against it in three weeks, some from the ground up.</p></div>
     <div><b>Example: Hanging Gardens of Rot</b><p>Every platform got a way in and a way out, and the map was split by job, marked below. Before launch I added 11 spawn points up top so the climb was worth making.</p></div>
   </div>
   <figure class="fh-zones">
@@ -101,12 +123,12 @@
 <section class="cine-sec">
   <span class="cine-label">Tools</span>
   <h2 class="cine-d">Tools I wrote for the team</h2>
-  <p class="cine-lede">The game's data is edited by hand, and mistakes only show up in the client. I wrote four Python tools to catch them earlier, published them to the team's tool repository and documented them.</p>
+  <p class="cine-lede">The game's data is edited by hand, and mistakes only show up in the client. I wrote four Python tools to catch them earlier.</p>
   <div class="cine-cards3 cine-cards3--2">
-    <article><img data-bb-src="fh/maps-annotated/the-end-of-fleeting-light.webp" alt="The End of Fleeting Light drawn with footholds, portals and spawns"><h3>MapView</h3><p>Draws any map from the game data, clean or with footholds, portals and spawns, and renders a before and after of each change. Flags floors that run past the camera, walls too close to portals, drop-downs through solid rock and overcrowded floors. It caught small problems early, which cut two or three passes from QA. Every map image on this page came from it.</p></article>
-    <article><div class="fh-sprites"><img data-bb-src="fh/npcs-hires/luma.png" alt="Luma"><img data-bb-src="fh/npcs-hires/nyroth.png" alt="Nyroth"><img data-bb-src="fh/npcs-hires/jaime-the-explorer.png" alt="Jaime the Explorer"><img data-bb-src="fh/npcs-hires/daniel-the-scholar.png" alt="Daniel the Scholar"></div><h3>NPC Hi-Res</h3><p>Exports NPC, monster and item sprites at four times their size, as PNGs, layered PSDs and pose sheets, plus a reference pack for outside artists. The marketing team used it instead of spending days digging through files for art.</p></article>
-    <article><h3>Quest Tool</h3><p>Compares each quest's written spec on the wiki with the quest data and lists every place they disagree. Its tester runs test plans through quests and party quests in a local client. Writing a plan and running it myself saved tens of hours.</p></article>
-    <article><h3>Dev Tool</h3><p>One window that sets up and starts the local servers and test client for a playtest, and saves hours of syncing across every repository.</p></article>
+    <article><img data-bb-src="fh/maps-annotated/the-end-of-fleeting-light.webp" alt="The End of Fleeting Light drawn with footholds, portals and spawns"><h3>MapView</h3><p>Draws any map from the game data and renders a before and after of each change. It caught layout and crowding problems early, which cut two or three passes from QA. Every map image on this page came from it.</p></article>
+    <article><div class="fh-sprites"><img data-bb-src="fh/npcs-hires/luma.png" alt="Luma"><img data-bb-src="fh/npcs-hires/nyroth.png" alt="Nyroth"><img data-bb-src="fh/npcs-hires/jaime-the-explorer.png" alt="Jaime the Explorer"><img data-bb-src="fh/npcs-hires/daniel-the-scholar.png" alt="Daniel the Scholar"></div><h3>NPC Hi-Res</h3><p>Exports character and item sprites at four times their size for art requests. The marketing team used it instead of spending days digging through files for art.</p></article>
+    <article><h3>Quest Tool</h3><p>Checks each quest's data against its written design and lists where they disagree, then runs test plans through the quests. It saved tens of hours of manual testing.</p></article>
+    <article><h3>Dev Tool</h3><p>One window that sets up a playtest, which saves hours of setup.</p></article>
   </div>
   <p class="cine-hint" style="margin-top:28px">I also wrote the team's dialogue style guide, a quest data guide for new designers, and a decision log of every design ruling.</p>
 </section>
@@ -116,6 +138,7 @@
   <h2 class="cine-d">Seven questlines, one region</h2>
   <p class="cine-lede">A five-quest opening act brings players down from Ellinia. Five questlines then open on separate level gates between 39 and 55, so a player always has one line at their level and a reason to go one map deeper. Each line's objectives are placed to walk the player through maps they have not seen yet.</p>
   <p class="cine-lede">Classic World is a social grinding game, and other players can steal your kills. I was careful about where each objective sent people and how crowded those maps would get. I also kept the dialogue short, so players read it instead of clicking past it.</p>
+  <p class="cine-lede">Myra's quest asks for 50 Myewoods and 50 Sporewoods. Myewoods spawn across two neighbouring maps and Sporewoods across two deeper ones, so one quest spreads its players over four maps. Two other quests both needed Golden Stirges, which had only two spawns per map and were very slow to finish, so I tripled them to six per map by converting other spawns and left the monster totals unchanged.</p>
   <div class="cine-flow fh-flow" aria-label="Quest structure">
     <div class="cine-node cine-node--end">Ellinia<small>Grendel, Magic Library</small></div>
     <div class="cine-node cine-node--act">Shadow of the World Tree<small>Lv 39 · 5 quests, in order</small></div>
@@ -199,25 +222,54 @@
 </div>
 
 <style>
-.fh-hero { min-height: 0 !important; display: block !important; background: #050805; padding-top: clamp(88px, 9vw, 120px); }
+.fh-hero { --s: 1; min-height: 0 !important; display: block !important; position: relative; overflow: hidden; background: #0b0b0c; padding: clamp(96px, 9vw, 128px) 0 clamp(28px, 4vw, 48px); }
 .fh-hero::after { content: none !important; }
-.fh-hero__title { position: relative; z-index: 2; text-align: center; padding: 0 var(--bb-gutter); margin-bottom: calc(-1 * clamp(40px, 7vw, 120px)); animation: fh-in .6s ease-out both; }
+@media (min-width: 1180px) { .fh-hero { --s: 2; } }
+@media (min-width: 1180px) and (max-width: 1599px) { .fh-cast__m--xl { display: none; } }
+@media (min-width: 2300px) { .fh-hero { --s: 3; } }
+.fh-hero__title { position: relative; z-index: 4; text-align: center; padding: 0 var(--bb-gutter); }
 .fh-hero__title .cine-label { justify-content: center; }
-.fh-hero .fh-title { font-size: clamp(54px, 10vw, 172px) !important; margin: 10px 0 0; text-shadow: 0 4px 40px rgba(0,0,0,.8); }
-.fh-scene { position: relative; width: max(100%, 1060px); left: 50%; transform: translateX(-50%); aspect-ratio: 2000 / 1049; }
-.fh-scene__bg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-.fh-px { position: absolute; transform: translate(-50%, -100%); animation: fh-in .6s ease-out var(--d) both; }
-.fh-px img { display: block; image-rendering: pixelated; height: auto; animation: fh-bob 4s ease-in-out calc(var(--d) + 1s) infinite; }
-.fh-px--zelya { left: 30.5%; top: 70.8%; } .fh-px--zelya img { width: calc(232px / 2); }
-.fh-px--tamya { left: 77%; top: 72.5%; } .fh-px--tamya img { width: calc(256px / 2); }
-.fh-px--shroom { left: 45%; top: 86.6%; } .fh-px--shroom img { width: 128px; animation-duration: 5s; }
-@media (max-width: 760px) { .fh-scene { width: max(100%, 620px); } .fh-px--zelya img { width: 58px; } .fh-px--tamya { display: none; } .fh-px--shroom img { width: 64px; } }
-@keyframes fh-in { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
-@keyframes fh-bob { 50% { translate: 0 -6px; } }
-@media (prefers-reduced-motion: reduce) { .fh-hero__title, .fh-px, .fh-px img { animation: none !important; } }
-.fh-hero__after { padding-top: clamp(28px, 4vw, 48px) !important; }
-.fh-hero__after .cine-hero__sub { max-width: 760px; color: var(--bb-text); }
-.fh-facts { margin-top: clamp(20px, 3vw, 32px); }
+.fh-hero .fh-title { font-size: clamp(54px, 10vw, 172px) !important; margin: 10px 0 0; }
+.fh-hero__flare { position: absolute; z-index: 5; left: 50%; top: clamp(70px, 8vw, 110px); width: 60vw; height: 22vw; translate: -50% 0; background: radial-gradient(closest-side, rgba(235,255,210,.85), rgba(185,242,122,.25) 45%, transparent); opacity: 0; pointer-events: none; }
+.fh-stagewrap { position: relative; margin-top: clamp(18px, 3vw, 40px); padding: 0 var(--bb-gutter); }
+.fh-stagewrap::before { content: ''; position: absolute; left: 50%; bottom: -4%; width: min(1200px, 96vw); height: 46%; translate: -50% 0; background: radial-gradient(closest-side, rgba(150,230,110,.30), rgba(150,230,110,.10) 55%, transparent); pointer-events: none; }
+.fh-hero__word { position: absolute; z-index: 1; left: 50%; bottom: 22%; translate: -50% 0; font: 800 20vh/1 var(--bb-display); font-stretch: 72%; text-transform: uppercase; letter-spacing: -.01em; color: rgba(225,245,215,.13); white-space: nowrap; pointer-events: none; }
+.fh-cast { position: relative; z-index: 2; display: flex; justify-content: center; align-items: flex-end; gap: calc(var(--s) * 6px); }
+.fh-cast__m { margin: 0 0 calc(var(--pb) * var(--s) * -1px); position: relative; flex: none; text-align: center; }
+.fh-cast__m img { display: block; width: calc(var(--w) * var(--s) * 1px); height: calc(var(--h) * var(--s) * 1px); image-rendering: pixelated; }
+.fh-cast__m figcaption { position: absolute; left: 50%; top: 100%; translate: -50% calc(8px - var(--pb) * var(--s) * 1px); font: 600 11px/1.2 var(--bb-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--bb-muted); white-space: nowrap; }
+.fh-cast__boss { z-index: 3; margin-left: calc(var(--s) * -26px); }
+.fh-hero__foot { position: relative; z-index: 4; padding: clamp(44px, 5vw, 64px) var(--bb-gutter) 0; }
+.fh-hero__sub { max-width: 760px; margin-left: auto !important; margin-right: auto !important; text-align: center; color: var(--bb-text) !important; }
+.fh-hero__after:not(:has(*)) { display: none; }
+.fh-facts { max-width: 1100px; margin: clamp(22px, 3vw, 34px) auto 0 !important; }
+@media (max-width: 700px) {
+  .fh-cast__m--wide { display: none; }
+  .fh-cast__m figcaption { display: none; }
+  .fh-hero__word { font-size: 13vh; }
+  .fh-cast { gap: 2px; }
+  .fh-cast__boss { margin-left: -44px; }
+}
+
+.fh-cast__boss { animation: fh-boss .9s cubic-bezier(.16,1,.3,1) .3s both; }
+.fh-cast__m:not(.fh-cast__boss) { animation: fh-fade .3s ease-out calc(1s + var(--i) * 60ms) both; }
+.fh-hero__flare { animation: fh-flare .5s ease-out 1.5s both; }
+.fh-hero__title { animation: fh-resolve .5s ease-out 1.5s both; }
+.fh-hero__word { animation: fh-fade .7s ease-out 2s both; }
+.fh-hero__sub { animation: fh-wipe .4s ease-out 3s both; }
+.fh-facts { animation: fh-rise .5s cubic-bezier(.16,1,.3,1) 3.4s both; }
+.fh-cast__boss img, .fh-cast__m--bob img { animation: fh-drift 7s ease-in-out 4s infinite; }
+.fh-cast__m--bob img { animation-duration: var(--dur, 8s); }
+@keyframes fh-boss { from { opacity: 0; transform: translate(-55vw, -45vh) scale(2.6); } 25% { opacity: 1; } to { opacity: 1; transform: none; } }
+@keyframes fh-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fh-flare { 0% { opacity: 0; } 40% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes fh-resolve { from { opacity: 0; filter: blur(14px); scale: 1.06; } to { opacity: 1; filter: none; scale: 1; } }
+@keyframes fh-wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes fh-rise { from { opacity: 0; translate: 0 40px; } to { opacity: 1; translate: 0 0; } }
+@keyframes fh-drift { 50% { translate: 0 -5px; } }
+.fh-hero.is-done :is(.fh-cast__m, .fh-hero__flare, .fh-hero__title, .fh-hero__word, .fh-hero__sub, .fh-facts) { animation: none !important; }
+.fh-hero.is-done .fh-hero__flare { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .fh-hero *, .fh-hero { animation: none !important; } .fh-hero__flare { opacity: 0; } }
 .fh-numbers { margin-top: clamp(28px, 4vw, 48px); }
 .fh-numbers > div { background: var(--bb-bg-2); }
 .fh-h3 { font: 800 clamp(26px, 2.6vw, 38px)/1 var(--bb-display); font-stretch: 72%; text-transform: uppercase; margin: 8px 0 12px; }
