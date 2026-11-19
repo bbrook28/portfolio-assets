@@ -1,7 +1,7 @@
 <div class="bb-page cine fh" data-title="MapleStory Classic: Forgotten Hollow · Ben Brook" data-description="Game Designer on Forgotten Hollow, a new level 39 to 60 region for MapleStory Classic World (Nexon, 2026). Level design, quests and tools." style="--bb-accent:#a6e35f">
 <section class="cine-hero bb-stage fh-stage" data-bb-stage>
   <div class="bb-stage__layers" aria-hidden="true">
-    <div class="bb-layer" data-depth="0.05"><img class="bb-layer__fill fh-stage__far" data-bb-src="fh/maps/another-sanctuary.webp" alt=""></div>
+    <div class="bb-layer" data-depth="0.05"><img class="bb-layer__fill fh-stage__far" data-bb-src="fh/maps/dilapidated-tomb.webp" alt=""></div>
     <div class="bb-layer" data-depth="0.15"><img class="bb-layer__fill bb-idle-pan fh-stage__town" data-bb-src="fh/maps/forgotten-hollow.webp" alt="" fetchpriority="high"></div>
     <div class="bb-layer" data-depth="0.25"><span class="fh-stage__beam bb-idle-glow"></span></div>
     <div class="bb-layer bb-layer--wide-only" data-depth="0.35"><span class="bb-stage__word">Hollow</span></div>
@@ -23,7 +23,7 @@
       <div><b>13 of 27</b><span>maps in the region built or rebuilt by me</span></div>
       <div><b>34</b><span>quests in 7 questlines</span></div>
       <div><b>4</b><span>tools shipped to the team</span></div>
-      <div><b>3</b><span>launches in 5 months</span></div>
+      <div><b>3</b><span>launches in 5 months: Founder's Access, Grand Launch, Forgotten Hollow</span></div>
     </div>
   </div>
 </section>
@@ -46,7 +46,7 @@
     <div><b>The result</b><p>I audited every map in the region against the rulebook three weeks before launch. Seven maps were too empty, so I raised their spawn rates and added 59 spawn points. Quest camps were cleared of monsters. One floor of Decayed Tunnel III was 75% crowded; moving three spawns to the next map brought it to 47% without changing the kill count a quest depends on. Every change went to QA with a rendered before and after.</p></div>
   </div>
   <ul class="bb-rules">
-    <li><b>Spawns run weak to strong.</b>Monster levels rise the deeper players go from the entrance.</li>
+    <li><b>Spawns run weak to strong.</b>The level ceiling rises with depth.</li>
     <li><b>Camps stay clear.</b>No spawns on the floors under Jaime's, Daniel's and Tamya's camps.</li>
     <li><b>Big monsters need big platforms.</b>Myewoods and Sporewoods only spawn on platforms 350 px or wider.</li>
     <li><b>Crowding is measured.</b>Monsters alive at once per floor, compared with the original maps.</li>
@@ -66,7 +66,7 @@
   <div style="padding:0 var(--g)">
     <span class="cine-label">The route</span>
     <h2 class="cine-d">Entrance to dead end</h2>
-    <p class="cine-lede">Every map from the Ellinia entrance to Another Sanctuary, in travel order. The level ceiling climbs from 40 at the entrance to 59 at the dead end. The dips after the town are side maps off the main route.</p>
+    <p class="cine-lede">Every map from the Ellinia entrance to Another Sanctuary, in travel order. The level ceiling climbs from 40 at the entrance to 59 at the dead end. A few maps along the way sit lower than the ones around them.</p>
   </div>
   <div class="cine-route"><div class="cine-route__scroll" tabindex="0" aria-label="Maps in route order, scroll sideways"><div class="cine-route__track" data-fh-route></div></div></div>
   <div class="cine-legend">
@@ -82,7 +82,7 @@
   <span class="cine-label">Case study 2 · Level design</span>
   <h2 class="cine-d">Rebuilding the region after the first playtest</h2>
   <div class="bb-case">
-    <div><b>The problem</b><p>The first versions of the maps went into a team playtest at the end of July. Two things came up again and again: how many monsters each floor had, and whether every class could hunt there. Some players camped a single platform for hours, which I hadn't planned for coming from single-player games.</p></div>
+    <div><b>The problem</b><p>The first versions of the maps went into a team playtest at the end of July. Two things came up again and again: how many monsters each floor had, and whether every class could hunt there. Some players camped a single platform for hours. In an MMO a map is somewhere people live, and my first layouts were built for passing through.</p></div>
     <div><b>What I did</b><p>I rebuilt Precipice of Darkness the same night from what I had watched. Then I wrote a map standard for the whole region: maps had to work for solo players, parties and crowds; have one clear main route plus alternates and shortcuts; give players safe places to rest and regroup; and never trap players, pets or dropped items. I broke it into a checklist per map and reworked seven maps against it in three weeks, some from the ground up.</p></div>
     <div><b>Example: Hanging Gardens of Rot</b><p>Every platform got a way in and a way out, and the map was split by job, marked below. Before launch I added 11 spawn points up top so the climb was worth making.</p></div>
   </div>
@@ -91,7 +91,7 @@
       <img data-bb-src="fh/maps-annotated/hanging-gardens-of-rot.webp" alt="Hanging Gardens of Rot as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Hanging Gardens of Rot as shipped">
       <span class="fh-pin" style="left:46%;top:91%">1</span>
       <span class="fh-pin" style="left:80%;top:27%">2</span>
-      <span class="fh-pin" style="left:27%;top:41%">3</span>
+      <span class="fh-pin" style="left:27%;top:44%">3</span>
     </div>
     <ol class="fh-zones__key">
       <li><b>1</b>The bottom path is a travel corridor with no monsters on it.</li>
@@ -111,7 +111,7 @@
   <h2 class="cine-d">Tools I wrote for the team</h2>
   <p class="cine-lede">The game's data is edited by hand, and mistakes only show up in the client. I wrote four Python tools to catch them earlier, published them to the team's tool repository and documented them.</p>
   <div class="cine-cards3 cine-cards3--2">
-    <article><img data-bb-src="fh/maps-annotated/the-end-of-fleeting-light.webp" alt="The End of Fleeting Light drawn with footholds, portals and spawns"><h3>MapView</h3><p>Draws any map from the game data, clean or with footholds, portals and spawns, and renders a before and after of each change. Flags floors that run past the camera, walls too close to portals, drop-downs through solid rock and overcrowded floors. It caught small problems early, which cut two or three passes from QA and spared me several balance passes of my own. Every map image on this page came from it.</p></article>
+    <article><img data-bb-src="fh/maps-annotated/the-end-of-fleeting-light.webp" alt="The End of Fleeting Light drawn with footholds, portals and spawns"><h3>MapView</h3><p>Draws any map from the game data, clean or with footholds, portals and spawns, and renders a before and after of each change. Flags floors that run past the camera, walls too close to portals, drop-downs through solid rock and overcrowded floors. It caught small problems early, which cut two or three passes from QA. Every map image on this page came from it.</p></article>
     <article><div class="fh-sprites"><img data-bb-src="fh/npcs-hires/luma.png" alt="Luma"><img data-bb-src="fh/npcs-hires/nyroth.png" alt="Nyroth"><img data-bb-src="fh/npcs-hires/jaime-the-explorer.png" alt="Jaime the Explorer"><img data-bb-src="fh/npcs-hires/daniel-the-scholar.png" alt="Daniel the Scholar"></div><h3>NPC Hi-Res</h3><p>Exports NPC, monster and item sprites at four times their size, as PNGs, layered PSDs and pose sheets, plus a reference pack for outside artists. The marketing team used it instead of spending days digging through files for art.</p></article>
     <article><h3>Quest Tool</h3><p>Compares each quest's written spec on the wiki with the quest data and lists every place they disagree. Its tester runs test plans through quests and party quests in a local client. Writing a plan and running it myself saved tens of hours.</p></article>
     <article><h3>Dev Tool</h3><p>One window that sets up and starts the local servers and test client for a playtest, and saves hours of syncing across every repository.</p></article>
@@ -128,21 +128,21 @@
     <div class="cine-node cine-node--end">Ellinia<small>Grendel, Magic Library</small></div>
     <div class="cine-node cine-node--act">Shadow of the World Tree<small>Lv 39 · 5 quests, in order</small></div>
     <div class="cine-split fh-split5">
-      <div class="cine-node"><img data-bb-src="fh/npcs/zelya.png" alt="">Zelya<small>Lv 39–42</small></div>
-      <div class="cine-node"><img data-bb-src="fh/npcs/myen.png" alt="">Myen<small>Lv 40–45</small></div>
-      <div class="cine-node"><img data-bb-src="fh/npcs/myra.png" alt="">Myra<small>Lv 49</small></div>
-      <div class="cine-node"><img data-bb-src="fh/npcs/tamya.png" alt="">Tamya<small>Lv 50–53, then Thieves Lv 55</small></div>
-      <div class="cine-node"><img data-bb-src="fh/npcs/glimmer.png" alt="">Glimmer<small>Lv 55</small></div>
+      <div class="cine-node"><img data-bb-src="fh/npcs/zelya.png" alt="Zelya">Zelya<small>Lv 39–42</small></div>
+      <div class="cine-node"><img data-bb-src="fh/npcs/myen.png" alt="Myen">Myen<small>Lv 40–45</small></div>
+      <div class="cine-node"><img data-bb-src="fh/npcs/myra.png" alt="Myra">Myra<small>Lv 49</small></div>
+      <div class="cine-node"><img data-bb-src="fh/npcs/tamya.png" alt="Tamya">Tamya<small>Lv 50–53, then Thieves Lv 55</small></div>
+      <div class="cine-node"><img data-bb-src="fh/npcs/glimmer.png" alt="Glimmer">Glimmer<small>Lv 55</small></div>
     </div>
   </div>
   <div class="cine-chains fh-chains">
-    <div class="cine-chain" style="--c:#e9c46a"><img data-bb-src="fh/npcs/myen.png" alt=""><div><b>Shadow of the World Tree</b><span>Lv 39 · 5 quests</span><p>Grendel senses a seal breaking under Ellinia, and players follow the rot down into the region.</p></div></div>
-    <div class="cine-chain" style="--c:#a9bd7a"><img data-bb-src="fh/npcs/zelya.png" alt=""><div><b>Zelya · Echoes of the Past</b><span>Lv 39–42 · 3 quests</span><p>Glowshrooms tore up the map back to her people's old home, and players recover the pieces.</p></div></div>
-    <div class="cine-chain" style="--c:#ffd27a"><img data-bb-src="fh/npcs/myen.png" alt=""><div><b>Myen · Winter in the Hollow</b><span>Lv 40–45 · 4 quests</span><p>The town gets ready for its first winter in the dark.</p></div></div>
-    <div class="cine-chain" style="--c:#b48cff"><img data-bb-src="fh/npcs/myra.png" alt=""><div><b>Myra · Myra's Wish</b><span>Lv 49 · 2 quests</span><p>Her old companions are now the Myewoods and Sporewoods, and she wants them put to rest.</p></div></div>
-    <div class="cine-chain" style="--c:#ff9f6b"><img data-bb-src="fh/npcs/tamya.png" alt=""><div><b>Tamya · The Hearthkeeper</b><span>Lv 50–53 · 6 quests</span><p>Daniel translates her grandmother's journal and finds the Lantern Rite.</p></div></div>
-    <div class="cine-chain" style="--c:#7fc8a9"><img data-bb-src="fh/npcs/whitney.png" alt=""><div><b>Thieves in the Hollow</b><span>Lv 55 · 9 quests</span><p>Myen's ward scrolls turn up for sale in Kerning City, and the trail leads to the Dark Lord.</p></div></div>
-    <div class="cine-chain" style="--c:#c9f27a"><img data-bb-src="fh/npcs/glimmer.png" alt=""><div><b>Glimmer · The Lonely Light</b><span>Lv 55 · 5 quests</span><p>The rot keeps creeping under Glimmer's door, and the line ends at the Rotten Mushmom.</p></div></div>
+    <div class="cine-chain" style="--c:#e9c46a"><img data-bb-src="fh/npcs/myen.png" alt="Myen"><div><b>Shadow of the World Tree</b><span>Lv 39 · 5 quests</span><p>Grendel senses a seal breaking under Ellinia, and players follow the rot down into the region.</p></div></div>
+    <div class="cine-chain" style="--c:#a9bd7a"><img data-bb-src="fh/npcs/zelya.png" alt="Zelya"><div><b>Zelya · Echoes of the Past</b><span>Lv 39–42 · 3 quests</span><p>Glowshrooms tore up the map back to her people's old home, and players recover the pieces.</p></div></div>
+    <div class="cine-chain" style="--c:#ffd27a"><img data-bb-src="fh/npcs/myen.png" alt="Myen"><div><b>Myen · Winter in the Hollow</b><span>Lv 40–45 · 4 quests</span><p>The town gets ready for its first winter in the dark.</p></div></div>
+    <div class="cine-chain" style="--c:#b48cff"><img data-bb-src="fh/npcs/myra.png" alt="Myra"><div><b>Myra · Myra's Wish</b><span>Lv 49 · 2 quests</span><p>Her old companions are now the Myewoods and Sporewoods, and she wants them put to rest.</p></div></div>
+    <div class="cine-chain" style="--c:#ff9f6b"><img data-bb-src="fh/npcs/tamya.png" alt="Tamya"><div><b>Tamya · The Hearthkeeper</b><span>Lv 50–53 · 6 quests</span><p>Daniel translates her grandmother's journal and finds the Lantern Rite.</p></div></div>
+    <div class="cine-chain" style="--c:#7fc8a9"><img data-bb-src="fh/npcs/whitney.png" alt="Whitney"><div><b>Thieves in the Hollow</b><span>Lv 55 · 9 quests</span><p>Myen's ward scrolls turn up for sale in Kerning City, and the trail leads to the Dark Lord.</p></div></div>
+    <div class="cine-chain" style="--c:#c9f27a"><img data-bb-src="fh/npcs/glimmer.png" alt="Glimmer"><div><b>Glimmer · The Lonely Light</b><span>Lv 55 · 5 quests</span><p>The rot keeps creeping under Glimmer's door, and the line ends at the Rotten Mushmom.</p></div></div>
   </div>
   <figure class="fh-sample">
     <img data-bb-src="fh/npcs-hires/tamya.png" alt="Tamya">
@@ -176,19 +176,20 @@
   <span class="cine-label">Also shipped</span>
   <h2 class="cine-d">Other work this year</h2>
   <ul class="bb-shipped">
-    <li><b>The Caretaker's Ledger.</b> A six-quest line across every Victoria Island town that sets up Forgotten Hollow a month early.</li>
-    <li><b>Citizenship quests</b> for Henesys and Kerning City housing.</li>
-    <li><b>Quest EXP and reward pass.</b> Implemented the pre-launch pass across every region, from Lith Harbor to El Nath.</li>
-    <li><b>Stumpy and Mano boss quests</b>, and the Excavation Site and Ant Tunnel questlines.</li>
-  </ul>
-  <ol class="cine-steps" style="--n:6;margin-top:28px">
+    <li><b>The Caretaker's Ledger.</b> A six-quest line across every Victoria Island town that sets up Forgotten Hollow a month early.
+  <ol class="cine-steps" style="--n:6;margin-top:18px">
     <li><small>Ellinia</small><b>The Filing Error</b><p>Recover the pages the fairies carried off.</p></li>
     <li><small>Henesys</small><b>Chief Stan's Signature</b><p>The town chief stamps the cover.</p></li>
     <li><small>Perion to Sleepywood</small><b>Repairing the Book</b><p>Manji hands the ledger on to Chrishrama.</p></li>
     <li><small>Sleepywood</small><b>The Faded Ink</b><p>Restore an entry time has worn away.</p></li>
     <li><small>Kerning City</small><b>The Dark Lord's Signature</b><p>Even the thieves' guild has a page.</p></li>
     <li><small>Ellinia</small><b>We Hold Your Place</b><p>The oldest entry names Grendel. The newest names you.</p></li>
-  </ol>
+  </ol></li>
+    <li><b>Citizenship quests</b> for Henesys and Kerning City housing.</li>
+    <li><b>Quest EXP and reward pass.</b> Implemented the pre-launch pass across every region, from Lith Harbor to El Nath.</li>
+    <li><b>Stumpy and Mano boss quests</b>, and the Excavation Site and Ant Tunnel questlines.</li>
+  </ul>
+
 </section>
 
 <section class="cine-sec">
@@ -201,7 +202,7 @@
   </div>
 </section>
 
-<a class="cine-next" href="/projects/t-7xfc6" style="--c:#e9b04f"><img data-bb-src="covers/bioshock.jpg" alt=""><div><span class="cine-label">Next project</span><strong>BioShock 4</strong></div></a>
+<a class="cine-next" href="/projects/t-7xfc6" style="--c:#e9b04f"><img data-bb-src="covers/bioshock.jpg" alt="" aria-hidden="true"><div><span class="cine-label">Next project</span><strong>BioShock 4</strong></div></a>
 <p class="cine-credit">MapleStory and all related game art © Nexon. Map renders and sprites come from the game data.</p>
 </div>
 
@@ -252,7 +253,7 @@
 
 <script>
 (window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root, bb) {
-  const A = bb.asset('fh/maps/');
+  const A = bb.asset('fh/maps-thumb/');
   const lv = {glowshroom:39,raffle:40,'golden-stirge':42,aqumander:43,echopus:45,rafflesia:47,duskmander:50,myewood:54,'rotten-mushroom':56,sporewood:59};
   const R = [
     ['forgotten-entrance-3','Forgotten Entrance III','east',['glowshroom','raffle'],'From Ellinia'],
@@ -280,7 +281,7 @@
   const W = 200, GAP = 10, PADL = parseFloat(getComputedStyle(track).paddingLeft);
   track.innerHTML = R.map(([id,name,reg,mobs,tag]) => {
     const top = mobs.length ? Math.max(...mobs.map(m => lv[m])) : null;
-    return `<div class="cine-stop" style="--c:${({east:'#a9bd7a',town:'#e9c46a',west:'#7fc8a9',deep:'#c47a5a'})[reg]}"><div><img loading="lazy" src="${A}${id}.webp" alt="">${tag ? `<span class="cine-tag">${tag}</span>` : ''}</div><b>${name}</b><small>${top ? 'Monsters up to Lv ' + top : 'No monsters'}</small></div>`;
+    return `<div class="cine-stop" style="--c:${({east:'#a9bd7a',town:'#e9c46a',west:'#7fc8a9',deep:'#c47a5a'})[reg]}"><div><img loading="lazy" src="${A}${id}.webp" alt="${name}" width="400" data-bb-lightbox data-bb-full="fh/maps/${id}.webp" data-bb-caption="${name}">${tag ? `<span class="cine-tag">${tag}</span>` : ''}</div><b>${name}</b><small>${top ? 'Monsters up to Lv ' + top : 'No monsters'}</small></div>`;
   }).join('');
   const pts = R.map((r,i) => { const m = r[3]; const top = m.length ? Math.max(...m.map(x => lv[x])) : null; return [PADL + i*(W+GAP) + W/2, top]; });
   const y = v => 120 - (v - 36) / (60 - 36) * 100;
@@ -290,6 +291,7 @@
   pts.forEach(p => { if (!p[1]) { last = null; return; } path += (last ? 'L' : 'M') + p[0] + ' ' + y(p[1]) + ' '; last = p; });
   const dots = valid.map(p => `<circle cx="${p[0]}" cy="${y(p[1])}" r="4.5" fill="#0b0b0c" stroke="#a6e35f" stroke-width="2"/><text x="${p[0]}" y="${y(p[1]) - 12}" fill="#f3f1ea" font-size="12.5" font-family="Hanken Grotesk, sans-serif" font-weight="600" text-anchor="middle">${p[1]}</text>`).join('');
   const town = pts[6][0];
+  if (bb.lightbox) bb.lightbox(track);
   track.insertAdjacentHTML('afterbegin', `<svg width="${total}" viewBox="0 0 ${total} 140" aria-hidden="true">
     <line x1="${town}" x2="${town}" y1="8" y2="140" stroke="#e9c46a" stroke-dasharray="3 5" opacity=".7"/>
     <text x="${town}" y="8" fill="#e9c46a" font-size="12" font-family="Hanken Grotesk, sans-serif" font-weight="600" text-anchor="middle">TOWN</text>

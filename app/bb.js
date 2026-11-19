@@ -651,7 +651,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     initQuietVideos(root);
     initStage(root);
     (window.BB_COMPONENTS || []).forEach(function (fn) {
-      try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
+      try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion, lightbox: initLightbox }); } catch (err) { console.error(err); }
     });
     [initCine, initTabs, initUpdated, initPins, initRoutes, initPreviews, initReadout].forEach(function (fn) {
       try { fn(root); } catch (err) { console.error(err); }
