@@ -1,15 +1,29 @@
 <div class="bb-page cine fh" data-title="MapleStory Classic: Forgotten Hollow · Ben Brook" style="--bb-accent:#a6e35f">
-<section class="cine-hero">
-  <div class="cine-hero__bg fh-key"><img loading="eager" fetchpriority="high" data-bb-src="fh/official-header.webp" data-bb-src-m="fh/official-header-m.webp" width="1920" height="1098" alt="Official Forgotten Hollow art from Nexon: the cave fairies and monsters of the region gathered under the title"></div>
+<section class="cine-hero bb-stage fh-stage" data-bb-stage>
+  <div class="bb-stage__layers" aria-hidden="true">
+    <div class="bb-layer" data-depth="0.05"><img class="bb-layer__fill fh-stage__far" data-bb-src="fh/maps/another-sanctuary.webp" alt=""></div>
+    <div class="bb-layer" data-depth="0.15"><img class="bb-layer__fill bb-idle-pan fh-stage__town" data-bb-src="fh/maps/forgotten-hollow.webp" alt="" fetchpriority="high"></div>
+    <div class="bb-layer" data-depth="0.25"><span class="fh-stage__beam bb-idle-glow"></span></div>
+    <div class="bb-layer bb-layer--wide-only" data-depth="0.35"><span class="bb-stage__word">Hollow</span></div>
+    <div class="bb-layer" data-depth="0.45"><canvas class="bb-stage__motes" data-colors="#b9f27a,#7fe0c8,#c9a2ff,#ffe9a8" data-count="80" data-dir="up"></canvas></div>
+    <div class="bb-layer bb-layer--pixel" data-depth="0.6">
+      <span class="fh-sprite fh-sprite--zelya bb-idle-bob"><img data-bb-src="fh/npcs-hires/zelya.png" alt=""></span>
+      <span class="fh-sprite fh-sprite--glim bb-idle-bob-slow bb-layer--wide-only"><img data-bb-src="fh/npcs-hires/glimmer.png" alt=""></span>
+    </div>
+    <div class="bb-layer bb-layer--pixel" data-depth="0.85">
+      <span class="fh-sprite fh-sprite--shroom bb-idle-sway"><img data-bb-src="fh/mobs/glowshroom.png" alt=""></span>
+      <span class="fh-sprite fh-sprite--rot bb-idle-sway bb-layer--wide-only"><img data-bb-src="fh/mobs/rotten-mushroom.png" alt=""></span>
+    </div>
+  </div>
   <div class="cine-hero__in">
     <span class="cine-label">MapleStory Classic World · Nexon · 2026</span>
     <h1 class="cine-d fh-title">Forgotten Hollow</h1>
-    <p class="cine-hero__sub">A new region for levels 39 to 59, hidden under Ellinia. It never existed in the original game, so it had to feel like it had always been there. <span data-bb-live="It opened November 18.">It opens November 18.</span></p>
+    <p class="cine-hero__sub">A new region for levels 39 to 60, hidden under Ellinia. It never existed in the original game, so it had to feel like it had always been there. It opened November 18.</p>
     <div class="cine-facts">
-      <div><b>26</b><span>maps in the region</span></div>
-      <div><b>Lv 39–59</b><span>monster range</span></div>
-      <div><b>~300</b><span>commits in five months</span></div>
-      <div><b>Nov 18</b><span>region opens</span></div>
+      <div><b>34</b><span>quests in seven questlines</span></div>
+      <div><b>27</b><span>maps in the region</span></div>
+      <div><b>Lv 39–60</b><span>monster range</span></div>
+      <div><b>Nov 18</b><span>region opened</span></div>
     </div>
   </div>
 </section>
@@ -17,13 +31,20 @@
 <section class="cine-sec">
   <span class="cine-label">My part</span>
   <h2 class="cine-d">What I built</h2>
-  <p class="cine-lede">After the initial concept, building the region was my job. I put it straight into the game's data and took it through QA.</p>
+  <p class="cine-lede">After the initial concept, building the region was my job. I put it straight into the game's data, tested it in the client and took it through QA.</p>
   <div class="cine-built">
-    <article><div class="cine-built__pic"><img data-bb-src="fh/crops/primeval-forest-2.webp" alt=""></div><h3>Maps</h3><p>I built or reworked most of the region's maps. Several changed after playtests.</p></article>
-    <article><div class="cine-built__pic cine-built__pic--sprites"><img data-bb-src="fh/npcs/zelya.png" alt=""><img data-bb-src="fh/npcs/nyroth.png" alt=""><img data-bb-src="fh/npcs/myra.png" alt=""></div><h3>Quests</h3><p>I wrote dozens of quests across several story chains, with rewards every class can use.</p></article>
-    <article><div class="cine-built__pic cine-built__pic--sprites"><img data-bb-src="fh/mobs/aqumander.png" alt=""><img data-bb-src="fh/mobs/echopus.png" alt=""><img data-bb-src="fh/mobs/sporewood.png" alt=""></div><h3>Monsters</h3><p>I decided where monsters spawn: safe camps by quest givers, the strongest ones far from the entrances.</p></article>
-    <article><div class="cine-built__pic cine-built__pic--sprites"><img data-bb-src="fh/npcs/luma.png" alt=""><img data-bb-src="fh/npcs/daniel-the-scholar.png" alt=""><img data-bb-src="fh/npcs/jaime-the-wandering-explorer.png" alt=""></div><h3>NPCs and items</h3><p>I added new NPCs with dialogue and idle chatter, plus quest items and housing decor.</p></article>
+    <article><div class="cine-built__pic"><img data-bb-src="fh/maps/hanging-gardens-of-rot.webp" alt=""></div><h3>Maps</h3><p>I built or reworked most of the region's maps. Hanging Gardens of Rot alone went through 16 revisions.</p></article>
+    <article><div class="cine-built__pic cine-built__pic--sprites"><img data-bb-src="fh/npcs/zelya.png" alt=""><img data-bb-src="fh/npcs/tamya.png" alt=""><img data-bb-src="fh/npcs/glimmer.png" alt=""></div><h3>Quests</h3><p>34 quests in seven questlines: objectives, drops, dialogue, rewards and level gates.</p></article>
+    <article><div class="cine-built__pic cine-built__pic--sprites"><img data-bb-src="fh/mobs/aqumander.png" alt=""><img data-bb-src="fh/mobs/echopus.png" alt=""><img data-bb-src="fh/mobs/sporewood.png" alt=""></div><h3>Monsters</h3><p>I placed the spawns and wrote the rules every map is checked against.</p></article>
+    <article><div class="cine-built__pic cine-built__pic--sprites"><img data-bb-src="fh/npcs/myen.png" alt=""><img data-bb-src="fh/npcs/sylka.png" alt=""><img data-bb-src="fh/npcs/jaime-the-explorer.png" alt=""></div><h3>NPCs and items</h3><p>New NPCs with dialogue, quest items, and 23 pieces of housing decor: 12 sold in shops and 11 crafted.</p></article>
   </div>
+  <div class="cine-facts fh-numbers">
+    <div><b>350</b><span>data commits</span></div>
+    <div><b>121</b><span>quests built</span></div>
+    <div><b>13</b><span>maps built or rebuilt</span></div>
+    <div><b>212</b><span>Jira tickets</span></div>
+  </div>
+  <p class="cine-hint">June 8 to November 17, 2026, across Forgotten Hollow and the rest of the live game. Quests and maps count only the ones I created or rebuilt over many revisions.</p>
 </section>
 
 <section class="cine-sec cine-sec--bleed">
@@ -43,31 +64,82 @@
 </section>
 
 <section class="cine-sec">
-  <span class="cine-label">Quest design</span>
-  <h2 class="cine-d">Three chains, one region</h2>
-  <p class="cine-lede">One short act pulls players in. Then three chains open at once, gated by level instead of order, and their objectives tour the maps. Finishing the quests means you've seen the place.</p>
-  <div class="cine-2col">
-    <div class="cine-flow" aria-label="Quest structure">
-      <div class="cine-node cine-node--end">Ellinia<small>Grendel, Magic Library</small></div>
-      <div class="cine-node cine-node--act">Act I<small>Lv 39 · 5 quests, in order</small></div>
-      <div class="cine-split">
-        <div class="cine-node"><img data-bb-src="fh/tiles/zelya.png" alt="">Zelya<small>Lv 39–43</small></div>
-        <div class="cine-node"><img data-bb-src="fh/tiles/nyroth.png" alt="">Nyroth<small>Lv 45–50</small></div>
-        <div class="cine-node"><img data-bb-src="fh/tiles/myra.png" alt="">Myra<small>Lv 49</small></div>
-      </div>
-      <div class="cine-node cine-node--end">Back to Ellinia<small>Magic Library</small></div>
+  <span class="cine-label">Level design</span>
+  <h2 class="cine-d">Rules for every map</h2>
+  <p class="cine-lede">New maps in an old game get judged against the old maps. I measured Nexon's original Victoria Island maps and wrote the numbers down as rules. When a rule and the original maps disagree, the original maps win.</p>
+  <ol class="cine-steps" style="--n:3">
+    <li><small>Spawns</small><b>Weak to strong from the entrance</b><p>Players walk in past the easiest monsters, and monster levels only go up as the maps go deeper.</p></li>
+    <li><small>Camps</small><b>Camps stay clear</b><p>No spawns on the floors under Jaime's, Daniel's and Tamya's camps, so players can turn in quests in peace.</p></li>
+    <li><small>Platforms</small><b>Big monsters need big platforms</b><p>Myewoods and Sporewoods only spawn on platforms at least 350 px wide, about the smallest the original maps use.</p></li>
+    <li><small>Crowding</small><b>Crowding is measured</b><p>I count the monsters alive at once from map size and spawn rate, the way the map editor does, and compare each floor with the originals.</p></li>
+    <li><small>Quests</small><b>Quest monsters keep their numbers</b><p>A spawn can move to another map, but the total a quest depends on stays the same.</p></li>
+    <li><small>QA</small><b>Every change gets a before and after</b><p>Each map edit ships with rendered before and after images, so QA can see what moved.</p></li>
+  </ol>
+  <div class="cine-2col fh-craft">
+    <div>
+      <span class="cine-label">Before and after · Decayed Tunnel III</span>
+      <h3 class="fh-h3">Moving a Myewood off a ledge</h3>
+      <p class="cine-lede">An audit found a Myewood on a 283 px ledge, too small for it. I moved the spawn to a full floor. In another pass the bottom floor was 75% crowded, so I moved three Myewood spawns next door to Lingering Regret. That brought it to 47% and kept the Myewood total Myra's quest needs.</p>
     </div>
-    <div class="cine-chains">
-      <div class="cine-chain" style="--c:#a9bd7a"><img data-bb-src="fh/npcs/zelya.png" alt=""><div><b>Zelya</b><span>Lv 39–43 · 3 quests</span><p>Rebuild a torn cave map. The pieces are out in the forest and the entrance caves.</p></div></div>
-      <div class="cine-chain" style="--c:#7fc8a9"><img data-bb-src="fh/npcs/nyroth.png" alt=""><div><b>Nyroth</b><span>Lv 45–50 · 5 quests</span><p>Follow the rot west and down into the Deep Passage.</p></div></div>
-      <div class="cine-chain" style="--c:#c47a5a"><img data-bb-src="fh/npcs/myra.png" alt=""><div><b>Myra</b><span>Lv 49 · 2 quests</span><p>Put her old companions, now Myewoods, to rest at Lingering Regret.</p></div></div>
+    <div class="bb-compare fh-compare" aria-label="Decayed Tunnel III before and after the Myewood spawn moved off the small ledge">
+      <img data-bb-src="fh/craft/ledge-after.webp" alt="Decayed Tunnel III after the change">
+      <div class="bb-compare__top"><img data-bb-src="fh/craft/ledge-before.webp" alt="Decayed Tunnel III before the change, with a Myewood on a small ledge"></div>
+      <div class="bb-compare__handle"></div>
+      <span class="bb-compare__label bb-compare__label--l">Before</span>
+      <span class="bb-compare__label bb-compare__label--r">After</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
     </div>
   </div>
 </section>
 
 <section class="cine-sec">
+  <span class="cine-label">Level design</span>
+  <h2 class="cine-d">Under the art</h2>
+  <p class="cine-lede">The same maps with footholds, ladders, ropes, portals and every spawn point drawn on from the map data. Tap one to see it full size.</p>
+  <div class="cine-gallery cine-gallery--slides">
+    <figure class="is-wide"><img data-bb-src="fh/maps-annotated/hanging-gardens-of-rot.webp" alt="Hanging Gardens of Rot with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Hanging Gardens of Rot, Tamya's camp"><figcaption>Hanging Gardens of Rot</figcaption></figure>
+    <figure><img data-bb-src="fh/maps-annotated/decayed-tunnel-3.webp" alt="Decayed Tunnel III with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Decayed Tunnel III, Jaime's camp"><figcaption>Decayed Tunnel III</figcaption></figure>
+    <figure><img data-bb-src="fh/maps-annotated/precipice-of-darkness.webp" alt="Precipice of Darkness with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Precipice of Darkness, Daniel's camp"><figcaption>Precipice of Darkness</figcaption></figure>
+  </div>
+</section>
+
+<section class="cine-sec">
+  <span class="cine-label">Quest design</span>
+  <h2 class="cine-d">Seven questlines, one region</h2>
+  <p class="cine-lede">A five-quest opening act brings players down from Ellinia. Then five questlines open, each with its own level gate, and their objectives tour the maps. Tamya's line leads into a second one that climbs up to Kerning City.</p>
+  <div class="cine-flow fh-flow" aria-label="Quest structure">
+    <div class="cine-node cine-node--end">Ellinia<small>Grendel, Magic Library</small></div>
+    <div class="cine-node cine-node--act">Shadow of the World Tree<small>Lv 39 · 5 quests, in order</small></div>
+    <div class="cine-split fh-split5">
+      <div class="cine-node"><img data-bb-src="fh/npcs/zelya.png" alt="">Zelya<small>Lv 39–42</small></div>
+      <div class="cine-node"><img data-bb-src="fh/npcs/myen.png" alt="">Myen<small>Lv 40–45</small></div>
+      <div class="cine-node"><img data-bb-src="fh/npcs/myra.png" alt="">Myra<small>Lv 49</small></div>
+      <div class="cine-node"><img data-bb-src="fh/npcs/tamya.png" alt="">Tamya<small>Lv 50–53, then Thieves Lv 55</small></div>
+      <div class="cine-node"><img data-bb-src="fh/npcs/glimmer.png" alt="">Glimmer<small>Lv 55</small></div>
+    </div>
+  </div>
+  <div class="cine-chains fh-chains">
+    <div class="cine-chain" style="--c:#e9c46a"><img data-bb-src="fh/npcs/myen.png" alt=""><div><b>Shadow of the World Tree</b><span>Lv 39 · 5 quests</span><p>Grendel senses a seal breaking under Ellinia. Players track the rot with Arwen's help and climb down by the Tree Tunnel or a back route from the Sleepywood dungeon.</p></div></div>
+    <div class="cine-chain" style="--c:#a9bd7a"><img data-bb-src="fh/npcs/zelya.png" alt=""><div><b>Zelya · Echoes of the Past</b><span>Lv 39–42 · 3 quests</span><p>Glowshrooms tore up the map that leads back to her people's old home. Recover the pieces, glue them with Raffle petals, and clear the way.</p></div></div>
+    <div class="cine-chain" style="--c:#ffd27a"><img data-bb-src="fh/npcs/myen.png" alt=""><div><b>Myen · Winter in the Hollow</b><span>Lv 40–45 · 4 quests</span><p>The town's first winter in the dark: new supplies, a trade with Ellinia's fairies, and parts for one night of lanterns.</p></div></div>
+    <div class="cine-chain" style="--c:#b48cff"><img data-bb-src="fh/npcs/myra.png" alt=""><div><b>Myra · Myra's Wish</b><span>Lv 49 · 2 quests</span><p>Her old companions are now the Myewoods and Sporewoods. Put them to rest, then tell Grendel.</p></div></div>
+    <div class="cine-chain" style="--c:#ff9f6b"><img data-bb-src="fh/npcs/tamya.png" alt=""><div><b>Tamya · The Hearthkeeper</b><span>Lv 50–53 · 6 quests</span><p>Tamya can't read her grandmother's journal. Daniel translates it and finds the Lantern Rite, the way hearthkeepers said goodbye.</p></div></div>
+    <div class="cine-chain" style="--c:#7fc8a9"><img data-bb-src="fh/npcs/whitney.png" alt=""><div><b>Thieves in the Hollow</b><span>Lv 55 · 9 quests</span><p>Myen's ward scrolls are being sold in Kerning City. The trail runs through a fence, a young thief whose partner has the rot, and a raid the Dark Lord is planning. It ends in a trade deal.</p></div></div>
+    <div class="cine-chain" style="--c:#c9f27a"><img data-bb-src="fh/npcs/glimmer.png" alt=""><div><b>Glimmer · The Lonely Light</b><span>Lv 55 · 5 quests</span><p>Glimmer lives beside Someone Else's Grave and the rot keeps creeping under her door. It ends with the Rotten Mushmom.</p></div></div>
+  </div>
+  <figure class="fh-sample">
+    <img data-bb-src="fh/npcs-hires/tamya.png" alt="Tamya">
+    <blockquote>
+      <p>"My little ember. I did not get lost. I stayed so the ones we left behind would not be alone in the dark. I lit a lantern for every name, and I will light one more for myself when my time comes."</p>
+      <p>"Don't grieve for me too long. Keep a fire burning for whoever is still walking. That is all a hearthkeeper ever does."</p>
+    </blockquote>
+    <figcaption>From The Last Lantern, the end of Tamya's questline: Elda's last message to Tamya.</figcaption>
+  </figure>
+</section>
+
+<section class="cine-sec">
   <span class="cine-label" style="color:#c47a5a">Encounter design</span>
-  <h2 class="cine-d">A boss with no marker</h2>
+  <h2 class="cine-d">The field boss</h2>
   <div class="cine-spot" style="--c:#c47a5a">
     <div class="cine-spot__art" data-bb-bg="fh/maps/someone-elses-grave.webp"><img data-bb-src="fh/mobs/rotten-mushmom.png" alt="Rotten Mushmom"></div>
     <div class="cine-spot__txt">
@@ -75,7 +147,7 @@
       <h3>Rotten Mushmom</h3>
       <ul class="cine-dots">
         <li>An undead Mushmom, 20 levels above the Victoria Island original.</li>
-        <li>She only spawns in Someone Else's Grave, a hidden map off Decayed Tunnel I. No quest points to her.</li>
+        <li>She only spawns in Someone Else's Grave, a hidden map off Decayed Tunnel I. Players find her by exploring, or through Glimmer's questline.</li>
         <li>She regenerates and is weak to holy and fire, the same classes the rest of the Deep Passage favors. That makes her a party fight.</li>
       </ul>
     </div>
@@ -83,9 +155,31 @@
 </section>
 
 <section class="cine-sec">
+  <span class="cine-label">Tools and docs</span>
+  <h2 class="cine-d">Tools I wrote for the team</h2>
+  <p class="cine-lede">The game's data is edited by hand, and mistakes show up in the client, not the editor. I wrote four Python tools to catch them earlier, shared them with the team and documented them.</p>
+  <div class="cine-cards3 cine-cards3--2">
+    <article><img data-bb-src="fh/maps-annotated/lingering-regret.webp" alt="Lingering Regret drawn with footholds, portals and spawns"><h3>MapView</h3><p>Draws any map from the game data, clean or with footholds, portals and spawns. It flags layout errors, measures crowding floor by floor and renders a before and after of each change. Every map image on this page came from it.</p></article>
+    <article><div class="fh-sprites"><img data-bb-src="fh/npcs-hires/luma.png" alt="Luma"><img data-bb-src="fh/npcs-hires/nyroth.png" alt="Nyroth"><img data-bb-src="fh/npcs-hires/jaime-the-explorer.png" alt="Jaime the Explorer"><img data-bb-src="fh/npcs-hires/daniel-the-scholar.png" alt="Daniel the Scholar"></div><h3>NPC Hi-Res</h3><p>Exports NPC, monster and item sprites at four times their size, as PNGs, layered PSDs and pose sheets, plus a reference pack for outside artists. I used it for the art requests on new NPCs and decor.</p></article>
+    <article><h3>Quest Tool</h3><p>Compares each quest's written spec on the wiki with the quest data and lists every place they disagree. Its tester runs test plans through quests and party quests in a local client.</p></article>
+    <article><h3>Dev Tool</h3><p>One window that sets up and starts the local servers and test client for a playtest.</p></article>
+  </div>
+  <h3 class="fh-h3" style="margin-top:clamp(40px,5vw,64px)">Docs on the team wiki</h3>
+  <p class="cine-hint" style="margin-top:4px">11 pages of my own, plus edits to 61 more.</p>
+  <div class="cine-list">
+    <div><b>Dialogue guide</b><p>How NPC text should read in a classic MapleStory game: line length, pacing, color and formatting tags, voice. About 2,000 words.</p></div>
+    <div><b>Quest data guide</b><p>For new designers: the four parts of a quest (display text, requirements, rewards, dialogue) and how chains link. About 3,500 words.</p></div>
+    <div><b>Quest design</b><p>The full design of the Forgotten Hollow questlines: story, objectives, items and NPCs. About 5,900 words.</p></div>
+    <div><b>Ledger outline</b><p>Story and quest outline for The Caretaker's Ledger. About 5,500 words.</p></div>
+    <div><b>Map rules</b><p>The spawn, crowding and layout rules above, each with the original maps it was measured on.</p></div>
+    <div><b>Decision log</b><p>Every design ruling from reviews and tickets on one page, so nobody asks the same question twice. About 5,800 words.</p></div>
+  </div>
+</section>
+
+<section class="cine-sec">
   <span class="cine-label">Live now</span>
   <h2 class="cine-d">The Caretaker's Ledger</h2>
-  <p class="cine-lede">A questline I designed that's already in the game. Lyn the Librarian is missing pages from an old registry, and getting them back means collecting signatures from the leader of each town on Victoria Island. It ends with Grendel, who players meet again when Forgotten Hollow opens.</p>
+  <p class="cine-lede">A questline I designed that went live in October. Lyn the Librarian is missing pages from an old registry, and getting them back means collecting signatures from the leader of each town on Victoria Island. It ends with Grendel, who opens Forgotten Hollow a month later.</p>
   <ol class="cine-steps" style="--n:6">
     <li><small>Ellinia</small><b>The Filing Error</b><p>Recover the pages the fairies carried off.</p></li>
     <li><small>Henesys</small><b>Chief Stan's Signature</b><p>The town chief stamps the cover.</p></li>
@@ -98,17 +192,17 @@
 
 <section class="cine-sec">
   <span class="cine-label">Launch</span>
-  <h2 class="cine-d">Two launches so far</h2>
+  <h2 class="cine-d">Three launches</h2>
   <div class="cine-tl" style="--n:4">
     <div><b>Jun 2026</b><span>Joined Nexon America</span></div>
     <div><b>Oct 6</b><span>Founder's Access</span></div>
     <div><b>Oct 21</b><span>Grand Launch on Steam and the Nexon launcher</span></div>
-    <div class="is-now"><b>Nov 18</b><span>Forgotten Hollow opens</span></div>
+    <div class="is-now"><b>Nov 18</b><span>Forgotten Hollow opened</span></div>
   </div>
   <div class="cine-cards3">
-    <article><h3>Citizenship quests</h3><p>Dozens of quests where players earn a home in Henesys and Kerning City. I set the EXP, mesos, item rewards and level requirements.</p></article>
-    <article><h3>EXP rebalance</h3><p>Before launch I retuned quest EXP and rewards across Maple Island and Victoria Island to fit a new leveling curve.</p></article>
-    <article><h3>Launch fixes</h3><p>I fixed a quest reward you could duplicate by re-accepting the quest, and a 1-pixel collision gap that let mages teleport out of a map.</p></article>
+    <article><h3>Citizenship quests</h3><p>The quests where players earn a home in Henesys and Kerning City. I set the EXP, mesos, item rewards and level requirements, and wrote the housing NPC text.</p></article>
+    <article><h3>EXP rebalance</h3><p>Before launch I retuned quest EXP and rewards region by region, from Lith Harbor to El Nath, to fit a new leveling curve.</p></article>
+    <article><h3>More quests and fixes</h3><p>The Stumpy and Mano boss quests, the Excavation Site and Ant Tunnel questlines, Moon Bunny party quest fixes, a duplicated quest reward and a 1-pixel gap that let mages teleport out of a map.</p></article>
   </div>
 </section>
 
@@ -118,13 +212,46 @@
     <a href="https://www.nexon.com/maplestory/news/update/48256/november-update-forgotten-hollow-preview" target="_blank" rel="noopener"><q>November Update: Forgotten Hollow Preview</q><span>Nexon · November 12, 2026</span></a>
     <a href="https://mmohuts.com/news/maplestory-classic-world-is-now-live-globally-as-a-free-to-play-legacy-server" target="_blank" rel="noopener"><q>Classic World is live globally, with Forgotten Hollow opening in November</q><span>MMOHuts · October 2026</span></a>
     <a href="https://www.mmorpg.com/previews/maplestory-classic-world-cbt-preview-2000137829" target="_blank" rel="noopener"><q>MapleStory Classic World closed beta: a first look</q><span>MMORPG.com · Preview</span></a>
-    <a href="https://maplestory.nexon.net/" target="_blank" rel="noopener"><q>MapleStory Classic World official site</q><span>Nexon</span></a>
+    <a href="https://www.nexon.com/mscw/landing" target="_blank" rel="noopener"><q>MapleStory Classic World official site</q><span>Nexon</span></a>
   </div>
 </section>
 
 <a class="cine-next" href="/projects/t-7xfc6" style="--c:#e9b04f"><img data-bb-src="covers/bioshock.jpg" alt=""><div><span class="cine-label">Next project</span><strong>BioShock 4</strong></div></a>
-<p class="cine-credit">MapleStory and all related game art © Nexon. Map renders are from the in-game client.</p>
+<p class="cine-credit">MapleStory and all related game art © Nexon. Map renders and sprites come from the game data.</p>
 </div>
+
+<style>
+.fh-stage .fh-stage__far { filter: blur(14px) saturate(1.2) brightness(.45); transform: scale(1.15); }
+.fh-stage .fh-stage__town { object-position: 50% 62%; filter: saturate(1.05) brightness(.75); }
+.fh-stage__beam { left: 52%; top: -10%; width: 22%; height: 95%; background: linear-gradient(180deg, rgba(220,255,240,.32), rgba(185,242,122,.08) 55%, transparent); clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%); filter: blur(10px); mix-blend-mode: screen; }
+.fh-sprite img { display: block; width: 100%; height: auto; filter: drop-shadow(0 0 18px rgba(185,242,122,.35)); }
+.fh-sprite--zelya { right: 18%; top: 26%; width: clamp(70px, 7vw, 120px); }
+.fh-sprite--glim { right: 32%; top: 16%; width: clamp(60px, 5vw, 92px); opacity: .85; }
+.fh-sprite--shroom { right: 9%; bottom: 30%; width: clamp(70px, 7vw, 128px); }
+.fh-sprite--rot { right: 25%; bottom: 33%; width: clamp(90px, 9vw, 160px); filter: brightness(.8); }
+@media (max-width: 760px) {
+  .fh-sprite--zelya { right: 7%; top: 13%; width: 54px; }
+  .fh-sprite--shroom { right: 8%; top: 24%; bottom: auto; width: 44px; }
+}
+.fh-numbers { margin-top: clamp(28px, 4vw, 48px); }
+.fh-numbers > div { background: var(--bb-bg-2); }
+.fh-h3 { font: 800 clamp(26px, 2.6vw, 38px)/1 var(--bb-display); font-stretch: 72%; text-transform: uppercase; margin: 8px 0 12px; }
+.fh-craft { margin-top: clamp(40px, 5vw, 72px); align-items: center; }
+.fh-compare { aspect-ratio: 1599 / 711; border-radius: var(--bb-radius); overflow: hidden; }
+.fh-split5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+@media (max-width: 760px) { .fh-split5 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } .fh-split5 > :last-child { grid-column: 1 / -1; } }
+.fh-chains { margin-top: clamp(24px, 3vw, 40px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 760px) { .fh-chains { grid-template-columns: 1fr; } }
+.fh-sample { display: grid; grid-template-columns: 110px 1fr; gap: clamp(18px, 3vw, 40px); align-items: start; margin: clamp(40px, 5vw, 72px) 0 0; padding: clamp(22px, 3.2vw, 44px); border-radius: var(--bb-radius); background: color-mix(in srgb, #ff9f6b 7%, var(--bb-bg-2)); }
+.fh-sample > img { width: 100%; height: auto; }
+.fh-sample blockquote { margin: 0; font: 500 clamp(18px, 1.8vw, 24px)/1.45 var(--bb-sans); color: var(--bb-text); }
+.fh-sample blockquote p { margin: 0 0 12px; }
+.fh-sample figcaption { grid-column: 2; font-size: 14px; color: var(--bb-muted); }
+@media (max-width: 640px) { .fh-sample { grid-template-columns: 1fr; } .fh-sample > img { width: 72px; } .fh-sample figcaption { grid-column: 1; } }
+.fh-sprites { display: flex; align-items: flex-end; justify-content: center; gap: 4%; margin: -22px -22px 18px; padding: 6% 6% 8%; aspect-ratio: 16 / 9; border-radius: var(--bb-radius) var(--bb-radius) 0 0; background: radial-gradient(circle at 50% 70%, rgba(166,227,95,.16), transparent 65%), #0e0e10; }
+.fh-sprites img { max-width: 21%; max-height: 80%; width: auto; height: auto; object-fit: contain; }
+.cine-cards3 > article > img[data-bb-src*="maps-annotated"], .cine-cards3 > article > img[src*="maps-annotated"] { object-position: 50% 40%; }
+</style>
 
 <script>
 (window.BB_COMPONENTS = window.BB_COMPONENTS || []).push(function (root, bb) {
@@ -135,10 +262,10 @@
     ['forgotten-entrance-2','Forgotten Entrance II','east',['raffle','glowshroom']],
     ['forgotten-entrance-1','Forgotten Entrance I','east',['raffle','aqumander','golden-stirge']],
     ['primeval-forest-3','Primeval Forest III','east',['aqumander','raffle'],'+ hidden street'],
-    ['primeval-forest-2','Primeval Forest II','east',['echopus','aqumander','golden-stirge'],'+ hidden street'],
+    ['primeval-forest-2','Primeval Forest II','east',['echopus','aqumander','golden-stirge'],'+ Tamya\'s camp'],
     ['primeval-forest-1','Primeval Forest I','east',['aqumander','echopus','glowshroom']],
     ['forgotten-hollow','Forgotten Hollow','town',[],'Safe town'],
-    ['the-end-of-fleeting-light','The End of Fleeting Light','west',['rafflesia','aqumander','duskmander']],
+    ['the-end-of-fleeting-light','The End of Fleeting Light','west',['rafflesia','aqumander','duskmander','glowshroom']],
     ['the-faded-canopy','The Faded Canopy','west',['glowshroom','raffle','echopus']],
     ['forbidden-entrance','Forbidden Entrance','west',['rafflesia','duskmander','golden-stirge']],
     ['perilous-descent-1','Perilous Descent I','deep',['echopus']],
@@ -146,9 +273,9 @@
     ['perilous-descent-3','Perilous Descent III','deep',['duskmander','echopus']],
     ['decayed-tunnel-1','Decayed Tunnel I','deep',['duskmander'],'+ hidden boss map'],
     ['decayed-tunnel-2','Decayed Tunnel II','deep',['rafflesia','golden-stirge']],
-    ['decayed-tunnel-3','Decayed Tunnel III','deep',['rafflesia','myewood','golden-stirge']],
-    ['lingering-regret','Lingering Regret','deep',['myewood','echopus']],
-    ['precipice-of-darkness','Precipice of Darkness','deep',['duskmander','rotten-mushroom']],
+    ['decayed-tunnel-3','Decayed Tunnel III','deep',['rafflesia','myewood','golden-stirge'],'Jaime\'s camp'],
+    ['lingering-regret','Lingering Regret','deep',['myewood','echopus'],'+ shop'],
+    ['precipice-of-darkness','Precipice of Darkness','deep',['duskmander','rotten-mushroom'],'Daniel\'s camp'],
     ['dilapidated-tomb','Dilapidated Tomb','deep',['rotten-mushroom','sporewood']],
     ['another-sanctuary','Another Sanctuary','deep',['rotten-mushroom','sporewood','golden-stirge'],'Dead end']
   ];

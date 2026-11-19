@@ -509,6 +509,80 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       }
     });
   }
+  function initStage(root) {
+    root.querySelectorAll('[data-bb-stage]').forEach(function (stage) {
+      var layers = [].slice.call(stage.querySelectorAll('.bb-layer[data-depth]'));
+      var canvas = stage.querySelector('canvas.bb-stage__motes');
+      stage.classList.add('is-ready');
+      if (reduceMotion) return;
+      var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      var px = 0, py = 0, tx = 0, ty = 0, sy = 0, visible = true, raf = 0;
+      if (fine) {
+        stage.addEventListener('pointermove', function (e) {
+          var r = stage.getBoundingClientRect();
+          tx = (e.clientX - r.left) / r.width - 0.5;
+          ty = (e.clientY - r.top) / r.height - 0.5;
+        });
+        stage.addEventListener('pointerleave', function () { tx = 0; ty = 0; });
+      }
+      var ctx = canvas && canvas.getContext('2d'), motes = [], dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var colors = canvas ? (canvas.getAttribute('data-colors') || '#ffffff').split(',') : [];
+      var dir = canvas && canvas.getAttribute('data-dir') === 'down' ? 1 : -1;
+      function newMote(anywhere) {
+        var w = canvas.width, h = canvas.height;
+        return {
+          x: Math.random() * w, y: anywhere ? Math.random() * h : (dir < 0 ? h + 10 : -10),
+          r: (Math.random() * 2.2 + 0.6) * dpr, s: (Math.random() * 0.35 + 0.12) * dpr,
+          sway: Math.random() * Math.PI * 2, z: Math.random(),
+          c: colors[Math.floor(Math.random() * colors.length)].trim(), a: Math.random() * 0.5 + 0.35
+        };
+      }
+      function size() {
+        if (!canvas) return;
+        canvas.width = canvas.offsetWidth * dpr; canvas.height = canvas.offsetHeight * dpr;
+        var n = parseInt(canvas.getAttribute('data-count') || '60', 10);
+        if (window.innerWidth < 760) n = Math.round(n * 0.45);
+        motes = [];
+        for (var i = 0; i < n; i++) motes.push(newMote(true));
+      }
+      function drawMotes(t) {
+        var w = canvas.width, h = canvas.height;
+        ctx.clearRect(0, 0, w, h);
+        ctx.globalCompositeOperation = 'lighter';
+        motes.forEach(function (m, i) {
+          m.y += m.s * dir; m.x += Math.sin(t / 1400 + m.sway) * 0.25 * dpr;
+          if (m.y < -12 || m.y > h + 12) motes[i] = m = newMote(false);
+          var x = m.x + px * 40 * m.z * dpr, y = m.y + py * 24 * m.z * dpr;
+          var g = ctx.createRadialGradient(x, y, 0, x, y, m.r * 4);
+          g.addColorStop(0, m.c); g.addColorStop(1, 'transparent');
+          ctx.globalAlpha = m.a * (0.6 + 0.4 * Math.sin(t / 700 + m.sway * 3)); ctx.fillStyle = g;
+          ctx.beginPath(); ctx.arc(x, y, m.r * 4, 0, Math.PI * 2); ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+      }
+      function frame(t) {
+        raf = 0;
+        if (!visible) return;
+        px += (tx - px) * 0.05; py += (ty - py) * 0.05;
+        sy = Math.min(window.pageYOffset, window.innerHeight * 1.2);
+        layers.forEach(function (l) {
+          var d = parseFloat(l.getAttribute('data-depth')) || 0;
+          l.style.transform = 'translate3d(' + (-px * 60 * d).toFixed(1) + 'px,' + (-py * 34 * d + sy * (0.35 - d * 0.3)).toFixed(1) + 'px,0)';
+        });
+        if (ctx) drawMotes(t);
+        raf = requestAnimationFrame(frame);
+      }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (en) {
+          visible = en[0].isIntersecting;
+          if (visible && !raf) raf = requestAnimationFrame(frame);
+        }).observe(stage);
+      }
+      size();
+      window.addEventListener('resize', size);
+      raf = requestAnimationFrame(frame);
+    });
+  }
   function init() {
     var root = document;
     var pg = document.querySelector('.bb-page'); if (pg && !pg.id) pg.id = 'bb-main';
@@ -522,6 +596,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     initLive(root);
     initNoZoom(root);
     initQuietVideos(root);
+    initStage(root);
     (window.BB_COMPONENTS || []).forEach(function (fn) {
       try { fn(root, { asset: assetUrl, reduceMotion: reduceMotion }); } catch (err) { console.error(err); }
     });
