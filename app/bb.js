@@ -897,6 +897,38 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       content.appendChild(a);
     });
     if (window.bbResolveAssets) window.bbResolveAssets(content);
+    var list = lv.querySelector('.lv-list');
+    if (list) {
+      var skip = document.createElement('a');
+      skip.className = 'lv-skip'; skip.href = '#' + (list.id || ''); skip.textContent = 'Skip the walk';
+      skip.addEventListener('click', function (e) {
+        e.preventDefault();
+        list.setAttribute('tabindex', '-1');
+        list.focus();
+      });
+      document.body.insertBefore(skip, document.body.firstChild);
+    }
+    R.forEach(function (o, i) {
+      if (!o.a) return;
+      o.a.addEventListener('focus', function () {
+        scrollToRoom(i, false);
+        requestAnimationFrame(function () { scrollToRoom(i, false); });
+      });
+      o.a.addEventListener('keydown', function (e) {
+        if (e.key !== 'Tab' || e.shiftKey) return;
+        e.preventDefault();
+        goEl.href = o.u;
+        card.classList.remove('lv-card--hide');
+        goEl.focus({ preventScroll: true });
+      });
+    });
+    goEl.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab' || cur < 1) return;
+      var next = e.shiftKey ? R[cur] : R[cur + 1];
+      if (!next || !next.a) return;
+      e.preventDefault();
+      next.a.focus({ preventScroll: true });
+    });
     var pts = [];
     R.forEach(function (o, i) {
       if (i) {
@@ -979,7 +1011,16 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       if (h && byId[h] != null) { scrollToRoom(byId[h], false); return true; }
       return false;
     }
-    var mx = 0, my = 0, pmx = 0, pmy = 0, cur = -1, camS = null, tl = 14, last = performance.now(), mode = '';
+    var mx = 0, my = 0, pmx = 0, pmy = 0, cur = -1, camS = null, tl = RM ? 0 : 14, last = performance.now(), mode = '';
+    var probe = !RM, probeDt = [], flat = false;
+    function checkProbe(dt, dive) {
+      if (!probe || dive < 0.02) return;
+      probeDt.push(dt);
+      if (dive < 0.97 && probeDt.length < 120) return;
+      probe = false;
+      probeDt.sort(function (a, b) { return a - b; });
+      if (probeDt[probeDt.length >> 1] > 28) document.body.classList.add('lv-flat');
+    }
     window.addEventListener('pointermove', function (e) { mx = e.clientX / window.innerWidth - 0.5; my = e.clientY / window.innerHeight - 0.5; }, { passive: true });
     window.addEventListener('resize', size);
     window.addEventListener('hashchange', fromHash);
@@ -999,13 +1040,14 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       var room = f < 0.5 ? i : i + 1, moving = m > 0 && m < 1;
       var hold = f < 0.3 ? 0.5 + f / 0.3 * 0.5 : f > 0.7 ? (f - 0.7) / 0.3 * 0.5 : 0.5; // 0 on arrival, 1 when leaving
       var fit = Math.min(vw / (phone ? 1080 : 1700), vh / (phone ? 1500 : 1100));
-      var sc = fit * (moving ? 0.8 : 1);
+      var sc = fit * (moving && !RM ? 0.8 : 1);
       var oy = phone ? vh * 0.36 : vh * 0.42, ox = phone ? vw * 0.5 : vw * 0.6;
       var atSpawn = room === 0 && !moving;
       var tgt = { x: x, y: atSpawn ? R[0].y + R[0].h / 2 : y, s: sc, o: atSpawn && !phone ? vw * 0.5 : ox };
-      camS = camS ? { x: camS.x + (tgt.x - camS.x) * 0.14, y: camS.y + (tgt.y - camS.y) * 0.14, s: camS.s + (tgt.s - camS.s) * 0.08, o: camS.o + (tgt.o - camS.o) * 0.1 } : tgt;
+      camS = camS && !RM ? { x: camS.x + (tgt.x - camS.x) * 0.14, y: camS.y + (tgt.y - camS.y) * 0.14, s: camS.s + (tgt.s - camS.s) * 0.08, o: camS.o + (tgt.o - camS.o) * 0.1 } : tgt;
       world.style.transform = 'translate(' + (camS.o - camS.x * camS.s) + 'px,' + (oy - camS.y * camS.s) + 'px) scale(' + camS.s + ')';
-      tl += ((moving ? 24 : 14) - tl) * 0.06; // the map leans back further while walking
+      if (!RM) tl += ((moving ? 24 : 14) - tl) * 0.06; // the map leans back further while walking
+      flat = document.body.classList.contains('lv-flat');
       pmx += (mx - pmx) * 0.05; pmy += (my - pmy) * 0.05;
       var settled = !moving && Math.abs(camS.x - tgt.x) < 40 && Math.abs(camS.y - tgt.y) < 40;
       var dive = 0, inView = mode === 'in';
@@ -1013,27 +1055,33 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       Object.keys(I).forEach(function (k) {
         var o = I[k];
         if (!o.el) return;
+        if (flat && !o.flatSet) { o.flatSet = 1; o.el.style.setProperty('--flat', 'url("' + asset('level/flat/' + R[k].id + '.jpg') + '")'); }
         var want = inView && +k === room && settled ? 1 : 0;
-        o.t += (want - o.t) * (want ? 0.045 : 0.09);
-        if (o.t < 0.002 && !want) o.t = 0;
+        if (RM) o.t = clamp(o.t + (want ? dt : -dt) / 200, 0, 1); // a plain 200 ms crossfade
+        else {
+          o.t += (want - o.t) * (want ? 0.045 : 0.09);
+          if (o.t < 0.002 && !want) o.t = 0;
+        }
         dive = Math.max(dive, o.t);
         var e = ease(o.t), s = o.el.style;
         if (o.t > 0) {
-          s.visibility = 'visible'; s.opacity = Math.min(1, o.t * 1.6);
-          o.cam.style.transform = 'translateZ(' + (-(1 - e) * 900) + 'px)';
-          o.rig.style.transform = RM ? '' : 'translateZ(' + ((+k === room ? hold - 0.35 : 0) * o.D * 0.45) + 'px) rotateY(' + (pmx * 6) + 'deg) rotateX(' + (-pmy * 3) + 'deg)';
-          if (o.t > 0.3) o.vids.forEach(function (v) { if (v.paused) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } });
-          if (!RM) o.fx(dt);
+          s.visibility = 'visible'; s.opacity = RM ? o.t : Math.min(1, o.t * 1.6);
+          o.cam.style.transform = RM || flat ? '' : 'translateZ(' + (-(1 - e) * 900) + 'px)';
+          o.rig.style.transform = RM || flat ? '' : 'translateZ(' + ((+k === room ? hold - 0.35 : 0) * o.D * 0.45) + 'px) rotateY(' + (pmx * 6) + 'deg) rotateX(' + (-pmy * 3) + 'deg)';
+          if (o.t > 0.3 && !flat) o.vids.forEach(function (v) { if (v.paused) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } });
+          if (!RM && !flat) o.fx(dt);
+          else if (flat) o.vids.forEach(function (v) { if (!v.paused) v.pause(); });
         } else {
           s.visibility = 'hidden'; s.opacity = 0;
           o.vids.forEach(function (v) { if (!v.paused) v.pause(); });
         }
       });
-      var de = ease(dive);
+      checkProbe(dt, dive);
+      var de = RM ? dive : ease(dive);
       document.body.classList.toggle('inroom', de > 0.5);
       var ro = R[room], gt = ro.spawn ? '' : de > 0.5 ? ro.goIn : ro.go;
       if (goEl.textContent !== gt) goEl.textContent = gt;
-      tilt.style.transform = 'rotateX(' + tl + 'deg) scale(' + (1 + de * 1.4) + ')';
+      tilt.style.transform = RM ? 'none' : 'rotateX(' + tl + 'deg) scale(' + (1 + de * 1.4) + ')';
       tilt.style.opacity = 1 - de;
       stage.style.setProperty('--de', de.toFixed(3));
       player.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + (xy[2] + Math.PI / 2) + 'rad)';
@@ -1055,6 +1103,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
         var url = location.pathname + location.search + (o.id ? '#' + o.id : '');
         if (url !== location.pathname + location.search + location.hash) history.replaceState(null, '', url);
       }
+      if (!o.spawn) goEl.href = o.u;
       card.classList.add('lv-card--swap');
       clearTimeout(swapT);
       swapT = setTimeout(function () {
