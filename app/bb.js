@@ -818,8 +818,10 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     return { el: sec, cam: cam, rig: rig, cv: cv, vids: vids, fx: makeFx(cv, t.getAttribute('data-fx') || 'none', extraClass === 'lv-int--hero' ? 0.35 : 1),
       dk: num(t.getAttribute('data-depth'), 0.8), D: 0 };
   }
+  var LITE = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) || window.matchMedia('(pointer: coarse) and (max-width: 1024px)').matches;
+  if (LITE) document.documentElement.classList.add('lv-lite');
   function sizeInterior(o, w, h) {
-    var M = Math.max(w, h), s = o.el.style, dpr = Math.min(2, window.devicePixelRatio || 1);
+    var M = Math.max(w, h), s = o.el.style, dpr = LITE ? 1 : Math.min(2, window.devicePixelRatio || 1);
     o.D = Math.round(M * o.dk);
     s.setProperty('--W', w + 'px'); s.setProperty('--H', h + 'px');
     s.setProperty('--P', Math.round(M * 0.75) + 'px'); s.setProperty('--D', o.D + 'px');
@@ -1082,7 +1084,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       if (h && byId[h] != null) { scrollToRoom(byId[h], false); return true; }
       return false;
     }
-    var mx = 0, my = 0, pmx = 0, pmy = 0, cur = -1, camS = null, tl = RM ? 0 : 14, last = performance.now(), mode = '';
+    var mx = 0, my = 0, pmx = 0, pmy = 0, cur = -1, camS = null, tl = RM || LITE ? 0 : 14, last = performance.now(), mode = '';
     var probe = !RM, probeDt = [], flat = false;
     function checkProbe(dt, dive) {
       if (!probe || dive < 0.02) return;
@@ -1128,7 +1130,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       var tgt = { x: x, y: atSpawn ? R[0].y + R[0].h / 2 : y, s: sc, o: atSpawn && !phone ? vw * 0.5 : ox };
       camS = camS && !RM ? { x: camS.x + (tgt.x - camS.x) * 0.14, y: camS.y + (tgt.y - camS.y) * 0.14, s: camS.s + (tgt.s - camS.s) * 0.08, o: camS.o + (tgt.o - camS.o) * 0.1 } : tgt;
       world.style.transform = 'translate(' + (camS.o - camS.x * camS.s) + 'px,' + (oy - camS.y * camS.s) + 'px) scale(' + camS.s + ')';
-      if (!RM) tl += ((moving ? 24 : 14) - tl) * 0.06; // the map leans back further while walking
+      if (!RM && !LITE) tl += ((moving ? 24 : 14) - tl) * 0.06; // the map leans back further while walking
       flat = document.body.classList.contains('lv-flat');
       pmx += (mx - pmx) * 0.05; pmy += (my - pmy) * 0.05;
       var settled = !moving && Math.abs(camS.x - tgt.x) < 40 && Math.abs(camS.y - tgt.y) < 40;
@@ -1163,7 +1165,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       document.body.classList.toggle('inroom', de > 0.5);
       var ro = R[room], gt = ro.spawn ? '' : de > 0.5 ? ro.goIn : ro.go;
       if (goEl.textContent !== gt) goEl.textContent = gt;
-      tilt.style.transform = RM ? 'none' : 'rotateX(' + tl + 'deg) scale(' + (1 + de * 1.4) + ')';
+      tilt.style.transform = RM ? 'none' : (tl ? 'rotateX(' + tl + 'deg) ' : '') + 'scale(' + (1 + de * 1.4) + ')';
       tilt.style.opacity = 1 - de;
       stage.style.setProperty('--de', de.toFixed(3));
       player.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + (xy[2] + Math.PI / 2) + 'rad)';
