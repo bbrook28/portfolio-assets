@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=613e55ff83">
+<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=5a573265ca">
 <div class="bb-page cine home" data-title="Ben Brook, game designer" data-description="Living world designer. I build places, quests and the systems that make them react to players: level design, quest design and narrative. Shipped at Nexon and Skydance; Alpha at Cloud Chamber." style="--bb-accent:#a6e35f">
 <div class="lv" data-lv>
 
@@ -18,12 +18,12 @@
 
   <template class="lv-int bs4" data-for="bioshock-4" data-depth="0.8" data-fx="none" data-bb-vars="tx-steel:level/tx/bs4-steel.webp">
     <div class="face back steel">
-      <div class="trim"></div>
+      <div class="trim"></div><div class="pool"></div>
       <div class="stencil">NDA</div>
       <div class="vault"><div class="art"><img data-bb-src="covers/bioshock.jpg" alt=""></div></div>
     </div>
-    <div class="face left steel"><div class="trim"></div><div class="boxes"></div><div class="shade"></div></div>
-    <div class="face right steel"><div class="trim"></div><div class="boxes"></div><div class="shade"></div></div>
+    <div class="face left steel"><div class="trim"></div><div class="boxes"></div><i class="cage" style="left:30%"></i><i class="cage" style="left:72%"></i><div class="shade"></div></div>
+    <div class="face right steel"><div class="trim"></div><div class="boxes b2"></div><i class="cage" style="left:28%"></i><i class="cage" style="left:70%"></i><div class="shade"></div></div>
     <div class="face ceil"><div class="shade"></div></div>
     <div class="face floor"><div class="water"></div><div class="shade"></div></div>
     <div class="vdoor"><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i></div>
@@ -31,15 +31,16 @@
   </template>
 
   <template class="lv-int vr" data-for="vr-title" data-depth="0.8" data-fx="none" data-bb-vars="plan:lonestar/map-courthouse-overview.jpg">
-    <div class="face back grey"><div class="map"><img data-bb-src="lonestar/map-courthouse-gameplay.jpg" alt=""></div><div class="stencil">blockout only</div></div>
+    <div class="face back grey"><div class="map"><img data-bb-src="lonestar/map-courthouse-gameplay.jpg" alt=""></div><div class="stencil">blockout only</div><div class="worklight"></div></div>
     <div class="face left grey"><div class="map"><img data-bb-src="lonestar/map-police-overview.jpg" alt=""></div><div class="shade"></div></div>
-    <div class="face right grey"><div class="map"><img data-bb-src="lonestar/map-courthouse-tunnel.jpg" alt=""></div><div class="shade"></div></div>
+    <div class="face right grey"><div class="map"><img data-bb-src="lonestar/map-police-gameplay.jpg" alt=""></div><div class="shade"></div></div>
     <div class="face ceil"><div class="shade"></div></div>
-    <div class="face floor"><div class="shade"></div></div>
+    <div class="face floor"><div class="pool"></div><div class="shade"></div></div>
     <div class="obj box edge" style="--x:calc(var(--W)*-.34);--z:calc(var(--D)*-.35);--w:22;--h:28"></div>
     <div class="obj box" style="--x:calc(var(--W)*-.18);--z:calc(var(--D)*-.65);--w:12;--h:40"></div>
     <div class="obj box orange" style="--x:calc(var(--W)*.2);--z:calc(var(--D)*-.55);--w:10;--h:10"></div>
     <div class="obj box edge" style="--x:calc(var(--W)*.33);--z:calc(var(--D)*-.3);--w:24;--h:14"></div>
+    <div class="hang floodlamp" style="--x:0px;--z:calc(var(--D)*-.45)"></div>
   </template>
 
   <template class="lv-int fh" data-for="maplestory-classic" data-depth="0.8" data-fx="spore" data-bb-vars="tx-rock:level/tx/fh-rock.webp tx-earth:level/tx/fh-earth.webp">
@@ -56,11 +57,13 @@
       <div class="pic"><img data-bb-src="fh/maps/the-end-of-fleeting-light.webp" alt=""></div>
     </div><div class="vine" style="left:62%;--l:28%"></div><div class="shade"></div></div>
     <div class="face ceil rock"><div class="shade"></div></div>
-    <div class="face floor"><div class="glow"></div><div class="shade"></div></div>
+    <div class="face floor"><div class="moss"></div><div class="glow"></div><div class="shade"></div></div>
     <div class="obj px" style="--x:calc(var(--W)*-.06);--z:calc(var(--D)*-.8);--h:38"><img data-bb-src="fh/mobs/sporewood.png" alt=""></div>
     <div class="obj px edge" style="--x:calc(var(--W)*-.14);--z:calc(var(--D)*-.5);--h:13"><img data-bb-src="fh/mobs/glowshroom.png" alt=""></div>
     <div class="obj px" style="--x:calc(var(--W)*.27);--z:calc(var(--D)*-.45);--h:30"><img data-bb-src="fh/npcs-hires/lyn-the-librarian.png" alt=""></div>
     <div class="obj px edge" style="--x:calc(var(--W)*.12);--z:calc(var(--D)*-.7);--h:18"><img data-bb-src="fh/mobs/rotten-mushmom.png" alt=""></div>
+    <div class="obj px edge" style="--x:calc(var(--W)*-.33);--z:calc(var(--D)*-.62);--h:30"><img data-bb-src="fh/npcs-hires/notice-board.png" alt=""></div>
+    <div class="obj px shroom edge" style="--x:calc(var(--W)*.36);--z:calc(var(--D)*-.3);--h:12"><img data-bb-src="fh/mobs/glowshroom.png" alt=""></div>
   </template>
 
   <template class="lv-int twd" data-for="retribution" data-depth="0.8" data-fx="ember" data-bb-vars="tx-metal:level/tx/twd-metal.webp tx-ply:level/tx/twd-ply.webp tx-concrete:level/tx/twd-concrete.webp">
@@ -73,7 +76,8 @@
       <div class="print" style="--r:1.5deg"><img data-bb-src="twd/grenadier-blueprint.jpg" alt=""></div>
     </div><div class="hazard"></div><div class="shade"></div></div>
     <div class="face right metal"><div class="ply"></div><div class="wall-row">
-      <div class="print" style="--r:1deg;max-width:60%"><img data-bb-src="twd/weapon-chainsaw.jpg" alt=""></div>
+      <div class="print" style="--r:1deg"><img data-bb-src="twd/weapon-chainsaw.jpg" alt=""></div>
+      <div class="print" style="--r:-2deg"><img data-bb-src="twd/weapon-gunfire.jpg" alt=""></div>
     </div><div class="hazard"></div><div class="shade"></div></div>
     <div class="face ceil"><div class="shade"></div></div>
     <div class="face floor"><div class="table">
@@ -81,6 +85,8 @@
       <img data-bb-src="twd/camp-mafia-top.jpg" style="--r:1deg" alt=""><img data-bb-src="twd/camp-industrial-1-top.jpg" style="--r:-2deg" alt="">
     </div><div class="lamp"></div><div class="shade"></div></div>
     <div class="hang bulb" style="--x:0px;--z:calc(var(--D)*-.3)"></div>
+    <div class="obj crates edge" style="--x:calc(var(--W)*.33);--z:calc(var(--D)*-.45)"><i></i><i></i><i></i></div>
+    <div class="obj drum edge" style="--x:calc(var(--W)*-.34);--z:calc(var(--D)*-.55)"></div>
   </template>
 
   <template class="lv-int zoe" data-for="zoelie" data-depth="0.75" data-fx="mote" data-bb-vars="tx-boards:level/tx/zoe-boards.webp">
@@ -91,14 +97,17 @@
     <div class="face left boards"><div class="wall-row">
       <div class="pic" style="--r:-1.5deg"><img data-bb-src="zoelie/form-bridge.jpg" alt=""></div>
       <div class="pic" style="--r:1deg"><img data-bb-src="zoelie/form-imagination.jpg" alt=""></div>
-    </div><div class="shade"></div></div>
+    </div><div class="lit" style="left:35%"></div><div class="shade"></div></div>
     <div class="face right boards"><div class="wall-row">
-      <div class="pic" style="--r:1.2deg;max-width:56%"><img data-bb-src="zoelie/glide.jpg" alt=""></div>
-    </div><div class="shade"></div></div>
+      <div class="pic" style="--r:1.2deg"><img data-bb-src="zoelie/glide.jpg" alt=""></div>
+      <div class="pic" style="--r:-1deg"><img data-bb-src="zoelie/sneak.jpg" alt=""></div>
+    </div><div class="lit" style="left:45%"></div><div class="shade"></div></div>
     <div class="face ceil"><div class="shade"></div></div>
     <div class="face floor"><div class="quilt"></div><div class="warm"></div><div class="shade"></div></div>
     <div class="hang lamp" style="--x:calc(var(--W)*-.2);--z:calc(var(--D)*-.35)"></div>
     <div class="hang lamp" style="--x:calc(var(--W)*.22);--z:calc(var(--D)*-.55)"></div>
+    <div class="obj trunk edge" style="--x:calc(var(--W)*-.3);--z:calc(var(--D)*-.5)"></div>
+    <div class="obj stool edge" style="--x:calc(var(--W)*.3);--z:calc(var(--D)*-.38)"><i></i></div>
   </template>
 
   <template class="lv-int beh" data-for="behemoth" data-depth="0.8" data-fx="snow" data-bb-vars="tx-wall:level/tx/beh-wall.webp tx-floor:level/tx/beh-floor.webp tx-ceil:level/tx/beh-ceil.webp">
@@ -123,7 +132,7 @@
   </template>
 
   <template class="lv-int sumo" data-for="sumo-scuffle" data-depth="0.75" data-fx="petal" data-bb-vars="tx-folds:level/tx/sumo-folds.webp tx-sand:level/tx/sumo-sand.webp tx-wood:level/tx/sumo-wood.webp crowd:level/sumo/crowd.webp">
-    <div class="face back"><div class="wallpaper"></div>
+    <div class="face back"><div class="wallpaper"></div><div class="glowwall"></div>
       <div class="tiers"><div class="tier"></div><div class="tier"></div><div class="tier"></div></div>
       <div class="sign">SUMO SCUFFLE</div>
       <div class="phone"><video data-bb-src="level/sumo/loop.mp4" data-bb-poster="level/sumo/loop-poster.jpg" muted loop playsinline preload="none"></video></div>
@@ -136,10 +145,12 @@
       <div class="lanterns"><i class="lantern"></i><i class="lantern"></i><i class="lantern"></i><i class="lantern"></i><i class="lantern"></i></div>
       <div class="nobori" style="left:18%;--c:#d1792b"></div><div class="nobori" style="left:48%;--c:#2f6fb5"></div><div class="nobori" style="left:78%;--c:#c23a4a"></div>
       <div class="tiers"><div class="tier"></div><div class="tier"></div><div class="tier"></div></div><div class="shade"></div></div>
-    <div class="face ceil"><div class="shade"></div></div>
-    <div class="face floor"><div class="dohyo"><div class="ring"></div></div><div class="spot"></div><div class="shade"></div></div>
+    <div class="face ceil"><div class="beams"></div><div class="shade"></div></div>
+    <div class="face floor"><div class="dohyo"><div class="ring"></div></div><div class="spot"></div><div class="zabuton"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="shade"></div></div>
     <div class="hang roof" style="--x:0px;--z:calc(var(--D)*-.5)"><div class="top"></div><div class="maku"></div>
       <i class="fusa" style="left:2%;--c:#2c8a4a"></i><i class="fusa" style="right:2%;--c:#c23a4a"></i></div>
+    <div class="hang chochin edge" style="--x:calc(var(--W)*-.3);--z:calc(var(--D)*-.25)"></div>
+    <div class="hang chochin edge" style="--x:calc(var(--W)*.3);--z:calc(var(--D)*-.3)"></div>
     <div class="obj wrestler" style="--x:calc(var(--W)*.26);--z:calc(var(--D)*-.4)"><img data-bb-src="level/sumo/wrestler-cut.webp" alt=""></div>
   </template>
 
