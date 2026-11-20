@@ -838,6 +838,10 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       host.setAttribute('data-lv-on', '1');
       loadFonts();
       var o = cloneInterior(t, host, asset, 'lv-int--hero');
+      var pg = host.closest('.bb-page');
+      if (pg && t.hasAttribute('data-bb-vars')) t.getAttribute('data-bb-vars').split(/\s+/).forEach(function (pair) {
+        var i = pair.indexOf(':'); if (i > 0) pg.style.setProperty('--' + pair.slice(0, i), 'url("' + asset(pair.slice(i + 1)) + '")');
+      });
       var hw = 0, hh = 0, seen = true, t0 = 0, last = 0, mx = 0, my = 0, pmx = 0, pmy = 0;
       function fit() { hw = host.clientWidth; hh = host.clientHeight; if (hw && hh) sizeInterior(o, hw, hh); if (RM) o.rig.style.transform = 'translateZ(' + (0.07 * o.D) + 'px)'; }
       fit();

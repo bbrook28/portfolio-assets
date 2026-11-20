@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=5a573265ca">
+<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=523e4dcdfc">
 <div class="bb-page cine lst" data-title="Unannounced VR title · Ben Brook" data-description="Level Designer on an unannounced VR title at Skydance Games, canceled in 2024: the courthouse, police station and tunnel hub, from paper maps to a playable Unreal Engine 5 vertical slice." style="--bb-accent:#e0a46a">
 
   <section class="cine-hero sh-hero sh-hero--room" data-sh-hero>
@@ -72,15 +72,25 @@
         <figcaption>In the courthouse the critical path snakes through the first floor, climbs to the courtroom, then drops to the basement and out through the tunnel. Doors marked X force another way: up through the ceiling, across the second floor, down a ladder.</figcaption>
       </figure>
       <figure class="cine-map">
-        <div class="bb-compare" style="aspect-ratio:1319/832" aria-label="Police station overview compared with gameplay pass">
-          <img data-bb-src="lonestar/map-police-gameplay.jpg" alt="Police station gameplay pass with enemies and loot">
-          <div class="bb-compare__top"><img data-bb-src="lonestar/map-police-overview.jpg" alt="Police station floor plan"></div>
-          <div class="bb-compare__handle"></div>
-          <span class="bb-compare__label bb-compare__label--l">Overview</span>
-          <span class="bb-compare__label bb-compare__label--r">Gameplay</span>
-          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare police station overview and gameplay pass">
+        <div class="cine-map__img">
+          <img data-bb-src="lonestar/map-police-gameplay.jpg" alt="Police station gameplay pass with enemies, cabinets, desks and crouch-holes marked">
+          <ol class="cine-map__pins" aria-hidden="true">
+            <li style="--x:40.8%;--y:27%">1</li>
+            <li style="--x:66.7%;--y:26.6%">2</li>
+            <li style="--x:11.7%;--y:39.4%">3</li>
+            <li style="--x:73.3%;--y:86%">4</li>
+            <li style="--x:38.5%;--y:56%">5</li>
+            <li style="--x:59.6%;--y:86%">6</li>
+          </ol>
         </div>
-        <figcaption>The police station has cells, interrogation, a firing range and the sheriff's gun storage. Enemies, cabinets and desks break sightlines, and crouch-holes between the cells give stealthy players a way past.</figcaption>
+        <ol class="cine-map__key">
+          <li><b>Crouch-holes</b>Holes between the cells give stealthy players a way past.</li>
+          <li><b>Interrogation</b>One of the station's rooms, alongside the cells.</li>
+          <li><b>Firing range</b>A single-lane range off the bullpen.</li>
+          <li><b>Gun storage</b>The sheriff's office, where the guns are kept.</li>
+          <li><b>Cover</b>Enemies, cabinets and desks break sightlines.</li>
+          <li><b>The tunnel</b>Stairs down to the tunnel that joins the station to the courthouse with no break in the walk.</li>
+        </ol>
       </figure>
     </div>
   </section>
