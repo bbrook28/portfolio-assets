@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=0f5276f7e4">
-<div class="bb-page cine fh" data-title="MapleStory Classic: Forgotten Hollow · Ben Brook" data-description="Game Designer on Forgotten Hollow, a new level 39 to 60 region for MapleStory Classic World (Nexon, 2026). Level design, quests and tools." style="--bb-accent:#a6e35f">
+<div class="bb-page cine fh" data-title="MapleStory Classic: Forgotten Hollow · Ben Brook" data-description="Game Designer on Forgotten Hollow, a new level 39 to 60 region for MapleStory Classic World (Nexon, 2026). Level design and quests." style="--bb-accent:#a6e35f">
 <section class="cine-hero sh-hero sh-hero--glow sh-hero--cast" data-sh-hero>
   <span class="sh-hero__flare" aria-hidden="true"></span>
   <div class="sh-hero__title">
@@ -24,7 +24,6 @@
     <div class="cine-facts sh-hero__panel">
       <div><b>13 of 27</b><span>maps in the region built or rebuilt by me</span></div>
       <div><b>34</b><span>quests in 7 questlines</span></div>
-      <div><b>4</b><span>tools shipped to the team</span></div>
       <div><b>3</b><span>launches in 6 weeks: Founder's Access, Grand Launch, Forgotten Hollow</span></div>
     </div>
   </div>
@@ -36,7 +35,7 @@
   <dl class="bb-role">
     <dt>Role</dt><dd>Game Designer, May to November 2026</dd>
     <dt>Team</dt><dd>8 developers in the US: 3 designers (my lead, a combat and abilities designer, and me), 3 engineers, a user researcher and a producer, plus 2 to 4 developers at Nexon Korea</dd>
-    <dt>What I owned</dt><dd>Level layout, monster placement, quests, NPCs, items, and the tools used to check all of it. I worked from my lead's initial concept and took the region through QA to launch.</dd>
+    <dt>What I owned</dt><dd>Level layout, monster placement, quests, NPCs and items, built in Wizet's in-house MapleStory tools on the game's original data architecture. I worked from my lead's initial concept and took the region through QA to launch. I also wrote the team's dialogue style guide, a quest data guide for new designers, and a decision log of every design ruling.</dd>
   </dl>
 </section>
 
@@ -45,7 +44,7 @@
   <h2 class="cine-d">Rules measured from the original maps</h2>
   <div class="bb-case">
     <div><b>The problem</b><p>New maps in a classic game get compared with the old ones, and "this feels off" is not something a team can review. I needed a standard that anyone could check.</p></div>
-    <div><b>What I did</b><p>I wrote a tool, MapView, that reads map data and measures it. I ran it over about 90 of Nexon's original Victoria Island maps and recorded what they actually do: how wide the platform is under a large monster, how close monsters spawn to NPCs and portals, and how much of each floor is taken up by monsters alive at once. Those numbers became the region's rulebook.</p></div>
+    <div><b>What I did</b><p>I measured the map data of about 90 of Nexon's original Victoria Island maps and recorded what they actually do: how wide the platform is under a large monster, how close monsters spawn to NPCs and portals, and how much of each floor is taken up by monsters alive at once. Those numbers became the region's rulebook.</p></div>
     <div><b>What the data changed</b><p>My first rules were too cautious. I had limited big monsters to platforms about twice as wide as the smallest the original maps use, and I kept monsters much further from NPCs than the originals do. I loosened both to match. Where my rule and the original maps disagreed, the original maps won.</p></div>
     <div><b>The result</b><p>I audited every map in the region against the rulebook three weeks before launch. Seven maps were too empty, so I raised their spawn rates and added 59 spawn points. Quest camps were cleared of monsters. One floor of Decayed Tunnel III was 75% crowded; moving three spawns to the next map brought it to 47% without changing the kill count a quest depends on. Every change went to QA with a rendered before and after.</p></div>
   </div>
@@ -108,19 +107,6 @@
     <figure style="margin:0"><img data-bb-src="fh/maps-annotated/dilapidated-tomb.webp" alt="Dilapidated Tomb as shipped, with footholds, portals and spawns drawn on" data-bb-lightbox data-bb-caption="Dilapidated Tomb as shipped"><figcaption class="bb-figcap">Dilapidated Tomb, the next map down the Deep Passage.</figcaption></figure>
   </div>
   <p class="cine-hint">Footholds, ladders, portals and spawn points are drawn on from the map data. Tap a map to see it full size.</p>
-</section>
-
-<section class="cine-sec">
-  <span class="cine-label">Tools</span>
-  <h2 class="cine-d">Tools I wrote for the team</h2>
-  <p class="cine-lede">The game's data is edited by hand, and mistakes only show up in the client. I wrote four Python tools to catch them earlier.</p>
-  <div class="cine-cards3 cine-cards3--2">
-    <article><img data-bb-src="fh/maps-annotated/the-end-of-fleeting-light.webp" alt="The End of Fleeting Light drawn with footholds, portals and spawns"><h3>MapView</h3><p>Draws any map from the game data and renders a before and after of each change. It caught layout and crowding problems early, which cut two or three passes from QA. Every map image on this page came from it.</p></article>
-    <article><div class="fh-sprites"><img data-bb-src="fh/npcs-hires/luma.png" alt="Luma"><img data-bb-src="fh/npcs-hires/nyroth.png" alt="Nyroth"><img data-bb-src="fh/npcs-hires/jaime-the-explorer.png" alt="Jaime the Explorer"><img data-bb-src="fh/npcs-hires/daniel-the-scholar.png" alt="Daniel the Scholar"></div><h3>NPC Hi-Res</h3><p>Exports character and item sprites at four times their size for art requests. The marketing team used it instead of spending days digging through files for art.</p></article>
-    <article><h3>Quest Tool</h3><p>Checks each quest's data against its written design and lists where they disagree, then runs test plans through the quests. It saved tens of hours of manual testing.</p></article>
-    <article><h3>Dev Tool</h3><p>One window that sets up a playtest, which saves hours of setup.</p></article>
-  </div>
-  <p class="cine-hint" style="margin-top:28px">I also wrote the team's dialogue style guide, a quest data guide for new designers, and a decision log of every design ruling.</p>
 </section>
 
 <section class="cine-sec">
