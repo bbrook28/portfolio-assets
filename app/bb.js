@@ -1,4 +1,4 @@
-window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <span class=\"bb-footer__label\">Say hi</span>\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames<wbr>@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";window.BB_ROUTES={"/":"home","/portfolio-1":"portfolio","/about":"about","/contact":"contact","/projects/maplestory-classic":"maplestory-classic","/projects/t-7xfc6":"bioshock-4","/projects/tbehemoth":"behemoth","/projects/the-walking-dead-saints-and-sinners-chapter-2":"twd-retribution","/projects/level-design-blockout-canceled-title":"lonestar","/projects/zoelie":"zoelie","/projects/game-design-pitch-deck":"bioshock-infinite-redux","/projects/sumo-scuffle":"sumo-scuffle","/projects/hell-my-name-is-bubba":"hell-my-name-is-buba","/projects/beepo":"beepo"};window.BB_W={"beepo/controls.jpg":1400,"beepo/puzzle-1.jpg":1800,"beepo/puzzle-2.jpg":1800,"beepo/puzzle-3.jpg":1800,"beepo/puzzle-4.jpg":1800,"beepo/puzzle-5.jpg":1800,"beepo/robots.jpg":1800,"behemoth/arch-1.jpg":2000,"behemoth/arch-2.jpg":1920,"behemoth/arch-3.jpg":1920,"behemoth/steam-1.jpg":1800,"behemoth/steam-2.jpg":1800,"behemoth/steam-3.jpg":1800,"behemoth/steam-4.jpg":1800,"behemoth/steam-5.jpg":1800,"bsi/level-design-doc.jpg":2400,"bsi/slide-1.jpg":1500,"bsi/slide-2.jpg":1500,"bsi/slide-3.jpg":1500,"bsi/slide-4.jpg":1500,"bsi/slide-5.jpg":1500,"bsi/slide-6.jpg":1500,"bsi/slide-7.jpg":1500,"bsi/slide-8.jpg":1500,"buba/shot-1.jpg":1800,"buba/shot-2.jpg":1800,"buba/shot-3.jpg":1800,"buba/shot-4.jpg":1800,"buba/shot-5.jpg":1800,"buba/theme.jpg":1200,"covers/beepo-b.jpg":1347,"covers/beepo-ff.jpg":2000,"covers/beepo.jpg":1500,"covers/behemoth-boss.jpg":2000,"covers/behemoth-gematsu.jpg":1920,"covers/behemoth-key.jpg":2400,"covers/behemoth-sq.jpg":2000,"covers/bioshock-alt.jpg":1920,"covers/bioshock.jpg":1500,"covers/bld.jpg":2000,"covers/bsi-sq.jpg":2000,"covers/bsi.jpg":1920,"covers/bubba.jpg":1920,"covers/compass.jpg":2000,"covers/lonestar-sq.jpg":1301,"covers/maplestory.jpg":2000,"covers/scad-intel.jpg":1075,"covers/socal.jpg":2000,"covers/twd-sq.jpg":2000,"covers/twd-yt.jpg":1280,"covers/twd.jpg":2000,"covers/wildmagic.jpg":2000,"fh/compare/depths.webp":1600,"fh/compare/surface.webp":1600,"fh/craft/ledge-after.webp":1599,"fh/craft/ledge-before.webp":1599,"fh/crops/cave-fairy-sanctuary.webp":1280,"fh/crops/forgotten-hollow.webp":1280,"fh/crops/precipice-of-darkness.webp":1280,"fh/crops/primeval-forest-2.webp":1280,"fh/crops/the-end-of-fleeting-light.webp":1280,"fh/maps-annotated/another-sanctuary.webp":2400,"fh/maps-annotated/bygone-days.webp":800,"fh/maps-annotated/cave-fairy-sanctuary.webp":800,"fh/maps-annotated/cave-fairy-store.webp":800,"fh/maps-annotated/decayed-tunnel-1.webp":2400,"fh/maps-annotated/decayed-tunnel-2.webp":2400,"fh/maps-annotated/decayed-tunnel-3.webp":2308,"fh/maps-annotated/dilapidated-tomb.webp":2398,"fh/maps-annotated/forbidden-entrance.webp":2400,"fh/maps-annotated/forgotten-dungeon-tunnel.webp":1530,"fh/maps-annotated/forgotten-entrance-1.webp":2400,"fh/maps-annotated/forgotten-entrance-2.webp":2400,"fh/maps-annotated/forgotten-entrance-3.webp":2400,"fh/maps-annotated/forgotten-hollow.webp":2400,"fh/maps-annotated/hanging-gardens-of-rot.webp":2400,"fh/maps-annotated/lingering-regret.webp":2128,"fh/maps-annotated/perilous-descent-1.webp":1948,"fh/maps-annotated/perilous-descent-2.webp":1588,"fh/maps-annotated/perilous-descent-3.webp":1588,"fh/maps-annotated/precipice-of-darkness.webp":2400,"fh/maps-annotated/primeval-forest-1.webp":2400,"fh/maps-annotated/primeval-forest-2.webp":1408,"fh/maps-annotated/the-end-of-fleeting-light.webp":2400,"fh/maps-annotated/the-faded-canopy.webp":2308,"fh/maps-annotated/the-valley-of-death.webp":2400,"fh/maps/another-sanctuary.webp":2000,"fh/maps/bygone-days.webp":800,"fh/maps/cave-fairy-department-store.webp":800,"fh/maps/cave-fairy-sanctuary.webp":800,"fh/maps/cave-fairy-store.webp":800,"fh/maps/collision-of-ice-and-fire.webp":2000,"fh/maps/decayed-tunnel-1.webp":2000,"fh/maps/decayed-tunnel-2.webp":2000,"fh/maps/decayed-tunnel-3.webp":2000,"fh/maps/dilapidated-tomb.webp":2000,"fh/maps/forbidden-entrance.webp":2000,"fh/maps/forgotten-dungeon-tunnel.webp":1530,"fh/maps/forgotten-entrance-1.webp":2000,"fh/maps/forgotten-entrance-2.webp":2000,"fh/maps/forgotten-entrance-3.webp":2000,"fh/maps/forgotten-hollow.webp":2000,"fh/maps/hanging-gardens-of-rot.webp":2000,"fh/maps/lingering-regret.webp":2000,"fh/maps/perilous-descent-1.webp":1948,"fh/maps/perilous-descent-2.webp":1588,"fh/maps/perilous-descent-3.webp":1588,"fh/maps/precipice-of-darkness.webp":2000,"fh/maps/primeval-forest-1.webp":2000,"fh/maps/primeval-forest-2.webp":1408,"fh/maps/primeval-forest-3.webp":2000,"fh/maps/someone-elses-grave.webp":1408,"fh/maps/the-end-of-fleeting-light.webp":2000,"fh/maps/the-faded-canopy.webp":2000,"fh/maps/the-valley-of-death.webp":2000,"fh/official-header-m.webp":1000,"fh/official-header.webp":1920,"home/composite-m.webp":1000,"home/composite.webp":1800,"lonestar/map-courthouse-gameplay.jpg":1016,"lonestar/map-courthouse-overview.jpg":1016,"lonestar/map-courthouse-tunnel.jpg":1800,"lonestar/map-police-exterior.jpg":1319,"lonestar/map-police-gameplay.jpg":1325,"lonestar/map-police-overview.jpg":1319,"lonestar/map-police-tunnel.jpg":1325,"lonestar/reference-board.jpg":1067,"lonestar/shot-00.jpg":1920,"lonestar/shot-01.jpg":1920,"lonestar/shot-02.jpg":1920,"lonestar/shot-03.jpg":1920,"lonestar/shot-04.jpg":1920,"lonestar/shot-05.jpg":1920,"lonestar/shot-06.jpg":1920,"lonestar/shot-07.jpg":1920,"lonestar/shot-08.jpg":1920,"lonestar/shot-09.jpg":1920,"lonestar/shot-10.jpg":1920,"lonestar/shot-11.jpg":1920,"lonestar/shot-12.jpg":1920,"lonestar/shot-13.jpg":1920,"lonestar/shot-14.jpg":1920,"lonestar/shot-15.jpg":1920,"lonestar/shot-16.jpg":1920,"lonestar/shot-17.jpg":1920,"lonestar/shot-18.jpg":1920,"lonestar/shot-19.jpg":1920,"lonestar/shot-20.jpg":1920,"lonestar/shot-21.jpg":1920,"lonestar/shot-22.jpg":1920,"lonestar/shot-23.jpg":1920,"lonestar/shot-24.jpg":1920,"lonestar/shot-25.jpg":1920,"lonestar/shot-26.jpg":1920,"lonestar/shot-27.jpg":1920,"lonestar/shot-28.jpg":1920,"lonestar/shot-29.jpg":1920,"social/beepo.jpg":2400,"social/behemoth.jpg":2400,"social/bioshock-4.jpg":2400,"social/bioshock-infinite-redux.jpg":2400,"social/hell-my-name-is-buba.jpg":2400,"social/lonestar.jpg":2400,"social/maplestory-classic.jpg":2400,"social/share-2026.jpg":1500,"social/share.jpg":2400,"social/sumo-scuffle.jpg":2400,"social/twd-retribution.jpg":2400,"social/wild-magic.jpg":2400,"social/zoelie.jpg":2400,"sumo/bowling.jpg":1920,"sumo/feast-1.jpg":1920,"sumo/feast-slam.jpg":1920,"sumo/keepaway.jpg":1920,"sumo/keyart.jpg":2400,"sumo/king.jpg":1920,"sumo/menu.jpg":1920,"sumo/trailer-poster.jpg":1280,"twd/camp-duplex-top.jpg":1530,"twd/camp-duplex.jpg":1800,"twd/camp-hotel-1.jpg":1375,"twd/camp-hotel-2.jpg":1375,"twd/camp-industrial-1-top.jpg":1390,"twd/camp-industrial-2-interior.jpg":1415,"twd/camp-industrial-2.jpg":1505,"twd/camp-mafia-top.jpg":1388,"twd/camp-mansion-night.jpg":1500,"twd/camp-mansion-top.jpg":1501,"twd/camp-mvp-courtyard.jpg":1501,"twd/camp-school-interior.jpg":1388,"twd/camp-school.jpg":1388,"twd/exile-dialogue-graph.jpg":1800,"twd/exile-order-ui-1.jpg":1800,"twd/exile-order-ui-2.jpg":1800,"twd/grenadier-blueprint.jpg":1638,"twd/grenadier-lineup-1.jpg":1800,"twd/grenadier-lineup-2.jpg":1800,"twd/patricia.jpg":1600,"twd/weapon-chainsaw.jpg":1600,"twd/weapon-gunfire.jpg":1600,"twd/weapon-silencer.jpg":1600,"wildmagic/arena-top.jpg":1800,"wildmagic/combat.jpg":1213,"wildmagic/controls-keys.jpg":1400,"wildmagic/controls-pad.jpg":1400,"wildmagic/enemies.jpg":1213,"zoelie/1.jpg":1400,"zoelie/12.jpg":1400,"zoelie/13.jpg":1400,"zoelie/4.jpg":1400,"zoelie/8.jpg":1400,"zoelie/form-bridge.jpg":1280,"zoelie/form-imagination.jpg":1200,"zoelie/glide.jpg":960,"zoelie/hero-first.jpg":1280,"zoelie/sneak.jpg":960,"zoelie/trailer-33.jpg":1280,"zoelie/trailer-41.jpg":1280,"zoelie/trailer-53.jpg":1280,"zoelie/trailer-57.jpg":1280,"zoelie/trailer-77.jpg":1280,"zoelie/trailer-8.jpg":1280};
+window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/portfolio-1\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <span class=\"bb-footer__label\">Say hi</span>\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames<wbr>@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/portfolio-1\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";window.BB_ROUTES={"/":"home","/portfolio-1":"portfolio","/about":"about","/contact":"contact","/projects/maplestory-classic":"maplestory-classic","/projects/t-7xfc6":"bioshock-4","/projects/tbehemoth":"behemoth","/projects/the-walking-dead-saints-and-sinners-chapter-2":"twd-retribution","/projects/level-design-blockout-canceled-title":"lonestar","/projects/zoelie":"zoelie","/projects/game-design-pitch-deck":"bioshock-infinite-redux","/projects/sumo-scuffle":"sumo-scuffle","/projects/hell-my-name-is-bubba":"hell-my-name-is-buba","/projects/beepo":"beepo"};window.BB_W={"beepo/controls.jpg":1400,"beepo/puzzle-1.jpg":1800,"beepo/puzzle-2.jpg":1800,"beepo/puzzle-3.jpg":1800,"beepo/puzzle-4.jpg":1800,"beepo/puzzle-5.jpg":1800,"beepo/robots.jpg":1800,"behemoth/arch-1.jpg":2000,"behemoth/arch-2.jpg":1920,"behemoth/arch-3.jpg":1920,"behemoth/steam-1.jpg":1800,"behemoth/steam-2.jpg":1800,"behemoth/steam-3.jpg":1800,"behemoth/steam-4.jpg":1800,"behemoth/steam-5.jpg":1800,"bsi/level-design-doc.jpg":2400,"bsi/slide-1.jpg":1500,"bsi/slide-2.jpg":1500,"bsi/slide-3.jpg":1500,"bsi/slide-4.jpg":1500,"bsi/slide-5.jpg":1500,"bsi/slide-6.jpg":1500,"bsi/slide-7.jpg":1500,"bsi/slide-8.jpg":1500,"buba/shot-1.jpg":1800,"buba/shot-2.jpg":1800,"buba/shot-3.jpg":1800,"buba/shot-4.jpg":1800,"buba/shot-5.jpg":1800,"buba/theme.jpg":1200,"covers/beepo-b.jpg":1347,"covers/beepo-ff.jpg":2000,"covers/beepo.jpg":1500,"covers/behemoth-boss.jpg":2000,"covers/behemoth-gematsu.jpg":1920,"covers/behemoth-key.jpg":2400,"covers/behemoth-sq.jpg":2000,"covers/bioshock-alt.jpg":1920,"covers/bioshock.jpg":1500,"covers/bld.jpg":2000,"covers/bsi-sq.jpg":2000,"covers/bsi.jpg":1920,"covers/bubba.jpg":1920,"covers/compass.jpg":2000,"covers/lonestar-sq.jpg":1301,"covers/maplestory.jpg":2000,"covers/scad-intel.jpg":1075,"covers/socal.jpg":2000,"covers/twd-sq.jpg":2000,"covers/twd-yt.jpg":1280,"covers/twd.jpg":2000,"covers/wildmagic.jpg":2000,"fh/compare/depths.webp":1600,"fh/compare/surface.webp":1600,"fh/craft/ledge-after.webp":1599,"fh/craft/ledge-before.webp":1599,"fh/crops/cave-fairy-sanctuary.webp":1280,"fh/crops/forgotten-hollow.webp":1280,"fh/crops/precipice-of-darkness.webp":1280,"fh/crops/primeval-forest-2.webp":1280,"fh/crops/the-end-of-fleeting-light.webp":1280,"fh/maps-annotated/another-sanctuary.webp":2400,"fh/maps-annotated/bygone-days.webp":800,"fh/maps-annotated/cave-fairy-sanctuary.webp":800,"fh/maps-annotated/cave-fairy-store.webp":800,"fh/maps-annotated/decayed-tunnel-1.webp":2400,"fh/maps-annotated/decayed-tunnel-2.webp":2400,"fh/maps-annotated/decayed-tunnel-3.webp":2308,"fh/maps-annotated/dilapidated-tomb.webp":2398,"fh/maps-annotated/forbidden-entrance.webp":2400,"fh/maps-annotated/forgotten-dungeon-tunnel.webp":1530,"fh/maps-annotated/forgotten-entrance-1.webp":2400,"fh/maps-annotated/forgotten-entrance-2.webp":2400,"fh/maps-annotated/forgotten-entrance-3.webp":2400,"fh/maps-annotated/forgotten-hollow.webp":2400,"fh/maps-annotated/hanging-gardens-of-rot.webp":2400,"fh/maps-annotated/lingering-regret.webp":2128,"fh/maps-annotated/perilous-descent-1.webp":1948,"fh/maps-annotated/perilous-descent-2.webp":1588,"fh/maps-annotated/perilous-descent-3.webp":1588,"fh/maps-annotated/precipice-of-darkness.webp":2400,"fh/maps-annotated/primeval-forest-1.webp":2400,"fh/maps-annotated/primeval-forest-2.webp":1408,"fh/maps-annotated/the-end-of-fleeting-light.webp":2400,"fh/maps-annotated/the-faded-canopy.webp":2308,"fh/maps-annotated/the-valley-of-death.webp":2400,"fh/maps/another-sanctuary.webp":2000,"fh/maps/bygone-days.webp":800,"fh/maps/cave-fairy-department-store.webp":800,"fh/maps/cave-fairy-sanctuary.webp":800,"fh/maps/cave-fairy-store.webp":800,"fh/maps/collision-of-ice-and-fire.webp":2000,"fh/maps/decayed-tunnel-1.webp":2000,"fh/maps/decayed-tunnel-2.webp":2000,"fh/maps/decayed-tunnel-3.webp":2000,"fh/maps/dilapidated-tomb.webp":2000,"fh/maps/forbidden-entrance.webp":2000,"fh/maps/forgotten-dungeon-tunnel.webp":1530,"fh/maps/forgotten-entrance-1.webp":2000,"fh/maps/forgotten-entrance-2.webp":2000,"fh/maps/forgotten-entrance-3.webp":2000,"fh/maps/forgotten-hollow.webp":2000,"fh/maps/hanging-gardens-of-rot.webp":2000,"fh/maps/lingering-regret.webp":2000,"fh/maps/perilous-descent-1.webp":1948,"fh/maps/perilous-descent-2.webp":1588,"fh/maps/perilous-descent-3.webp":1588,"fh/maps/precipice-of-darkness.webp":2000,"fh/maps/primeval-forest-1.webp":2000,"fh/maps/primeval-forest-2.webp":1408,"fh/maps/primeval-forest-3.webp":2000,"fh/maps/someone-elses-grave.webp":1408,"fh/maps/the-end-of-fleeting-light.webp":2000,"fh/maps/the-faded-canopy.webp":2000,"fh/maps/the-valley-of-death.webp":2000,"fh/official-header-m.webp":1000,"fh/official-header.webp":1920,"home/composite-m.webp":1000,"home/composite.webp":1800,"level/beh/loop-poster.jpg":1280,"level/fh/loop-poster.jpg":1280,"level/sumo/crowd.webp":2048,"level/twd/loop-poster.jpg":1280,"level/tx/beh-ceil.webp":1024,"level/tx/beh-floor.webp":1024,"level/tx/beh-wall.webp":1024,"level/tx/fh-earth.webp":1024,"level/tx/fh-rock.webp":1024,"level/tx/sg-vault.webp":1024,"level/tx/sg-wall.webp":1024,"level/tx/sg-wood.webp":1024,"level/tx/sumo-folds.webp":1024,"level/tx/sumo-sand.webp":1024,"level/tx/sumo-wood.webp":1024,"level/tx/twd-concrete.webp":1024,"level/tx/twd-metal.webp":1024,"level/tx/twd-ply.webp":1024,"level/tx/zoe-boards.webp":1024,"lonestar/map-courthouse-gameplay.jpg":1016,"lonestar/map-courthouse-overview.jpg":1016,"lonestar/map-courthouse-tunnel.jpg":1800,"lonestar/map-police-exterior.jpg":1319,"lonestar/map-police-gameplay.jpg":1325,"lonestar/map-police-overview.jpg":1319,"lonestar/map-police-tunnel.jpg":1325,"lonestar/reference-board.jpg":1067,"lonestar/shot-00.jpg":1920,"lonestar/shot-01.jpg":1920,"lonestar/shot-02.jpg":1920,"lonestar/shot-03.jpg":1920,"lonestar/shot-04.jpg":1920,"lonestar/shot-05.jpg":1920,"lonestar/shot-06.jpg":1920,"lonestar/shot-07.jpg":1920,"lonestar/shot-08.jpg":1920,"lonestar/shot-09.jpg":1920,"lonestar/shot-10.jpg":1920,"lonestar/shot-11.jpg":1920,"lonestar/shot-12.jpg":1920,"lonestar/shot-13.jpg":1920,"lonestar/shot-14.jpg":1920,"lonestar/shot-15.jpg":1920,"lonestar/shot-16.jpg":1920,"lonestar/shot-17.jpg":1920,"lonestar/shot-18.jpg":1920,"lonestar/shot-19.jpg":1920,"lonestar/shot-20.jpg":1920,"lonestar/shot-21.jpg":1920,"lonestar/shot-22.jpg":1920,"lonestar/shot-23.jpg":1920,"lonestar/shot-24.jpg":1920,"lonestar/shot-25.jpg":1920,"lonestar/shot-26.jpg":1920,"lonestar/shot-27.jpg":1920,"lonestar/shot-28.jpg":1920,"lonestar/shot-29.jpg":1920,"social/beepo.jpg":2400,"social/behemoth.jpg":2400,"social/bioshock-4.jpg":2400,"social/bioshock-infinite-redux.jpg":2400,"social/hell-my-name-is-buba.jpg":2400,"social/lonestar.jpg":2400,"social/maplestory-classic.jpg":2400,"social/share-2026.jpg":1500,"social/share.jpg":2400,"social/sumo-scuffle.jpg":2400,"social/twd-retribution.jpg":2400,"social/wild-magic.jpg":2400,"social/zoelie.jpg":2400,"sumo/bowling.jpg":1920,"sumo/feast-1.jpg":1920,"sumo/feast-slam.jpg":1920,"sumo/keepaway.jpg":1920,"sumo/keyart.jpg":2400,"sumo/king.jpg":1920,"sumo/menu.jpg":1920,"sumo/trailer-poster.jpg":1280,"twd/camp-duplex-top.jpg":1530,"twd/camp-duplex.jpg":1800,"twd/camp-hotel-1.jpg":1375,"twd/camp-hotel-2.jpg":1375,"twd/camp-industrial-1-top.jpg":1390,"twd/camp-industrial-2-interior.jpg":1415,"twd/camp-industrial-2.jpg":1505,"twd/camp-mafia-top.jpg":1388,"twd/camp-mansion-night.jpg":1500,"twd/camp-mansion-top.jpg":1501,"twd/camp-mvp-courtyard.jpg":1501,"twd/camp-school-interior.jpg":1388,"twd/camp-school.jpg":1388,"twd/exile-dialogue-graph.jpg":1800,"twd/exile-order-ui-1.jpg":1800,"twd/exile-order-ui-2.jpg":1800,"twd/grenadier-blueprint.jpg":1638,"twd/grenadier-lineup-1.jpg":1800,"twd/grenadier-lineup-2.jpg":1800,"twd/patricia.jpg":1600,"twd/weapon-chainsaw.jpg":1600,"twd/weapon-gunfire.jpg":1600,"twd/weapon-silencer.jpg":1600,"wildmagic/arena-top.jpg":1800,"wildmagic/combat.jpg":1213,"wildmagic/controls-keys.jpg":1400,"wildmagic/controls-pad.jpg":1400,"wildmagic/enemies.jpg":1213,"zoelie/1.jpg":1400,"zoelie/12.jpg":1400,"zoelie/13.jpg":1400,"zoelie/4.jpg":1400,"zoelie/8.jpg":1400,"zoelie/form-bridge.jpg":1280,"zoelie/form-imagination.jpg":1200,"zoelie/glide.jpg":960,"zoelie/hero-first.jpg":1280,"zoelie/sneak.jpg":960,"zoelie/trailer-33.jpg":1280,"zoelie/trailer-41.jpg":1280,"zoelie/trailer-53.jpg":1280,"zoelie/trailer-57.jpg":1280,"zoelie/trailer-77.jpg":1280,"zoelie/trailer-8.jpg":1280};
 (function () {
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -24,6 +24,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     return (window.BB_ASSET_BASE || '') + key;
   }
   window.bbAsset = assetUrl;
+  window.bbResolveAssets = function (root) { resolveAssets(root); };
   function resolveAssets(root) {
     var small = window.matchMedia('(max-width: 760px)').matches;
     root.querySelectorAll('[data-bb-src]').forEach(function (el) {
@@ -676,7 +677,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       try { fn(root); } catch (err) { console.error(err); }
     });
   }
-  var PROJECTS = ['fh', 'bs4', 'beh', 'twd', 'lst', 'sumo', 'zoe', 'bsi', 'buba', 'bp'];
+  var PROJECTS = ['fh', 'bs4', 'beh', 'twd', 'lst', 'sumo', 'zoe', 'sg'];
   window.bbAchieve = function () {};
   function initUpdated() {
     var el = document.querySelector('[data-bb-updated]');
@@ -732,4 +733,348 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
   window.BB_COMPONENTS = window.BB_COMPONENTS || [];
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
+})();
+(function () {
+  'use strict';
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  function el(tag, cls, parent) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function num(v, d) { var n = parseFloat(v); return isNaN(n) ? d : n; }
+  function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
+  function pad2(n) { return (n < 10 ? '0' : '') + n; }
+  var FX = {
+    snow: { n: 220 },
+    petal: { n: 46 },
+    dust: { n: 70, rgb: '255,215,140', rise: 0.000012, size: 3 },
+    spore: { n: 80, rgb: '150,235,120', rise: 0.000016, size: 2.4 },
+    ember: { n: 90, rgb: '255,140,60', rise: 0.00004, size: 1.8 },
+    mote: { n: 60, rgb: '255,190,90', rise: 0.000006, size: 2.6 }
+  };
+  function makeFx(cv, kind) {
+    var cfg = FX[kind];
+    if (!cfg) return function () {};
+    var ps = [], i;
+    for (i = 0; i < cfg.n; i++) ps.push({ x: Math.random(), y: Math.random(), z: 0.3 + Math.random() * 0.9, a: Math.random() * 6.28, s: Math.random() });
+    return function (dt) {
+      var c = cv.getContext('2d'), W = cv.width, H = cv.height;
+      var k = W / 1600 * (window.devicePixelRatio > 1 ? 1.4 : 1);
+      c.clearRect(0, 0, W, H);
+      for (var j = 0; j < ps.length; j++) {
+        var p = ps[j];
+        if (kind === 'snow') {
+          p.y += dt * 0.00006 * (1 + p.z * 2); p.x += dt * 0.00002 * (Math.sin(p.a += dt * 0.001) + 0.6);
+          c.fillStyle = 'rgba(235,242,255,' + (0.35 + 0.5 * p.z) + ')';
+          c.beginPath(); c.arc(p.x * W, p.y * H, (1 + p.z * 3) * k, 0, 7); c.fill();
+        } else if (kind === 'petal') {
+          p.y += dt * 0.00004 * (1 + p.z); p.x += dt * 0.00002 * Math.sin(p.a += dt * 0.0015);
+          c.save(); c.translate(p.x * W, p.y * H); c.rotate(p.a);
+          c.fillStyle = 'rgba(255,' + (170 + p.s * 40 | 0) + ',' + (200 + p.s * 30 | 0) + ',' + (0.5 + 0.4 * p.z) + ')';
+          c.beginPath(); c.ellipse(0, 0, 8 * p.z * k, 4.5 * p.z * k, 0, 0, 7); c.fill(); c.restore();
+        } else {
+          p.y -= dt * cfg.rise * (1 + p.z); p.x += dt * 0.000008 * Math.sin(p.a += dt * 0.0007);
+          var r = (1 + p.z * 2.2) * k * cfg.size, px = p.x * W, py = p.y * H;
+          var g = c.createRadialGradient(px, py, 0, px, py, r);
+          g.addColorStop(0, 'rgba(' + cfg.rgb + ',' + (0.5 * p.z) + ')'); g.addColorStop(1, 'rgba(' + cfg.rgb + ',0)');
+          c.fillStyle = g; c.beginPath(); c.arc(px, py, r, 0, 7); c.fill();
+        }
+        if (p.y > 1.05) p.y = -0.05; if (p.y < -0.05) p.y = 1.05;
+        if (p.x > 1.05) p.x = -0.05; if (p.x < -0.05) p.x = 1.05;
+      }
+    };
+  }
+  function loadFonts() {
+    if (document.getElementById('lv-fonts')) return;
+    var l = document.createElement('link');
+    l.id = 'lv-fonts'; l.rel = 'stylesheet';
+    l.href = 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&display=swap';
+    document.head.appendChild(l);
+  }
+  function initLevel(root, api) {
+    var lv = (root || document).querySelector('[data-lv]');
+    if (!lv || lv.getAttribute('data-lv-on')) return;
+    lv.setAttribute('data-lv-on', '1');
+    api = api || {};
+    var asset = api.asset || window.bbAsset || function (k) { return k; };
+    var RM = !!api.reduceMotion;
+    loadFonts();
+    var spawnEl = lv.querySelector('.lv-spawn');
+    var R = [{
+      spawn: true, el: spawnEl,
+      x: num(spawnEl && spawnEl.getAttribute('data-x'), 300), y: num(spawnEl && spawnEl.getAttribute('data-y'), 240),
+      w: num(spawnEl && spawnEl.getAttribute('data-w'), 980), h: num(spawnEl && spawnEl.getAttribute('data-h'), 780),
+      c: (spawnEl && spawnEl.getAttribute('data-c')) || '#ff5b2e'
+    }];
+    Array.prototype.forEach.call(lv.querySelectorAll('.lv-room'), function (a) {
+      var note = a.getAttribute('data-note');
+      R.push({
+        a: a, id: a.id, n: a.textContent.trim(), u: a.getAttribute('href'),
+        x: num(a.getAttribute('data-x'), 0), y: num(a.getAttribute('data-y'), 0),
+        w: num(a.getAttribute('data-w'), 800), h: num(a.getAttribute('data-h'), 500),
+        c: a.getAttribute('data-c') || '#ff5b2e',
+        s: a.getAttribute('data-studio') || '', r: a.getAttribute('data-role') || '',
+        p: a.getAttribute('data-summary') || '', img: a.getAttribute('data-img'),
+        go: a.getAttribute('data-go') || 'Enter room', goIn: a.getAttribute('data-go-in') || 'Explore the project',
+        note: note ? note.split('|') : null, lock: a.hasAttribute('data-lock')
+      });
+    });
+    var byId = {};
+    R.forEach(function (o, i) { if (o.id) byId[o.id] = i; });
+    var templates = {};
+    Array.prototype.forEach.call(lv.querySelectorAll('template.lv-int'), function (t) {
+      var i = byId[t.getAttribute('data-for')];
+      if (i != null) templates[i] = t;
+    });
+    var WW = 0, WH = 0;
+    R.forEach(function (o) { WW = Math.max(WW, o.x + o.w); WH = Math.max(WH, o.y + o.h); });
+    WW += 400; WH += 400;
+    lv.classList.add('lv--on');
+    lv.style.setProperty('--n', R.length);
+    var stage = el('div', 'lv-stage');
+    var tilt = el('div', 'lv-tilt', stage);
+    var world = el('div', 'lv-world', tilt);
+    world.style.width = WW + 'px'; world.style.height = WH + 'px';
+    var glows = el('div', 'lv-glows', world);
+    var walls = el('div', 'lv-walls', world);
+    var corr = document.createElementNS(SVGNS, 'svg');
+    corr.setAttribute('class', 'lv-corr'); corr.setAttribute('width', WW); corr.setAttribute('height', WH);
+    corr.setAttribute('aria-hidden', 'true');
+    world.appendChild(corr);
+    var content = el('div', 'lv-content', world);
+    var player = el('div', 'lv-player', world);
+    el('i', '', player);
+    var ints = el('div', 'lv-ints', stage);
+    el('div', 'lv-vig', stage);
+    el('div', 'lv-grain', stage);
+    var card = el('div', 'lv-card lv-card--hide', stage);
+    var cMeta = el('div', 'lv-card__meta', card), cH = el('h2', 'lv-card__h', card), cP = el('p', 'lv-card__p', card);
+    var goEl = el('a', 'lv-go', card);
+    var count = el('div', 'lv-count', stage);
+    count.setAttribute('aria-hidden', 'true');
+    var cntB = el('b', '', count);
+    count.appendChild(document.createTextNode('OF ' + pad2(R.length - 1)));
+    var mini = el('div', 'lv-mini', stage);
+    mini.setAttribute('aria-hidden', 'true');
+    var hint = el('div', 'lv-hint', stage);
+    hint.textContent = 'Scroll to move';
+    hint.setAttribute('aria-hidden', 'true');
+    lv.insertBefore(stage, lv.firstChild);
+    R.forEach(function (o, i) {
+      o.cx = o.x + o.w / 2; o.cy = o.spawn ? o.y + o.h - 110 : o.y + o.h / 2;
+      var g = el('div', 'lv-glow', glows), gw = o.w + 900, gh = o.h + 800;
+      g.style.cssText = 'left:' + (o.cx - gw / 2) + 'px;top:' + (o.y + o.h / 2 - gh / 2) + 'px;width:' + gw + 'px;height:' + gh + 'px;background:radial-gradient(closest-side,' + o.c + ',transparent)';
+      o.glow = g;
+      var w = el('div', 'lv-wall', walls);
+      w.style.cssText = 'left:' + o.x + 'px;top:' + o.y + 'px;width:' + o.w + 'px;height:' + o.h + 'px';
+      if (o.spawn) {
+        if (o.el) { content.appendChild(o.el); o.el.style.left = (o.x + 70) + 'px'; o.el.style.top = (o.y + 70) + 'px'; }
+        var t = el('div', 'lv-tag', content);
+        t.style.left = o.x + 'px'; t.style.top = (o.y - 30) + 'px';
+        t.innerHTML = '<b>RM-00</b>&nbsp; SPAWN';
+        t.setAttribute('aria-hidden', 'true');
+        return;
+      }
+      var a = o.a;
+      a.className = 'lv-room' + (o.lock ? ' lv-room--lock' : '') + (templates[i] ? ' lv-room--enter' : '');
+      a.style.cssText = 'left:' + o.x + 'px;top:' + o.y + 'px;width:' + o.w + 'px;height:' + o.h + 'px';
+      a.setAttribute('aria-label', o.n + (o.s ? ', ' + o.s : ''));
+      a.innerHTML = '';
+      var inner = el('span', 'lv-room__in', a), pic = el('span', 'lv-room__pic', inner);
+      if (o.img) { var im = el('img', '', pic); im.alt = ''; im.setAttribute('data-bb-src', o.img); }
+      var tag = el('span', 'lv-tag', a);
+      tag.innerHTML = '<b>RM-' + pad2(i) + '</b>&nbsp; ';
+      tag.appendChild(document.createTextNode(o.n.toUpperCase()));
+      var dim = el('span', 'lv-dim', a);
+      dim.textContent = (o.w / 20) + ' × ' + (o.h / 20) + ' m';
+      if (o.note) {
+        var nt = el('span', 'lv-note', a);
+        nt.textContent = o.note[0]; nt.style.left = num(o.note[1], 0) + 'px'; nt.style.top = num(o.note[2], 0) + 'px';
+      }
+      content.appendChild(a);
+    });
+    if (window.bbResolveAssets) window.bbResolveAssets(content);
+    var pts = [];
+    R.forEach(function (o, i) {
+      if (i) {
+        var p = R[i - 1], horiz = Math.abs(o.cx - p.cx) > Math.abs(o.cy - p.cy);
+        pts.push(horiz ? [o.cx, p.cy] : [p.cx, o.cy]);
+      }
+      pts.push([o.cx, o.cy]); o.pi = pts.length - 1;
+    });
+    var d = 'M' + pts.map(function (p) { return p.join(' '); }).join('L');
+    corr.innerHTML = '<path d="' + d + '" fill="none" stroke="#d9d3c5" stroke-width="92"/><path d="' + d + '" fill="none" stroke="#111316" stroke-width="84"/>' +
+      '<path d="' + d + '" fill="none" stroke="#ff5b2e" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" opacity=".9"/>';
+    var cum = [0];
+    for (var q = 1; q < pts.length; q++) cum.push(cum[q - 1] + Math.hypot(pts[q][0] - pts[q - 1][0], pts[q][1] - pts[q - 1][1]));
+    var total = cum[cum.length - 1];
+    function at(len) {
+      var i = 1;
+      while (i < cum.length - 1 && cum[i] < len) i++;
+      var t = (len - cum[i - 1]) / ((cum[i] - cum[i - 1]) || 1), a = pts[i - 1], b = pts[i];
+      return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, Math.atan2(b[1] - a[1], b[0] - a[0])];
+    }
+    var stops = R.map(function (o) { return cum[o.pi]; });
+    var ms = document.createElementNS(SVGNS, 'svg');
+    ms.setAttribute('viewBox', '0 0 ' + WW + ' ' + WH);
+    ms.innerHTML = R.map(function (o) { return '<rect x="' + o.x + '" y="' + o.y + '" width="' + o.w + '" height="' + o.h + '" fill="none" stroke="rgba(239,233,220,.35)" stroke-width="40"/>'; }).join('') +
+      '<path d="' + d + '" fill="none" stroke="rgba(239,233,220,.2)" stroke-width="40"/><path class="lv-mtrail" d="' + d + '" fill="none" stroke="#ff5b2e" stroke-width="50"/><circle class="lv-mdot" r="90" fill="#ff5b2e"/>';
+    mini.appendChild(ms);
+    var mtrail = ms.querySelector('.lv-mtrail'), mdot = ms.querySelector('.lv-mdot');
+    mtrail.style.strokeDasharray = total + ' ' + total;
+    var I = {};
+    Object.keys(templates).forEach(function (k) {
+      var t = templates[k];
+      I[k] = { t: 0, D: 0, dk: num(t.getAttribute('data-depth'), 0.8), fxKind: t.getAttribute('data-fx') || 'none', tpl: t, el: null };
+    });
+    var vw = 0, vh = 0;
+    function sizeInt(o) {
+      if (!o.el) return;
+      var M = Math.max(vw, vh), s = o.el.style, dpr = Math.min(2, window.devicePixelRatio || 1);
+      o.D = Math.round(M * o.dk);
+      s.setProperty('--W', vw + 'px'); s.setProperty('--H', vh + 'px');
+      s.setProperty('--P', Math.round(M * 0.75) + 'px'); s.setProperty('--D', o.D + 'px');
+      s.setProperty('--u', (Math.min(vw * 0.8, vh) / 100).toFixed(2) + 'px');
+      o.cv.width = Math.round(vw * dpr); o.cv.height = Math.round(vh * dpr);
+    }
+    function build(k) {
+      var o = I[k];
+      if (!o || o.el) return;
+      var t = o.tpl, sec = el('section', t.className + ' lv-int--' + R[k].id, ints);
+      sec.setAttribute('aria-hidden', 'true');
+      var cam = el('div', 'lv-cam', sec), rig = el('div', 'lv-rig', cam);
+      rig.appendChild(document.importNode(t.content, true));
+      o.cv = el('canvas', 'lv-fx', sec);
+      o.el = sec; o.cam = cam; o.rig = rig;
+      if (t.hasAttribute('data-bb-vars')) sec.setAttribute('data-bb-vars', t.getAttribute('data-bb-vars'));
+      [sec].concat(Array.prototype.slice.call(sec.querySelectorAll('[data-bb-vars]'))).forEach(function (e) {
+        e.getAttribute('data-bb-vars').split(/\s+/).forEach(function (pair) {
+          var i = pair.indexOf(':');
+          if (i > 0) e.style.setProperty('--' + pair.slice(0, i), 'url("' + asset(pair.slice(i + 1)) + '")');
+        });
+      });
+      if (window.bbResolveAssets) window.bbResolveAssets(sec);
+      o.vids = Array.prototype.slice.call(sec.querySelectorAll('video'));
+      o.vids.forEach(function (v) { v.muted = true; v.setAttribute('preload', 'none'); });
+      o.fx = makeFx(o.cv, o.fxKind);
+      sizeInt(o);
+    }
+    function size() {
+      vw = stage.clientWidth || window.innerWidth; vh = stage.clientHeight || window.innerHeight;
+      Object.keys(I).forEach(function (k) { sizeInt(I[k]); });
+    }
+    function range() {
+      var top = lv.getBoundingClientRect().top + window.pageYOffset;
+      return { top: top, len: Math.max(1, lv.offsetHeight - window.innerHeight) };
+    }
+    function scrollToRoom(i, smooth) {
+      var r = range();
+      window.scrollTo({ top: Math.round(r.top + r.len * i / (R.length - 1)), behavior: smooth && !RM ? 'smooth' : 'auto' });
+    }
+    function fromHash() {
+      var h = decodeURIComponent((location.hash || '').slice(1));
+      if (h && byId[h] != null) { scrollToRoom(byId[h], false); return true; }
+      return false;
+    }
+    var mx = 0, my = 0, pmx = 0, pmy = 0, cur = -1, camS = null, tl = 14, last = performance.now(), mode = '';
+    window.addEventListener('pointermove', function (e) { mx = e.clientX / window.innerWidth - 0.5; my = e.clientY / window.innerHeight - 0.5; }, { passive: true });
+    window.addEventListener('resize', size);
+    window.addEventListener('hashchange', fromHash);
+    function setMode(m) {
+      if (m === mode) return;
+      mode = m; stage.setAttribute('data-pos', m);
+    }
+    function frame(now) {
+      var dt = Math.min(50, now - last); last = now;
+      var phone = vw < 760, rg = range(), y0 = window.pageYOffset - rg.top;
+      setMode(y0 < 0 ? 'before' : y0 > rg.len ? 'after' : 'in');
+      var p = clamp(y0 / rg.len, 0, 1) * (stops.length - 1);
+      var i = Math.min(stops.length - 2, Math.floor(p)), f = p - i;
+      var m = ease(clamp((f - 0.3) / 0.4, 0, 1));
+      var len = stops[i] + (stops[i + 1] - stops[i]) * m;
+      var xy = at(len), x = xy[0], y = xy[1];
+      var room = f < 0.5 ? i : i + 1, moving = m > 0 && m < 1;
+      var hold = f < 0.3 ? 0.5 + f / 0.3 * 0.5 : f > 0.7 ? (f - 0.7) / 0.3 * 0.5 : 0.5; // 0 on arrival, 1 when leaving
+      var fit = Math.min(vw / (phone ? 1080 : 1700), vh / (phone ? 1500 : 1100));
+      var sc = fit * (moving ? 0.8 : 1);
+      var oy = phone ? vh * 0.36 : vh * 0.42, ox = phone ? vw * 0.5 : vw * 0.6;
+      var atSpawn = room === 0 && !moving;
+      var tgt = { x: x, y: atSpawn ? R[0].y + R[0].h / 2 : y, s: sc, o: atSpawn && !phone ? vw * 0.5 : ox };
+      camS = camS ? { x: camS.x + (tgt.x - camS.x) * 0.14, y: camS.y + (tgt.y - camS.y) * 0.14, s: camS.s + (tgt.s - camS.s) * 0.08, o: camS.o + (tgt.o - camS.o) * 0.1 } : tgt;
+      world.style.transform = 'translate(' + (camS.o - camS.x * camS.s) + 'px,' + (oy - camS.y * camS.s) + 'px) scale(' + camS.s + ')';
+      tl += ((moving ? 24 : 14) - tl) * 0.06; // the map leans back further while walking
+      pmx += (mx - pmx) * 0.05; pmy += (my - pmy) * 0.05;
+      var settled = !moving && Math.abs(camS.x - tgt.x) < 40 && Math.abs(camS.y - tgt.y) < 40;
+      var dive = 0, inView = mode === 'in';
+      [room - 1, room, room + 1].forEach(function (k) { if (I[k] && !I[k].el) build(k); });
+      Object.keys(I).forEach(function (k) {
+        var o = I[k];
+        if (!o.el) return;
+        var want = inView && +k === room && settled ? 1 : 0;
+        o.t += (want - o.t) * (want ? 0.045 : 0.09);
+        if (o.t < 0.002 && !want) o.t = 0;
+        dive = Math.max(dive, o.t);
+        var e = ease(o.t), s = o.el.style;
+        if (o.t > 0) {
+          s.visibility = 'visible'; s.opacity = Math.min(1, o.t * 1.6);
+          o.cam.style.transform = 'translateZ(' + (-(1 - e) * 900) + 'px)';
+          o.rig.style.transform = RM ? '' : 'translateZ(' + ((+k === room ? hold - 0.35 : 0) * o.D * 0.45) + 'px) rotateY(' + (pmx * 6) + 'deg) rotateX(' + (-pmy * 3) + 'deg)';
+          if (o.t > 0.3) o.vids.forEach(function (v) { if (v.paused) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } });
+          if (!RM) o.fx(dt);
+        } else {
+          s.visibility = 'hidden'; s.opacity = 0;
+          o.vids.forEach(function (v) { if (!v.paused) v.pause(); });
+        }
+      });
+      var de = ease(dive);
+      document.body.classList.toggle('inroom', de > 0.5);
+      var ro = R[room], gt = ro.spawn ? '' : de > 0.5 ? ro.goIn : ro.go;
+      if (goEl.textContent !== gt) goEl.textContent = gt;
+      tilt.style.transform = 'rotateX(' + tl + 'deg) scale(' + (1 + de * 1.4) + ')';
+      tilt.style.opacity = 1 - de;
+      stage.style.setProperty('--de', de.toFixed(3));
+      player.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + (xy[2] + Math.PI / 2) + 'rad)';
+      mtrail.style.strokeDashoffset = total - len; mdot.setAttribute('cx', x); mdot.setAttribute('cy', y);
+      if (room !== cur) enter(room);
+      hint.style.opacity = y0 > 40 ? 0 : 1;
+      requestAnimationFrame(frame);
+    }
+    var swapT = 0;
+    function enter(room) {
+      cur = room;
+      var o = R[room];
+      R.forEach(function (r, k) {
+        r.glow.classList.toggle('lit', k === room);
+        if (r.a) { r.a.classList.toggle('lit', k === room); if (k <= room) r.a.classList.add('seen'); }
+      });
+      cntB.textContent = pad2(room);
+      if (mode === 'in' && history.replaceState) {
+        var url = location.pathname + location.search + (o.id ? '#' + o.id : '');
+        if (url !== location.pathname + location.search + location.hash) history.replaceState(null, '', url);
+      }
+      card.classList.add('lv-card--swap');
+      clearTimeout(swapT);
+      swapT = setTimeout(function () {
+        if (o.spawn) card.classList.add('lv-card--hide');
+        else {
+          card.classList.remove('lv-card--hide');
+          cMeta.textContent = o.s + '  /  ' + o.r; cH.textContent = o.n; cP.textContent = o.p; goEl.href = o.u;
+        }
+        card.classList.remove('lv-card--swap');
+      }, room === 0 ? 0 : 260);
+    }
+    size();
+    if (!fromHash()) {  }
+    window.addEventListener('load', function () { fromHash(); });
+    requestAnimationFrame(frame);
+  }
+  window.bbInitLevel = initLevel;
+  window.BB_COMPONENTS = window.BB_COMPONENTS || [];
+  window.BB_COMPONENTS.push(initLevel);
+  if (document.readyState !== 'loading') setTimeout(function () {
+    initLevel(document, { asset: window.bbAsset, reduceMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches });
+  }, 0);
 })();
