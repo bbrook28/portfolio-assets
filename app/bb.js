@@ -841,9 +841,19 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting; if (!seen) pauseVids(o.vids); }).observe(host);
       o.el.style.visibility = 'visible';
       if (RM) { o.el.style.opacity = 1; return; } // reduced motion: the room stands still, its videos show their posters
+      var paused = false, hero = host.closest('.sh-hero') || host.parentElement, pb = document.createElement('button');
+      pb.type = 'button'; pb.className = 'cine-pause'; pb.appendChild(document.createElement('span'));
+      function setPaused(on) {
+        paused = on; hero.classList.toggle('is-paused', on);
+        pb.setAttribute('aria-pressed', on ? 'true' : 'false'); pb.setAttribute('aria-label', on ? 'Play the room' : 'Pause the room');
+        if (on) { pauseVids(o.vids); o.el.style.opacity = 1; o.cam.style.transform = ''; }
+      }
+      setPaused(false);
+      pb.addEventListener('click', function () { setPaused(!paused); });
+      hero.appendChild(pb);
       function frame(now) {
         requestAnimationFrame(frame);
-        if (!seen) { last = now; return; }
+        if (!seen || paused) { last = now; return; }
         if (!t0) t0 = now;
         var dt = Math.min(50, now - (last || now)); last = now;
         var e = ease(clamp((now - t0) / 1600, 0, 1));
