@@ -748,22 +748,29 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function pad2(n) { return (n < 10 ? '0' : '') + n; }
   var FX = {
-    snow: { n: 220 },
-    petal: { n: 46 },
+    snow: { n: 120 },
+    petal: { n: 30 },
     dust: { n: 70, rgb: '255,215,140', rise: 0.000012, size: 3 },
-    spore: { n: 80, rgb: '150,235,120', rise: 0.000016, size: 2.4 },
-    ember: { n: 90, rgb: '255,140,60', rise: 0.00004, size: 1.8 },
-    mote: { n: 60, rgb: '255,190,90', rise: 0.000006, size: 2.6 }
+    spore: { n: 48, rgb: '150,235,120', rise: 0.000016, size: 2.4 },
+    ember: { n: 50, rgb: '255,140,60', rise: 0.00004, size: 1.8 },
+    mote: { n: 38, rgb: '255,190,90', rise: 0.000006, size: 2.6 }
   };
   function makeFx(cv, kind) {
     var cfg = FX[kind];
     if (!cfg) return function () {};
     var ps = [], i;
+    var glow = null;
+    if (cfg.rgb) { // one soft dot, drawn once and stamped for every particle
+      glow = document.createElement('canvas'); glow.width = glow.height = 64;
+      var gc = glow.getContext('2d'), gg = gc.createRadialGradient(32, 32, 0, 32, 32, 32);
+      gg.addColorStop(0, 'rgba(' + cfg.rgb + ',1)'); gg.addColorStop(1, 'rgba(' + cfg.rgb + ',0)');
+      gc.fillStyle = gg; gc.fillRect(0, 0, 64, 64);
+    }
     for (i = 0; i < cfg.n; i++) ps.push({ x: Math.random(), y: Math.random(), z: 0.3 + Math.random() * 0.9, a: Math.random() * 6.28, s: Math.random() });
     return function (dt) {
       var c = cv.getContext('2d'), W = cv.width, H = cv.height;
       var k = W / 1600 * (window.devicePixelRatio > 1 ? 1.4 : 1);
-      c.clearRect(0, 0, W, H);
+      c.clearRect(0, 0, W, H); c.globalAlpha = 1;
       for (var j = 0; j < ps.length; j++) {
         var p = ps[j];
         if (kind === 'snow') {
@@ -778,9 +785,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
         } else {
           p.y -= dt * cfg.rise * (1 + p.z); p.x += dt * 0.000008 * Math.sin(p.a += dt * 0.0007);
           var r = (1 + p.z * 2.2) * k * cfg.size, px = p.x * W, py = p.y * H;
-          var g = c.createRadialGradient(px, py, 0, px, py, r);
-          g.addColorStop(0, 'rgba(' + cfg.rgb + ',' + (0.5 * p.z) + ')'); g.addColorStop(1, 'rgba(' + cfg.rgb + ',0)');
-          c.fillStyle = g; c.beginPath(); c.arc(px, py, r, 0, 7); c.fill();
+          c.globalAlpha = 0.5 * p.z; c.drawImage(glow, px - r, py - r, 2 * r, 2 * r);
         }
         if (p.y > 1.05) p.y = -0.05; if (p.y < -0.05) p.y = 1.05;
         if (p.x > 1.05) p.x = -0.05; if (p.x < -0.05) p.x = 1.05;
@@ -1073,9 +1078,9 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       if (probeDt[probeDt.length >> 1] > 40) document.body.classList.add('lv-flat');
     }
     window.addEventListener('pointermove', function (e) { mx = e.clientX / window.innerWidth - 0.5; my = e.clientY / window.innerHeight - 0.5; }, { passive: true });
-    var lastP = -1;
+    var lastP = -1, ps = null, rgC = null, rgN = 0;
     window.addEventListener('resize', function () {
-      size();
+      size(); rgC = null;
       if (lastP < 0 || lastP > 1) return;
       var r = range();
       window.scrollTo(0, Math.round(r.top + r.len * lastP));
@@ -1087,10 +1092,14 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     }
     function frame(now) {
       var dt = Math.min(50, now - last); last = now;
-      var phone = vw < 760, rg = range(), y0 = window.pageYOffset - rg.top;
+      if (!rgC || ++rgN > 60) { rgC = range(); rgN = 0; } // the level's place on the page, re-read once a second
+      var phone = vw < 760, rg = rgC, y0 = window.pageYOffset - rg.top;
       setMode(y0 < 0 ? 'before' : y0 > rg.len ? 'after' : 'in');
       lastP = y0 / rg.len;
-      var p = clamp(y0 / rg.len, 0, 1) * (stops.length - 1);
+      var pt = clamp(y0 / rg.len, 0, 1) * (stops.length - 1);
+      if (ps == null || RM || Math.abs(pt - ps) > 1.2) ps = pt; else ps += (pt - ps) * (1 - Math.exp(-dt / 110));
+      if (Math.abs(pt - ps) < 0.0005) ps = pt;
+      var p = ps;
       var i = Math.min(stops.length - 2, Math.floor(p)), f = p - i;
       var m = ease(clamp((f - 0.3) / 0.4, 0, 1));
       var len = stops[i] + (stops[i + 1] - stops[i]) * m;
