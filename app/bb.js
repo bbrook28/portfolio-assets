@@ -41,7 +41,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
         var set = [640, 1280].filter(function (w) { return w < ow; }).map(function (w) { return stem + '-' + w + '.webp ' + w + 'w'; });
         set.push(assetUrl(key) + ' ' + ow + 'w');
         var rw = el.getBoundingClientRect().width;
-        el.setAttribute('sizes', (el.loading === 'lazy' ? 'auto, ' : '') + (rw > 0 ? Math.ceil(rw) + 'px' : '100vw'));
+        el.setAttribute('sizes', (rw > 0 ? Math.ceil(rw) + 'px' : '100vw'));
         el.setAttribute('srcset', set.join(', '));
       }
       el.removeAttribute('data-bb-src');
@@ -755,7 +755,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     ember: { n: 50, rgb: '255,140,60', rise: 0.00004, size: 1.8 },
     mote: { n: 38, rgb: '255,190,90', rise: 0.000006, size: 2.6 }
   };
-  function makeFx(cv, kind) {
+  function makeFx(cv, kind, scale) {
     var cfg = FX[kind];
     if (!cfg) return function () {};
     var ps = [], i;
@@ -766,7 +766,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       gg.addColorStop(0, 'rgba(' + cfg.rgb + ',1)'); gg.addColorStop(1, 'rgba(' + cfg.rgb + ',0)');
       gc.fillStyle = gg; gc.fillRect(0, 0, 64, 64);
     }
-    for (i = 0; i < cfg.n; i++) ps.push({ x: Math.random(), y: Math.random(), z: 0.3 + Math.random() * 0.9, a: Math.random() * 6.28, s: Math.random() });
+    for (i = 0; i < Math.round(cfg.n * (scale || 1)); i++) ps.push({ x: Math.random(), y: Math.random(), z: 0.3 + Math.random() * 0.9, a: Math.random() * 6.28, s: Math.random() });
     return function (dt) {
       var c = cv.getContext('2d'), W = cv.width, H = cv.height;
       var k = W / 1600 * (window.devicePixelRatio > 1 ? 1.4 : 1);
@@ -815,7 +815,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     if (window.bbResolveAssets) window.bbResolveAssets(sec);
     var vids = Array.prototype.slice.call(sec.querySelectorAll('video'));
     vids.forEach(function (v) { v.muted = true; v.setAttribute('preload', 'none'); });
-    return { el: sec, cam: cam, rig: rig, cv: cv, vids: vids, fx: makeFx(cv, t.getAttribute('data-fx') || 'none'),
+    return { el: sec, cam: cam, rig: rig, cv: cv, vids: vids, fx: makeFx(cv, t.getAttribute('data-fx') || 'none', extraClass === 'lv-int--hero' ? 0.35 : 1),
       dk: num(t.getAttribute('data-depth'), 0.8), D: 0 };
   }
   function sizeInterior(o, w, h) {
@@ -935,6 +935,17 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     el('div', 'lv-grain', stage);
     var card = el('div', 'lv-card lv-card--hide', stage);
     var cMeta = el('div', 'lv-card__meta', card), cH = el('h2', 'lv-card__h', card), cP = el('p', 'lv-card__p', card);
+    var fitCtx = document.createElement('canvas').getContext('2d');
+    function fitH() {
+      cH.style.fontSize = '';
+      var cs = getComputedStyle(cH), fs = parseFloat(cs.fontSize), avail = cH.clientWidth, wide = 0;
+      if (!avail) return;
+      fitCtx.font = cs.fontWeight + ' ' + fs + 'px ' + cs.fontFamily;
+      cH.textContent.toUpperCase().split(/\s+/).forEach(function (w) { wide = Math.max(wide, fitCtx.measureText(w).width); });
+      if (wide > avail) cH.style.setProperty('font-size', Math.floor(fs * avail / wide * 0.96) + 'px', 'important');
+    }
+    window.addEventListener('resize', fitH);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitH);
     var goEl = el('a', 'lv-go', card);
     var count = el('div', 'lv-count', stage);
     count.setAttribute('aria-hidden', 'true');
@@ -1181,7 +1192,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
         if (o.spawn) card.classList.add('lv-card--hide');
         else {
           card.classList.remove('lv-card--hide');
-          cMeta.textContent = o.s + '  /  ' + o.r; cH.textContent = o.n; cP.textContent = o.p; goEl.href = o.u;
+          cMeta.textContent = o.s + '  /  ' + o.r; cH.textContent = o.n; cP.textContent = o.p; goEl.href = o.u; fitH();
         }
         card.classList.remove('lv-card--swap');
       }, room === 0 ? 0 : 260);
