@@ -1114,7 +1114,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       setMode(y0 < 0 ? 'before' : y0 > rg.len ? 'after' : 'in');
       lastP = y0 / rg.len;
       var pt = clamp(y0 / rg.len, 0, 1) * (stops.length - 1);
-      if (ps == null || RM || Math.abs(pt - ps) > 1.2) ps = pt; else ps += (pt - ps) * (1 - Math.exp(-dt / 110));
+      if (ps == null || RM || Math.abs(pt - ps) > 1.2) ps = pt; else ps += (pt - ps) * (1 - Math.exp(-dt / 50));
       if (Math.abs(pt - ps) < 0.0005) ps = pt;
       var p = ps;
       var i = Math.min(stops.length - 2, Math.floor(p)), f = p - i;
@@ -1191,7 +1191,10 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       card.classList.add('lv-card--swap');
       clearTimeout(swapT);
       swapT = setTimeout(function () {
-        if (o.spawn) card.classList.add('lv-card--hide');
+        var intro = o.spawn && vw < 760 && spawnEl && spawnEl.querySelector('p');
+        card.classList.toggle('lv-card--intro', !!intro);
+        if (intro) { card.classList.remove('lv-card--hide'); cP.textContent = intro.textContent; }
+        else if (o.spawn) card.classList.add('lv-card--hide');
         else {
           card.classList.remove('lv-card--hide');
           cMeta.textContent = o.s + '  /  ' + o.r; cH.textContent = o.n; cP.textContent = o.p; goEl.href = o.u; fitH();
