@@ -655,10 +655,42 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       raf = requestAnimationFrame(frame);
     });
   }
+  function initFolds(root) {
+    function btn(label, open, target) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'bb-fold__btn'; b.textContent = label; b.setAttribute('aria-expanded', 'false');
+      b.addEventListener('click', function () {
+        var on = !target.classList.contains('is-open');
+        target.classList.toggle('is-open', on); b.setAttribute('aria-expanded', String(on)); b.textContent = on ? open : label;
+      });
+      return b;
+    }
+    root.querySelectorAll('.cine p').forEach(function (p) {
+      if (p.closest('.bb-fold, figure, figcaption, .sh-hero, .cine-hero, .lv-int, template, .bb-todo') || p.matches('.cine-lede, .cine-credit, .cine-note, .cine-hint, .bb-figcap') || p.textContent.length < 260) return;
+      var tw = document.createTreeWalker(p, NodeFilter.SHOW_TEXT), n, seen = 0, cut = null;
+      while (!cut && (n = tw.nextNode())) {
+        var re = /[.!?]["')]?\s+(?=[A-Z0-9"'])/g, m;
+        while ((m = re.exec(n.data))) { if (seen + m.index > 40) { cut = [n, m.index + m[0].length]; break; } }
+        seen += n.data.length;
+      }
+      if (!cut) return;
+      var r = document.createRange(); r.setStart(cut[0], cut[1]); r.setEnd(p, p.childNodes.length);
+      var more = document.createElement('span'); more.className = 'bb-fold__more'; more.appendChild(r.extractContents());
+      p.appendChild(more); p.classList.add('bb-fold');
+      p.after(btn('Read more', 'Show less', p));
+    });
+    root.querySelectorAll('.cine-hapt').forEach(function (h) {
+      var rows = h.querySelectorAll('.cine-hapt__row');
+      if (rows.length < 5 || h.classList.contains('cine-hapt--fold')) return;
+      h.classList.add('cine-hapt--fold');
+      h.after(btn('Show all ' + rows.length + ' curves', 'Show fewer', h));
+    });
+  }
   function init() {
     var root = document;
     var pg = document.querySelector('.bb-page'); if (pg && !pg.id) pg.id = 'bb-main';
     resolveAssets(root);
+    initFolds(root);
     initHeader();
     initLightbox(root);
     initCompare(root);
