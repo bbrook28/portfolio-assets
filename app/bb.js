@@ -838,9 +838,9 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       fit();
       window.addEventListener('resize', fit);
       if (!RM) window.addEventListener('pointermove', function (e) { mx = e.clientX / window.innerWidth - 0.5; my = e.clientY / window.innerHeight - 0.5; }, { passive: true });
-      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting; if (!seen) pauseVids(o.vids); else if (RM) playVids(o.vids); }).observe(host);
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting; if (!seen) pauseVids(o.vids); }).observe(host);
       o.el.style.visibility = 'visible';
-      if (RM) { o.el.style.opacity = 1; playVids(o.vids); return; }
+      if (RM) { o.el.style.opacity = 1; return; } // reduced motion: the room stands still, its videos show their posters
       function frame(now) {
         requestAnimationFrame(frame);
         if (!seen) { last = now; return; }
@@ -1060,10 +1060,16 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       if (dive < 0.97 && probeDt.length < 120) return;
       probe = false;
       probeDt.sort(function (a, b) { return a - b; });
-      if (probeDt[probeDt.length >> 1] > 28) document.body.classList.add('lv-flat');
+      if (probeDt[probeDt.length >> 1] > 40) document.body.classList.add('lv-flat');
     }
     window.addEventListener('pointermove', function (e) { mx = e.clientX / window.innerWidth - 0.5; my = e.clientY / window.innerHeight - 0.5; }, { passive: true });
-    window.addEventListener('resize', size);
+    var lastP = -1;
+    window.addEventListener('resize', function () {
+      size();
+      if (lastP < 0 || lastP > 1) return;
+      var r = range();
+      window.scrollTo(0, Math.round(r.top + r.len * lastP));
+    });
     window.addEventListener('hashchange', fromHash);
     function setMode(m) {
       if (m === mode) return;
@@ -1073,6 +1079,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       var dt = Math.min(50, now - last); last = now;
       var phone = vw < 760, rg = range(), y0 = window.pageYOffset - rg.top;
       setMode(y0 < 0 ? 'before' : y0 > rg.len ? 'after' : 'in');
+      lastP = y0 / rg.len;
       var p = clamp(y0 / rg.len, 0, 1) * (stops.length - 1);
       var i = Math.min(stops.length - 2, Math.floor(p)), f = p - i;
       var m = ease(clamp((f - 0.3) / 0.4, 0, 1));
@@ -1109,7 +1116,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
           s.visibility = 'visible'; s.opacity = RM ? o.t : Math.min(1, o.t * 1.6);
           o.cam.style.transform = RM || flat ? '' : 'translateZ(' + (-(1 - e) * 900) + 'px)';
           o.rig.style.transform = RM || flat ? '' : 'translateZ(' + ((+k === room ? hold - 0.35 : 0) * o.D * 0.45) + 'px) rotateY(' + (pmx * 6) + 'deg) rotateX(' + (-pmy * 3) + 'deg)';
-          if (o.t > 0.3 && !flat) o.vids.forEach(function (v) { if (v.paused) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } });
+          if (o.t > 0.3 && !flat && !RM) o.vids.forEach(function (v) { if (v.paused) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } });
           if (!RM && !flat) o.fx(dt);
           else if (flat) o.vids.forEach(function (v) { if (!v.paused) v.pause(); });
         } else {
