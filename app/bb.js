@@ -969,6 +969,8 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     var tilt = el('div', 'lv-tilt', stage);
     var world = el('div', 'lv-world', tilt);
     world.style.width = WW + 'px'; world.style.height = WH + 'px';
+    var LZ = LITE ? 0.4 : 1;
+    if (LITE) world.style.zoom = LZ;
     var glows = el('div', 'lv-glows', world);
     var walls = el('div', 'lv-walls', world);
     var corr = document.createElementNS(SVGNS, 'svg');
@@ -1175,7 +1177,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       var atSpawn = room === 0 && !moving;
       var tgt = { x: x, y: atSpawn ? R[0].y + R[0].h / 2 : y, s: sc, o: atSpawn && !phone ? vw * 0.5 : ox };
       camS = camS && !RM ? { x: camS.x + (tgt.x - camS.x) * 0.14, y: camS.y + (tgt.y - camS.y) * 0.14, s: camS.s + (tgt.s - camS.s) * 0.08, o: camS.o + (tgt.o - camS.o) * 0.1 } : tgt;
-      world.style.transform = 'translate(' + (camS.o - camS.x * camS.s) + 'px,' + (oy - camS.y * camS.s) + 'px) scale(' + camS.s + ')';
+      world.style.transform = 'translate(' + (camS.o - camS.x * camS.s) + 'px,' + (oy - camS.y * camS.s) + 'px) scale(' + camS.s / LZ + ')';
       if (!RM && !LITE) tl += ((moving ? 24 : 14) - tl) * 0.06; // the map leans back further while walking
       flat = document.body.classList.contains('lv-flat');
       pmx += (mx - pmx) * 0.05; pmy += (my - pmy) * 0.05;
