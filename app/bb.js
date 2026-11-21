@@ -1,4 +1,4 @@
-window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/work\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/work\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <span class=\"bb-footer__label\">Say hi</span>\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames<wbr>@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/work\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";window.BB_ROUTES={"/":"home","/work":"portfolio","/about":"about","/contact":"contact","/projects/maplestory-classic":"maplestory-classic","/projects/bioshock-4":"bioshock-4","/projects/behemoth":"behemoth","/projects/the-walking-dead-saints-and-sinners-chapter-2":"twd-retribution","/projects/level-design-blockout-canceled-title":"lonestar","/projects/zoelie":"zoelie","/projects/game-design-pitch-deck":"bioshock-infinite-redux","/projects/sumo-scuffle":"sumo-scuffle","/projects/hell-my-name-is-bubba":"hell-my-name-is-buba","/projects/beepo":"beepo"};window.BB_ALIASES={"wild-magic": "sumo-scuffle"};window.BB_CSSV="dc16c675fa";window.BB_W={"beepo/controls.jpg":1400,"beepo/puzzle-1.jpg":1800,"beepo/puzzle-2.jpg":1800,"beepo/puzzle-3.jpg":1800,"beepo/puzzle-4.jpg":1800,"beepo/puzzle-5.jpg":1800,"beepo/robots.jpg":1800,"behemoth/arch-1.jpg":2000,"behemoth/arch-2.jpg":1920,"behemoth/arch-3.jpg":1920,"behemoth/steam-1.jpg":1800,"behemoth/steam-2.jpg":1800,"behemoth/steam-3.jpg":1800,"behemoth/steam-4.jpg":1800,"behemoth/steam-5.jpg":1800,"bsi/level-design-doc.jpg":2400,"bsi/slide-1.jpg":1500,"bsi/slide-2.jpg":1500,"bsi/slide-3.jpg":1500,"bsi/slide-4.jpg":1500,"bsi/slide-5.jpg":1500,"bsi/slide-6.jpg":1500,"bsi/slide-7.jpg":1500,"bsi/slide-8.jpg":1500,"buba/shot-1.jpg":1800,"buba/shot-2.jpg":1800,"buba/shot-3.jpg":1800,"buba/shot-4.jpg":1800,"buba/shot-5.jpg":1800,"buba/theme.jpg":1200,"covers/beepo-b.jpg":1347,"covers/beepo-ff.jpg":2000,"covers/beepo.jpg":1500,"covers/behemoth-boss.jpg":2000,"covers/behemoth-gematsu.jpg":1920,"covers/behemoth-key.jpg":2400,"covers/behemoth-sq.jpg":2000,"covers/bioshock-alt.jpg":1920,"covers/bioshock.jpg":1500,"covers/bld.jpg":2000,"covers/bsi-sq.jpg":2000,"covers/bsi.jpg":1920,"covers/bubba.jpg":1920,"covers/compass.jpg":2000,"covers/lonestar-sq.jpg":1301,"covers/maplestory.jpg":2000,"covers/scad-intel.jpg":1075,"covers/socal.jpg":2000,"covers/twd-sq.jpg":2000,"covers/twd-yt.jpg":1280,"covers/twd.jpg":2000,"covers/wildmagic.jpg":2000,"fh/compare/depths.webp":1600,"fh/compare/surface.webp":1600,"fh/craft/ledge-after.webp":1599,"fh/craft/ledge-before.webp":1599,"fh/crops/cave-fairy-sanctuary.webp":1280,"fh/crops/forgotten-hollow.webp":1280,"fh/crops/precipice-of-darkness.webp":1280,"fh/crops/primeval-forest-2.webp":1280,"fh/crops/the-end-of-fleeting-light.webp":1280,"fh/maps-annotated/another-sanctuary.webp":2400,"fh/maps-annotated/bygone-days.webp":800,"fh/maps-annotated/cave-fairy-sanctuary.webp":800,"fh/maps-annotated/cave-fairy-store.webp":800,"fh/maps-annotated/decayed-tunnel-1.webp":2400,"fh/maps-annotated/decayed-tunnel-2.webp":2400,"fh/maps-annotated/decayed-tunnel-3.webp":2308,"fh/maps-annotated/dilapidated-tomb.webp":2398,"fh/maps-annotated/forbidden-entrance.webp":2400,"fh/maps-annotated/forgotten-dungeon-tunnel.webp":1530,"fh/maps-annotated/forgotten-entrance-1.webp":2400,"fh/maps-annotated/forgotten-entrance-2.webp":2400,"fh/maps-annotated/forgotten-entrance-3.webp":2400,"fh/maps-annotated/forgotten-hollow.webp":2400,"fh/maps-annotated/hanging-gardens-of-rot.webp":2400,"fh/maps-annotated/lingering-regret.webp":2128,"fh/maps-annotated/perilous-descent-1.webp":1948,"fh/maps-annotated/perilous-descent-2.webp":1588,"fh/maps-annotated/perilous-descent-3.webp":1588,"fh/maps-annotated/precipice-of-darkness.webp":2400,"fh/maps-annotated/primeval-forest-1.webp":2400,"fh/maps-annotated/primeval-forest-2.webp":1408,"fh/maps-annotated/the-end-of-fleeting-light.webp":2400,"fh/maps-annotated/the-faded-canopy.webp":2308,"fh/maps-annotated/the-valley-of-death.webp":2400,"fh/maps/another-sanctuary.webp":2000,"fh/maps/bygone-days.webp":800,"fh/maps/cave-fairy-department-store.webp":800,"fh/maps/cave-fairy-sanctuary.webp":800,"fh/maps/cave-fairy-store.webp":800,"fh/maps/collision-of-ice-and-fire.webp":2000,"fh/maps/decayed-tunnel-1.webp":2000,"fh/maps/decayed-tunnel-2.webp":2000,"fh/maps/decayed-tunnel-3.webp":2000,"fh/maps/dilapidated-tomb.webp":2000,"fh/maps/forbidden-entrance.webp":2000,"fh/maps/forgotten-dungeon-tunnel.webp":1530,"fh/maps/forgotten-entrance-1.webp":2000,"fh/maps/forgotten-entrance-2.webp":2000,"fh/maps/forgotten-entrance-3.webp":2000,"fh/maps/forgotten-hollow.webp":2000,"fh/maps/hanging-gardens-of-rot.webp":2000,"fh/maps/lingering-regret.webp":2000,"fh/maps/perilous-descent-1.webp":1948,"fh/maps/perilous-descent-2.webp":1588,"fh/maps/perilous-descent-3.webp":1588,"fh/maps/precipice-of-darkness.webp":2000,"fh/maps/primeval-forest-1.webp":2000,"fh/maps/primeval-forest-2.webp":1408,"fh/maps/primeval-forest-3.webp":2000,"fh/maps/someone-elses-grave.webp":1408,"fh/maps/the-end-of-fleeting-light.webp":2000,"fh/maps/the-faded-canopy.webp":2000,"fh/maps/the-valley-of-death.webp":2000,"fh/official-header-m.webp":1000,"fh/official-header.webp":1920,"home/composite-m.webp":1000,"home/composite.webp":1800,"level/beh/loop-poster.jpg":1280,"level/fh/loop-poster.jpg":1280,"level/sumo/crowd.webp":2048,"level/twd/loop-poster.jpg":1280,"level/tx/beh-ceil.webp":1024,"level/tx/beh-floor.webp":1024,"level/tx/beh-wall.webp":1024,"level/tx/fh-earth.webp":1024,"level/tx/fh-rock.webp":1024,"level/tx/sg-vault.webp":1024,"level/tx/sg-wall.webp":1024,"level/tx/sg-wood.webp":1024,"level/tx/sumo-folds.webp":1024,"level/tx/sumo-sand.webp":1024,"level/tx/sumo-wood.webp":1024,"level/tx/twd-concrete.webp":1024,"level/tx/twd-metal.webp":1024,"level/tx/twd-ply.webp":1024,"level/tx/zoe-boards.webp":1024,"lonestar/map-courthouse-gameplay.jpg":1016,"lonestar/map-courthouse-overview.jpg":1016,"lonestar/map-courthouse-tunnel.jpg":1800,"lonestar/map-police-exterior.jpg":1319,"lonestar/map-police-gameplay.jpg":1325,"lonestar/map-police-overview.jpg":1319,"lonestar/map-police-tunnel.jpg":1325,"lonestar/reference-board.jpg":1067,"lonestar/shot-00.jpg":1920,"lonestar/shot-01.jpg":1920,"lonestar/shot-02.jpg":1920,"lonestar/shot-03.jpg":1920,"lonestar/shot-04.jpg":1920,"lonestar/shot-05.jpg":1920,"lonestar/shot-06.jpg":1920,"lonestar/shot-07.jpg":1920,"lonestar/shot-08.jpg":1920,"lonestar/shot-09.jpg":1920,"lonestar/shot-10.jpg":1920,"lonestar/shot-11.jpg":1920,"lonestar/shot-12.jpg":1920,"lonestar/shot-13.jpg":1920,"lonestar/shot-14.jpg":1920,"lonestar/shot-15.jpg":1920,"lonestar/shot-16.jpg":1920,"lonestar/shot-17.jpg":1920,"lonestar/shot-18.jpg":1920,"lonestar/shot-19.jpg":1920,"lonestar/shot-20.jpg":1920,"lonestar/shot-21.jpg":1920,"lonestar/shot-22.jpg":1920,"lonestar/shot-23.jpg":1920,"lonestar/shot-24.jpg":1920,"lonestar/shot-25.jpg":1920,"lonestar/shot-26.jpg":1920,"lonestar/shot-27.jpg":1920,"lonestar/shot-28.jpg":1920,"lonestar/shot-29.jpg":1920,"social/beepo.jpg":2400,"social/behemoth.jpg":2400,"social/bioshock-4.jpg":2400,"social/bioshock-infinite-redux.jpg":2400,"social/hell-my-name-is-buba.jpg":2400,"social/lonestar.jpg":2400,"social/maplestory-classic.jpg":2400,"social/share-2026.jpg":1500,"social/share.jpg":2400,"social/sumo-scuffle.jpg":2400,"social/twd-retribution.jpg":2400,"social/wild-magic.jpg":2400,"social/zoelie.jpg":2400,"sumo/bowling.jpg":1920,"sumo/feast-1.jpg":1920,"sumo/feast-slam.jpg":1920,"sumo/keepaway.jpg":1920,"sumo/keyart.jpg":2400,"sumo/king.jpg":1920,"sumo/menu.jpg":1920,"sumo/trailer-poster.jpg":1280,"twd/camp-duplex-top.jpg":1530,"twd/camp-duplex.jpg":1800,"twd/camp-hotel-1.jpg":1375,"twd/camp-hotel-2.jpg":1375,"twd/camp-industrial-1-top.jpg":1390,"twd/camp-industrial-2-interior.jpg":1415,"twd/camp-industrial-2.jpg":1505,"twd/camp-mafia-top.jpg":1388,"twd/camp-mansion-night.jpg":1500,"twd/camp-mansion-top.jpg":1501,"twd/camp-mvp-courtyard.jpg":1501,"twd/camp-school-interior.jpg":1388,"twd/camp-school.jpg":1388,"twd/exile-dialogue-graph.jpg":1800,"twd/exile-order-ui-1.jpg":1800,"twd/exile-order-ui-2.jpg":1800,"twd/grenadier-blueprint.jpg":1638,"twd/grenadier-lineup-1.jpg":1800,"twd/grenadier-lineup-2.jpg":1800,"twd/patricia.jpg":1600,"twd/weapon-chainsaw.jpg":1600,"twd/weapon-gunfire.jpg":1600,"twd/weapon-silencer.jpg":1600,"wildmagic/arena-top.jpg":1800,"wildmagic/combat.jpg":1213,"wildmagic/controls-keys.jpg":1400,"wildmagic/controls-pad.jpg":1400,"wildmagic/enemies.jpg":1213,"zoelie/1.jpg":1400,"zoelie/12.jpg":1400,"zoelie/13.jpg":1400,"zoelie/4.jpg":1400,"zoelie/8.jpg":1400,"zoelie/form-bridge.jpg":1280,"zoelie/form-imagination.jpg":1200,"zoelie/glide.jpg":960,"zoelie/hero-first.jpg":1280,"zoelie/sneak.jpg":960,"zoelie/trailer-33.jpg":1280,"zoelie/trailer-41.jpg":1280,"zoelie/trailer-53.jpg":1280,"zoelie/trailer-57.jpg":1280,"zoelie/trailer-77.jpg":1280,"zoelie/trailer-8.jpg":1280};
+window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-title","maplestory-classic":"maplestory-classic","sumo-scuffle":"sumo-scuffle","twd-retribution":"retribution","zoelie":"zoelie","wild-magic":"sumo-scuffle"};window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/work\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00c3\u00a9sum\u00c3\u00a9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/work\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00c3\u00a9sum\u00c3\u00a9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <span class=\"bb-footer__label\">Say hi</span>\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames<wbr>@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00c2\u00a9 <span data-bb-year>2026</span> Ben Brook \u00c2\u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/work\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00c2\u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";window.BB_ROUTES={"/":"home","/work":"portfolio","/about":"about","/contact":"contact","/projects/maplestory-classic":"maplestory-classic","/projects/bioshock-4":"bioshock-4","/projects/behemoth":"behemoth","/projects/the-walking-dead-saints-and-sinners-chapter-2":"twd-retribution","/projects/level-design-blockout-canceled-title":"lonestar","/projects/zoelie":"zoelie","/projects/game-design-pitch-deck":"bioshock-infinite-redux","/projects/sumo-scuffle":"sumo-scuffle","/projects/hell-my-name-is-bubba":"hell-my-name-is-buba","/projects/beepo":"beepo"};window.BB_ALIASES={"wild-magic": "sumo-scuffle"};window.BB_CSSV="2b5bafc342";window.BB_W={"beepo/controls.jpg":1400,"beepo/puzzle-1.jpg":1800,"beepo/puzzle-2.jpg":1800,"beepo/puzzle-3.jpg":1800,"beepo/puzzle-4.jpg":1800,"beepo/puzzle-5.jpg":1800,"beepo/robots.jpg":1800,"behemoth/arch-1.jpg":2000,"behemoth/arch-2.jpg":1920,"behemoth/arch-3.jpg":1920,"behemoth/steam-1.jpg":1800,"behemoth/steam-2.jpg":1800,"behemoth/steam-3.jpg":1800,"behemoth/steam-4.jpg":1800,"behemoth/steam-5.jpg":1800,"bsi/level-design-doc.jpg":2400,"bsi/slide-1.jpg":1500,"bsi/slide-2.jpg":1500,"bsi/slide-3.jpg":1500,"bsi/slide-4.jpg":1500,"bsi/slide-5.jpg":1500,"bsi/slide-6.jpg":1500,"bsi/slide-7.jpg":1500,"bsi/slide-8.jpg":1500,"buba/shot-1.jpg":1800,"buba/shot-2.jpg":1800,"buba/shot-3.jpg":1800,"buba/shot-4.jpg":1800,"buba/shot-5.jpg":1800,"buba/theme.jpg":1200,"covers/beepo-b.jpg":1347,"covers/beepo-ff.jpg":2000,"covers/beepo.jpg":1500,"covers/behemoth-boss.jpg":2000,"covers/behemoth-gematsu.jpg":1920,"covers/behemoth-key.jpg":2400,"covers/behemoth-sq.jpg":2000,"covers/bioshock-alt.jpg":1920,"covers/bioshock.jpg":1500,"covers/bld.jpg":2000,"covers/bsi-sq.jpg":2000,"covers/bsi.jpg":1920,"covers/bubba.jpg":1920,"covers/compass.jpg":2000,"covers/lonestar-sq.jpg":1301,"covers/maplestory.jpg":2000,"covers/scad-intel.jpg":1075,"covers/socal.jpg":2000,"covers/twd-sq.jpg":2000,"covers/twd-yt.jpg":1280,"covers/twd.jpg":2000,"covers/wildmagic.jpg":2000,"fh/compare/depths.webp":1600,"fh/compare/surface.webp":1600,"fh/craft/ledge-after.webp":1599,"fh/craft/ledge-before.webp":1599,"fh/crops/cave-fairy-sanctuary.webp":1280,"fh/crops/forgotten-hollow.webp":1280,"fh/crops/precipice-of-darkness.webp":1280,"fh/crops/primeval-forest-2.webp":1280,"fh/crops/the-end-of-fleeting-light.webp":1280,"fh/maps-annotated/another-sanctuary.webp":2400,"fh/maps-annotated/bygone-days.webp":800,"fh/maps-annotated/cave-fairy-sanctuary.webp":800,"fh/maps-annotated/cave-fairy-store.webp":800,"fh/maps-annotated/decayed-tunnel-1.webp":2400,"fh/maps-annotated/decayed-tunnel-2.webp":2400,"fh/maps-annotated/decayed-tunnel-3.webp":2308,"fh/maps-annotated/dilapidated-tomb.webp":2398,"fh/maps-annotated/forbidden-entrance.webp":2400,"fh/maps-annotated/forgotten-dungeon-tunnel.webp":1530,"fh/maps-annotated/forgotten-entrance-1.webp":2400,"fh/maps-annotated/forgotten-entrance-2.webp":2400,"fh/maps-annotated/forgotten-entrance-3.webp":2400,"fh/maps-annotated/forgotten-hollow.webp":2400,"fh/maps-annotated/hanging-gardens-of-rot.webp":2400,"fh/maps-annotated/lingering-regret.webp":2128,"fh/maps-annotated/perilous-descent-1.webp":1948,"fh/maps-annotated/perilous-descent-2.webp":1588,"fh/maps-annotated/perilous-descent-3.webp":1588,"fh/maps-annotated/precipice-of-darkness.webp":2400,"fh/maps-annotated/primeval-forest-1.webp":2400,"fh/maps-annotated/primeval-forest-2.webp":1408,"fh/maps-annotated/the-end-of-fleeting-light.webp":2400,"fh/maps-annotated/the-faded-canopy.webp":2308,"fh/maps-annotated/the-valley-of-death.webp":2400,"fh/maps/another-sanctuary.webp":2000,"fh/maps/bygone-days.webp":800,"fh/maps/cave-fairy-department-store.webp":800,"fh/maps/cave-fairy-sanctuary.webp":800,"fh/maps/cave-fairy-store.webp":800,"fh/maps/collision-of-ice-and-fire.webp":2000,"fh/maps/decayed-tunnel-1.webp":2000,"fh/maps/decayed-tunnel-2.webp":2000,"fh/maps/decayed-tunnel-3.webp":2000,"fh/maps/dilapidated-tomb.webp":2000,"fh/maps/forbidden-entrance.webp":2000,"fh/maps/forgotten-dungeon-tunnel.webp":1530,"fh/maps/forgotten-entrance-1.webp":2000,"fh/maps/forgotten-entrance-2.webp":2000,"fh/maps/forgotten-entrance-3.webp":2000,"fh/maps/forgotten-hollow.webp":2000,"fh/maps/hanging-gardens-of-rot.webp":2000,"fh/maps/lingering-regret.webp":2000,"fh/maps/perilous-descent-1.webp":1948,"fh/maps/perilous-descent-2.webp":1588,"fh/maps/perilous-descent-3.webp":1588,"fh/maps/precipice-of-darkness.webp":2000,"fh/maps/primeval-forest-1.webp":2000,"fh/maps/primeval-forest-2.webp":1408,"fh/maps/primeval-forest-3.webp":2000,"fh/maps/someone-elses-grave.webp":1408,"fh/maps/the-end-of-fleeting-light.webp":2000,"fh/maps/the-faded-canopy.webp":2000,"fh/maps/the-valley-of-death.webp":2000,"fh/official-header-m.webp":1000,"fh/official-header.webp":1920,"home/composite-m.webp":1000,"home/composite.webp":1800,"level/beh/loop-poster.jpg":1280,"level/fh/loop-poster.jpg":1280,"level/sumo/crowd.webp":2048,"level/twd/loop-poster.jpg":1280,"level/tx/beh-ceil.webp":1024,"level/tx/beh-floor.webp":1024,"level/tx/beh-wall.webp":1024,"level/tx/fh-earth.webp":1024,"level/tx/fh-rock.webp":1024,"level/tx/sg-vault.webp":1024,"level/tx/sg-wall.webp":1024,"level/tx/sg-wood.webp":1024,"level/tx/sumo-folds.webp":1024,"level/tx/sumo-sand.webp":1024,"level/tx/sumo-wood.webp":1024,"level/tx/twd-concrete.webp":1024,"level/tx/twd-metal.webp":1024,"level/tx/twd-ply.webp":1024,"level/tx/zoe-boards.webp":1024,"lonestar/map-courthouse-gameplay.jpg":1016,"lonestar/map-courthouse-overview.jpg":1016,"lonestar/map-courthouse-tunnel.jpg":1800,"lonestar/map-police-exterior.jpg":1319,"lonestar/map-police-gameplay.jpg":1325,"lonestar/map-police-overview.jpg":1319,"lonestar/map-police-tunnel.jpg":1325,"lonestar/reference-board.jpg":1067,"lonestar/shot-00.jpg":1920,"lonestar/shot-01.jpg":1920,"lonestar/shot-02.jpg":1920,"lonestar/shot-03.jpg":1920,"lonestar/shot-04.jpg":1920,"lonestar/shot-05.jpg":1920,"lonestar/shot-06.jpg":1920,"lonestar/shot-07.jpg":1920,"lonestar/shot-08.jpg":1920,"lonestar/shot-09.jpg":1920,"lonestar/shot-10.jpg":1920,"lonestar/shot-11.jpg":1920,"lonestar/shot-12.jpg":1920,"lonestar/shot-13.jpg":1920,"lonestar/shot-14.jpg":1920,"lonestar/shot-15.jpg":1920,"lonestar/shot-16.jpg":1920,"lonestar/shot-17.jpg":1920,"lonestar/shot-18.jpg":1920,"lonestar/shot-19.jpg":1920,"lonestar/shot-20.jpg":1920,"lonestar/shot-21.jpg":1920,"lonestar/shot-22.jpg":1920,"lonestar/shot-23.jpg":1920,"lonestar/shot-24.jpg":1920,"lonestar/shot-25.jpg":1920,"lonestar/shot-26.jpg":1920,"lonestar/shot-27.jpg":1920,"lonestar/shot-28.jpg":1920,"lonestar/shot-29.jpg":1920,"social/beepo.jpg":2400,"social/behemoth.jpg":2400,"social/bioshock-4.jpg":2400,"social/bioshock-infinite-redux.jpg":2400,"social/hell-my-name-is-buba.jpg":2400,"social/lonestar.jpg":2400,"social/maplestory-classic.jpg":2400,"social/share-2026.jpg":1500,"social/share.jpg":2400,"social/sumo-scuffle.jpg":2400,"social/twd-retribution.jpg":2400,"social/wild-magic.jpg":2400,"social/zoelie.jpg":2400,"sumo/bowling.jpg":1920,"sumo/feast-1.jpg":1920,"sumo/feast-slam.jpg":1920,"sumo/keepaway.jpg":1920,"sumo/keyart.jpg":2400,"sumo/king.jpg":1920,"sumo/menu.jpg":1920,"sumo/trailer-poster.jpg":1280,"twd/camp-duplex-top.jpg":1530,"twd/camp-duplex.jpg":1800,"twd/camp-hotel-1.jpg":1375,"twd/camp-hotel-2.jpg":1375,"twd/camp-industrial-1-top.jpg":1390,"twd/camp-industrial-2-interior.jpg":1415,"twd/camp-industrial-2.jpg":1505,"twd/camp-mafia-top.jpg":1388,"twd/camp-mansion-night.jpg":1500,"twd/camp-mansion-top.jpg":1501,"twd/camp-mvp-courtyard.jpg":1501,"twd/camp-school-interior.jpg":1388,"twd/camp-school.jpg":1388,"twd/exile-dialogue-graph.jpg":1800,"twd/exile-order-ui-1.jpg":1800,"twd/exile-order-ui-2.jpg":1800,"twd/grenadier-blueprint.jpg":1638,"twd/grenadier-lineup-1.jpg":1800,"twd/grenadier-lineup-2.jpg":1800,"twd/patricia.jpg":1600,"twd/weapon-chainsaw.jpg":1600,"twd/weapon-gunfire.jpg":1600,"twd/weapon-silencer.jpg":1600,"wildmagic/arena-top.jpg":1800,"wildmagic/combat.jpg":1213,"wildmagic/controls-keys.jpg":1400,"wildmagic/controls-pad.jpg":1400,"wildmagic/enemies.jpg":1213,"zoelie/1.jpg":1400,"zoelie/12.jpg":1400,"zoelie/13.jpg":1400,"zoelie/4.jpg":1400,"zoelie/8.jpg":1400,"zoelie/form-bridge.jpg":1280,"zoelie/form-imagination.jpg":1200,"zoelie/glide.jpg":960,"zoelie/hero-first.jpg":1280,"zoelie/sneak.jpg":960,"zoelie/trailer-33.jpg":1280,"zoelie/trailer-41.jpg":1280,"zoelie/trailer-53.jpg":1280,"zoelie/trailer-57.jpg":1280,"zoelie/trailer-77.jpg":1280,"zoelie/trailer-8.jpg":1280};
 (function () {
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -28,12 +28,54 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     if (window.BB_CSSV) link('stylesheet', base + 'bb.css?v=' + window.BB_CSSV);
     var pre = null; try { pre = sessionStorage.getItem('bb-pf:' + name); } catch (e) {}
     if (name && !pre && window.fetch) EARLY = { name: name, p: fetch(base + 'pages/' + name + '.html', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }) };
+    var small = window.matchMedia('(max-width: 760px)').matches, room = (window.BB_HERO || {})[name];
+    var hero = name === 'home' ? (small ? 'level/flat-m/maplestory-classic.jpg' : '') : room ? 'level/' + (small ? 'flat-m' : 'flat') + '/' + room + '.jpg' : name === 'portfolio' ? 'reel/reel-poster.jpg' : '';
+    if (hero) { var pl = document.createElement('link'); pl.rel = 'preload'; pl.as = 'image'; pl.href = (window.BB_ASSET_BASE || '') + hero; pl.setAttribute('fetchpriority', 'high'); head.appendChild(pl); }
+  })();
+  (function () {
+    var E = EARLY;
+    if (!E) return;
+    var html = null, done = false, mo = null;
+    function stub() {
+      var found = null;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-bb-page]'), function (s) {
+        var nm = s.getAttribute('data-bb-page');
+        if (!found && (nm === E.name || (window.BB_ALIASES || {})[nm] === E.name)) found = s;
+      });
+      return found;
+    }
+    function place() {
+      if (done || html == null) return;
+      var el = stub();
+      if (!el) return;
+      done = true;
+      if (mo) mo.disconnect();
+      if (el.querySelector('.bb-page')) return;
+      el.innerHTML = html; runScripts(el);
+      var pg = el.querySelector('.bb-page'); if (pg && !pg.id) pg.id = 'bb-main';
+      resolveAssets(el);
+    }
+    E.p.then(function (t) {
+      html = t; place();
+      if (!done && document.readyState === 'loading' && 'MutationObserver' in window) {
+        mo = new MutationObserver(place);
+        mo.observe(document.documentElement, { childList: true, subtree: true });
+        document.addEventListener('DOMContentLoaded', function () { if (mo) mo.disconnect(); });
+      }
+    }).catch(function () {});
   })();
   function assetUrl(key) {
     if (!key || /^(https?:)?\/\//.test(key) || key.indexOf('data:') === 0) return key;
     var map = window.BB_ASSETS || {};
     if (map[key]) return map[key];
     return (window.BB_ASSET_BASE || '') + key;
+  }
+  function setInert(on, keep) {
+    Array.prototype.forEach.call(document.body.children, function (c) {
+      if (c === keep || c.contains(keep) || /^(SCRIPT|STYLE|LINK)$/.test(c.tagName)) return;
+      if (on) { if (!c.hasAttribute('inert')) { c.setAttribute('inert', ''); c.setAttribute('data-bb-inert', ''); } }
+      else if (c.hasAttribute('data-bb-inert')) { c.removeAttribute('inert'); c.removeAttribute('data-bb-inert'); }
+    });
   }
   window.bbAsset = assetUrl;
   window.bbResolveAssets = function (root) { resolveAssets(root); };
@@ -80,9 +122,12 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     var burger = header.querySelector('.bb-burger');
     if (burger) {
       var setOpen = function (open) {
+        var was = document.documentElement.classList.contains('bb-menu-open');
         document.documentElement.classList.toggle('bb-menu-open', open);
         burger.setAttribute('aria-expanded', open ? 'true' : 'false');
         document.body.style.overflow = open ? 'hidden' : '';
+        setInert(open, header);
+        if (was && !open && !header.contains(document.activeElement)) burger.focus();
       };
       burger.addEventListener('click', function () {
         setOpen(!document.documentElement.classList.contains('bb-menu-open'));
@@ -90,7 +135,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       header.querySelectorAll('.bb-mobile a').forEach(function (a) {
         a.addEventListener('click', function () { setOpen(false); });
       });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.documentElement.classList.contains('bb-menu-open')) { setOpen(false); burger.focus(); } });
       window.addEventListener('resize', function () { if (window.innerWidth > 860) setOpen(false); });
     }
     var year = document.querySelector('[data-bb-year]');
@@ -153,11 +198,13 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     showLightbox(lbItems.indexOf(el));
     lb.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+    setInert(true, lb);
     lb.querySelector('.bb-lightbox__close').focus();
   }
   function closeLightbox() {
     lb.classList.remove('is-open');
     document.body.style.overflow = '';
+    setInert(false, lb);
     if (lbReturn) lbReturn.focus();
   }
   window.bbOpenLightbox = openLightbox;
@@ -531,11 +578,13 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     var touch = window.matchMedia('(hover: none)').matches;
     root.querySelectorAll('[data-cine-play]').forEach(function (card) {
       var v = card.querySelector('video'); if (!v) return;
+      if (reduceMotion) return; // the poster stays
       var play = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
       if (touch && 'IntersectionObserver' in window) {
         new IntersectionObserver(function (e) { if (e[0].isIntersecting) play(); else v.pause(); }, { threshold: .6 }).observe(card);
       } else {
         card.addEventListener('mouseenter', play); card.addEventListener('mouseleave', function () { v.pause(); });
+        card.addEventListener('focusin', play); card.addEventListener('focusout', function () { v.pause(); });
       }
     });
   }
@@ -885,11 +934,12 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       if (!t || host.getAttribute('data-lv-on')) return;
       host.setAttribute('data-lv-on', '1');
       loadFonts();
-      var o = cloneInterior(t, host, asset, 'lv-int--hero');
       var pg = host.closest('.bb-page');
       if (pg && t.hasAttribute('data-bb-vars')) t.getAttribute('data-bb-vars').split(/\s+/).forEach(function (pair) {
         var i = pair.indexOf(':'); if (i > 0) pg.style.setProperty('--' + pair.slice(0, i), 'url("' + asset(pair.slice(i + 1)) + '")');
       });
+      if (window.matchMedia('(max-width: 760px)').matches) { host.classList.add('sh-hero__bg--still'); return; }
+      var o = cloneInterior(t, host, asset, 'lv-int--hero');
       var hw = 0, hh = 0, seen = true, t0 = 0, last = 0, mx = 0, my = 0, pmx = 0, pmy = 0;
       function fit() { hw = host.clientWidth; hh = host.clientHeight; if (hw && hh) sizeInterior(o, hw, hh); if (RM) o.rig.style.transform = 'translateZ(' + (0.07 * o.D) + 'px)'; }
       fit();
@@ -1037,6 +1087,17 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
     hint.setAttribute('aria-hidden', 'true');
     var toWork = el('a', 'lv-towork', stage);
     toWork.href = '/work'; toWork.innerHTML = '<span>Skip the walk: </span>See all work';
+    var paused = false;
+    if (!RM) {
+      var pb = el('button', 'cine-pause lv-pause', stage);
+      pb.type = 'button'; pb.appendChild(document.createElement('span'));
+      var setPaused = function (on) {
+        paused = on; stage.classList.toggle('is-paused', on);
+        pb.setAttribute('aria-pressed', on ? 'true' : 'false'); pb.setAttribute('aria-label', on ? 'Play the rooms' : 'Pause the rooms');
+      };
+      setPaused(false);
+      pb.addEventListener('click', function () { setPaused(!paused); });
+    }
     lv.insertBefore(stage, lv.firstChild);
     R.forEach(function (o, i) {
       o.cx = o.x + o.w / 2; o.cy = o.spawn ? o.y + o.h - 110 : o.y + o.h / 2;
@@ -1056,7 +1117,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       var a = o.a;
       a.className = 'lv-room' + (o.lock ? ' lv-room--lock' : '') + (templates[i] ? ' lv-room--enter' : '');
       a.style.cssText = 'left:' + o.x + 'px;top:' + o.y + 'px;width:' + o.w + 'px;height:' + o.h + 'px';
-      a.setAttribute('aria-label', o.n + (o.s ? ', ' + o.s : ''));
+      a.setAttribute('aria-label', o.n + (o.s ? ', ' + o.s : '') + (o.r ? ', ' + o.r : '') + (o.p ? '. ' + o.p : ''));
       a.innerHTML = '';
       var inner = el('span', 'lv-room__in', a), pic = el('span', 'lv-room__pic', inner);
       if (o.img) { var im = el('img', '', pic); im.alt = ''; im.loading = 'eager'; im.setAttribute('fetchpriority', 'high'); im.setAttribute('data-bb-src', o.img); }
@@ -1231,9 +1292,9 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
           s.visibility = 'visible'; s.opacity = RM ? o.t : Math.min(1, o.t * 1.6);
           o.cam.style.transform = RM || flat ? '' : 'translateZ(' + (-(1 - e) * 900) + 'px)';
           o.rig.style.transform = RM || flat ? '' : 'translateZ(' + ((+k === room ? hold - 0.35 : 0) * o.D * 0.45) + 'px) rotateY(' + (pmx * 6) + 'deg) rotateX(' + (-pmy * 3) + 'deg)';
-          if (o.t > 0.3 && !flat && !RM) o.vids.forEach(function (v) { if (v.paused) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } });
-          if (!RM && !flat) o.fx(dt);
-          else if (flat) o.vids.forEach(function (v) { if (!v.paused) v.pause(); });
+          if (o.t > 0.3 && !flat && !RM && !paused) o.vids.forEach(function (v) { if (v.paused) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } });
+          if (!RM && !flat && !paused) o.fx(dt);
+          else if (flat || paused) o.vids.forEach(function (v) { if (!v.paused) v.pause(); });
         } else {
           s.visibility = 'hidden'; s.opacity = 0;
           o.vids.forEach(function (v) { if (!v.paused) v.pause(); });
@@ -1270,7 +1331,7 @@ window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to cont
       card.classList.add('lv-card--swap');
       clearTimeout(swapT);
       swapT = setTimeout(function () {
-        var intro = o.spawn && vw < 760 && spawnEl && spawnEl.querySelector('p');
+        var intro = o.spawn && vw < 1000 && spawnEl && spawnEl.querySelector('p');
         card.classList.toggle('lv-card--intro', !!intro);
         if (intro) { card.classList.remove('lv-card--hide'); cP.textContent = intro.textContent; }
         else if (o.spawn) card.classList.add('lv-card--hide');
