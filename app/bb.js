@@ -1036,7 +1036,7 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function pad2(n) { return (n < 10 ? '0' : '') + n; }
   var FX = {
-    snow: { n: 120 },
+    snow: { n: 60 },
     petal: { n: 30 },
     dust: { n: 70, rgb: '255,215,140', rise: 0.000012, size: 3 },
     spore: { n: 48, rgb: '150,235,120', rise: 0.000016, size: 2.4 },
@@ -1062,9 +1062,9 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
       for (var j = 0; j < ps.length; j++) {
         var p = ps[j];
         if (kind === 'snow') {
-          p.y += dt * 0.00006 * (1 + p.z * 2); p.x += dt * 0.00002 * (Math.sin(p.a += dt * 0.001) + 0.6);
-          c.fillStyle = 'rgba(235,242,255,' + (0.35 + 0.5 * p.z) + ')';
-          c.beginPath(); c.arc(p.x * W, p.y * H, (1 + p.z * 3) * k, 0, 7); c.fill();
+          p.y += dt * 0.000024 * (1 + p.z * 1.5); p.x += dt * 0.000009 * (Math.sin(p.a += dt * 0.0006) + 0.4);
+          c.fillStyle = 'rgba(235,242,255,' + (0.18 + 0.32 * p.z) + ')';
+          c.beginPath(); c.arc(p.x * W, p.y * H, (0.8 + p.z * 1.8) * k, 0, 7); c.fill();
         } else if (kind === 'petal') {
           p.y += dt * 0.00004 * (1 + p.z); p.x += dt * 0.00002 * Math.sin(p.a += dt * 0.0015);
           c.save(); c.translate(p.x * W, p.y * H); c.rotate(p.a);
