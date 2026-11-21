@@ -1,4 +1,4 @@
-window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-title","maplestory-classic":"maplestory-classic","sumo-scuffle":"sumo-scuffle","twd-retribution":"retribution","zoelie":"zoelie","wild-magic":"sumo-scuffle"};window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/work\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/work\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <span class=\"bb-footer__label\">Say hi</span>\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames<wbr>@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/work\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";window.BB_ROUTES={"/":"home","/work":"portfolio","/about":"about","/contact":"contact","/projects/maplestory-classic":"maplestory-classic","/projects/bioshock-4":"bioshock-4","/projects/behemoth":"behemoth","/projects/the-walking-dead-saints-and-sinners-chapter-2":"twd-retribution","/projects/level-design-blockout-canceled-title":"lonestar","/projects/zoelie":"zoelie","/projects/game-design-pitch-deck":"bioshock-infinite-redux","/projects/sumo-scuffle":"sumo-scuffle","/projects/hell-my-name-is-bubba":"hell-my-name-is-buba","/projects/beepo":"beepo"};window.BB_ALIASES={"wild-magic": "sumo-scuffle"};window.BB_CSSV="2be2a261f8";window.BB_W={"beepo/controls.jpg":1400,"beepo/puzzle-1.jpg":1800,"beepo/puzzle-2.jpg":1800,"beepo/puzzle-3.jpg":1800,"beepo/puzzle-4.jpg":1800,"beepo/puzzle-5.jpg":1800,"beepo/robots.jpg":1800,"behemoth/arch-1.jpg":2000,"behemoth/arch-2.jpg":1920,"behemoth/arch-3.jpg":1920,"behemoth/steam-1.jpg":1800,"behemoth/steam-2.jpg":1800,"behemoth/steam-3.jpg":1800,"behemoth/steam-4.jpg":1800,"behemoth/steam-5.jpg":1800,"bsi/level-design-doc.jpg":2400,"bsi/slide-1.jpg":1500,"bsi/slide-2.jpg":1500,"bsi/slide-3.jpg":1500,"bsi/slide-4.jpg":1500,"bsi/slide-5.jpg":1500,"bsi/slide-6.jpg":1500,"bsi/slide-7.jpg":1500,"bsi/slide-8.jpg":1500,"buba/shot-1.jpg":1800,"buba/shot-2.jpg":1800,"buba/shot-3.jpg":1800,"buba/shot-4.jpg":1800,"buba/shot-5.jpg":1800,"buba/theme.jpg":1200,"covers/beepo-b.jpg":1347,"covers/beepo-ff.jpg":2000,"covers/beepo.jpg":1500,"covers/behemoth-boss.jpg":2000,"covers/behemoth-gematsu.jpg":1920,"covers/behemoth-key.jpg":2400,"covers/behemoth-sq.jpg":2000,"covers/bioshock-alt.jpg":1920,"covers/bioshock.jpg":1500,"covers/bld.jpg":2000,"covers/bsi-sq.jpg":2000,"covers/bsi.jpg":1920,"covers/bubba.jpg":1920,"covers/compass.jpg":2000,"covers/lonestar-sq.jpg":1301,"covers/maplestory.jpg":2000,"covers/scad-intel.jpg":1075,"covers/socal.jpg":2000,"covers/twd-sq.jpg":2000,"covers/twd-yt.jpg":1280,"covers/twd.jpg":2000,"covers/wildmagic.jpg":2000,"fh/compare/depths.webp":1600,"fh/compare/surface.webp":1600,"fh/craft/ledge-after.webp":1599,"fh/craft/ledge-before.webp":1599,"fh/crops/cave-fairy-sanctuary.webp":1280,"fh/crops/forgotten-hollow.webp":1280,"fh/crops/precipice-of-darkness.webp":1280,"fh/crops/primeval-forest-2.webp":1280,"fh/crops/the-end-of-fleeting-light.webp":1280,"fh/maps-annotated/another-sanctuary.webp":2400,"fh/maps-annotated/bygone-days.webp":800,"fh/maps-annotated/cave-fairy-sanctuary.webp":800,"fh/maps-annotated/cave-fairy-store.webp":800,"fh/maps-annotated/decayed-tunnel-1.webp":2400,"fh/maps-annotated/decayed-tunnel-2.webp":2400,"fh/maps-annotated/decayed-tunnel-3.webp":2308,"fh/maps-annotated/dilapidated-tomb.webp":2398,"fh/maps-annotated/forbidden-entrance.webp":2400,"fh/maps-annotated/forgotten-dungeon-tunnel.webp":1530,"fh/maps-annotated/forgotten-entrance-1.webp":2400,"fh/maps-annotated/forgotten-entrance-2.webp":2400,"fh/maps-annotated/forgotten-entrance-3.webp":2400,"fh/maps-annotated/forgotten-hollow.webp":2400,"fh/maps-annotated/hanging-gardens-of-rot.webp":2400,"fh/maps-annotated/lingering-regret.webp":2128,"fh/maps-annotated/perilous-descent-1.webp":1948,"fh/maps-annotated/perilous-descent-2.webp":1588,"fh/maps-annotated/perilous-descent-3.webp":1588,"fh/maps-annotated/precipice-of-darkness.webp":2400,"fh/maps-annotated/primeval-forest-1.webp":2400,"fh/maps-annotated/primeval-forest-2.webp":1408,"fh/maps-annotated/the-end-of-fleeting-light.webp":2400,"fh/maps-annotated/the-faded-canopy.webp":2308,"fh/maps-annotated/the-valley-of-death.webp":2400,"fh/maps/another-sanctuary.webp":2000,"fh/maps/bygone-days.webp":800,"fh/maps/cave-fairy-department-store.webp":800,"fh/maps/cave-fairy-sanctuary.webp":800,"fh/maps/cave-fairy-store.webp":800,"fh/maps/collision-of-ice-and-fire.webp":2000,"fh/maps/decayed-tunnel-1.webp":2000,"fh/maps/decayed-tunnel-2.webp":2000,"fh/maps/decayed-tunnel-3.webp":2000,"fh/maps/dilapidated-tomb.webp":2000,"fh/maps/forbidden-entrance.webp":2000,"fh/maps/forgotten-dungeon-tunnel.webp":1530,"fh/maps/forgotten-entrance-1.webp":2000,"fh/maps/forgotten-entrance-2.webp":2000,"fh/maps/forgotten-entrance-3.webp":2000,"fh/maps/forgotten-hollow.webp":2000,"fh/maps/hanging-gardens-of-rot.webp":2000,"fh/maps/lingering-regret.webp":2000,"fh/maps/perilous-descent-1.webp":1948,"fh/maps/perilous-descent-2.webp":1588,"fh/maps/perilous-descent-3.webp":1588,"fh/maps/precipice-of-darkness.webp":2000,"fh/maps/primeval-forest-1.webp":2000,"fh/maps/primeval-forest-2.webp":1408,"fh/maps/primeval-forest-3.webp":2000,"fh/maps/someone-elses-grave.webp":1408,"fh/maps/the-end-of-fleeting-light.webp":2000,"fh/maps/the-faded-canopy.webp":2000,"fh/maps/the-valley-of-death.webp":2000,"fh/official-header-m.webp":1000,"fh/official-header.webp":1920,"home/composite-m.webp":1000,"home/composite.webp":1800,"level/beh/loop-poster.jpg":1280,"level/fh/loop-poster.jpg":1280,"level/sumo/crowd.webp":2048,"level/twd/loop-poster.jpg":1280,"level/tx/beh-ceil.webp":1024,"level/tx/beh-floor.webp":1024,"level/tx/beh-wall.webp":1024,"level/tx/fh-earth.webp":1024,"level/tx/fh-rock.webp":1024,"level/tx/sg-vault.webp":1024,"level/tx/sg-wall.webp":1024,"level/tx/sg-wood.webp":1024,"level/tx/sumo-folds.webp":1024,"level/tx/sumo-sand.webp":1024,"level/tx/sumo-wood.webp":1024,"level/tx/twd-concrete.webp":1024,"level/tx/twd-metal.webp":1024,"level/tx/twd-ply.webp":1024,"level/tx/zoe-boards.webp":1024,"lonestar/map-courthouse-gameplay.jpg":1016,"lonestar/map-courthouse-overview.jpg":1016,"lonestar/map-courthouse-tunnel.jpg":1800,"lonestar/map-police-exterior.jpg":1319,"lonestar/map-police-gameplay.jpg":1325,"lonestar/map-police-overview.jpg":1319,"lonestar/map-police-tunnel.jpg":1325,"lonestar/reference-board.jpg":1067,"lonestar/shot-00.jpg":1920,"lonestar/shot-01.jpg":1920,"lonestar/shot-02.jpg":1920,"lonestar/shot-03.jpg":1920,"lonestar/shot-04.jpg":1920,"lonestar/shot-05.jpg":1920,"lonestar/shot-06.jpg":1920,"lonestar/shot-07.jpg":1920,"lonestar/shot-08.jpg":1920,"lonestar/shot-09.jpg":1920,"lonestar/shot-10.jpg":1920,"lonestar/shot-11.jpg":1920,"lonestar/shot-12.jpg":1920,"lonestar/shot-13.jpg":1920,"lonestar/shot-14.jpg":1920,"lonestar/shot-15.jpg":1920,"lonestar/shot-16.jpg":1920,"lonestar/shot-17.jpg":1920,"lonestar/shot-18.jpg":1920,"lonestar/shot-19.jpg":1920,"lonestar/shot-20.jpg":1920,"lonestar/shot-21.jpg":1920,"lonestar/shot-22.jpg":1920,"lonestar/shot-23.jpg":1920,"lonestar/shot-24.jpg":1920,"lonestar/shot-25.jpg":1920,"lonestar/shot-26.jpg":1920,"lonestar/shot-27.jpg":1920,"lonestar/shot-28.jpg":1920,"lonestar/shot-29.jpg":1920,"social/beepo.jpg":2400,"social/behemoth.jpg":2400,"social/bioshock-4.jpg":2400,"social/bioshock-infinite-redux.jpg":2400,"social/hell-my-name-is-buba.jpg":2400,"social/lonestar.jpg":2400,"social/maplestory-classic.jpg":2400,"social/share-2026.jpg":1500,"social/share.jpg":2400,"social/sumo-scuffle.jpg":2400,"social/twd-retribution.jpg":2400,"social/wild-magic.jpg":2400,"social/zoelie.jpg":2400,"sumo/bowling.jpg":1920,"sumo/feast-1.jpg":1920,"sumo/feast-slam.jpg":1920,"sumo/keepaway.jpg":1920,"sumo/keyart.jpg":2400,"sumo/king.jpg":1920,"sumo/menu.jpg":1920,"sumo/trailer-poster.jpg":1280,"twd/camp-duplex-top.jpg":1530,"twd/camp-duplex.jpg":1800,"twd/camp-hotel-1.jpg":1375,"twd/camp-hotel-2.jpg":1375,"twd/camp-industrial-1-top.jpg":1390,"twd/camp-industrial-2-interior.jpg":1415,"twd/camp-industrial-2.jpg":1505,"twd/camp-mafia-top.jpg":1388,"twd/camp-mansion-night.jpg":1500,"twd/camp-mansion-top.jpg":1501,"twd/camp-mvp-courtyard.jpg":1501,"twd/camp-school-interior.jpg":1388,"twd/camp-school.jpg":1388,"twd/exile-dialogue-graph.jpg":1800,"twd/exile-order-ui-1.jpg":1800,"twd/exile-order-ui-2.jpg":1800,"twd/grenadier-blueprint.jpg":1638,"twd/grenadier-lineup-1.jpg":1800,"twd/grenadier-lineup-2.jpg":1800,"twd/patricia.jpg":1600,"twd/weapon-chainsaw.jpg":1600,"twd/weapon-gunfire.jpg":1600,"twd/weapon-silencer.jpg":1600,"wildmagic/arena-top.jpg":1800,"wildmagic/combat.jpg":1213,"wildmagic/controls-keys.jpg":1400,"wildmagic/controls-pad.jpg":1400,"wildmagic/enemies.jpg":1213,"zoelie/1.jpg":1400,"zoelie/12.jpg":1400,"zoelie/13.jpg":1400,"zoelie/4.jpg":1400,"zoelie/8.jpg":1400,"zoelie/form-bridge.jpg":1280,"zoelie/form-imagination.jpg":1200,"zoelie/glide.jpg":960,"zoelie/hero-first.jpg":1280,"zoelie/sneak.jpg":960,"zoelie/trailer-33.jpg":1280,"zoelie/trailer-41.jpg":1280,"zoelie/trailer-53.jpg":1280,"zoelie/trailer-57.jpg":1280,"zoelie/trailer-77.jpg":1280,"zoelie/trailer-8.jpg":1280};
+window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-title","maplestory-classic":"maplestory-classic","sumo-scuffle":"sumo-scuffle","twd-retribution":"retribution","zoelie":"zoelie","wild-magic":"sumo-scuffle"};window.BB_CHROME={"header": "<a class=\"bb-skip\" href=\"#bb-main\">Skip to content</a>\n<header class=\"bb-header\" id=\"bbHeader\">\n  <div class=\"bb-header__inner\">\n    <a class=\"bb-brand\" href=\"/\"><b>Ben Brook</b><span>Level &amp; quest design</span></a>\n    <nav class=\"bb-nav\" aria-label=\"Main\">\n      <a href=\"/work\" data-path=\"/portfolio\">Work</a>\n      <a href=\"/about\" data-path=\"/about\">About</a>\n      <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      <a class=\"bb-nav__res\" href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n    </nav>\n    <button class=\"bb-burger\" type=\"button\" aria-label=\"Menu\" aria-expanded=\"false\" aria-controls=\"bbMobile\"><span></span><span></span></button>\n    <div class=\"bb-mobile\" id=\"bbMobile\">\n      <nav aria-label=\"Mobile\">\n        <a href=\"/\" data-path=\"/\">Home</a>\n        <a href=\"/work\" data-path=\"/portfolio\">Work</a>\n        <a href=\"/about\" data-path=\"/about\">About</a>\n        <a href=\"/contact\" data-path=\"/contact\">Contact</a>\n      </nav>\n      <div class=\"bb-mobile__foot\">\n        <a href=\"https://bbrook28.github.io/portfolio-assets/resume/BenBrook_Resume.pdf\" target=\"_blank\" rel=\"noopener\">R\u00e9sum\u00e9</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"mailto:benbrookgames@gmail.com\">Email</a>\n      </div>\n    </div>\n  </div>\n</header>\n", "footer": "<footer class=\"bb-footer\">\n  <div class=\"bb-container\">\n    <span class=\"bb-footer__label\">Say hi</span>\n    <a class=\"bb-footer__mail\" href=\"mailto:benbrookgames@gmail.com\">benbrookgames<wbr>@gmail.com</a>\n    <div class=\"bb-footer__row\">\n      <span>\u00a9 <span data-bb-year>2026</span> Ben Brook \u00b7 Los Angeles</span>\n      <nav aria-label=\"Footer\">\n        <a href=\"/work\">Work</a>\n        <a href=\"/about\">About</a>\n        <a href=\"https://www.linkedin.com/in/benbrook12/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>\n        <a href=\"https://bbrook28.itch.io/\" target=\"_blank\" rel=\"noopener\">itch.io</a>\n        <a href=\"https://www.instagram.com/theoriginaldiabeto/\" target=\"_blank\" rel=\"noopener\">Instagram</a>\n      </nav>\n    </div>\n    <p class=\"bb-footer__legal\">Design documents, writing and site \u00a9 Ben Brook. Game art, footage and trademarks belong to their studios and publishers and are shown for portfolio purposes.</p>\n  </div>\n</footer>\n"};window.BB_UPDATED="November 2026";window.BB_ROUTES={"/":"home","/work":"portfolio","/about":"about","/contact":"contact","/projects/maplestory-classic":"maplestory-classic","/projects/bioshock-4":"bioshock-4","/projects/behemoth":"behemoth","/projects/the-walking-dead-saints-and-sinners-chapter-2":"twd-retribution","/projects/level-design-blockout-canceled-title":"lonestar","/projects/zoelie":"zoelie","/projects/game-design-pitch-deck":"bioshock-infinite-redux","/projects/sumo-scuffle":"sumo-scuffle","/projects/hell-my-name-is-bubba":"hell-my-name-is-buba","/projects/beepo":"beepo"};window.BB_ALIASES={"wild-magic": "sumo-scuffle"};window.BB_CSSV="00edbd2753";window.BB_W={"beepo/controls.jpg":1400,"beepo/puzzle-1.jpg":1800,"beepo/puzzle-2.jpg":1800,"beepo/puzzle-3.jpg":1800,"beepo/puzzle-4.jpg":1800,"beepo/puzzle-5.jpg":1800,"beepo/robots.jpg":1800,"behemoth/arch-1.jpg":2000,"behemoth/arch-2.jpg":1920,"behemoth/arch-3.jpg":1920,"behemoth/steam-1.jpg":1800,"behemoth/steam-2.jpg":1800,"behemoth/steam-3.jpg":1800,"behemoth/steam-4.jpg":1800,"behemoth/steam-5.jpg":1800,"bsi/level-design-doc.jpg":2400,"bsi/slide-1.jpg":1500,"bsi/slide-2.jpg":1500,"bsi/slide-3.jpg":1500,"bsi/slide-4.jpg":1500,"bsi/slide-5.jpg":1500,"bsi/slide-6.jpg":1500,"bsi/slide-7.jpg":1500,"bsi/slide-8.jpg":1500,"buba/shot-1.jpg":1800,"buba/shot-2.jpg":1800,"buba/shot-3.jpg":1800,"buba/shot-4.jpg":1800,"buba/shot-5.jpg":1800,"buba/theme.jpg":1200,"covers/beepo-b.jpg":1347,"covers/beepo-ff.jpg":2000,"covers/beepo.jpg":1500,"covers/behemoth-boss.jpg":2000,"covers/behemoth-gematsu.jpg":1920,"covers/behemoth-key.jpg":2400,"covers/behemoth-sq.jpg":2000,"covers/bioshock-alt.jpg":1920,"covers/bioshock.jpg":1500,"covers/bld.jpg":2000,"covers/bsi-sq.jpg":2000,"covers/bsi.jpg":1920,"covers/bubba.jpg":1920,"covers/compass.jpg":2000,"covers/lonestar-sq.jpg":1301,"covers/maplestory.jpg":2000,"covers/scad-intel.jpg":1075,"covers/socal.jpg":2000,"covers/twd-sq.jpg":2000,"covers/twd-yt.jpg":1280,"covers/twd.jpg":2000,"covers/wildmagic.jpg":2000,"fh/compare/depths.webp":1600,"fh/compare/surface.webp":1600,"fh/craft/ledge-after.webp":1599,"fh/craft/ledge-before.webp":1599,"fh/crops/cave-fairy-sanctuary.webp":1280,"fh/crops/forgotten-hollow.webp":1280,"fh/crops/precipice-of-darkness.webp":1280,"fh/crops/primeval-forest-2.webp":1280,"fh/crops/the-end-of-fleeting-light.webp":1280,"fh/maps-annotated/another-sanctuary.webp":2400,"fh/maps-annotated/bygone-days.webp":800,"fh/maps-annotated/cave-fairy-sanctuary.webp":800,"fh/maps-annotated/cave-fairy-store.webp":800,"fh/maps-annotated/decayed-tunnel-1.webp":2400,"fh/maps-annotated/decayed-tunnel-2.webp":2400,"fh/maps-annotated/decayed-tunnel-3.webp":2308,"fh/maps-annotated/dilapidated-tomb.webp":2398,"fh/maps-annotated/forbidden-entrance.webp":2400,"fh/maps-annotated/forgotten-dungeon-tunnel.webp":1530,"fh/maps-annotated/forgotten-entrance-1.webp":2400,"fh/maps-annotated/forgotten-entrance-2.webp":2400,"fh/maps-annotated/forgotten-entrance-3.webp":2400,"fh/maps-annotated/forgotten-hollow.webp":2400,"fh/maps-annotated/hanging-gardens-of-rot.webp":2400,"fh/maps-annotated/lingering-regret.webp":2128,"fh/maps-annotated/perilous-descent-1.webp":1948,"fh/maps-annotated/perilous-descent-2.webp":1588,"fh/maps-annotated/perilous-descent-3.webp":1588,"fh/maps-annotated/precipice-of-darkness.webp":2400,"fh/maps-annotated/primeval-forest-1.webp":2400,"fh/maps-annotated/primeval-forest-2.webp":1408,"fh/maps-annotated/the-end-of-fleeting-light.webp":2400,"fh/maps-annotated/the-faded-canopy.webp":2308,"fh/maps-annotated/the-valley-of-death.webp":2400,"fh/maps/another-sanctuary.webp":2000,"fh/maps/bygone-days.webp":800,"fh/maps/cave-fairy-department-store.webp":800,"fh/maps/cave-fairy-sanctuary.webp":800,"fh/maps/cave-fairy-store.webp":800,"fh/maps/collision-of-ice-and-fire.webp":2000,"fh/maps/decayed-tunnel-1.webp":2000,"fh/maps/decayed-tunnel-2.webp":2000,"fh/maps/decayed-tunnel-3.webp":2000,"fh/maps/dilapidated-tomb.webp":2000,"fh/maps/forbidden-entrance.webp":2000,"fh/maps/forgotten-dungeon-tunnel.webp":1530,"fh/maps/forgotten-entrance-1.webp":2000,"fh/maps/forgotten-entrance-2.webp":2000,"fh/maps/forgotten-entrance-3.webp":2000,"fh/maps/forgotten-hollow.webp":2000,"fh/maps/hanging-gardens-of-rot.webp":2000,"fh/maps/lingering-regret.webp":2000,"fh/maps/perilous-descent-1.webp":1948,"fh/maps/perilous-descent-2.webp":1588,"fh/maps/perilous-descent-3.webp":1588,"fh/maps/precipice-of-darkness.webp":2000,"fh/maps/primeval-forest-1.webp":2000,"fh/maps/primeval-forest-2.webp":1408,"fh/maps/primeval-forest-3.webp":2000,"fh/maps/someone-elses-grave.webp":1408,"fh/maps/the-end-of-fleeting-light.webp":2000,"fh/maps/the-faded-canopy.webp":2000,"fh/maps/the-valley-of-death.webp":2000,"fh/official-header-m.webp":1000,"fh/official-header.webp":1920,"home/composite-m.webp":1000,"home/composite.webp":1800,"level/beh/loop-poster.jpg":1280,"level/fh/loop-poster.jpg":1280,"level/sumo/crowd.webp":2048,"level/twd/loop-poster.jpg":1280,"level/tx/beh-ceil.webp":1024,"level/tx/beh-floor.webp":1024,"level/tx/beh-wall.webp":1024,"level/tx/fh-earth.webp":1024,"level/tx/fh-rock.webp":1024,"level/tx/sg-vault.webp":1024,"level/tx/sg-wall.webp":1024,"level/tx/sg-wood.webp":1024,"level/tx/sumo-folds.webp":1024,"level/tx/sumo-sand.webp":1024,"level/tx/sumo-wood.webp":1024,"level/tx/twd-concrete.webp":1024,"level/tx/twd-metal.webp":1024,"level/tx/twd-ply.webp":1024,"level/tx/zoe-boards.webp":1024,"lonestar/map-courthouse-gameplay.jpg":1016,"lonestar/map-courthouse-overview.jpg":1016,"lonestar/map-courthouse-tunnel.jpg":1800,"lonestar/map-police-exterior.jpg":1319,"lonestar/map-police-gameplay.jpg":1325,"lonestar/map-police-overview.jpg":1319,"lonestar/map-police-tunnel.jpg":1325,"lonestar/reference-board.jpg":1067,"lonestar/shot-00.jpg":1920,"lonestar/shot-01.jpg":1920,"lonestar/shot-02.jpg":1920,"lonestar/shot-03.jpg":1920,"lonestar/shot-04.jpg":1920,"lonestar/shot-05.jpg":1920,"lonestar/shot-06.jpg":1920,"lonestar/shot-07.jpg":1920,"lonestar/shot-08.jpg":1920,"lonestar/shot-09.jpg":1920,"lonestar/shot-10.jpg":1920,"lonestar/shot-11.jpg":1920,"lonestar/shot-12.jpg":1920,"lonestar/shot-13.jpg":1920,"lonestar/shot-14.jpg":1920,"lonestar/shot-15.jpg":1920,"lonestar/shot-16.jpg":1920,"lonestar/shot-17.jpg":1920,"lonestar/shot-18.jpg":1920,"lonestar/shot-19.jpg":1920,"lonestar/shot-20.jpg":1920,"lonestar/shot-21.jpg":1920,"lonestar/shot-22.jpg":1920,"lonestar/shot-23.jpg":1920,"lonestar/shot-24.jpg":1920,"lonestar/shot-25.jpg":1920,"lonestar/shot-26.jpg":1920,"lonestar/shot-27.jpg":1920,"lonestar/shot-28.jpg":1920,"lonestar/shot-29.jpg":1920,"social/beepo.jpg":2400,"social/behemoth.jpg":2400,"social/bioshock-4.jpg":2400,"social/bioshock-infinite-redux.jpg":2400,"social/hell-my-name-is-buba.jpg":2400,"social/lonestar.jpg":2400,"social/maplestory-classic.jpg":2400,"social/share-2026.jpg":1500,"social/share.jpg":2400,"social/sumo-scuffle.jpg":2400,"social/twd-retribution.jpg":2400,"social/wild-magic.jpg":2400,"social/zoelie.jpg":2400,"sumo/bowling.jpg":1920,"sumo/feast-1.jpg":1920,"sumo/feast-slam.jpg":1920,"sumo/keepaway.jpg":1920,"sumo/keyart.jpg":2400,"sumo/king.jpg":1920,"sumo/menu.jpg":1920,"sumo/trailer-poster.jpg":1280,"twd/camp-duplex-top.jpg":1530,"twd/camp-duplex.jpg":1800,"twd/camp-hotel-1.jpg":1375,"twd/camp-hotel-2.jpg":1375,"twd/camp-industrial-1-top.jpg":1390,"twd/camp-industrial-2-interior.jpg":1415,"twd/camp-industrial-2.jpg":1505,"twd/camp-mafia-top.jpg":1388,"twd/camp-mansion-night.jpg":1500,"twd/camp-mansion-top.jpg":1501,"twd/camp-mvp-courtyard.jpg":1501,"twd/camp-school-interior.jpg":1388,"twd/camp-school.jpg":1388,"twd/exile-dialogue-graph.jpg":1800,"twd/exile-order-ui-1.jpg":1800,"twd/exile-order-ui-2.jpg":1800,"twd/grenadier-blueprint.jpg":1638,"twd/grenadier-lineup-1.jpg":1800,"twd/grenadier-lineup-2.jpg":1800,"twd/patricia.jpg":1600,"twd/weapon-chainsaw.jpg":1600,"twd/weapon-gunfire.jpg":1600,"twd/weapon-silencer.jpg":1600,"wildmagic/arena-top.jpg":1800,"wildmagic/combat.jpg":1213,"wildmagic/controls-keys.jpg":1400,"wildmagic/controls-pad.jpg":1400,"wildmagic/enemies.jpg":1213,"zoelie/1.jpg":1400,"zoelie/12.jpg":1400,"zoelie/13.jpg":1400,"zoelie/4.jpg":1400,"zoelie/8.jpg":1400,"zoelie/form-bridge.jpg":1280,"zoelie/form-imagination.jpg":1200,"zoelie/glide.jpg":960,"zoelie/hero-first.jpg":1280,"zoelie/sneak.jpg":960,"zoelie/trailer-33.jpg":1280,"zoelie/trailer-41.jpg":1280,"zoelie/trailer-53.jpg":1280,"zoelie/trailer-57.jpg":1280,"zoelie/trailer-77.jpg":1280,"zoelie/trailer-8.jpg":1280};
 (function () {
   'use strict';
   if (/^\/projects\/?$/.test(location.pathname)) { location.replace('/work'); return; }
@@ -837,6 +837,193 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
 })();
 (function () {
   'use strict';
+  var VARIANTS = [{ id: 'wide', a: 1.92 }, { id: 'std', a: 1.5 }, { id: 'tall', a: 0.545 }];
+  function pickVariant(w, h) {
+    var a = w / h, best = VARIANTS[0];
+    VARIANTS.forEach(function (v) { if (Math.abs(Math.log(a / v.a)) < Math.abs(Math.log(a / best.a))) best = v; });
+    return best.id;
+  }
+  function wave(t, period, delay) { return Math.sin(((t + (delay || 0)) / period) * Math.PI * 2); }
+  var MOTION = [
+    { re: /\b(chochin|bulb|lamp|chand)\b/, f: function (t, b, i, cls) { var deg = /\bchand\b/.test(cls) ? 0.7 : 1.6, per = /\bchand\b/.test(cls) ? 18 : (i % 2 ? 13.6 : 11); return pivot(b[0] / 2, 0, new DOMMatrix().rotateSelf(0, 0, deg * wave(t, per, i * 2.4))); } },
+    { re: /\bwrestler\b/, f: function (t, b) { var s = wave(t, 1.4); return pivot(b[0] / 2, b[1], new DOMMatrix().translateSelf(0, -0.02 * b[1] * Math.max(0, s)).rotateSelf(0, 0, 3 * Math.sin((t / 1.4) * Math.PI * 2 + Math.PI / 2))); } },
+    { re: /\breaper\b/, f: function (t, b) { return new DOMMatrix().translateSelf(0, -0.007 * b[1] * (1 - Math.cos((t / 6) * Math.PI * 2))); } },
+    { re: /\b(haze|fog)\b/, f: function (t, b, i) { return new DOMMatrix().translateSelf(0.06 * b[0] * wave(t, 2 * (14 + 2 * (i % 3)), i * 3), 0); } }
+  ];
+  function pivot(px, py, m) { return new DOMMatrix().translateSelf(px, py).multiplySelf(m).translateSelf(-px, -py); }
+  function flicker(t, cls, i) {
+    if (/\bshaft\b/.test(cls)) return 0.55 + 0.45 * (0.5 + 0.5 * wave(t, 14));
+    if (/\b(candle|cage|shroom|sconce)\b/.test(cls)) return 0.93 + 0.07 * Math.sin(t * 7.3 + i) * Math.sin(t * 3.1 + i * 2);
+    return 1;
+  }
+  var VS = '#version 300 es\n' +
+    'in vec2 a; uniform mat4 m; uniform vec4 r; uniform vec4 uv; uniform vec4 cam; uniform vec2 vp; out vec2 t; out vec2 t2;\n' +
+    'void main(){ vec4 p = m * vec4(r.xy + a * r.zw, 0.0, 1.0); p /= p.w;\n' +
+    '  float P = cam.z, d = P - p.z, X = p.x - cam.x, Y = p.y - cam.y;\n' +
+    '  float n = 2.0, f = 40000.0;\n' +
+    '  gl_Position = vec4((cam.x * d + X * P) / (vp.x * 0.5), -(cam.y * d + Y * P) / (vp.y * 0.5), d * (f + n) / (f - n) - 2.0 * f * n / (f - n), d);\n' +
+    '  t = uv.xy + a * uv.zw; t2 = a; }';
+  var FS = '#version 300 es\nprecision mediump float;\n' +
+    'in vec2 t; in vec2 t2; uniform sampler2D s; uniform sampler2D s2; uniform float mk; uniform float k; uniform vec4 c; out vec4 o;\n' +
+    'void main(){ vec4 x = c.a > 0.0 ? c : texture(s, t);\n' +
+    '  if (mk > 0.5) { o = vec4(x.rgb * texture(s2, t2).r * k, 0.0); return; }\n' +
+    '  o = vec4(x.rgb * x.a, x.a) * k; }';
+  function create(host, asset) {
+    var cv = document.createElement('canvas');
+    cv.className = 'lv-gl';
+    cv.setAttribute('aria-hidden', 'true');
+    var gl = cv.getContext('webgl2', { alpha: true, premultipliedAlpha: true, antialias: true, powerPreference: 'high-performance' });
+    if (!gl) return null;
+    host.insertBefore(cv, host.firstChild);
+    var aniso = gl.getExtension('EXT_texture_filter_anisotropic');
+    function sh(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; }
+    var pr = gl.createProgram();
+    gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return null;
+    gl.useProgram(pr);
+    var U = {}; ['m', 'r', 'uv', 'cam', 'vp', 's', 's2', 'mk', 'k', 'c'].forEach(function (n) { U[n] = gl.getUniformLocation(pr, n); });
+    var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([0, 0, 1, 0, 0, 1, 1, 1]), gl.STATIC_DRAW);
+    var al = gl.getAttribLocation(pr, 'a'); gl.enableVertexAttribArray(al); gl.vertexAttribPointer(al, 2, gl.FLOAT, false, 0, 0);
+    gl.uniform1i(U.s, 0); gl.uniform1i(U.s2, 1); gl.uniform1f(U.mk, 0);
+    var rooms = {}, vw = 0, vh = 0, dpr = 1, variant = '', lost = false, queue = [];
+    cv.addEventListener('webglcontextlost', function (e) { e.preventDefault(); lost = true; });
+    function resize(w, h) {
+      vw = w; vh = h;
+      dpr = Math.min(window.devicePixelRatio || 1, 2, Math.sqrt(9e6 / Math.max(1, w * h)));
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+      var v = pickVariant(w, h);
+      if (v !== variant) { variant = v; Object.keys(rooms).forEach(function (id) { var r = rooms[id]; free(r); delete rooms[id]; load(id); }); }
+    }
+    function texture(img) {
+      var tx = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tx);
+      gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+      gl.generateMipmap(gl.TEXTURE_2D);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      if (aniso) gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(8, gl.getParameter(aniso.MAX_TEXTURE_MAX_ANISOTROPY_EXT)));
+      return tx;
+    }
+    function load(id) {
+      if (rooms[id]) return rooms[id].ready;
+      var r = rooms[id] = { id: id, man: null, tex: {}, vids: [], ok: false, failed: false };
+      var base = 'level/gl/' + variant + '/';
+      r.ready = fetch(asset(base + id + '.json')).then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); }).then(function (man) {
+        r.man = man;
+        var files = [];
+        man.quads.forEach(function (q) { files.push(q.img); (q.vids || []).forEach(function (v) { if (v.mask) files.push(v.mask); }); });
+        return Promise.all(files.map(function (img) {
+          var q = { img: img };
+          return fetch(asset(base + q.img)).then(function (res) { return res.blob(); }).then(function (bl) { return createImageBitmap(bl, { premultiplyAlpha: 'none' }); }).then(function (bm) {
+            return new Promise(function (done) { queue.push(function () { if (rooms[id] === r) r.tex[q.img] = texture(bm); bm.close && bm.close(); done(); }); });
+          });
+        }));
+      }).then(function () {
+        r.man.quads.forEach(function (q) {
+          (q.vids || []).forEach(function (v) {
+            var el = document.createElement('video'); el.muted = true; el.loop = true; el.playsInline = true; el.setAttribute('playsinline', ''); el.preload = 'none'; el.crossOrigin = 'anonymous';
+            if (v.src) el.setAttribute('data-bb-src', v.src); if (v.srcM) el.setAttribute('data-bb-src-m', v.srcM); if (v.poster) el.setAttribute('data-bb-poster', v.poster);
+            var wrap = document.createElement('div'); wrap.appendChild(el);
+            if (window.bbResolveAssets) window.bbResolveAssets(wrap); else el.src = asset(v.src);
+            if (!el.getAttribute('src') && !el.src) el.src = asset(v.src);
+            var vv = { q: q, v: v, el: el, tex: null, fresh: false };
+            var tick = function () { vv.fresh = true; if (el.requestVideoFrameCallback) el.requestVideoFrameCallback(tick); };
+            if (el.requestVideoFrameCallback) el.requestVideoFrameCallback(tick); else el.addEventListener('timeupdate', function () { vv.fresh = true; });
+            if (v.poster) { var im = new Image(); im.crossOrigin = 'anonymous'; im.onload = function () { if (!vv.tex) vv.tex = texture(im); }; im.src = el.poster || asset(v.poster); }
+            r.vids.push(vv);
+          });
+        });
+        r.ok = true;
+      }).catch(function (e) { r.failed = true; if (window.console) console.warn('room ' + id + ' (WebGL):', e && e.message); });
+      return r.ready;
+    }
+    function free(r) {
+      Object.keys(r.tex).forEach(function (k) { gl.deleteTexture(r.tex[k]); });
+      r.vids.forEach(function (vv) { vv.el.pause(); vv.el.removeAttribute('src'); vv.el.load(); if (vv.tex) gl.deleteTexture(vv.tex); });
+      r.tex = {}; r.vids = [];
+    }
+    function unload(id) { var r = rooms[id]; if (!r) return; free(r); delete rooms[id]; }
+    function ready(id) { var r = rooms[id]; return !!(r && r.ok); }
+    function has(id) { var r = rooms[id]; return !(r && r.failed); }
+    function playing(id, on) {
+      var r = rooms[id]; if (!r) return;
+      r.vids.forEach(function (vv) { if (on && vv.el.paused) { vv.el.preload = 'auto'; var p = vv.el.play(); if (p && p.catch) p.catch(function () {}); } else if (!on && !vv.el.paused) vv.el.pause(); });
+    }
+    var I4 = new DOMMatrix();
+    function draw(q, m, k, tex, rect, uv) {
+      gl.uniformMatrix4fv(U.m, false, m.toFloat32Array());
+      gl.uniform4fv(U.r, rect || q.r); gl.uniform4fv(U.uv, uv || [0, 0, 1, 1]);
+      gl.uniform1f(U.k, k); gl.uniform4f(U.c, 0, 0, 0, 0);
+      gl.bindTexture(gl.TEXTURE_2D, tex);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    }
+    function frame(list, de, time) {
+      if (lost) return;
+      var budget = 2; while (queue.length && budget--) queue.shift()();
+      gl.viewport(0, 0, cv.width, cv.height);
+      gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+      var P = Math.round(Math.max(vw, vh) * 0.75), oy = (window.matchMedia('(max-width: 760px)').matches ? 0.30 : 0.44);
+      gl.uniform4f(U.cam, 0, (oy - 0.5) * vh, P, 0); gl.uniform2f(U.vp, vw, vh);
+      gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      var g = Math.max(0, Math.min(1, (de - 0.35) / 0.65)), drawn = [], vplay = [];
+      Object.keys(rooms).forEach(function (id) { if (rooms[id].vids.some(function (vv) { return !vv.el.paused; })) vplay.push(id); });
+      list.forEach(function (it) {
+        var r = rooms[it.id]; if (!r || !r.ok || it.alpha <= 0) return;
+        drawn.push(it.id + ':' + Object.keys(r.tex).length);
+        var man = r.man, M = Math.max(vw, vh);
+        gl.clear(gl.DEPTH_BUFFER_BIT);
+        gl.disable(gl.DEPTH_TEST);
+        gl.uniformMatrix4fv(U.m, false, I4.toFloat32Array()); gl.uniform4f(U.r, -vw, -vh, 2 * vw, 2 * vh);
+        gl.uniform4f(U.c, 5 / 255, 5 / 255, 6 / 255, 1); gl.uniform1f(U.k, it.alpha); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        var room = new DOMMatrix().translateSelf(0, 0, it.camZ).translateSelf(0, 0, it.rigZ)
+          .rotateAxisAngleSelf(0, 1, 0, it.rotY).rotateAxisAngleSelf(1, 0, 0, it.rotX)
+          .scaleSelf(vw / man.W, vh / man.H, (M * man.dk) / man.D);
+        gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LEQUAL);
+        gl.depthMask(true);
+        var rest = [];
+        man.quads.forEach(function (q, i) {
+          var tx = r.tex[q.img]; if (!tx) return;
+          var m = room.multiply(new DOMMatrix(q.m));
+          if (q.face) { draw(q, m, it.alpha, tx); return; }
+          rest.push({ q: q, i: i, m: m, tx: tx, z: m.transformPoint(new DOMPoint(q.box[0] / 2, q.box[1] / 2, 0)).z });
+        });
+        gl.enable(gl.POLYGON_OFFSET_FILL); gl.polygonOffset(-2, -2);
+        r.vids.forEach(function (vv) {
+          var el = vv.el;
+          if (el.readyState >= 2 && vv.fresh) { vv.fresh = false; if (!vv.tex) vv.tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, vv.tex); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, el); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE); vv.vw = el.videoWidth; vv.vh = el.videoHeight; }
+          if (!vv.tex) return;
+          var R = vv.v.r, uv = [0, 0, 1, 1];
+          if (vv.vw && vv.v.fit !== 'fill') {  var ra = R[2] / R[3], va = vv.vw / vv.vh; if (va > ra) { var s = ra / va; uv = [(1 - s) / 2, 0, s, 1]; } else { var s2 = va / ra; uv = [0, (1 - s2) / 2, 1, s2]; } }
+          var mt = vv.v.mask && r.tex[vv.v.mask];
+          if (mt) { gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, mt); gl.activeTexture(gl.TEXTURE0); gl.uniform1f(U.mk, 1); }
+          draw(vv.q, room.multiply(new DOMMatrix(vv.q.m)), it.alpha, vv.tex, R, uv);
+          gl.uniform1f(U.mk, 0);
+        });
+        gl.disable(gl.POLYGON_OFFSET_FILL);
+        gl.depthMask(false);
+        rest.sort(function (a, b) { return a.z - b.z; });
+        rest.forEach(function (p) {
+          var q = p.q, m = p.m, rect = q.r;
+          if (q.gate === 'split') rect = [q.r[0] + q.side * g * 1.04 * q.half, q.r[1], q.r[2], q.r[3]];
+          else if (q.gate === 'up') rect = [q.r[0], q.r[1] - g * 1.06 * q.box[1], q.r[2], q.r[3]];
+          else for (var j = 0; j < MOTION.length; j++) if (MOTION[j].re.test(q.cls)) { m = m.multiply(MOTION[j].f(time, q.box, p.i, q.cls)); break; }
+          if (q.gate && g >= 1) return;
+          draw(q, m, it.alpha * flicker(time, q.cls, p.i), p.tx, rect);
+        });
+        gl.depthMask(true);
+      });
+      var d = drawn.join(' '), vp = vplay.join(' ');
+      if (cv.getAttribute('data-drawn') !== d) cv.setAttribute('data-drawn', d);
+      if (cv.getAttribute('data-playing') !== vp) cv.setAttribute('data-playing', vp);
+    }
+    return { canvas: cv, resize: resize, load: load, unload: unload, ready: ready, has: has, playing: playing, frame: frame, variant: function () { return variant; } };
+  }
+  window.bbLevelGL = { create: create };
+})();
+(function () {
+  'use strict';
   var SVGNS = 'http://www.w3.org/2000/svg';
   function el(tag, cls, parent) {
     var e = document.createElement(tag);
@@ -900,11 +1087,11 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
     l.href = 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&display=swap';
     document.head.appendChild(l);
   }
-  function cloneInterior(t, parent, asset, extraClass) {
-    var sec = el('section', t.className + (extraClass ? ' ' + extraClass : ''), parent);
+  function cloneInterior(t, parent, asset, extraClass, bare) {
+    var sec = el('section', t.className + (extraClass ? ' ' + extraClass : '') + (bare ? ' lv-int--gl' : ''), parent);
     sec.setAttribute('aria-hidden', 'true');
     var cam = el('div', 'lv-cam', sec), rig = el('div', 'lv-rig', cam);
-    rig.appendChild(document.importNode(t.content, true));
+    if (!bare) rig.appendChild(document.importNode(t.content, true));
     var cv = el('canvas', 'lv-fx', sec);
     if (t.hasAttribute('data-bb-vars')) sec.setAttribute('data-bb-vars', t.getAttribute('data-bb-vars'));
     [sec].concat(Array.prototype.slice.call(sec.querySelectorAll('[data-bb-vars]'))).forEach(function (e) {
@@ -940,6 +1127,7 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
     Array.prototype.forEach.call(document.querySelectorAll('[style*="view-transition-name"]'), function (n) { n.style.viewTransitionName = ''; });
     var room = a.classList.contains('lv-stop') ? a.querySelector('img') : Array.prototype.filter.call(lv.querySelectorAll('.lv-int'), function (x) { return getComputedStyle(x).visibility === 'visible' && +getComputedStyle(x).opacity > 0.5; })[0];
     var title = a.classList.contains('lv-stop') ? a.querySelector('.lv-stop__h') : lv.querySelector('.lv-card__h');
+    if (room && room.classList.contains('lv-int--gl') && !document.body.classList.contains('lv-flat')) room = lv.querySelector('.lv-gl') || room;
     if (room) room.style.viewTransitionName = 'bb-room';
     if (title) title.style.viewTransitionName = 'bb-roomtitle';
   }, true);
@@ -1233,16 +1421,23 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
       I[k] = { t: 0, D: 0, dk: num(t.getAttribute('data-depth'), 0.8), fxKind: t.getAttribute('data-fx') || 'none', tpl: t, el: null };
     });
     var vw = 0, vh = 0;
-    function sizeInt(o) { if (o.el) sizeInterior(o, vw, vh, !RM); }
+    var GLR = null;
+    if (!LITE && window.bbLevelGL && !/[?&]css-rooms\b/.test(location.search)) { try { GLR = window.bbLevelGL.create(ints, asset); } catch (err) { GLR = null; } }
+    if (GLR) stage.classList.add('lv--gl');
+    function sizeInt(o) { if (o.el) sizeInterior(o, vw, vh, !RM && !o.gl); }
     function build(k) {
       var o = I[k];
       if (!o || o.el) return;
-      var c = cloneInterior(o.tpl, ints, asset, 'lv-int--' + R[k].id);
+      o.gid = o.tpl.getAttribute('data-for');
+      o.gl = !!(GLR && !o.noGL);
+      var c = cloneInterior(o.tpl, ints, asset, 'lv-int--' + R[k].id, o.gl);
       o.el = c.el; o.cam = c.cam; o.rig = c.rig; o.cv = c.cv; o.vids = c.vids; o.fx = c.fx;
+      if (o.gl) { GLR.load(o.gid); o.up = ''; }
       sizeInt(o);
     }
     function size() {
       vw = stage.clientWidth || window.innerWidth; vh = stage.clientHeight || window.innerHeight;
+      if (GLR) GLR.resize(vw, vh);
       Object.keys(I).forEach(function (k) { sizeInt(I[k]); });
     }
     function range() {
@@ -1311,11 +1506,13 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
       var settled = !moving && Math.abs(camS.x - tgt.x) < 40 && Math.abs(camS.y - tgt.y) < 40;
       var dive = 0, inView = mode === 'in';
       [room - 1, room, room + 1].forEach(function (k) { if (I[k] && !I[k].el) build(k); });
+      var glList = [];
       Object.keys(I).forEach(function (k) {
         var o = I[k];
         if (!o.el) return;
+        if (o.gl && !GLR.has(o.gid)) { o.el.parentNode.removeChild(o.el); o.el = null; o.gl = false; o.noGL = true; build(k); }
         if (flat && !o.flatSet) { o.flatSet = 1; o.el.style.setProperty('--flat', 'url("' + asset('level/flat/' + R[k].id + '.jpg') + '")'); }
-        var want = inView && +k === room && settled ? 1 : 0;
+        var want = inView && +k === room && settled && (!o.gl || GLR.ready(o.gid)) ? 1 : 0;
         if (RM) o.t = clamp(o.t + (want ? dt : -dt) / 200, 0, 1); // a plain 200 ms crossfade
         else {
           o.t += (want - o.t) * (want ? 0.045 : 0.09);
@@ -1325,23 +1522,30 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
         var e = ease(o.t), s = o.el.style;
         if (o.t > 0) {
           s.visibility = 'visible'; s.opacity = RM ? o.t : Math.min(1, o.t * 1.6);
-          o.cam.style.transform = RM || flat ? '' : 'translateZ(' + (-(1 - e) * 900) + 'px)';
-          o.rig.style.transform = RM || flat ? '' : 'translateZ(' + ((+k === room ? hold - 0.35 : 0) * o.D * 0.45) + 'px) rotateY(' + (pmx * 6) + 'deg) rotateX(' + (-pmy * 3) + 'deg)' + o.up;
+          if (o.gl) {
+            if (!flat) glList.push({ id: o.gid, alpha: RM ? o.t : Math.min(1, o.t * 1.6), camZ: RM ? 0 : -(1 - e) * 900, rigZ: RM ? 0 : (+k === room ? hold - 0.35 : 0) * o.D * 0.45, rotY: RM ? 0 : pmx * 6, rotX: RM ? 0 : -pmy * 3 });
+            GLR.playing(o.gid, o.t > 0.3 && !flat && !paused && !RM);
+          } else {
+            o.cam.style.transform = RM || flat ? '' : 'translateZ(' + (-(1 - e) * 900) + 'px)';
+            o.rig.style.transform = RM || flat ? '' : 'translateZ(' + ((+k === room ? hold - 0.35 : 0) * o.D * 0.45) + 'px) rotateY(' + (pmx * 6) + 'deg) rotateX(' + (-pmy * 3) + 'deg)' + o.up;
+          }
           if (o.t > 0.3 && !flat && !RM && !paused) o.vids.forEach(function (v) { if (v.paused) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } });
           if (!RM && !flat && !paused) o.fx(dt);
           else if (flat || paused) o.vids.forEach(function (v) { if (!v.paused) v.pause(); });
         } else {
-          var warm = !RM && !flat && lastDive < 0.02 && (+k === i || +k === i + 1);
+          var warm = !o.gl && !RM && !flat && lastDive < 0.02 && (+k === i || +k === i + 1);
+          if (o.gl) GLR.playing(o.gid, false);
           s.visibility = warm ? 'visible' : 'hidden'; s.opacity = warm ? 0.01 : 0;
           if (warm) o.cam.style.transform = 'translateZ(-900px)';
           o.vids.forEach(function (v) { if (!v.paused) v.pause(); });
         }
         var far = o.t === 0 && !(+k === i || +k === i + 1);
-        if (far !== !!o.far) { o.far = far; s.display = far ? 'none' : ''; }
+        if (far !== !!o.far) { o.far = far; s.display = far ? 'none' : ''; if (o.gl) { if (far) GLR.unload(o.gid); else GLR.load(o.gid); } }
       });
       lastDive = dive;
       checkProbe(dt, dive);
       var de = RM ? dive : ease(dive);
+      if (GLR) GLR.frame(glList, de, now / 1000);
       document.body.classList.toggle('inroom', de > 0.5);
       var ro = R[room], gt = ro.spawn ? '' : de > 0.5 ? ro.goIn : ro.go;
       if (goEl.textContent !== gt) goEl.textContent = gt;
@@ -1354,7 +1558,7 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
       hint.style.opacity = y0 > 40 ? 0 : 1;
       requestAnimationFrame(frame);
     }
-    var swapT = 0;
+    var swapT = 0, landed = document.readyState === 'complete';
     function enter(room) {
       cur = room;
       var o = R[room];
@@ -1364,7 +1568,7 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
       });
       cntB.textContent = pad2(room);
       lv.setAttribute('data-cur', o.id || '');
-      if (mode === 'in' && history.replaceState) {
+      if (mode === 'in' && landed && history.replaceState) {
         var url = location.pathname + location.search + (o.id ? '#' + o.id : '');
         if (url !== location.pathname + location.search + location.hash) history.replaceState(null, '', url);
       }
@@ -1385,7 +1589,7 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
     }
     size();
     if (!fromHash()) {  }
-    window.addEventListener('load', function () { fromHash(); });
+    window.addEventListener('load', function () { fromHash(); landed = true; });
     requestAnimationFrame(frame);
   }
   window.bbInitLevel = initLevel;
