@@ -1,5 +1,5 @@
 <link rel="canonical" href="https://benbrookgames.com/">
-<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=36f779bc23">
+<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=97013577f3">
 <div class="bb-page cine home" data-title="Ben Brook, game designer" data-description="Game designer. I build places, quests and the systems that make them react to players: level design, quest design and narrative. Shipped at Nexon and Skydance; Alpha at Cloud Chamber." style="--bb-accent:#ff5b2e">
 <div class="lv" data-lv>
 
@@ -41,6 +41,7 @@
     <div class="obj box" style="--x:calc(var(--W)*-.18);--z:calc(var(--D)*-.65);--w:12;--h:40"></div>
     <div class="obj box orange" style="--x:calc(var(--W)*.2);--z:calc(var(--D)*-.55);--w:10;--h:10"></div>
     <div class="obj box edge" style="--x:calc(var(--W)*.33);--z:calc(var(--D)*-.3);--w:24;--h:14"></div>
+    <div class="obj bot" style="--x:calc(var(--W)*-.04);--z:calc(var(--D)*-.5)"><i></i></div>
     <div class="hang floodlamp" style="--x:0px;--z:calc(var(--D)*-.45)"></div>
     <div class="gate"></div>
   </template>
@@ -60,12 +61,12 @@
     </div><div class="vine" style="left:62%;--l:28%"></div><div class="shade"></div></div>
     <div class="face ceil rock"><div class="shade"></div></div>
     <div class="face floor"><div class="moss"></div><div class="glow"></div><div class="shade"></div></div>
-    <div class="obj px" style="--x:calc(var(--W)*-.06);--z:calc(var(--D)*-.8);--h:38"><img data-bb-src="fh/mobs/sporewood.png" alt=""></div>
-    <div class="obj px edge" style="--x:calc(var(--W)*-.14);--z:calc(var(--D)*-.5);--h:13"><img data-bb-src="fh/mobs/glowshroom.png" alt=""></div>
-    <div class="obj px" style="--x:calc(var(--W)*.27);--z:calc(var(--D)*-.45);--h:30"><img data-bb-src="fh/npcs-hires/lyn-the-librarian.png" alt=""></div>
-    <div class="obj px edge" style="--x:calc(var(--W)*.12);--z:calc(var(--D)*-.7);--h:18"><img data-bb-src="fh/mobs/rotten-mushmom.png" alt=""></div>
+    <div class="obj px mob" style="--x:calc(var(--W)*-.06);--z:calc(var(--D)*-.8);--h:38"><img data-bb-src="fh/mobs/sporewood.png" alt=""></div>
+    <div class="obj px mob edge" style="--x:calc(var(--W)*-.14);--z:calc(var(--D)*-.5);--h:13"><img data-bb-src="fh/mobs/glowshroom.png" alt=""></div>
+    <div class="obj px npc" style="--x:calc(var(--W)*.27);--z:calc(var(--D)*-.45);--h:30"><img data-bb-src="fh/npcs-hires/lyn-the-librarian.png" alt=""></div>
+    <div class="obj px mob edge" style="--x:calc(var(--W)*.12);--z:calc(var(--D)*-.7);--h:18"><img data-bb-src="fh/mobs/rotten-mushmom.png" alt=""></div>
     <div class="obj px edge" style="--x:calc(var(--W)*-.33);--z:calc(var(--D)*-.62);--h:30"><img data-bb-src="fh/npcs-hires/notice-board.png" alt=""></div>
-    <div class="obj px shroom edge" style="--x:calc(var(--W)*.36);--z:calc(var(--D)*-.3);--h:12"><img data-bb-src="fh/mobs/glowshroom.png" alt=""></div>
+    <div class="obj px mob shroom edge" style="--x:calc(var(--W)*.36);--z:calc(var(--D)*-.3);--h:12"><img data-bb-src="fh/mobs/glowshroom.png" alt=""></div>
     <div class="gate"></div>
   </template>
 
@@ -120,7 +121,7 @@
 
   <template class="lv-int beh" data-for="behemoth" data-depth="0.8" data-fx="snow" data-bb-vars="tx-wall:level/tx/beh-wall.webp tx-floor:level/tx/beh-floor.webp tx-ceil:level/tx/beh-ceil.webp">
     <div class="face back stone">
-      <div class="banner" style="left:8%;--c:#5a1519"></div><div class="banner" style="right:8%;--c:#1d2f5a"></div>
+      
       <div class="arch"><video data-bb-src="level/beh/loop.mp4" data-bb-src-m="level/beh/loop-m.mp4" data-bb-poster="level/beh/loop-poster.jpg" muted loop playsinline preload="none"></video></div>
     </div>
     <div class="face left stone"><div class="arcade">
@@ -135,6 +136,8 @@
     </div><div class="shade"></div></div>
     <div class="face ceil"><div class="shade"></div></div>
     <div class="face floor"><div class="runner"></div><div class="snow"></div><div class="shade"></div></div>
+    <div class="hang pennant" style="--x:calc(var(--W)*-.4);--z:calc(var(--D)*-.97);--c:#5a1519"></div>
+    <div class="hang pennant" style="--x:calc(var(--W)*.4);--z:calc(var(--D)*-.97);--c:#1d2f5a"></div>
     <div class="obj shaft" style="--x:0px;--z:calc(var(--D)*-.62);--c:rgba(190,215,255,.9)"></div>
     <div class="obj fog" style="--x:0px;--z:calc(var(--D)*-.6)"></div>
     <div class="gate"></div>
