@@ -1416,10 +1416,11 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
       pts.push([o.cx, o.cy]); o.pi = pts.length - 1;
     });
     var d = 'M' + pts.map(function (p) { return p.join(' '); }).join('L');
-    corr.innerHTML = '<defs><pattern id="lv-fl" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#111316"/><path d="M0 .5H40M.5 0V40" stroke="rgba(239,233,220,.045)"/></pattern></defs>' +
+    corr.innerHTML = '<defs><pattern id="lv-fl" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#111316"/><path d="M0 .5H40M.5 0V40" stroke="rgba(239,233,220,.045)"/></pattern>' +
+      '<pattern id="lv-nm" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M0 0L80 80M80 0L40 40M0 80L40 40M0 40H80M40 0V80" stroke="rgba(120,220,150,.09)" stroke-width="1.5" fill="none"/></pattern></defs>' +
       '<path d="' + d + '" transform="translate(0 30)" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="128" stroke-linejoin="round"/>' +
       '<path d="' + d + '" transform="translate(0 14)" fill="none" stroke="#5f5a50" stroke-width="92"/>' +
-      '<path d="' + d + '" fill="none" stroke="#d9d3c5" stroke-width="92"/><path d="' + d + '" fill="none" stroke="url(#lv-fl)" stroke-width="84"/>' +
+      '<path d="' + d + '" fill="none" stroke="#d9d3c5" stroke-width="92"/><path d="' + d + '" fill="none" stroke="url(#lv-fl)" stroke-width="84"/><path d="' + d + '" fill="none" stroke="url(#lv-nm)" stroke-width="72"/>' +
       '<path d="' + d + '" fill="none" stroke="#ff5b2e" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" opacity=".9"/>';
     var cum = [0];
     for (var q = 1; q < pts.length; q++) cum.push(cum[q - 1] + Math.hypot(pts[q][0] - pts[q - 1][0], pts[q][1] - pts[q - 1][1]));
@@ -1431,6 +1432,50 @@ window.BB_HERO={"behemoth":"behemoth","bioshock-4":"bioshock-4","lonestar":"vr-t
       return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, Math.atan2(b[1] - a[1], b[0] - a[0])];
     }
     var stops = R.map(function (o) { return cum[o.pi]; });
+    (function () {
+      function inside(x, y) { return R.some(function (o) { return x > o.x && x < o.x + o.w && y > o.y && y < o.y + o.h; }); }
+      var runs = [], s = -1, STEP = 8;
+      for (var L = 0; L <= total; L += STEP) {
+        var p0 = at(L), out = !inside(p0[0], p0[1]);
+        if (out && s < 0) s = L;
+        if ((!out || L + STEP > total) && s >= 0) { runs.push([s, L]); s = -1; }
+      }
+      function off(len, side) { var p1 = at(len), n = p1[2] + Math.PI / 2; return [p1[0] + Math.cos(n) * side, p1[1] + Math.sin(n) * side, p1[2]]; }
+      function f(v) { return Math.round(v * 10) / 10; }
+      var g = '';
+      runs.forEach(function (r, ri) {
+        var len = r[1] - r[0]; if (len < 120) return;
+        [r[0] + 4, r[1] - 4].forEach(function (l) {
+          var a1 = off(l, -46), a2 = off(l, 46);
+          g += '<path d="M' + f(a1[0]) + ' ' + f(a1[1]) + 'L' + f(a2[0]) + ' ' + f(a2[1]) + '" stroke="#efe9dc" stroke-width="10" opacity=".55"/>' +
+            '<path d="M' + f(a1[0]) + ' ' + f(a1[1]) + 'L' + f(a2[0]) + ' ' + f(a2[1]) + '" stroke="#111316" stroke-width="4" stroke-dasharray="6 6"/>';
+        });
+        var c = off(r[0] + 64, -30);
+        g += '<g transform="translate(' + f(c[0]) + ' ' + f(c[1]) + ')"><circle r="15" fill="none" stroke="#4fd1c5" stroke-width="2" stroke-dasharray="4 4" opacity=".8"/>' +
+          '<path d="M-3 9V-17" stroke="#efe9dc" stroke-width="2.5"/><path d="M-1.5 -17L15 -11L-1.5 -5Z" fill="#4fd1c5"/></g>';
+        if (len > 480) {
+          var m = r[0] + len / 2, e0 = off(m - 150, 14), e1 = off(m + 150, 14), en = off(m + 40, 14), ang = en[2] * 180 / Math.PI;
+          g += '<path d="M' + f(e0[0]) + ' ' + f(e0[1]) + 'L' + f(e1[0]) + ' ' + f(e1[1]) + '" stroke="#e5484d" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" opacity=".75"/>' +
+            '<circle cx="' + f(e0[0]) + '" cy="' + f(e0[1]) + '" r="4" fill="none" stroke="#e5484d" stroke-width="2" opacity=".75"/><circle cx="' + f(e1[0]) + '" cy="' + f(e1[1]) + '" r="4" fill="none" stroke="#e5484d" stroke-width="2" opacity=".75"/>' +
+            '<g transform="translate(' + f(en[0]) + ' ' + f(en[1]) + ') rotate(' + f(ang) + ')"><path d="M0 0L150 -26A152 152 0 0 1 150 26Z" fill="#e5484d" opacity=".13"/>' +
+            '<path d="M0 0L150 -26M0 0L150 26" stroke="#e5484d" stroke-width="1.5" opacity=".4"/><circle r="11" fill="#e5484d"/><path d="M3 -5L10 0L3 5" fill="none" stroke="#111316" stroke-width="2.5" stroke-linejoin="round"/></g>';
+        }
+        [0.28, 0.76].forEach(function (k) {
+          var pk = off(r[0] + len * k, -24);
+          g += '<path d="M' + f(pk[0]) + ' ' + f(pk[1] - 9) + 'l9 9l-9 9l-9 -9Z" fill="#f2c94c" stroke="#111316" stroke-width="2"/>';
+        });
+      });
+      var sp = R[0], kx = sp.x - 250, ky = sp.y + sp.h - 250, T = 'font-family="Hanken Grotesk, sans-serif" font-size="20" font-weight="600" letter-spacing="2" fill="#bbb8ad"';
+      g += '<g transform="translate(' + kx + ' ' + ky + ')">' +
+        '<rect x="-12" y="-12" width="24" height="24" fill="url(#lv-nm)" stroke="rgba(120,220,150,.5)"/><text x="24" y="7" ' + T + '>NAVMESH</text>' +
+        '<g transform="translate(0 60)"><path d="M-3 9V-17" stroke="#efe9dc" stroke-width="2.5"/><path d="M-1.5 -17L15 -11L-1.5 -5Z" fill="#4fd1c5"/><text x="26" y="7" ' + T + '>CHECKPOINT</text></g>' +
+        '<g transform="translate(0 120)"><circle r="10" fill="#e5484d"/><path d="M3 -5L9 0L3 5" fill="none" stroke="#111316" stroke-width="2.5"/><text x="22" y="7" ' + T + '>PATROL</text></g>' +
+        '<g transform="translate(0 180)"><path d="M0 -9l9 9l-9 9l-9 -9Z" fill="#f2c94c"/><text x="20" y="7" ' + T + '>PICKUP</text></g></g>';
+      var mk = document.createElementNS(SVGNS, 'g');
+      mk.setAttribute('class', 'lv-marks');
+      mk.innerHTML = g;
+      corr.appendChild(mk);
+    })();
     var ms = document.createElementNS(SVGNS, 'svg');
     ms.setAttribute('viewBox', '0 0 ' + WW + ' ' + WH);
     ms.innerHTML = R.map(function (o) { return '<rect x="' + o.x + '" y="' + o.y + '" width="' + o.w + '" height="' + o.h + '" fill="none" stroke="rgba(239,233,220,.35)" stroke-width="40"/>'; }).join('') +
