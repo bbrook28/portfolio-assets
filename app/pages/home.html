@@ -1,5 +1,5 @@
 <link rel="canonical" href="https://benbrookgames.com/">
-<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=8cd5e0079e">
+<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=362a9c9180">
 <div class="bb-page cine home" data-title="Ben Brook, game designer" data-description="Game designer. I build places, quests and the systems that make them react to players: level design, quest design and narrative. Shipped at Nexon and Skydance; Alpha at Cloud Chamber." style="--bb-accent:#ff5b2e">
 <div class="lv" data-lv>
 
@@ -41,6 +41,7 @@
     <div class="obj box" style="--x:calc(var(--W)*-.18);--z:calc(var(--D)*-.65);--w:12;--h:40"></div>
     <div class="obj box orange" style="--x:calc(var(--W)*.2);--z:calc(var(--D)*-.55);--w:10;--h:10"></div>
     <div class="obj box edge" style="--x:calc(var(--W)*.33);--z:calc(var(--D)*-.3);--w:24;--h:14"></div>
+    <div class="obj stairs" style="--x:calc(var(--W)*.3);--z:calc(var(--D)*-.8)"></div>
     <div class="obj bot" style="--x:calc(var(--W)*-.04);--z:calc(var(--D)*-.5)"><b class="leg bk"></b><b class="arm bk"></b><b class="leg"></b><b class="torso"></b><b class="head"><i></i></b><b class="arm"></b></div>
     <div class="hang floodlamp" style="--x:0px;--z:calc(var(--D)*-.45)"></div>
     <div class="gate"></div>
@@ -104,6 +105,9 @@
     <div class="hang bulb" style="--x:0px;--z:calc(var(--D)*-.3)"></div>
     <div class="obj crates edge" style="--x:calc(var(--W)*.33);--z:calc(var(--D)*-.45)"><i></i><i></i><i></i></div>
     <div class="obj drum edge" style="--x:calc(var(--W)*-.34);--z:calc(var(--D)*-.55)"></div>
+    <div class="obj guard" style="--x:calc(var(--W)*-.2);--z:calc(var(--D)*-.82)"><img data-bb-src="level/twd/gren-a.webp" alt=""></div>
+    <div class="obj guard" style="--x:calc(var(--W)*.2);--z:calc(var(--D)*-.7)"><img data-bb-src="level/twd/gren-b.webp" alt=""></div>
+    <div class="obj guard edge" style="--x:calc(var(--W)*.37);--z:calc(var(--D)*-.58)"><img data-bb-src="level/twd/gren-c.webp" alt=""></div>
     <div class="gate"></div>
   </template>
 
@@ -129,6 +133,9 @@
     <div class="hang flags" style="--x:0px;--z:calc(var(--D)*-.72)"></div>
     <div class="obj crates edge" style="--x:calc(var(--W)*-.3);--z:calc(var(--D)*-.5)"><i></i></div>
     <div class="obj planter edge" style="--x:calc(var(--W)*.3);--z:calc(var(--D)*-.4)"></div>
+    <div class="obj barrel" style="--x:calc(var(--W)*-.24);--z:calc(var(--D)*-.82)"><img data-bb-src="level/zoe/barrel.webp" alt=""><img class="p" data-bb-src="level/zoe/barrel-painted.webp" alt=""></div>
+    <div class="obj barrel" style="--x:calc(var(--W)*.24);--z:calc(var(--D)*-.84)"><img data-bb-src="level/zoe/barrel.webp" alt=""><img class="p" data-bb-src="level/zoe/barrel-painted.webp" alt=""></div>
+    <div class="obj sueno" style="--x:calc(var(--W)*-.25);--z:calc(var(--D)*-.52);--y:calc(var(--u)*50)"><img data-bb-src="level/zoe/sueno.webp" alt=""></div>
     <div class="gate"></div>
   </template>
 
@@ -153,6 +160,10 @@
     <div class="hang pennant" style="--x:calc(var(--W)*.4);--z:calc(var(--D)*-.97);--c:#1d2f5a"></div>
     <div class="obj shaft" style="--x:0px;--z:calc(var(--D)*-.62);--c:rgba(190,215,255,.9)"></div>
     <div class="obj fog" style="--x:0px;--z:calc(var(--D)*-.6)"></div>
+    <div class="obj brazier fire candle" style="--x:calc(var(--W)*-.2);--z:calc(var(--D)*-.72)"><b></b><i></i><i></i><i></i></div>
+    <div class="obj brazier fire candle" style="--x:calc(var(--W)*.2);--z:calc(var(--D)*-.72)"><b></b><i></i><i></i><i></i></div>
+    <div class="obj brazier fire candle" style="--x:calc(var(--W)*-.27);--z:calc(var(--D)*-.36)"><b></b><i></i><i></i><i></i></div>
+    <div class="obj brazier fire candle" style="--x:calc(var(--W)*.27);--z:calc(var(--D)*-.36)"><b></b><i></i><i></i><i></i></div>
     <div class="gate"></div>
   </template>
 
@@ -176,10 +187,10 @@
       <i class="fusa" style="left:2%;--c:#2c8a4a"></i><i class="fusa" style="right:2%;--c:#c23a4a"></i></div>
     <div class="hang chochin edge" style="--x:calc(var(--W)*-.3);--z:calc(var(--D)*-.25)"></div>
     <div class="hang chochin edge" style="--x:calc(var(--W)*.3);--z:calc(var(--D)*-.3)"></div>
-    <div class="obj dancer" data-sheet="level/sumo/dance-gawa-banzai.webp" data-grid="8,4,32" data-fps="12.308" style="--x:calc(var(--W)*-.02);--z:calc(var(--D)*-.84);--d:2.6s"><div class="sh"><img data-bb-src="level/sumo/dance-gawa-banzai.webp" alt=""></div></div>
-    <div class="obj dancer edge" data-sheet="level/sumo/dance-tomo-spin.webp" data-grid="8,4,32" data-fps="13.333" style="--x:calc(var(--W)*.4);--z:calc(var(--D)*-.8);--d:2.4s"><div class="sh"><img data-bb-src="level/sumo/dance-tomo-spin.webp" alt=""></div></div>
-    <div class="obj dancer edge" data-sheet="level/sumo/dance-umi-belly.webp" data-grid="8,4,32" data-fps="14.545" style="--x:calc(var(--W)*.29);--z:calc(var(--D)*-.62);--d:2.2s"><div class="sh"><img data-bb-src="level/sumo/dance-umi-belly.webp" alt=""></div></div>
-    <div class="obj dancer" data-sheet="level/sumo/dance-yama-shiko.webp" data-grid="8,4,32" data-fps="12.308" style="--x:calc(var(--W)*.15);--z:calc(var(--D)*-.52);--d:2.6s"><div class="sh"><img data-bb-src="level/sumo/dance-yama-shiko.webp" alt=""></div></div>
+    <div class="obj dancer" data-sheet="level/sumo/dance-gawa-banzai.webp" data-grid="8,8,64" data-fps="24.615" style="--x:calc(var(--W)*-.02);--z:calc(var(--D)*-.84);--d:2.6s"><div class="sh"><img data-bb-src="level/sumo/dance-gawa-banzai.webp" alt=""></div></div>
+    <div class="obj dancer edge" data-sheet="level/sumo/dance-tomo-spin.webp" data-grid="8,8,64" data-fps="26.667" style="--x:calc(var(--W)*.4);--z:calc(var(--D)*-.8);--d:2.4s"><div class="sh"><img data-bb-src="level/sumo/dance-tomo-spin.webp" alt=""></div></div>
+    <div class="obj dancer edge" data-sheet="level/sumo/dance-umi-belly.webp" data-grid="8,8,64" data-fps="29.091" style="--x:calc(var(--W)*.29);--z:calc(var(--D)*-.62);--d:2.2s"><div class="sh"><img data-bb-src="level/sumo/dance-umi-belly.webp" alt=""></div></div>
+    <div class="obj dancer" data-sheet="level/sumo/dance-yama-shiko.webp" data-grid="8,8,64" data-fps="24.615" style="--x:calc(var(--W)*.15);--z:calc(var(--D)*-.52);--d:2.6s"><div class="sh"><img data-bb-src="level/sumo/dance-yama-shiko.webp" alt=""></div></div>
     <div class="gate"></div>
   </template>
 
