@@ -1,5 +1,5 @@
 <link rel="canonical" href="https://benbrookgames.com/projects/maplestory-classic">
-<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=a6e51823ee">
+<link rel="stylesheet" href="https://bbrook28.github.io/portfolio-assets/app/bb.css?v=7c7527e8d4">
 <div class="bb-page cine fh" data-title="MapleStory Classic: Forgotten Hollow · Ben Brook" data-description="Game Designer on Forgotten Hollow, a new level 39 to 60 region for MapleStory Classic World (Nexon, 2026). Level design and quests." style="--bb-accent:#a6e35f">
 <section class="cine-hero sh-hero sh-hero--room sh-hero--glow sh-hero--cast" data-sh-hero>
   <div class="sh-hero__bg sh-hero__bg--room" aria-hidden="true" data-lv-room="maplestory-classic"><img data-bb-src="level/flat/maplestory-classic.jpg" data-bb-src-m="level/flat-m/maplestory-classic.jpg" alt="" loading="eager" fetchpriority="high"><template class="lv-int fh" data-for="maplestory-classic" data-depth="0.8" data-fx="firefly" data-bb-vars="tx-rock:level/tx/fh-rock.webp tx-earth:level/tx/fh-earth.webp">
@@ -72,7 +72,7 @@
   <dl class="bb-role">
     <dt>Role</dt><dd>Game Designer, since May 2026 <span class="bb-role__tech">Nexon's in-house MapleStory tools</span></dd>
     <dt>Team</dt><dd>8 developers in the US: 3 designers (my lead, a combat and abilities designer, and me), 3 engineers, a user researcher and a producer, plus 2 to 4 developers at Nexon Korea</dd>
-    <dt>What I owned</dt><dd>Level layout, monster placement, quests, NPCs and items, built in Nexon's in-house MapleStory tools on the game's original data architecture. I worked from my lead's initial concept and took the region through QA to launch. I also wrote the team's dialogue style guide, a quest data guide for new designers, and a decision log of every design ruling.</dd>
+    <dt>What I owned</dt><dd>Level layout, monster placement, quests, NPCs and items, built in Nexon's in-house MapleStory tools on the game's original data architecture, including quest scripts that my lead started or that were ported from the Korean original. I worked from my lead's initial concept and took the region through QA to launch. I also wrote the team's dialogue style guide, a quest data guide for new designers, and a decision log of every design ruling.</dd>
   </dl>
 </section>
 
@@ -98,7 +98,7 @@
   <div class="bb-case">
     <div><b>The problem</b><p>New maps in a classic game get compared with the old ones, and "this feels off" is not something a team can review. I needed a standard that anyone could check.</p></div>
     <div><b>What I did</b><p>I measured the map data of about 90 of Nexon's original Victoria Island maps and recorded what they actually do: how wide the platform is under a large monster, how close monsters spawn to NPCs and portals, and how much of each floor is taken up by monsters alive at once. Those numbers became the region's rulebook.</p></div>
-    <div><b>What the data changed</b><p>My first rules were too cautious. I had limited big monsters to platforms about twice as wide as the smallest the original maps use, and I kept monsters much further from NPCs than the originals do. I loosened both to match. Where my rule and the original maps disagreed, the original maps won.</p></div>
+    <div><b>What the data changed</b><p>My first rules were too cautious. I had limited big monsters to platforms about twice as wide as the smallest the original maps use, and I kept monsters much farther from NPCs than the originals do. I loosened both to match. Where my rule and the original maps disagreed, the original maps won.</p></div>
     <div><b>The result</b><p>I audited every map in the region against the rulebook three weeks before launch. Seven maps were too empty, so I raised their spawn rates and added 59 spawn points. Quest camps were cleared of monsters. One floor of Decayed Tunnel III was 75% crowded; moving three spawns to the next map brought it to 47% without changing the kill count a quest depends on. Every change went to QA with a rendered before and after.</p></div>
   </div>
   <ul class="bb-rules">
@@ -124,7 +124,7 @@
   <div class="bb-case">
     <div><b>The problem</b><p>The first versions of the maps went into a team playtest at the end of July. Two things came up again and again: how many monsters each floor had, and whether every class could hunt there. Some players camped a single platform for hours. In an MMO a map is somewhere people live, and my first layouts were built for passing through.</p></div>
     <div><b>What I did</b><p>I rebuilt Precipice of Darkness the same night from what I had watched. Then I wrote a map standard for the whole region: every map works for solo players, parties and crowds, has one clear main route plus alternates and shortcuts, gives players safe places to regroup, and never traps players, pets or dropped items. I broke it into a checklist per map and reworked seven maps against it in three weeks, some from the ground up.</p></div>
-    <div><b>Example: Hanging Gardens of Rot</b><p>My lead's class-balance rule was no safe hunting spots, where a ranged class can hit a monster that cannot reach it. I fixed those with spawns on the platform or a rope or ladder to it, and evened out spawns floor by floor. Every platform got a way in and a way out, and the map was split by job, marked below. Before launch I added 11 spawn points up top so the climb was worth making.</p></div>
+    <div><b>Example: Hanging Gardens of Rot</b><p>My lead's class-balance rule was no safe hunting spots, where a ranged class can hit a monster that cannot reach it. I fixed those with spawns on the platform or a rope or ladder to it, and evened out spawns floor by floor. Every platform got a way in and a way out, and the map was split into zones, marked below. Before launch I added 11 spawn points up top so the climb was worth making.</p></div>
   </div>
   <figure class="fh-zones">
     <div class="fh-zones__pic">
@@ -151,7 +151,7 @@
   <h2 class="cine-d">Seven questlines, one region</h2>
   <p class="cine-lede">A five-quest opening act brings players down from Ellinia. Five questlines then open on separate level gates between 39 and 55, so a player always has one line at their level and a reason to go one map deeper. Each line's objectives are placed to walk the player through maps they have not seen yet.</p>
   <p class="cine-lede">Classic World is a social grinding game, and other players can steal your kills. I was careful about where each objective sent people and how crowded those maps would get. I also kept the dialogue short, so players read it instead of clicking past it.</p>
-  <p class="cine-lede">Myra's quest asks for 50 Myewoods and 50 Sporewoods. Myewoods spawn across two neighbouring maps and Sporewoods across two deeper ones, so one quest spreads its players over four maps. Two other quests both needed Golden Stirges, which had only two spawns per map and were very slow to finish, so I tripled them to six per map by converting other spawns and left the monster totals unchanged.</p>
+  <p class="cine-lede">Myra's quest asks for 50 Myewoods and 50 Sporewoods. Myewoods spawn across two neighboring maps and Sporewoods across two deeper ones, so one quest spreads its players over four maps. Two other quests both needed Golden Stirges, which had only two spawns per map and were very slow to finish, so I tripled them to six per map by converting other spawns and left the monster totals unchanged.</p>
   <div class="cine-flow fh-flow" aria-label="Quest structure">
     <div class="cine-node cine-node--end">Ellinia<small>Grendel, Magic Library</small></div>
     <div class="cine-node cine-node--act">Shadow of the World Tree<small>Lv 39 · 5 quests, in order</small></div>
@@ -165,7 +165,7 @@
   </div>
   <div class="cine-chains fh-chains">
     <div class="cine-chain" style="--c:#e9c46a"><img data-bb-src="fh/npcs/myen.png" alt="Myen"><div><b>Shadow of the World Tree</b><span>Lv 39 · 5 quests</span><p>Grendel senses a seal breaking under Ellinia, and players follow the rot down into the region.</p></div></div>
-    <div class="cine-chain" style="--c:#a9bd7a"><img data-bb-src="fh/npcs/zelya.png" alt="Zelya"><div><b>Zelya · Echoes of the Past</b><span>Lv 39–42 · 3 quests</span><p>Glowshrooms tore up the map back to her people's old home, and players recover the pieces.</p></div></div>
+    <div class="cine-chain" style="--c:#a9bd7a"><img data-bb-src="fh/npcs/zelya.png" alt="Zelya"><div><b>Zelya · Echoes of the Past</b><span>Lv 39–42 · 3 quests</span><p>Glowshrooms tore up the map leading back to her people's old home, and players recover the pieces.</p></div></div>
     <div class="cine-chain" style="--c:#ffd27a"><img data-bb-src="fh/npcs/myen.png" alt="Myen"><div><b>Myen · Winter in the Hollow</b><span>Lv 40–45 · 4 quests</span><p>The town gets ready for its first winter in the dark.</p></div></div>
     <div class="cine-chain" style="--c:#b48cff"><img data-bb-src="fh/npcs/myra.png" alt="Myra"><div><b>Myra · Myra's Wish</b><span>Lv 49 · 2 quests</span><p>Her old companions are now the Myewoods and Sporewoods, and she wants them put to rest.</p></div></div>
     <div class="cine-chain" style="--c:#ff9f6b"><img data-bb-src="fh/npcs/tamya.png" alt="Tamya"><div><b>Tamya · The Hearthkeeper</b><span>Lv 50–53 · 6 quests</span><p>Daniel translates her grandmother's journal and finds the Lantern Rite.</p></div></div>
@@ -193,7 +193,7 @@
       <ul class="cine-dots">
         <li>An undead Mushmom, 20 levels above the Victoria Island original.</li>
         <li>She only spawns in Someone Else's Grave, a hidden map off Decayed Tunnel I. Players find her by exploring, or through Glimmer's questline.</li>
-        <li>She regenerates and is weak to holy and fire, the same classes the rest of the Deep Passage favors. That makes her a party fight.</li>
+        <li>She regenerates and is weak to holy and fire, the same elements the rest of the Deep Passage favors. As a field boss she is meant for groups, though she can be soloed.</li>
         <li>I wanted her to be a climactic moment players stumble into. Field boss maps fill up fast in this game, so hiding her and tying her to a questline kept the crowd off her map for a while.</li>
       </ul>
     </div>
